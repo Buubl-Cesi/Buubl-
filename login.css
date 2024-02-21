@@ -1,0 +1,185 @@
+/*Sélecteur*/
+
+body {
+    background-color: rgb(42, 43, 52);
+    overflow: hidden;
+}
+
+fieldset {
+    margin: -2% 7% -1% 7%;
+    padding: 2.7%;
+    /**/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /**/
+    color: rgba(0, 0, 0, 0.5);
+    font-family: "Arial", sans-serif;
+    background-color: rgba(238, 238, 238, 1);
+    /**/
+    border: 3px solid #ffffff ;
+    border-radius: 10px;  
+}
+
+fieldset input{
+    border: none;
+    color: rgb(0, 0, 0);
+    background-color: rgba(238, 238, 238, 1);
+    padding: 0.8%;
+    outline: none;
+}
+
+/*Classes Img & Shapes*/
+
+.background-img {
+    position: absolute;
+    width: 80%;
+    height: 120%;
+    top: -14.5%;
+    left: -8%;
+    object-fit: cover;
+}
+
+.background-img-green {
+    position: absolute;
+    width: 44%;
+    height: 76%;
+    top: 35%;
+    left: 71%;
+
+}
+
+.background-img-brand {
+    position: absolute;
+    top: 0%;
+    left: 88.3%;
+    width: 11%;
+    height:11%;
+}
+
+.background-img-bubble {
+    position: absolute;
+    top: 24%;
+    left: 92%;
+    width: 5.77%;
+    height: 10%;
+}
+
+/*.background-img-bubble {
+    position: absolute;
+    top: 24%;
+    left: 92%;
+}*/
+
+.background-img-password {
+    position: absolute;
+    opacity: 0.5;
+    margin-top: 0.4%;
+    left: 85%;
+    width: 4%;
+    height:2.5%;
+}
+
+.blue-box {
+    background-color:rgba(85, 105, 159, 0.99);
+    position: absolute;
+    height: 72.44%;
+    width: 27.81%;
+    top : 14.5%;
+    left: 58.5%;
+    border-radius: 8%;
+    box-shadow: 0.40vw 0.40vw 0.64vw rgba(0, 0, 0, 0.35);
+}
+
+
+/*Text only*/
+
+
+.text-title {
+    color: white;
+    font-family: "Arial", "Arial Normal", sans-serif;
+    font-size:large;
+    margin-left: 7%;
+    margin-top: 8%;
+}
+
+.text-title-thin {
+    font-weight: lighter;
+}
+
+.text-subtitle {
+    color : rgba(255, 255, 255, 0.61);
+    font-family: "Arial", sans-serif;
+    font-size:small;
+    font-weight: lighter;
+    margin-left: 7%;
+    margin-top: -2%;
+}
+
+.text-advertisement {
+    color : white;
+    font-family: "Arial", sans-serif;
+    font-size:260%;
+    font-weight: bold;
+    margin-left: 7%;
+    margin-top: 3%;
+} 
+
+
+.text-alignement {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 7%;
+}
+
+.text-end {
+    margin-left: 7%;
+    color: white;
+    font-family: "Arial", sans-serif;
+    font-size: small;
+}
+
+.text-login-forgot {
+    color : #869bd9;
+    font-family: "Arial", sans-serif;
+    margin-left: 7%;
+    margin-bottom: 5%;
+    font-size: small;
+}
+
+.check-box-text {
+    color: white;
+    font-family: "Arial", sans-serif;
+    font-size:small;
+    font-weight:normal;
+}
+
+
+/*Button*/
+
+.button-login{
+    color :white;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(30, 152, 215, 0.35);
+    border-radius: 10px;
+    border: none;
+    padding:0.1%;
+    margin-top: 2%;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 1%;
+    font-family: "Arial", sans-serif;
+    font-size: medium;
+    
+}
+
+
+input[type="checkbox"] {
+    margin-left: 7%;
+    margin-bottom: 1%;
+}
+
+.check-box-first {
+    margin-top: 7.5%;
+}
