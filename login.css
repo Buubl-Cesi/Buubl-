@@ -74,7 +74,7 @@ fieldset input{
 .background-img-password {
     position: absolute;
     opacity: 0.5;
-    margin-top: 0.4%;
+    margin-top: 0.45%;
     left: 85%;
     width: 4%;
     height:2.5%;
@@ -95,14 +95,20 @@ fieldset input{
 /*Text only*/
 
 
-.text-title {
+.text-title, .text-title-2 {
     color: white;
     font-family: "Arial", "Arial Normal", sans-serif;
-    font-size:large;
     margin-left: 7%;
-    margin-top: 8%;
+    margin-top: 7.5%;
 }
 
+.text-title{
+    font-size:large;
+}
+
+.text-title-2{
+    font-size: medium;
+}
 .text-title-thin {
     font-weight: lighter;
 }
@@ -123,6 +129,7 @@ fieldset input{
     font-weight: bold;
     margin-left: 7%;
     margin-top: 3%;
+    margin-right: 7%;
 } 
 
 
@@ -182,4 +189,98 @@ input[type="checkbox"] {
 
 .check-box-first {
     margin-top: 7.5%;
+}
+
+
+/*Media Queries*/
+
+/*@media (max-width: 800px) {
+    .background-img,
+    .background-img-green,
+    .background-img-bubble {
+        display: none;
+    }
+
+    .blue-box {
+        position: absolute;
+        width: 70%; 
+        height: 82%; 
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+
+    .background-img-brand {
+        width: 6%;
+        height:6%;
+        top: 0%;
+        left: 60%;
+    }
+}*/
+
+
+@media (max-height: 730px) {
+
+    .text-title {
+        color: white;
+        font-family: "Arial", "Arial Normal", sans-serif;
+        font-size:100%;
+        margin-left: 7%;
+        margin-top: 6.5%;
+    }
+
+    .text-subtitle {
+        color : rgba(255, 255, 255, 0.61);
+        font-family: "Arial", sans-serif;
+        font-size:80%;
+        font-weight: lighter;
+        margin-left: 7%;
+        margin-top: -2%;
+    }
+
+    .text-advertisement {
+        color : white;
+        font-family: "Arial", sans-serif;
+        font-size:210%;
+        font-weight: bold;
+        margin-left: 7%;
+        margin-top: 3%;
+        margin-right: 7%;
+    } 
+
+
+    .text-end {
+        margin-left: 7%;
+        color: white;
+        font-family: "Arial", sans-serif;
+        font-size: 70%;
+    }
+
+    .text-login-forgot {
+        color : #869bd9;
+        font-family: "Arial", sans-serif;
+        margin-left: 7%;
+        margin-bottom: 5%;
+        font-size: 70%;
+    }
+
+    .check-box-text {
+        color: white;
+        font-family: "Arial", sans-serif;
+        font-size:70%;
+        font-weight:normal;
+    }
+
+    
+    .check-box-first {
+        margin-top: 0%;
+    }
+
+    .text-title-2{
+        margin-top: -2.9%;
+    }
+
+    .background-img-password {
+        margin-top: 0.6%;
+    }
 }
