@@ -3,15 +3,8 @@ body {
     font-family: 'Arial', sans-serif;
     overflow: hidden;
     margin: 0;
-
-}
-
-.background-img-green {
-    position: absolute;
-    width: 44%;
-    height: 76%;
-    top: 35%;
-    left: 71%;
+    padding :0;
+    
 
 }
 
@@ -22,7 +15,7 @@ h1 {
 
 h2 {
     color : white;
-    margin-left : 1%;
+    margin-left : 0px;
 }
 
 h3 {
@@ -43,25 +36,21 @@ div {
     align-items: center;
     text-align : left;
     border: 1px solid #ccc;
-    margin-bottom: 20px;  
+    margin-bottom: 20px;
+    z-index: 1;
 }
 
 
 .div-bottom {
     background-color: rgba(113, 194, 133, 0.8);
     border-radius: 25px;
-
     width: 95%;
-    height: 400px;
     padding: 20px;
     border: 1px solid #ccc;
     margin: 0 auto;
-
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
-
-    
+    z-index : 1;
 }
 
 
@@ -72,7 +61,6 @@ div {
     border-radius: 20px;
     margin-right: 10px;
     right : 53%;
-
 }
 
 .logo2 {
@@ -82,7 +70,6 @@ div {
     border-radius: 20px;
     margin-right: 10px;
     right : 3.5%;
-
 }
 
 
@@ -94,7 +81,6 @@ div {
     border-radius: 0px;
     border : 0px;
     margin: 0 auto;
-
 }
 
   
@@ -114,10 +100,104 @@ div {
     margin-left: 1.5%;
 }
 
-.profil {
-    border-radius: 90px;
-    width: 300px; 
-    height: 300px;
-    right : 10%;
+.div-bottom section {
+    flex: 1;
 }
 
+
+.div-bottom .section3 {
+    margin-right: 20px;
+}
+
+.div-bottom h2,
+.div-bottom label {
+    text-align: left;
+    margin-right: 20px;
+}
+
+
+.div-bottom section {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-bottom section h2,
+.div-bottom section label {
+    margin-bottom: 10px;
+}
+
+.profil {
+    width: 30%;
+    height : 30%;
+    margin-left: auto;
+    border-radius: 100%;
+
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2A2B34 ;
+
+}
+
+.navbar {
+    display: flex;
+    align-items: center; 
+    background-color: #465257; 
+    border-radius: 15px; 
+    width: 95%; 
+    height: 60px; 
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.loupe {
+    width: 80%; 
+    height: 80%;
+    margin-top: 10%;
+}
+
+.search-box {
+    margin-top: 2.2%;
+    margin-left: 0%;
+    height: 70px;
+
+}
+
+.search-box input{
+    border-radius: 15px; 
+    height: 30%; 
+    border: 0px;
+    padding: 5px 10px; 
+
+}
+
+.logo {
+    display: flex;
+    max-width: 15%; 
+    margin-left: 55%;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.coeur {
+    width: 25%; 
+    margin-top: 5%;
+
+}
+
+.navbar a {
+    color: #fff; 
+    padding: 1% 1%; 
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    transition: background-color 0.3s;
+    color: #7fb7f8; 
+}
