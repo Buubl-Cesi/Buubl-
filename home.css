@@ -4,29 +4,12 @@ body {
     overflow: hidden;
     margin: 0;
     padding :0;
-    
-
 }
 
-h1 {
-    color : white;
-
-}
-
-h2 {
-    color : white;
-    margin-left : 0px;
-}
-
-h3 {
-    color : white;
-    margin-left : 3%;
-}
-
-
-label {
-    color : white;
-}
+h1 {color : white;}
+h2 {color : white; margin-left : 0px;}
+h3 {color : white; margin-left : 3%;}
+label {color : white;}
 
 div {
     overflow: hidden;
@@ -37,43 +20,8 @@ div {
     text-align : left;
     border: 1px solid #ccc;
     margin-bottom: 20px;
-    z-index: 1;
+    z-index: 1;   
 }
-
-
-.div-bottom {
-    background-color: rgba(113, 194, 133, 0.8);
-    border-radius: 25px;
-    width: 95%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    z-index : 1;
-}
-
-
-.logo1 {
-    position: absolute;
-    width: 50px; 
-    height: 50px;
-    border-radius: 20px;
-    margin-right: 10px;
-    right : 53%;
-}
-
-.logo2 {
-    position: absolute;
-    width: 50px; 
-    height: 50px;
-    border-radius: 20px;
-    margin-right: 10px;
-    right : 3.5%;
-}
-
-
-
 
 .container {
     display: flex;
@@ -81,9 +29,11 @@ div {
     border-radius: 0px;
     border : 0px;
     margin: 0 auto;
+    width : 92%;
+    position: relative;
 }
 
-  
+
 .section1, .section2 {
     width: 48%;
     float: left;
@@ -96,9 +46,63 @@ div {
     margin-right: 0;
 }
 
-.contact{
-    margin-left: 1.5%;
+
+.proposition {
+    justify-content: space-between;
+    display: flex;
 }
+
+.text-proposition,
+.img-proposition {
+    flex: 1;
+    padding: 1px; 
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+.logo1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    margin-right : auto;
+}
+
+
+
+
+
+
+.contact{
+    margin-left: 2.5%;
+}
+
+
+
+
+
+.div-bottom {
+    background-color: rgba(113, 194, 133, 0.8);
+    border-radius: 25px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    z-index : 1;
+    width : 93%;
+}
+
+
+
+
+
 
 .div-bottom section {
     flex: 1;
@@ -127,12 +131,56 @@ div {
 }
 
 .profil {
-    width: 30%;
-    height : 30%;
+    width: 25%;
+    height : 25%;
     margin-left: auto;
     border-radius: 100%;
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
