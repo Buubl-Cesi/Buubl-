@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Bubbl-Login</title>
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
     <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
 </head>
 <body>
     <header>
@@ -13,6 +14,7 @@
         <img class="background-img" src="Images/Login_image.png" alt="Chatting">
         <img class="background-img-green" src="Images/1137799.png" alt="Kelp">
         <img class="background-img-bubble" src="Images/normal_u22.png" alt="Bubble">
+        <img class="background-img-turn" src="Images/turn.png" alt="Turn">
     </header>
 
     <main>
@@ -27,16 +29,17 @@
                         <fieldset>
                             <input type="text" id="email" name="Email" placeholder="Email" required>
                         </fieldset>
-                        <p class="text-login-forgot">Adresse email oublié ?</p>
+                        <p><a class="text-login-forgot" href="google.com">Adresse email oublié ?</a></p>
+
                     </div>
 
 
                     <div>
                         <fieldset>
                             <input type="password" id="password" name="Password" placeholder="Mot de passe" required>
-                            <img class="background-img-password" src="Images/normal_u17.png" alt="password">
+                            <img class="background-img-password" src="Images/normal_u17.png" onclick="passwordDisplay()" alt="password">
                         </fieldset>
-                        <p class="text-login-forgot">Mot de passe oublié ?</p>
+                        <p><a class="text-login-forgot" href="google.com">Mot de passe oublié ?</a></p>
                     </div>
 
                 </div>
@@ -48,7 +51,7 @@
 
                 <div>
                     <input class="check-box" type="checkbox" id="checkbox2" name="checkbox2">
-                    <label class="check-box-text" for="checkbox2">J'accepte le traitement de mes données personnelles ?</label>
+                    <label class="check-box-text" for="checkbox2">J'accepte le traitement de mes données <span class="display">personnelles</span> ?</label>
                 </div>
 
                 <div class="button-login">

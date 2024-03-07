@@ -6,7 +6,7 @@ body {
 }
 
 fieldset {
-    margin: -2% 7% -1% 7%;
+    margin: -2% 7% -3% 7%;
     padding: 2.7%;
     /**/
     flex: 1;
@@ -31,6 +31,10 @@ fieldset input{
 
 /*Classes Img & Shapes*/
 
+.display{
+    display:contents;
+}
+
 .background-img {
     position: absolute;
     width: 80%;
@@ -38,6 +42,8 @@ fieldset input{
     top: -14.5%;
     left: -8%;
     object-fit: cover;
+    transform: translateX(0);
+    transition: transform 3s ease-in-out;
 }
 
 .background-img-green {
@@ -46,15 +52,20 @@ fieldset input{
     height: 76%;
     top: 35%;
     left: 71%;
-
+    transform: translateX(0);
+    transition: transform 1.5s ease-in-out;
 }
 
 .background-img-brand {
     position: absolute;
-    top: 0%;
+    top: 1.5%;
     left: 88.3%;
-    width: 11%;
-    height:11%;
+    /* width: 11%;
+    height:11%; */
+    width: 150px;
+    height: 80px;
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
 }
 
 .background-img-bubble {
@@ -63,33 +74,47 @@ fieldset input{
     left: 92%;
     width: 5.77%;
     height: 10%;
+    transform: translateX(0);
+    transition: transform 1.5s ease-in-out;
 }
 
-/*.background-img-bubble {
-    position: absolute;
-    top: 24%;
-    left: 92%;
-}*/
 
 .background-img-password {
     position: absolute;
     opacity: 0.5;
-    margin-top: 0.45%;
+    margin-top: 0.6%;
     left: 85%;
     width: 4%;
     height:2.5%;
 }
+
+.background-img-turn{
+    display: none;
+    position: absolute;
+    top: 4.7%;
+    left: 37%;
+    width: 25%;
+    height: 90%;
+    /* transform: translateX(0);
+    transition: transform 1s ease-in-out; */
+}
+
+
 
 .blue-box {
     background-color:rgba(85, 105, 159, 0.99);
     position: absolute;
     height: 72.44%;
     width: 27.81%;
+    min-width: 400px;
     top : 14.5%;
     left: 58.5%;
     border-radius: 8%;
     box-shadow: 0.40vw 0.40vw 0.64vw rgba(0, 0, 0, 0.35);
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
 }
+
 
 
 /*Text only*/
@@ -98,8 +123,9 @@ fieldset input{
 .text-title, .text-title-2 {
     color: white;
     font-family: "Arial", "Arial Normal", sans-serif;
+    font-size:100%;
     margin-left: 7%;
-    margin-top: 7.5%;
+    margin-top: 6.5%;
 }
 
 .text-title{
@@ -107,8 +133,10 @@ fieldset input{
 }
 
 .text-title-2{
+    margin-top: -2.9%;
     font-size: medium;
 }
+
 .text-title-thin {
     font-weight: lighter;
 }
@@ -116,16 +144,17 @@ fieldset input{
 .text-subtitle {
     color : rgba(255, 255, 255, 0.61);
     font-family: "Arial", sans-serif;
-    font-size:small;
+    font-size:80%;
     font-weight: lighter;
     margin-left: 7%;
     margin-top: -2%;
 }
 
+
 .text-advertisement {
     color : white;
     font-family: "Arial", sans-serif;
-    font-size:260%;
+    font-size:210%;
     font-weight: bold;
     margin-left: 7%;
     margin-top: 3%;
@@ -143,22 +172,32 @@ fieldset input{
     margin-left: 7%;
     color: white;
     font-family: "Arial", sans-serif;
-    font-size: small;
+    font-size: 67%;
 }
+
 
 .text-login-forgot {
     color : #869bd9;
     font-family: "Arial", sans-serif;
     margin-left: 7%;
     margin-bottom: 5%;
-    font-size: small;
+    font-size: 67%;
+    text-decoration: none;
 }
+
 
 .check-box-text {
     color: white;
     font-family: "Arial", sans-serif;
-    font-size:small;
+    font-size:70%;
     font-weight:normal;
+    
+}
+
+.text-login-forgot a:visited {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
 }
 
 
@@ -185,42 +224,94 @@ fieldset input{
 input[type="checkbox"] {
     margin-left: 7%;
     margin-bottom: 1%;
+    vertical-align: bottom;
+    position: relative;
+    top: 3.1px;
+
 }
 
 .check-box-first {
-    margin-top: 7.5%;
+    margin-top: 0%;
 }
-
 
 /*Media Queries*/
 
-/*@media (max-width: 800px) {
-    .background-img,
+@media screen and (max-width:455px) {
+
     .background-img-green,
+    .background-img,
     .background-img-bubble {
         display: none;
     }
 
-    .blue-box {
-        position: absolute;
-        width: 70%; 
-        height: 82%; 
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
+    .display{
+        display: none;
     }
 
+    .blue-box{
+        border-radius: 25px;
+        top: 12%;
+        height: 84%;
+        min-width: 350px;
+        width: 95%; 
+        transform : translateX(-59%)
+    }
+
+    .background-img-brand{
+        top: -1%;
+        transform : translateX(-148%)
+    }
+/**/
+    .text-alignement{
+        margin-right: 0%;
+    }
+
+}
+
+@media  (max-width:1255px) and (min-width:455px)  {
+
+
+    .background-img{
+        transform: translateX(-1000px); 
+    }
+
+    .blue-box{
+        transform : translateX(-250px)
+    }
+
+    .background-img-green{
+        transform : translateX(350px)
+    }
+
+    .background-img-bubble{
+        transform : translateX(350px)
+    }
+
+    .background-img-brand{
+        transform : translateX(-275px)
+    }
+
+}
+
+@media only screen and (max-device-width: 880px) and (orientation: landscape) {
+    .background-img-green,
+    .background-img,
+    .background-img-bubble,
+    .blue-box,
     .background-img-brand {
-        width: 6%;
-        height:6%;
-        top: 0%;
-        left: 60%;
+        display: none;
     }
-}*/
+
+    .background-img-turn{
+        display: block;
+    }
+}
 
 
-@media (max-height: 730px) {
+/*Media Queries Fullscreen*/
+/*Permet d'avoir un plein écran fonctionnel*/
 
+@media (display-mode: fullscreen) {
     .text-title {
         color: white;
         font-family: "Arial", "Arial Normal", sans-serif;
@@ -269,9 +360,9 @@ input[type="checkbox"] {
         font-family: "Arial", sans-serif;
         font-size:70%;
         font-weight:normal;
+        
     }
 
-    
     .check-box-first {
         margin-top: 0%;
     }
@@ -283,4 +374,28 @@ input[type="checkbox"] {
     .background-img-password {
         margin-top: 0.6%;
     }
+
+    .blue-box{
+        height: 61.5%;
+        top: 20%;
+    }
+
+    .background-img{
+        width: 85%;
+        height: 125%;
+        top: -17%;
+        left: -8%;
+    }
+
+    .background-img-brand{
+        top: 2.5%;
+        left: 86.5%;
+        width: 11.5%;
+        height: 9%;
+    }
 }
+
+
+/*Reste de code non-utilisé*/
+
+
