@@ -16,11 +16,6 @@ body {
     margin-left: 2%;
     margin-top: 2%;
     transition: transform 0.3s;
-    display: none;
-}
-
-.navbar-hidden {
-    transform: translateY(-200%);
 }
 
 .loupe {
@@ -43,139 +38,160 @@ body {
     width: 100%;
 }
 
-.logo {
-    margin-left: -5%;
-    margin-top: 15px;
-}
-
-.logo img{
-    max-width: 150px;
-}
-
-.page{
-margin-right: 0%;
-margin-left: auto;
-margin-top: 0.2%;
+.menu1 {   
+    display: block;  
 }
 
 
-.logo:hover {
-    transform: scale(1.1);
+
+@media (max-width: 1400px) {
+    .menu2 {   
+        display: none;  
+    }
+
+    .page{
+        position: absolute;
+        right: 8%;
+        top: 8%;
+        }
+
+    .coeur {
+        position: absolute;
+        width: 30px;
+        top: 7%;
+        right: 5%;
+        
+    }
+        
+    .navbar a {
+        color: #fff; 
+        padding: 0 10px;
+        text-decoration: none;
+    }
+        
+    .navbar a:hover {
+        transition: background-color 0.3s;
+        color: #7fb7f8; 
+    }
+
+    .logo {
+        position: absolute;
+        left: 43%;
+        top: 10%;
+        text-decoration: none;
+    }
+    
+    .logo img{
+        max-width: 150px;
+    }
+    
+    .logo:hover {
+        transform: scale(1.1);
+    }
+    
 }
 
-.coeur {
-    width: 35px;
-    margin-top: 20%;
-}
+@media (max-width: 600px) {
+    .menu1{
+        display: none;
+    }
+    .menu2{
+        display: block;
+    }
 
-.navbar a {
-    color: #fff; 
-    padding: 0 10px;
-    text-decoration: none;
-}
+    .page{
+        margin-right: 0%;
+        margin-left: auto;
+        margin-top: 0.2%;
+        display: none;
+    }
 
-.navbar a:hover {
-    transition: background-color 0.3s;
-    color: #7fb7f8; 
-}
-
-
-/*--------------------------navbar-petite------------------------------------------------------------------------------------*/
-
-.navbarGR {
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center; 
-    background-color: #465257; 
-    border-radius: 25px; 
-    width: 95%; 
-    height: 50px;
-    margin-left: 2%;
-    margin-top: 2%;
-    transition: transform 0.3s;
-}
-
-.loupeGR {
-    width: 35px;
-    height: auto;
-    margin: 10px;
-    margin-top: 25%;
-}
-
-.searchGR {
-    width: 150px; 
-    margin-left: 0%;
-}
-
-.searchGR input {
-    border-radius: 15px; 
-    height: 25px;
-    border: 0px;
-    padding: 5px 10px; 
-    width: 100%;
-}
-
-.logoGR {
-    max-width: 80px;
-    margin-left: 480%;
-    margin-top: 7%;
-}
-
-.hamburger-menu {  
-    margin-top: 0.2%;
-    z-index: 1001; 
-}
-
-.hamburger-menu img{
-    margin-left: 1250%;
+    .loupeGR {
+        width: 35px;
+        height: auto;
+        margin: 10px;
+        margin-top: 25%;
+    }
+    
+    .searchGR {
+        width: 150px; 
+        margin-left: 0%;
+    }
+    
+    .searchGR input {
+        border-radius: 15px; 
+        height: 25px;
+        border: 0px;
+        padding: 5px 10px; 
+        width: 100%;
+    }
+    
+    .logoGR {
+        position: absolute;
+        max-width: 80px;
+        left: 50%;
+        top: 1px;
+        text-decoration: none;
+    }
+    
+    .hamburger-menu {  
+        position: absolute;
+        left: 80%;
+        top: 3%;
+        margin-top: 3%;
+        z-index: 1001; 
+    }
+    
+    .hamburger-menu img{
+        width: 45px;
+    }
+    
+    .pageGR{
     margin-right: 0%;
-    width: 45px;
-}
+    margin-left: auto;
+    margin-top: 0.2%;
+    }
+    
+    .navbarGR a {
+        color: #fff; 
+        padding: 0 10px;
+        text-decoration: none;
+    }
+    
+    .menu {
+        display: none;
+        position: fixed; /* Fixe le menu sur la droite */
+        margin-top: 347px; /* À partir du haut de la fenêtre */
+        margin-bottom: auto;
+        right: 4.6%; /* À partir de la droite de la fenêtre */
+        left: auto;
+        width: 200px; /* Largeur du menu */
+        height: 295px; /* Hauteur du menu pour prendre toute la hauteur de l'écran */
+        background-color: #ffffff; /* Couleur de fond du menu */
+        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1); /* Ombre pour un peu de profondeur */
+        z-index: 1000; /* S'assure que le menu s'affiche au-dessus des autres contenus */
+        text-align: center; /* Alignement du texte à gauche */
+        transition: opacity 0.5s, visibility 0.5s;
+        border-radius: 10px;
+    }
+    
+    .menu a {
+        display: block; /* Affiche les liens en bloc pour qu'ils prennent toute la largeur */
+        padding: 20px; /* Espacement autour du texte des liens */
+        border-bottom: 1px solid #ddd; /* Une ligne séparatrice entre les éléments */
+        color: #333; /* Couleur du texte */
+        text-decoration: none; /* Enlève le soulignement des liens */
+    }
+    
+    .menu a:hover {
+        background-color: #eee; /* Couleur de fond au survol pour un effet interactif */
+        border-radius: 10px;
+    }
+    
+    /* Style pour le menu quand il est affiché */
+    .menu.show {
+        display: block;
+    }
 
-.pageGR{
-margin-right: 0%;
-margin-left: auto;
-margin-top: 0.2%;
+    
 }
-
-.navbarGR a {
-    color: #fff; 
-    padding: 0 10px;
-    text-decoration: none;
-}
-
-.menu {
-    display: none;
-    position: fixed; /* Fixe le menu sur la droite */
-    margin-top: 347px; /* À partir du haut de la fenêtre */
-    margin-bottom: auto;
-    right: 4.6%; /* À partir de la droite de la fenêtre */
-    left: auto;
-    width: 200px; /* Largeur du menu */
-    height: 295px; /* Hauteur du menu pour prendre toute la hauteur de l'écran */
-    background-color: #ffffff; /* Couleur de fond du menu */
-    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1); /* Ombre pour un peu de profondeur */
-    z-index: 1000; /* S'assure que le menu s'affiche au-dessus des autres contenus */
-    text-align: center; /* Alignement du texte à gauche */
-    transition: opacity 0.5s, visibility 0.5s;
-    border-radius: 10px;
-}
-
-.menu a {
-    display: block; /* Affiche les liens en bloc pour qu'ils prennent toute la largeur */
-    padding: 20px; /* Espacement autour du texte des liens */
-    border-bottom: 1px solid #ddd; /* Une ligne séparatrice entre les éléments */
-    color: #333; /* Couleur du texte */
-    text-decoration: none; /* Enlève le soulignement des liens */
-}
-
-.menu a:hover {
-    background-color: #eee; /* Couleur de fond au survol pour un effet interactif */
-    border-radius: 10px;
-}
-
-/* Style pour le menu quand il est affiché */
-.menu.show {
-    display: block;
-}
-
