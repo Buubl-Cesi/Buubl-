@@ -5,9 +5,10 @@ body {
     margin: 0;
     padding: 0;
 }
+
 img {
     width: 50%;
-    height: 50%;
+    height: 60%;
     object-fit: cover;
     border-radius: 20%;
     box-shadow: 10px 5px 5px rgba(13, 13, 13, 0.424);
@@ -22,7 +23,7 @@ h1 {
 
 h2 {
     margin-top : -1%;
-    font-size: 2.2em;
+    font-size: 2em;
 }
 
 h3 {
@@ -32,8 +33,18 @@ h3 {
 }
 
 label {
+    font-style: italic;
     justify-content: right;
     font-size : 0.9em;
+}
+
+p {
+    margin-left : 5%;
+    margin-right : 5%;
+    margin-top : 5%;
+    margin-bottom : 1.5%;
+    font-style: italic;
+    color : rgb(116, 116, 116)
 }
 
 
@@ -119,8 +130,35 @@ label {
 }
 
 
+
+
+
 /* MEDIA QUERIES --------------------------------------------------------------------------------------------------*/
 
-@media screen {
-    
+
+/* Ecran moyen -----------------------------------------*/ 
+
+@media (max-width: 1200px) {
+    h1{font-size: 2.4em;}
+    h2 {font-size: 1.5em;}
+    h3, p {font-size: 0.8em;}  
+    label {font-size : 0.6em;}
+}
+
+/* Petit écran -----------------------------------------*/
+@media (max-width: 900px) {
+    h1{font-size: 1.6em;}
+    h2 {font-size: 1.2em;}
+    h3, p {font-size: 0.7em;}
+    label {font-size : 0.5em;}
+    .secondary-frame {margin-bottom : 3%;}
+}
+
+/* téléphone -------------------------------------------*/
+@media (max-width: 500px) {
+    h1{font-size: 1em;}
+    h2 {font-size: 0.8em;}
+    h3, p {font-size: 0.3em;}
+    label {font-size : 0.2em;}
+    .secondary-frame {margin-bottom : 5%;}
 }
