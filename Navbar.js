@@ -34,11 +34,12 @@ function updateImageSource() {
     var width = window.innerWidth;
     var image = document.getElementById('logo');
   
-    if (width >= 900) {
+    if (width > 1200) {
       image.src = 'Images/logo.png';
-    } else if (width <= 500) {
+    } else if (width < 1100) {
       image.src = 'Images/mini-logo.png';
     }
+    
   }
   window.addEventListener('resize', updateImageSource);
   updateImageSource();
