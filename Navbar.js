@@ -34,12 +34,6 @@ function resetmenu() {
 
 /*----------------Afficher navbar------------------------------------------------*/
 
-
-function toggleSearchBox() {
-    var rechercheGR = document.getElementById('rechercheGR');
-    rechercheGR.classList.toggle('affiche');
-}
-
 function toggleMenu() {
     var menu = document.getElementById("menu");
     menu.classList.toggle("show");

@@ -1,16 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #2A2B34;
 }
-.content {
-    height: 1500px; /* Exemple de contenu pour déclencher le défilement */
-    background-color: #f0f0f0; /* Fond de la zone de contenu */
-    padding: 20px; /* Ajouter un espacement pour le contenu sous la barre de navigation */
-}
+
 
 /*--------------------------navbar-grande------------------------------------------------------------------------------------*/
 
 .navbar {
+    font-family: Arial, sans-serif;
     display: flex;
     align-items: center; 
     background-color: #465257; 
@@ -48,10 +44,12 @@ body {
 }
 
 .logo {
-    max-width: 130px;
-    margin-left: -2%;
-    margin-right:auto;
-    margin-top: 7%;
+    margin-left: -5%;
+    margin-top: 15px;
+}
+
+.logo img{
+    max-width: 150px;
 }
 
 .page{
@@ -85,32 +83,28 @@ margin-top: 0.2%;
 /*--------------------------navbar-petite------------------------------------------------------------------------------------*/
 
 .navbarGR {
+    font-family: Arial, sans-serif;
     display: flex;
     align-items: center; 
     background-color: #465257; 
     border-radius: 25px; 
     width: 95%; 
-    height: 60px;
+    height: 50px;
     margin-left: 2%;
     margin-top: 2%;
     transition: transform 0.3s;
 }
 
-.navbarGR-hidden {
-    transform: translateY(-200%);
-}
-
 .loupeGR {
-    width: 40px;
+    width: 35px;
     height: auto;
     margin: 10px;
     margin-top: 25%;
 }
 
 .searchGR {
-    width: 20%; 
-    margin-right: 22%;
-    display: none; /* Cache par défaut la zone de recherche */
+    width: 150px; 
+    margin-left: 0%;
 }
 
 .searchGR input {
@@ -122,10 +116,20 @@ margin-top: 0.2%;
 }
 
 .logoGR {
-    max-width: 90px;
-    margin-left: 25%;
-    margin-right:auto;
+    max-width: 80px;
+    margin-left: 480%;
     margin-top: 7%;
+}
+
+.hamburger-menu {  
+    margin-top: 0.2%;
+    z-index: 1001; 
+}
+
+.hamburger-menu img{
+    margin-left: 1250%;
+    margin-right: 0%;
+    width: 45px;
 }
 
 .pageGR{
@@ -134,38 +138,18 @@ margin-left: auto;
 margin-top: 0.2%;
 }
 
-.coeurGR {
-    width: 35px;
-    margin-top: 20%;
-}
-
 .navbarGR a {
     color: #fff; 
     padding: 0 10px;
     text-decoration: none;
 }
 
-.navbarGR a:hover {
-    transition: background-color 0.3s;
-    color: #7fb7f8; 
-}
-
-.affiche {
-    display: block; /* Affiche la zone de recherche quand elle a la classe .affiche */
-}
-
-
-
-
-
-
-
 .menu {
     display: none;
     position: fixed; /* Fixe le menu sur la droite */
-    top: 24%; /* À partir du haut de la fenêtre */
-    bottom: auto;
-    right: 3.5%; /* À partir de la droite de la fenêtre */
+    margin-top: 347px; /* À partir du haut de la fenêtre */
+    margin-bottom: auto;
+    right: 4.6%; /* À partir de la droite de la fenêtre */
     left: auto;
     width: 200px; /* Largeur du menu */
     height: 295px; /* Hauteur du menu pour prendre toute la hauteur de l'écran */
@@ -175,14 +159,6 @@ margin-top: 0.2%;
     text-align: center; /* Alignement du texte à gauche */
     transition: opacity 0.5s, visibility 0.5s;
     border-radius: 10px;
-}
-
-.hamburger-menu {
-    max-width: 50px;
-    margin-left: 85%;
-    margin-right:auto;
-    margin-top: -0.1%;
-    z-index: 1001; /* Pour s'assurer que l'icône est au-dessus du menu */
 }
 
 .menu a {
@@ -202,3 +178,4 @@ margin-top: 0.2%;
 .menu.show {
     display: block;
 }
+
