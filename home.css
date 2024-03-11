@@ -68,7 +68,7 @@
 }
 
 body {
-    background-color: #2A2B34;
+    background-color: hsl(234, 11%, 18%);
     font-family: 'Arial', sans-serif;
     overflow: hidden;
     margin: 0;
