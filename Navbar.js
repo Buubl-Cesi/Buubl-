@@ -29,16 +29,30 @@ function toggleMenu() {
     menu.classList.toggle("show");
 }
 
+document.addEventListener('click', function(e) {
+    var menu = document.getElementById("menu");
+    var menuToggle = document.getElementById("menuGR"); 
+    var target = e.target; 
+    if (!menu.contains(target) && !menuToggle.contains(target)) {
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+        }
+    }
+});
 
 function updateImageSource() {
     var width = window.innerWidth;
     var image = document.getElementById('logo');
   
-    if (width > 1200) {
+    if (width < 1400 && width > 1100) {
       image.src = 'Images/logo.png';
-    } else if (width < 1100) {
+    } else if (width < 1100 && width > 400) {
       image.src = 'Images/mini-logo.png';
     }
+    else if (width < 400){
+      image.src = 'Images/mini-logo.png';
+    }
+    
     
   }
   window.addEventListener('resize', updateImageSource);

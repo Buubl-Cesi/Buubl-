@@ -43,8 +43,6 @@ body {
     display: block;  
 }
 
-
-
 @media (max-width: 1400px) {
     .menu2 {   
         display: none;  
@@ -102,13 +100,13 @@ body {
     
     .logo {
         position: absolute;
-        left: 45%;
+        left: 50%;
         top: -10px;
         text-decoration: none;
     }
     
     .logo img{
-        max-width: 85px;
+        max-width: 75px;
     }
     
     .logo:hover {
@@ -142,10 +140,8 @@ body {
         width: 200px; 
         height: 295px; 
         background-color: #ffffff; 
-        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1); 
         z-index: 1000; 
         text-align: center; 
-        transition: opacity 0.5s, visibility 0.5s;
         border-radius: 10px;
     }
     
@@ -155,11 +151,13 @@ body {
         border-bottom: 1px solid #ddd; 
         color: #333; 
         text-decoration: none; 
+        border-radius: 10px;
     }
     
     .menu a:hover {
-        background-color: #eee; 
+        background-color: #cecece; 
         border-radius: 10px;
+        color: #333; 
     }
     
     .menu.show {
@@ -169,8 +167,7 @@ body {
     
 }
 
-
-@media (max-width: 400px) {
+@media (max-width: 800px) {
     .menu1{
         display: none;
     }
@@ -187,21 +184,20 @@ body {
         border-radius: 25px; 
         width: 95%; 
         height: 50px;
-        left: 30px;
+        left: 10px;
         top: 15px;
         transition: transform 0.3s;
     }
     
     .loupe {
-        width: 40px;
-        height: auto;
+        width: 30px;
         margin: 10px;
-        margin-top: 25%;
+        margin-top: 28%;
     }
     
     .search-box {
-        width: 150px; 
-        margin-right: 22%;
+        width: 120px; 
+        
     }
     
     .search-box input {
@@ -214,13 +210,13 @@ body {
     
     .logo {
         position: absolute;
-        left: 45%;
-        top: -10px;
+        left: 50%;
+        top: -11px;
         text-decoration: none;
     }
     
     .logo img{
-        max-width: 85px;
+        max-width: 70px;
     }
     
     .logo:hover {
@@ -229,14 +225,13 @@ body {
 
     .hamburger-menu {  
         position: absolute;
-        left: 92%;
-        top: 0%;
-        top: 7px;
+        left: 89%;
+        top: 5px;
         z-index: 1001; 
     }
     
     .hamburger-menu img{
-        width: 45px;
+        width: 40px;
     }
     
     .navbarGR a {
@@ -254,10 +249,8 @@ body {
         width: 200px; 
         height: 295px; 
         background-color: #ffffff; 
-        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1); 
         z-index: 1000; 
         text-align: center; 
-        transition: opacity 0.5s, visibility 0.5s;
         border-radius: 10px;
     }
     
@@ -267,11 +260,123 @@ body {
         border-bottom: 1px solid #ddd; 
         color: #333; 
         text-decoration: none; 
+        border-radius: 10px;
     }
     
     .menu a:hover {
-        background-color: #eee; 
+        background-color: #cecece; 
         border-radius: 10px;
+        color: #333; 
+    }
+    
+    .menu.show {
+        display: block;
+    }
+
+    
+}
+
+
+@media (max-width: 500px) {
+    .menu1{
+        display: none;
+    }
+    .menu2{
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center; 
+        background-color: #465257; 
+        border-radius: 25px; 
+        width: 95%; 
+        height: 50px;
+        left: 10px;
+        top: 15px;
+        transition: transform 0.3s;
+    }
+    
+    .loupe {
+        width: 30px;
+        margin: 10px;
+        margin-top: 28%;
+    }
+    
+    .search-box {
+        width: 120px; 
+        
+    }
+    
+    .search-box input {
+        border-radius: 15px; 
+        height: 25px;
+        border: 0px;
+        padding: 5px 10px; 
+        width: 100%;
+    }
+    
+    .logo {
+        position: absolute;
+        left: 60%;
+        top: -11px;
+        text-decoration: none;
+    }
+    
+    .logo img{
+        max-width: 70px;
+    }
+    
+    .logo:hover {
+        transform: scale(1.1);
+    }
+
+    .hamburger-menu {  
+        position: absolute;
+        left: 84%;
+        top: 5px;
+        z-index: 1001; 
+    }
+    
+    .hamburger-menu img{
+        width: 40px;
+    }
+    
+    .navbarGR a {
+        color: #fff; 
+        padding: 0 10px;
+        text-decoration: none;
+    }
+    
+    .menu {
+        display: none;
+        position: fixed; 
+        margin-top: 35px; 
+        right: 4.6%; 
+        left: auto;
+        width: 200px; 
+        height: 295px; 
+        background-color: #ffffff; 
+        z-index: 1000; 
+        text-align: center; 
+        border-radius: 10px;
+    }
+    
+    .menu a {
+        display: block; 
+        padding: 20px; 
+        border-bottom: 1px solid #ddd; 
+        color: #333; 
+        text-decoration: none; 
+        border-radius: 10px;
+    }
+    
+    .menu a:hover {
+        background-color: #cecece; 
+        border-radius: 10px;
+        color: #333; 
     }
     
     .menu.show {
