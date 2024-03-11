@@ -5,3 +5,14 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.principal-frame {
+    background-color : white;
+    border-radius: 10px;
+    width: 80%;
+    height: 70%;
+}
+
+img {
+    resize: 10%;
+}
