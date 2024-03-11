@@ -1,0 +1,25 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    border-radius: 20px;
+    background-color: rgb(213, 213, 213);
+    width: 18%;
+    text-align: center;
+}
+
+img {
+    margin-top : 30%;
+    margin-bottom : 30%;
+    height: 80%;
+    width: 80%;
+}
+
+
+
+
