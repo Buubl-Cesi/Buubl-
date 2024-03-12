@@ -13,16 +13,29 @@ section {
     border: 1px solid red;
 }
 
-h2 {
-    font-size : 2em;
-    margin-top : 20%;
-}
-
 h1 {
     color : white;
     margin-top : 5%;
-    margin-left : 5%;
+    margin-left : 8%;
 }
+
+h2 {
+    font-size : 2em;
+    margin-top : 0%;
+}
+
+.resize {
+
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.info {
+    color : rgb(110, 110, 110);
+    font-size : 1em;
+    margin-top : 5%;
+}
+
 
 .image-company {
     margin-top: 30%;
@@ -34,7 +47,6 @@ h1 {
     text-align: center;
 }
 
-
 .slide{
    padding-top: 80px;
    padding-bottom: 80px;
@@ -43,8 +55,8 @@ h1 {
     scroll-behavior: smooth;
 }
 .ensemble-fleche{
-    width:1800px;
-    min-width: 1000px;
+    width:90%;
+    min-width: 90%;
     display: flex;
     margin: auto;
 }
@@ -53,21 +65,35 @@ h1 {
     display: none;
 }
 
-
 .card{
-background-color: white;
-border: 1px solid rgb(0, 0, 0);
+background-color:  rgb(138, 138, 138);
 border-radius: 20px;
 width:300px;
 height: 500px;
 min-width:300px;
 min-height:400px;
 transition-duration: 1000ms;
-margin: 5px;
+margin: 25px;
 z-index: 1;
 box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.312);
 text-align: center;
-
 }
 
+@media (max-width: 700px) {
+    h1 {
+        font-size : 2em;
+    }
+    
+    .card {
+        width: 40%;
+        height: 70%;
+    }
+}
 
+.img-svg1 {
+    margin-right : 3%;
+}
+
+.img-svg2 {
+    margin-left: 3%;
+}

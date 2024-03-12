@@ -1,19 +1,50 @@
+// ANIMATION ---------------------------------------------------------------------------------------------------------------
+
+
 var tab=document.querySelectorAll(".card");
 var fleche1=document.querySelector(".img-svg1");
 var fleche2=document.querySelector(".img-svg2");
 var slide=document.querySelector(".slide");
-var indice_carte_milieu=2;
-
+var indice_carte_milieu=0;
 
 
 function augmenter(variable) {
-        variable.style="z-index:2;transform: scale(1.2);width:calc(2*100%);";
-}
+    var rect = variable.getBoundingClientRect();
+    var scrollLeft = slide.scrollLeft + rect.left - (window.innerWidth - rect.width) / 2;
+    slide.scrollLeft = scrollLeft;
+    variable.style="z-index:2;transform: scale(1.2);width:calc(2*100%);background-color: rgb(255, 255, 255);";
 
+    slide.scrollLeft = variable.offsetLeft - (slide.offsetWidth - variable.offsetWidth) / 2;
+}
 
 function diminuer(variable) {
     variable.style="transform: scale(1); z-index=1";
-    
+}
+
+function left()
+{
+    diminuer(tab[indice_carte_milieu]);
+    indice_carte_milieu = (indice_carte_milieu - 1 + tab.length) % tab.length;
+    augmenter(tab[indice_carte_milieu]);
+    if (indice_carte_milieu == tab.length - 1) {
+        slide.scrollLeft = slide.scrollWidth;
+    } else {
+        var scrollDistance = tab[indice_carte_milieu].getBoundingClientRect().width;
+        slide.scrollBy(-scrollDistance,0);
+    }
+}
+
+function right()
+{
+    diminuer(tab[indice_carte_milieu]);
+    indice_carte_milieu = (indice_carte_milieu + 1) % tab.length;
+    augmenter(tab[indice_carte_milieu]);
+    if (indice_carte_milieu == 0) {
+        slide.scrollLeft = 0;
+    } else {
+        var scrollDistance = tab[indice_carte_milieu].getBoundingClientRect().width;
+        slide.scrollBy(scrollDistance,0);
+    }
 }
 
 window.onload=()=>{
@@ -21,23 +52,21 @@ window.onload=()=>{
 }
 
 fleche1.onclick=()=>{
-    if(indice_carte_milieu!=1){
-    diminuer(tab[indice_carte_milieu]);
-    console.log(tab[indice_carte_milieu].width);
-    augmenter(tab[indice_carte_milieu-1]);
-    slide.scrollBy(-210,0);
-    indice_carte_milieu=indice_carte_milieu-1;
-    }
+    left();
  }
 
 fleche2.onclick=()=>{
-   if(indice_carte_milieu!=9){
-   
-    diminuer(tab[indice_carte_milieu]);
-    augmenter(tab[indice_carte_milieu+1]);
-    slide.scrollBy(210,0);
-    indice_carte_milieu=indice_carte_milieu+1;
-   }
-   
-   
+   right();
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'ArrowLeft') {
+        left();
+        event.preventDefault();
+    }
+    if (event.code === 'ArrowRight') {
+        right();
+        event.preventDefault();
+    }
+});
+
