@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="recherche.css">
+<title>recherche</title>
+</head>
+<body>
+    <div class="navbar">
+
+        <a href="accueil">
+            <img src="Images/loupe.png" alt="Loupe" class="loupe" id="loupe" onmouseover="changeloupe()" onmouseout="resetloupe()">
+        </a>
+
+        <div class="search-box">
+            <input type="text" placeholder="Rechercher...">
+        </div>
+
+        <a href="accueil">
+            <img src="Images/logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="page"> 
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Offre</a>
+        <a href="#apropos">Entreprise</a>
+        <a href="#contact">Demande</a>
+        <a href="#contact">Profil</a>
+    </div>
+        <a href="like">
+            <img src="Images/coeur.png" alt="Coeur" class="coeur" id="coeur" onmouseover="changecoeur()" onmouseout="resetcoeur()">
+        </a>
+        
+    </div>
+    <div class="flex-container">
+        <fieldset class="fieldset-left">
+        <div class="legend-right">Filtres de recherche :</div>
+        <div class="form-group"> 
+          <label>Secteur :</label>
+          <input type="text" placeholder="Nom de la Société" required>
+        </div>
+        <div class="form-group"> 
+            <label>Secteur :</label>
+            <input type="text" placeholder="Nom de la Société" required>
+          </div>
+          <div class="form-group"> 
+            <label>Secteur :</label>
+            <input type="text" placeholder="Nom de la Société" required>
+          </div>
+          <div class="form-group"> 
+            <label>Secteur :</label>
+            <input type="text" placeholder="Nom de la Société" required>
+          </div>
+          <div class="form-group"> 
+            <label>Secteur :</label>
+            <input type="text" placeholder="Nom de la Société" required>
+          </div>
+          <div class="form-group"> 
+            <label>Secteur :</label>
+            <input type="text" placeholder="Nom de la Société" required>
+          </div>
+          <button class="custom-button">
+            Rechercher
+          </button>
+        </fieldset>
+      
+      
+      <fieldset class="fieldset-right">
+        <div  class="genre">
+        <div class="legend-left">Résultat de votre recherche :</div>
+        <div class="click-box">
+            Offre de stage- Equipier polyvalent
+            <img class="img" src="Images/mcdo.png" alt="logo_entreprise">
+        </div>
+        <div class="click-box">
+            Offre de stage- Technicien de surface
+            <img class="img" src="mcdo.png" alt="logo_entreprise">
+        </div>
+        <div class="click-box">
+            Offre de stage-Equipier polyvalent
+            <img class="img" src="mcdo.png" alt="logo_entreprise">
+        </div>
+        <div class="click-box">
+            Offre de stage-Equipier polyvalent
+            <img class="img" src="mcdo.png" alt="logo_entreprise">
+        </div>
+        <div class="click-box">
+            Offre de stage-Equipier polyvalent
+            <img class="img" src="mcdo.png" alt="logo_entreprise">
+        </div>
+        <div class="click-box">
+            Offre de stage-Equipier polyvalent
+            <img class="img" src="mcdo.png" alt="logo_entreprise">
+        </div>        
+        </div>
+        </fieldset>
+      </div>
+    <script src="recherche.js"></script>
+</body>
+</html>
