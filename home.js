@@ -23,6 +23,67 @@ function resetmenu() {
 }
 
 /*----------------Afficher navbar------------------------------------------------*/
+let pagetop = true;
+
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    const threshold = 10; // Vous pouvez ajuster ce seuil si nécessaire
+    const currentScroll = window.scrollY;
+
+    // Vérifie si la page est en haut
+    if (currentScroll <= threshold) {
+        navbar.classList.remove('navbar-hidden');
+        pagetop = true;
+    } 
+    else {
+        navbar.classList.add('navbar-hidden');
+        pagetop = false;
+    }
+});
+
+window.addEventListener('mousemove', function(e) {
+    const cursorPositionY = e.clientY
+    const navbar = document.getElementById('navbar');
+    const threshold = 80;
+
+    if (cursorPositionY <= threshold && pagetop == false) {
+        navbar.classList.remove('navbar-hidden');
+    } 
+    else if (cursorPositionY > threshold && pagetop == false) {
+        navbar.classList.add('navbar-hidden');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function toggleMenu() {
     var menu = document.getElementById("menu");
@@ -58,3 +119,11 @@ function updateImageSource() {
   }
   window.addEventListener('resize', updateImageSource);
   updateImageSource();
+
+
+
+
+
+
+
+    
