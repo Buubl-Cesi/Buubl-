@@ -386,8 +386,6 @@ body {
     .menu.show {
         display: block;
     }
-
-    
 }
 
 
@@ -566,4 +564,5 @@ h1, h2, h3, label, p {
 .navbar.navbar-hidden {
     transform: translateY(-200%); /* Ajustez si nécessaire selon la hauteur de votre navbar */
 }
+
 
