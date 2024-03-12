@@ -46,7 +46,8 @@ function updateImageSource() {
   
     if (width < 1400 && width > 1100) {
       image.src = 'Images/logo.png';
-    } else if (width < 1100 && width > 400) {
+    } 
+    else if (width < 1100 && width > 400) {
       image.src = 'Images/mini-logo.png';
     }
     else if (width < 400){
