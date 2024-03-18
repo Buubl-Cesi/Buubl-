@@ -23,7 +23,6 @@ function resetmenu() {
 }
 
 /*----------------Afficher navbar------------------------------------------------*/
-
 let pagetop = true;
 let menus = false;
 
@@ -102,4 +101,5 @@ function updateImageSource() {
   }
   window.addEventListener('resize', updateImageSource);
   updateImageSource();
+
 
