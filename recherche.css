@@ -4,71 +4,7 @@ body{
     font-family: Helvetica;
 }
 
-.navbar {
-  display: flex;
-  align-items: center; 
-  background-color: #465257; 
-  border-radius: 25px; 
-  width: 95%; 
-  height: 60px;
-  margin-left: 2%;
-  margin-top: 2%;
-  margin-bottom: 4%;
-}
 
-.loupe {
-  width: 40px;
-  height: auto;
-  margin: 10px;
-  margin-top: 25%;
-}
-
-.search-box {
-  width: 20%; 
-  margin-right: 22%;
-}
-
-.search-box input {
-  border-radius: 15px; 
-  height: 25px;
-  border: 0px;
-  padding: 5px 10px; 
-  width: 100%;
-}
-
-.logo {
-  max-width: 130px;
-  margin-left: -2%;
-  margin-right:auto;
-  margin-top: 7%;
-}
-
-.page{
-margin-right: 0%;
-margin-left: auto;
-margin-top: 0.2%;
-}
-
-
-.logo:hover {
-  transform: scale(1.1);
-}
-
-.coeur {
-  width: 35px;
-  margin-top: 20%;
-}
-
-.navbar a {
-  color: #fff; 
-  padding: 0 10px;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  transition: background-color 0.3s;
-  color: #7fb7f8; 
-}
 .flex-container {
     display: flex;
     justify-content: space-between; 
