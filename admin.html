@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+<title>recherche</title>
+</head>
+<body>
+    <div class="navbar">
+
+        <a href="accueil">
+            <img src="Images/loupe.png" alt="Loupe" class="loupe" id="loupe" onmouseover="changeloupe()" onmouseout="resetloupe()">
+        </a>
+
+        <div class="search-box">
+            <input type="text" placeholder="Rechercher...">
+        </div>
+
+        <a href="accueil">
+            <img src="Images/logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="page"> 
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Offre</a>
+        <a href="#apropos">Entreprise</a>
+        <a href="#contact">Demande</a>
+        <a href="#contact">Profil</a>
+    </div>
+        <a href="like">
+            <img src="Images/coeur.png" alt="Coeur" class="coeur" id="coeur" onmouseover="changecoeur()" onmouseout="resetcoeur()">
+        </a>
+        
+    </div>
+    <div class="flex-container">
+        <fieldset class="fieldset-left">
+        <div class="legend-right">
+          <img class="img" src="Images/mcdo.png" alt="logo_entreprise" id="imageCliquee"><p> mcdo</p><input type="file" id="selecteurFichier" style="display: none;" accept="image/*">
+          <div class="form-group"> 
+            <label>Enoncé :</label>
+            <input type="text" id="champ1" placeholder="Enoncé" required>
+          </div>
+          <div class="form-group"> 
+            <label>Rémunération :</label>
+            <input type="text" id="champ2" placeholder="Rémunération" required> 
+          </div>
+          <div class="form-group"> 
+            <label>Durée :</label>
+            <input type="text" id="champ3" placeholder="Durée" required>
+          </div>
+          <button class="custom-button" id="boutonGriser" type="submit">
+            Modifier
+          </button>
+        </div>
+        </fieldset>
+      
+      
+      <fieldset class="fieldset-right">
+        <div class="legend-right">
+          <div class="form-group2"> 
+          <label>Description :</label>
+          <textarea type="text" name="description" id="descr" cols="30" rows="10" placeholder="Description"></textarea>
+          </div>
+          <button class="button-supprimer" id="boutonSupprimer" onclick="supprimerContenu()">
+            Supprimer
+          </button>
+        </div>  
+        </fieldset>
+      </div>
+    <script src="admin.js"></script>
+</body>
+</html>

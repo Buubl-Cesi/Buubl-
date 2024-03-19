@@ -1,0 +1,271 @@
+body{
+    background-color: #2A2B34;
+    color: azure;
+    font-family: Helvetica;
+}
+
+.navbar {
+  display: flex;
+  align-items: center; 
+  background-color: #465257; 
+  border-radius: 25px; 
+  width: 95%; 
+  height: 60px;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+
+.loupe {
+  width: 40px;
+  height: auto;
+  margin: 10px;
+  margin-top: 25%;
+}
+
+.search-box {
+  width: 20%; 
+  margin-right: 22%;
+}
+
+.search-box input {
+  border-radius: 15px; 
+  height: 25px;
+  border: 0px;
+  padding: 5px 10px; 
+  width: 100%;
+}
+
+.logo {
+  max-width: 130px;
+  margin-left: -2%;
+  margin-right:auto;
+  margin-top: 7%;
+}
+
+.page{
+margin-right: 0%;
+margin-left: auto;
+margin-top: 0.2%;
+}
+
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.coeur {
+  width: 35px;
+  margin-top: 20%;
+}
+
+.navbar a {
+  color: #fff; 
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  transition: background-color 0.3s;
+  color: #7fb7f8; 
+}
+.flex-container {
+    display: flex;
+    justify-content: space-between; 
+    width: 80%;
+    margin-left: 10%;
+    background-color: whitesmoke;
+    border-radius: 8px;
+  }
+  
+  .fieldset-left, .fieldset-right {
+    flex: 1;
+    margin: 0% 1%; 
+  }
+
+  .fieldset-left{
+    background-color: transparent;
+    border-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .fieldset-right{
+    border-color: transparent;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 15%;
+  }
+ 
+  .legend-right{
+    margin-left: 18%;
+    margin-bottom: 1%;
+    font-weight: bold;
+    font-size: 120%;
+    color: black;
+  }
+
+  .legend-right p{
+    width: 250px;
+    margin-bottom: 4%;
+   margin-left: 20%;
+  }
+  .legend-right img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px; 
+    right: 78.5%;
+    margin-top: 0.8%;
+}
+  .legend-left{
+    margin-bottom: 3%;
+    font-weight: bold;
+    font-size: 150%;
+  }
+  textarea {
+    width: 128%; /* Largeur à 100% de son conteneur */
+    height: 100%; /* Hauteur fixe */
+    padding: 30px; /* Espacement intérieur pour le texte */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur/hauteur totale */
+    border: 2px solid #ccc; /* Bordure légère */
+    border-radius: 4px; /* Bords arrondis */
+    background-color: #f8f8f8; /* Couleur de fond légère */
+    outline: none; /* Supprime l'outline par défaut au focus */
+    font-size: 13px; /* Taille de police */
+    resize: none;
+  }
+  
+  textarea:focus {
+    border-color: grey; /* Change la couleur de bordure lors du focus */
+  }
+  
+
+  .form-group {
+    margin-top: 15%;
+    width: 100%;
+    margin-bottom: 1%;
+  }
+
+  .form-group label {
+    margin-bottom: 1%; 
+    color: black; 
+    font-size: 80%;
+  } 
+  
+  .form-group input {
+    width: 100%;  
+    padding: 6%; 
+    border: 1px solid #ccc; 
+    border-radius: 7px;  
+  }
+
+  .form-group2 {
+    margin-top: 30%;
+    width:100%;
+    margin-bottom: 1%;
+  }
+
+  .form-group2 label {
+    display: block; 
+    margin-top: 21%; 
+    color: black; 
+    font-size: 80%;
+  } 
+
+  .click-box {
+    background-color: #39415A;
+    border: 1px solid #596469;
+    margin-bottom: 4%;
+    border-radius: 15px; 
+    padding-left: 3%; 
+    line-height: 350%; /* Pour centrer le texte verticalement */
+    cursor: pointer; /* Change le curseur en une main lorsqu'il survole la boîte */
+}
+
+  .click-box:hover{
+  padding: 1%;
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+}
+
+  .click-box img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 15px; 
+    right: 4%;
+    margin-top: 0.8%;
+}
+  
+  .custom-button {
+        margin-top: 12%;
+        width: 112%; 
+        color: black; 
+        border: 2px solid white;
+        background-color: white; 
+        font-size: 100%; 
+        padding: 5%;
+        border-radius: 5px; 
+        cursor: pointer; 
+        transition: all 0.3s ease; 
+    }
+    
+  .custom-button:hover {
+        background-color: grey; 
+        border-color: grey;
+    }
+  .bouton-actif {
+      background-color: green;
+      color: white;
+    }
+    
+  .champs-desactives {
+      background-color: #ccc;
+    }
+
+  .button-supprimer {
+      margin-left: 13%;
+      margin-top: 29%;
+      width: 100%; 
+      color: black; 
+      border: 2px solid white;
+      background-color: white; 
+      font-size: 100%; 
+      padding: 5%;
+      border-radius: 5px; 
+      cursor: pointer; 
+      transition: all 0.3s ease; 
+  }
+  
+  .button-supprimer:hover {
+      background-color: grey; 
+      border-color: grey;
+  }
+
+
+
+  @media screen and (min-width: 900px) and (max-width: 1068px) {
+    .flex-container {
+      display: block; 
+    }
+    .fieldset-left{
+      background-color: transparent;
+      border-color: transparent;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 15%;
+      
+    }
+    .fieldset-right{
+      border-color: transparent;
+      background-color: transparent;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 14%;
+    }
+    .form-group  {
+      font-size: 120%;
+    } 
+
+  }
