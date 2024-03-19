@@ -1,0 +1,133 @@
+body {
+    background-color: #2A2B34;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.3em;
+    margin-left : 5%;
+}
+
+h2 {
+    font-size: 0.8em;
+    margin-top: 5%;
+    margin-left : 5%;
+}
+
+.container {
+    display: flex;
+
+    justify-content: center;
+    margin: auto;
+    min-width: 90%;
+    margin-top : 5%;
+
+    width: 90%;
+    min-height: 100%;  
+}
+
+.title-frame, .search-parameters, .right-frame {
+    background-color: white;
+    border-radius : 10px;
+}
+
+.left-part-frame, .search-parameters {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-part-frame {
+    width: 25%;
+    margin-right : 1%;
+}
+
+.right-frame {
+    width: 74%;
+}
+
+.title-frame {
+    margin-bottom: 3%;
+}
+
+.center-param {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+fieldset{
+    margin-bottom: 15%;
+    border-radius: 10px;
+}
+
+.object-param-txt {
+    min-width: 100%;
+}
+
+.object-param-button {
+    min-width: 100%;
+    min-height: 20%;
+    margin-top: 10%;
+    background-color: rgb(0, 153, 255);
+    color : white;
+    line-height: 3;
+    border-radius : 10px;
+}
+
+.search-action  {
+    margin-top : 30%;
+    min-width: 90%;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 850px) {
+    .container {
+        display: block; 
+    }
+
+    .left-part-frame {
+        display: inline;
+    }
+
+    fieldset{
+        margin-bottom: 1%;
+        border-radius: 10px;
+    }
+
+    .search-action  {
+        margin-top : 5%;
+        min-width: 90%;
+    }
+
+    .object-param-button {
+        
+        margin-top: 3%;
+        
+    }
+
+    .center-param {
+        margin-top: 0%;
+        
+    }
+
+    .right-frame {
+        width: 100%;
+    }
+    
+    h1 {
+        margin-left : 0%;
+        padding: 5%;
+    }
+
+    
+}
