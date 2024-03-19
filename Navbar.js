@@ -23,7 +23,6 @@ function resetmenu() {
 }
 
 /*----------------Afficher navbar------------------------------------------------*/
-
 let pagetop = true;
 let menus = false;
 

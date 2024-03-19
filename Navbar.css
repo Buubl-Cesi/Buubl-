@@ -6,7 +6,7 @@ body {
 /*--------------------------navbar-grande------------------------------------------------------------------------------------*/
 
 .navbar {
-    position: absolute;
+    position: fixed; /* Fixe la navbar en haut de la page */
     font-family: Arial, sans-serif;
     display: flex;
     align-items: center; 
@@ -17,6 +17,7 @@ body {
     left: 30px;
     top: 15px;
     transition: transform 0.3s;
+    z-index: 1000;
 }
 
 .loupe {
@@ -187,6 +188,7 @@ body {
         left: 10px;
         top: 15px;
         transition: transform 0.3s;
+        z-index: 1000;
     }
     
     .loupe {
@@ -297,6 +299,7 @@ body {
         left: 10px;
         top: 15px;
         transition: transform 0.3s;
+        z-index: 1000;
     }
     
     .loupe {
@@ -382,6 +385,8 @@ body {
     .menu.show {
         display: block;
     }
+}
 
-    
+.navbar.navbar-hidden {
+    transform: translateY(-200%); /* Ajustez si nécessaire selon la hauteur de votre navbar */
 }
