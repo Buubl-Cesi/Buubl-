@@ -70,7 +70,7 @@ body {
     }
         
     .navbar a:hover {
-        transition: background-color 0.3s;
+        transition: 0.3s;
         color: #7fb7f8; 
     }
 
@@ -139,7 +139,7 @@ body {
         right: 4.6%; 
         left: auto;
         width: 200px; 
-        height: 295px; 
+        height: 355px; 
         background-color: #ffffff; 
         z-index: 1000; 
         text-align: center; 

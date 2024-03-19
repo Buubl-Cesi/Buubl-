@@ -70,6 +70,17 @@ function toggleMenu() {
     }
 }
 
+function toggleMenuadmin() {
+    var menu = document.getElementById("menuadmin");
+    menu.classList.toggle("show");
+    if (menus == false){
+        menus = true;
+    }
+    else{
+        menus = false;
+    }
+}
+
 document.addEventListener('click', function(e) {
     var menu = document.getElementById("menu");
     var menuToggle = document.getElementById("menuGR"); 
@@ -82,23 +93,4 @@ document.addEventListener('click', function(e) {
         }
     }
 });
-
-function updateImageSource() {
-    var width = window.innerWidth;
-    var image = document.getElementById('logo');
-  
-    if (width < 1400 && width > 1100) {
-      image.src = 'Images/logo.png';
-    } 
-    else if (width < 1100 && width > 400) {
-      image.src = 'Images/mini-logo.png';
-    }
-    else if (width < 400){
-      image.src = 'Images/mini-logo.png';
-    }
-    
-    
-  }
-  window.addEventListener('resize', updateImageSource);
-  updateImageSource();
 

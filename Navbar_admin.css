@@ -43,6 +43,8 @@ body {
 .menu1 {   
     display: block;  
 }
+ 
+
 
 @media (max-width: 1400px) {
     .menu2 {   
@@ -77,12 +79,12 @@ body {
     .logo {
         position: absolute;
         left: 43%;
-        top: -6px;
+        top: -1px;
         text-decoration: none;
     }
     
     .logo img{
-        max-width: 150px;
+        max-width: 300px;
     }
     
     .logo:hover {
@@ -163,9 +165,7 @@ body {
     
     .menu.show {
         display: block;
-    }
-
-    
+    }  
 }
 
 @media (max-width: 800px) {
