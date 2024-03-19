@@ -76,19 +76,50 @@ body {
 
     .logo {
         position: absolute;
-        left: 43%;
-        top: -6px;
+        left: 37%;
         text-decoration: none;
     }
     
     .logo img{
-        max-width: 150px;
+        max-width: 280px;
     }
     
-    .logo:hover {
+    .logo:hover img {
         transform: scale(1.1);
     }
+
+    .menuadmin {
+        display: none;
+        position: fixed; 
+        margin-top: 35px; 
+        right: 4.6%; 
+        left: auto;
+        width: 200px; 
+        height: 355px; 
+        background-color: #ffffff; 
+        z-index: 1000; 
+        text-align: center; 
+        border-radius: 10px;
+    }
     
+    .menuadmin a {
+        display: block; 
+        padding: 20px; 
+        border-bottom: 1px solid #ddd; 
+        color: #333; 
+        text-decoration: none; 
+        border-radius: 10px;
+    }
+    
+    .menuadmin a:hover {
+        background-color: #cecece; 
+        border-radius: 10px;
+        color: #333; 
+    }
+    
+    .menuadmin.showad {
+        display: block;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -164,8 +195,6 @@ body {
     .menu.show {
         display: block;
     }
-
-    
 }
 
 @media (max-width: 800px) {
