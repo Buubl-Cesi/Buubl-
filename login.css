@@ -291,6 +291,10 @@ input[type="checkbox"] {
         transform : translateX(-275px)
     }
 
+    .blue-box{
+        height: auto;
+    }
+
 }
 
 @media only screen and (max-device-width: 800px) and (max-width:800px) and (orientation: landscape) {
