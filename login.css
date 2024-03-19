@@ -268,7 +268,7 @@ input[type="checkbox"] {
 
 }
 
-@media  (max-width:1264px) and (min-width:455px)  {
+@media  (max-width:1255px) and (min-width:455px)  {
 
 
     .background-img{
@@ -311,6 +311,13 @@ input[type="checkbox"] {
     }
 }
 
+@media screen and (min-width:1256px) and (max-width:1496px) {
+
+    .blue-box{
+        top: 10%;
+        height: 82.5%;
+    }
+}
 
 /*Media Queries Fullscreen*/
 /*Permet d'avoir un plein écran fonctionnel*/
