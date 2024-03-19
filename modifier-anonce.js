@@ -133,3 +133,11 @@ function supprimerContenu() {
     document.getElementById('champ3').value = '';
     document.getElementById('descr').value = '';
 }
+function supprimerContenu1() {
+    // Sélectionner les champs par leur ID et mettre leur valeur à vide
+    document.getElementById('champ1').value = '';
+    document.getElementById('champ2').value = '';
+    document.getElementById('champ3').value = '';
+    document.getElementById('descr').value = '';
+}
+

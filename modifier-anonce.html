@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
-<title>recherche</title>
+    <link rel="stylesheet" href="modifier-anonce.css">
+<title>admin</title>
 </head>
 <body>
     <div class="navbar">
@@ -33,10 +33,13 @@
         </a>
         
     </div>
+    <div class="flex-container-image">
+    <img class="img" src="Images/mcdo.png" alt="logo_entreprise" id="imageCliquee">
+    <input type="file" id="selecteurFichier" style="display: none;" accept="image/*">  
+    </div>
     <div class="flex-container">
-        <fieldset class="fieldset-left">
+      <fieldset class="fieldset-left">
         <div class="legend-right">
-          <img class="img" src="Images/mcdo.png" alt="logo_entreprise" id="imageCliquee"><p> mcdo</p><input type="file" id="selecteurFichier" style="display: none;" accept="image/*">
           <div class="form-group"> 
             <label>Enoncé :</label>
             <input type="text" id="champ1" placeholder="Enoncé" required>
@@ -49,8 +52,8 @@
             <label>Durée :</label>
             <input type="text" id="champ3" placeholder="Durée" required>
           </div>
-          <button class="custom-button" id="boutonGriser" type="submit">
-            Modifier
+          <button class="button-supprimer" id="boutonSupprimer" onclick="supprimerContenu()">
+            Supprimer
           </button>
         </div>
         </fieldset>
@@ -62,12 +65,15 @@
           <label>Description :</label>
           <textarea type="text" name="description" id="descr" cols="30" rows="10" placeholder="Description"></textarea>
           </div>
-          <button class="button-supprimer" id="boutonSupprimer" onclick="supprimerContenu()">
+          <button class="custom-button" id="boutonGriser" type="submit">
+            Modifier
+          </button>
+          <button class="button-supprimer1" id="boutonSupprimer" onclick="supprimerContenu1()">
             Supprimer
           </button>
         </div>  
         </fieldset>
       </div>
-    <script src="admin.js"></script>
+    <script src="modifier-anonce.js"></script>
 </body>
 </html>
