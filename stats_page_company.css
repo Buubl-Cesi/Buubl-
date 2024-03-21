@@ -1,0 +1,173 @@
+body {
+    background-color: #2A2B34;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.3em;
+    margin-left : 5%;
+}
+
+h2 {
+    font-size: 2em;
+
+    margin-left : 5%;
+}
+
+h3 {
+    margin-top : 5%;
+    margin-left : 5%;
+    font-size: 1.5em;
+}
+
+.container {
+    display: flex;
+
+    justify-content: center;
+    margin: auto;
+    min-width: 90%;
+    margin-top : 5%;
+
+    width: 90%;
+    min-height: 100%;  
+}
+
+.title-frame, .stats-container, .right-frame {
+    background-color: white;
+    border-radius : 10px;
+}
+
+.left-part-frame, .stats-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-container {
+    align-items: center;
+}
+
+.left-part-frame {
+    width: 25%;
+    margin-right : 1%;
+}
+
+.right-frame {
+    width: 74%;
+}
+
+.title-frame {
+    margin-bottom: 3%;
+}
+
+.stats-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+fieldset{
+    margin-bottom: 15%;
+    border-radius: 10px;
+}
+
+.object-param-txt {
+    min-width: 100%;
+}
+
+.object-param-button {
+    min-width: 100%;
+    min-height: 20%;
+    margin-top: 10%;
+    background-color: rgb(0, 153, 255);
+    color : white;
+    line-height: 3;
+    border-radius : 10px;
+}
+
+.search-action  {
+    margin-top : 30%;
+    min-width: 90%;
+}
+
+
+.option-frame {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius : 15px;
+    background-color : rgb(230, 230, 230);
+    border: 1px solid black;
+    margin-top : 2%;
+    margin-bottom: 2%;
+}
+
+.options {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-result {
+    font-size : 3em;
+}
+
+
+
+
+@media (max-width: 850px) {
+    .container {
+        display: block; 
+    }
+
+    .left-part-frame {
+        display: inline;
+    }
+
+    fieldset{
+        margin-bottom: 1%;
+        border-radius: 10px;
+    }
+
+    .search-action  {
+        margin-top : 5%;
+        min-width: 90%;
+    }
+
+    .object-param-button {
+        
+        margin-top: 3%;
+        
+    }
+
+    .stats-frame {
+        margin-top: 0%;
+        
+    }
+
+    .right-frame {
+        width: 100%;
+        display: flex;
+
+        justify-content: center;
+        margin: auto;
+        margin : auto
+    }
+    
+    h1 {
+        margin-left : 0%;
+        padding: 5%;
+    }
+
+    
+}
