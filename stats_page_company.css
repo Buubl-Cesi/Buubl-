@@ -12,15 +12,9 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
-
+    font-size: 0.8em;
+    margin-top: 5%;
     margin-left : 5%;
-}
-
-h3 {
-    margin-top : 5%;
-    margin-left : 5%;
-    font-size: 1.5em;
 }
 
 .container {
@@ -35,18 +29,14 @@ h3 {
     min-height: 100%;  
 }
 
-.title-frame, .stats-container, .right-frame {
+.title-frame, .search-parameters, .right-frame {
     background-color: white;
     border-radius : 10px;
 }
 
-.left-part-frame, .stats-container {
+.left-part-frame, .search-parameters {
     display: flex;
     flex-direction: column;
-}
-
-.stats-container {
-    align-items: center;
 }
 
 .left-part-frame {
@@ -62,11 +52,8 @@ h3 {
     margin-bottom: 3%;
 }
 
-.stats-frame {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1%;
+.center-param {
+    margin-top: 10%;
     margin-bottom: 5%;
     margin-left: 5%;
     margin-right: 5%;
@@ -97,29 +84,8 @@ fieldset{
 }
 
 
-.option-frame {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius : 15px;
-    background-color : rgb(230, 230, 230);
-    border: 1px solid black;
-    margin-top : 2%;
-    margin-bottom: 2%;
-}
-
-.options {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.stats-result {
-    font-size : 3em;
+.parameter {
+    margin-top: 3%;
 }
 
 
@@ -150,18 +116,13 @@ fieldset{
         
     }
 
-    .stats-frame {
+    .center-param {
         margin-top: 0%;
         
     }
 
     .right-frame {
         width: 100%;
-        display: flex;
-
-        justify-content: center;
-        margin: auto;
-        margin : auto
     }
     
     h1 {

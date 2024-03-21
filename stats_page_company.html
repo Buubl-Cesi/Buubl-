@@ -11,48 +11,121 @@
 
         <div class = "left-part-frame">
             <div class = "title-frame">
-                <h1>STATISTIQUES | Offres</h1>
+                <h1>STATISTIQUES | Entreprises</h1>
 
             </div>
 
-            <div class = "stats-container">
+            <div class = "search-parameters">
 
-                <h3>Les statistiques générales de Buubl</h3>
+                <h2>Filtres pour votre recherche</h2>
 
-                <div class = "stats-frame">
-                    <h4>Nombre d'entreprises :</h4>
-                    <label class = "stats-result">20</label>
+                <div class = center-param>
+
             
-                    <h4>Nombre d'offres de stage :</h4>
-                    <label class = "stats-result">34</label>
-            
-                    <h3>Nombre d'étudiants :</h3>
-                    <label class = "stats-result">456</label>
-            
-                    <h4>Nombre de pilotes : </h4>
-                    <label class = "stats-result">45</label>
-            
+                    <fieldset>
+
+                        <legend>Chercher par : </legend>
+                      
+                        <div>
+                            <input type="radio" id="Sector" name="Orderby" value="Sector" checked />
+                            <label for="Sector">Secteur</label>
+                        </div>
+                      
+                        <div>
+                            <input type="radio" id="Localisation" name="Orderby" value="Localisation" />
+                            <label for="Localisation">Localité</label>
+                        </div>
+                      
+                        <div>
+                            <input type="radio" id="Bestoffer" name="Orderby" value="Bestoffer" />
+                            <label for="Bestoffer">Top des offres en wishlist</label>
+                        </div>
+    
+                      </fieldset>
+    
+    
+                      <fieldset>
+    
+                        <legend>Trier par ordre : </legend>
+                        <label>Pour les recherches nécessitant cette fonction.</label>
+                      
+                        <div>
+                          <input type="radio" id="Increasing" name="OrderByCrease" value="Increasing" checked />
+                          <label for="Increasing">Croissant</label>
+                        </div>
+                      
+                        <div>
+                          <input type="radio" id="Decreasing" name="OrderByCrease" value="Decreasing" />
+                          <label for="Decreasing">Décroissant</label>
+                        </div>
+                                     
+                      </fieldset>
+    
+                      <div class = "search-action">
+
+                        <div class = "parameter">
+                          <label class = "Parameter-label">Paramètre de recherche :</label>
+                          <input type="text" name="nom" placeholder="Entrez un potentiel paramètre ici.">
+                        </div>
+
+                        <div class = "parameter">
+                          <label class = "Parameter-label">Secteur :</label>
+                            <select>
+                              <option value="Sector1">Secteur 1</option>
+                              <option value="Sector2">Secteur 2</option>
+                          </select>
+
+                        </div>
+
+                      
+                        <input class = "object-param-button" type="button" value="Valider recherche" />
+    
+                      </div>
+
                 </div>
                 
             </div>
         </div>
 
         <div class = "right-frame">
-            
-            <div class = "options">
+            <!--https://vincent-vanneste.fr/views/php/co/Afficher.html-->
+            <div class = "result">
 
-              <div class = "option-frame">
-                <h2>Statistiques des entreprises</h2>
-              </div>
+                <table>
+                    <caption>
+                      exemple tableau
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Person</th>
+                        <th scope="col">Most interest in</th>
+                        <th scope="col">Age</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Chris</th>
+                        <td>HTML tables</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Dennis</th>
+                        <td>Web accessibility</td>
+                        <td>45</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Sarah</th>
+                        <td>JavaScript frameworks</td>
+                        <td>29</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Karen</th>
+                        <td>Web performance</td>
+                        <td>29</td>
 
-              <div class = "option-frame">
-                <h2>Statistiques des offres</h2>
-              </div>
-
-              <div class = "option-frame">
-                <h2>Statistiques des étudiants</h2>
-              </div>
-            
+                      </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
