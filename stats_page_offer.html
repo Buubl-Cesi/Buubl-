@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUUBL | STATISTIQUES DASHBOARD</title>
-    <link rel="stylesheet" href="stats_page_offer.css">
+    <link rel="stylesheet" href="stats_page_student.css">
 </head>
 <body>
     <div class = "container">
@@ -18,7 +18,6 @@
             <div class = "search-parameters">
 
                 <h2>Filtres pour votre recherche</h2>
-
                 <div class = center-param>
 
             
@@ -27,8 +26,8 @@
                         <legend>Chercher par : </legend>
                       
                         <div>
-                            <input type="radio" id="Competence" name="Orderby" value="Competence" checked />
-                            <label for="Competence">Compétences</label>
+                            <input type="radio" id="Sector" name="Orderby" value="Sector" checked />
+                            <label for="Sector">Secteur</label>
                         </div>
                       
                         <div>
@@ -36,16 +35,6 @@
                             <label for="Localisation">Localité</label>
                         </div>
                       
-                        <div>
-                            <input type="radio" id="Promotion" name="Orderby" value="Promotion" />
-                            <label for="Promotion">Promotions</label>
-                        </div>
-    
-                        <div>
-                            <input type="radio" id="Duration" name="Orderby" value="Duration" />
-                            <label for="Duration">Durée du stage</label>
-                        </div>
-    
                         <div>
                             <input type="radio" id="Bestoffer" name="Orderby" value="Bestoffer" />
                             <label for="Bestoffer">Top des offres en wishlist</label>
@@ -73,21 +62,22 @@
     
                       <div class = "search-action">
 
-                        <div class = "search-action">
+                        <div class = "parameter">
+                          <label class = "Parameter-label">Paramètre de recherche :</label>
+                          <input type="text" name="nom" placeholder="Entrez un potentiel paramètre ici.">
+                        </div>
 
-                          <div class = "parameter">
-                            <label class = "Parameter-label">Paramètre de recherche :</label>
-                            <input type="text" name="nom" placeholder="Entrez un potentiel paramètre ici.">
-                          </div>
-  
-                          <div class = "parameter">
-                            <label class = "Parameter-label">Secteur :</label>
-                              <select>
-                                <option value="Sector1">Secteur 1</option>
-                                <option value="Sector2">Secteur 2</option>
-                            </select>
-  
-                          </div>
+                        <div class = "parameter">
+                          <label class = "Parameter-label">Secteur :</label>
+                            <select>
+                              <option value="Sector1">Secteur 1</option>
+                              <option value="Sector2">Secteur 2</option>
+                          </select>
+
+                        </div>
+
+                      
+                        <input class = "object-param-button" type="button" value="Valider recherche" />
     
                       </div>
 

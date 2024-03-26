@@ -1,7 +1,7 @@
 body {
     background-color: #2A2B34;
     font-family: 'Arial', sans-serif;
-    overflow: hidden;
+    overflow: auto;
     margin: 0;
     padding: 0;
 }
@@ -72,11 +72,6 @@ h3 {
     margin-right: 5%;
 }
 
-fieldset{
-    margin-bottom: 15%;
-    border-radius: 10px;
-}
-
 .object-param-txt {
     min-width: 100%;
 }
@@ -116,27 +111,37 @@ fieldset{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .stats-result {
     font-size : 3em;
 }
 
+.button {
+    height: 30%;
+    border-radius: 10px;;
+    margin-top : 5%;
+    margin-bottom : 5%;
+    width: 80%;
+    display: inline-block;
+    background-color: rgb(218, 218, 218);
+    padding: 10px;
+    color : black;
+}
+
+a.button {
+    text-decoration: none;
+  }
 
 
-
-@media (max-width: 850px) {
+@media (max-width: 950px) {
     .container {
         display: block; 
     }
 
     .left-part-frame {
         display: inline;
-    }
-
-    fieldset{
-        margin-bottom: 1%;
-        border-radius: 10px;
     }
 
     .search-action  {
@@ -163,11 +168,17 @@ fieldset{
         margin: auto;
         margin : auto
     }
+
+    .stats-result {
+        font-size : 2em;
+    }
     
     h1 {
         margin-left : 0%;
         padding: 5%;
     }
 
-    
+    h3 {
+        font-size : 1.1em;
+    } 
 }
