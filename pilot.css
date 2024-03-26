@@ -40,7 +40,10 @@ h1 {
     display:block;
     margin-left: 10%;
     border-color: whitesmoke;
+    padding-bottom: 30%;
+    padding-top: 5%;
 }   
 .contaigner label{
     margin-left: 30%;
 }
+

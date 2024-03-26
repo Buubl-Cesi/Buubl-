@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = htmlContent;
     }
 
-    // Afficher initialement les étudiants de la promo sélectionnée par défaut
     const initialPromo = document.getElementById('promoSelector').value;
     displayStudents(initialPromo);
 });
