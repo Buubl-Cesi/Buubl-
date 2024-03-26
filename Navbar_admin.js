@@ -22,16 +22,30 @@ function resetmenu() {
     document.getElementById('menuGR').src = 'Images/slider.png'; 
 }
 
-/*----------------Afficher navbar------------------------------------------------*/
+function change_logo() {
+    var largeurFenetre = window.innerWidth; 
+    var monImage = document.getElementById('logoad'); 
+  
+    if (largeurFenetre < 1185) { 
+      monImage.src = 'Images/logo-admin_min.png';
+    }  
+    else { 
+      monImage.src = 'Images/logo-admin.png';
+    }
+  }
+  window.addEventListener('resize', change_logo);
+  change_logo();
+
 let pagetop = true;
 let menus = false;
 
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
-    const threshold = 10; // Vous pouvez ajuster ce seuil si nécessaire
+    var menuad = document.getElementById("menuadmin"); 
+    menuad.classList.remove("showad");
+    const threshold = 10; 
     const currentScroll = window.scrollY;
 
-    // Vérifie si la page est en haut
     if (currentScroll <= threshold) {
         navbar.classList.remove('navbar-hidden');
         pagetop = true;
@@ -57,10 +71,10 @@ window.addEventListener('mousemove', function(e) {
     }
 });
 
-
-
 function toggleMenu() {
     var menu = document.getElementById("menu");
+    var menuad = document.getElementById("menuadmin"); 
+    menuad.classList.remove("showad");
     menu.classList.toggle("show");
     if (menus == false){
         menus = true;
@@ -70,7 +84,7 @@ function toggleMenu() {
     }
 }
 function toggleMenuad() {
-    var menuad = document.getElementById("menuadmin"); // Correction ici
+    var menuad = document.getElementById("menuadmin"); 
     menuad.classList.toggle("showad");
 }
 
@@ -86,3 +100,4 @@ document.addEventListener('click', function(e) {
         }
     }
 });
+

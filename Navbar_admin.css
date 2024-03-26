@@ -3,10 +3,9 @@ body {
 }
 
 
-/*--------------------------navbar-grande------------------------------------------------------------------------------------*/
 
 .navbar {
-    position: fixed; /* Fixe la navbar en haut de la page */
+    position: fixed; 
     font-family: Arial, sans-serif;
     display: flex;
     align-items: center; 
@@ -44,7 +43,7 @@ body {
     display: block;  
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
     .menu2 {   
         display: none;  
     }
@@ -90,31 +89,27 @@ body {
 
     .menuadmin {
         display: none;
-        position: fixed; 
-        margin-top: 35px; 
-        right: 4.6%; 
-        left: auto;
-        width: 200px; 
-        height: 355px; 
-        background-color: #ffffff; 
-        z-index: 1000; 
-        text-align: center; 
-        border-radius: 10px;
+        background-color: #465257;
+        position: absolute;
+        border-radius: 15px;
+        top: 65px;
+        width: 99.7%;
+        height: 30px;
+        text-align: center;
     }
     
     .menuadmin a {
-        display: block; 
-        padding: 20px; 
-        border-bottom: 1px solid #ddd; 
-        color: #333; 
+        height: 100%;
+        display: inline-block; 
+        position:relative;
+        text-align: center;
+        top: 19%;
+        color: #ffffff; 
         text-decoration: none; 
-        border-radius: 10px;
     }
     
     .menuadmin a:hover {
-        background-color: #cecece; 
-        border-radius: 10px;
-        color: #333; 
+        color: #7fb7f8; 
     }
     
     .menuadmin.showad {
@@ -122,7 +117,7 @@ body {
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1185px) {
     .menu1{
         display: none;
     }
@@ -133,12 +128,12 @@ body {
     .logo {
         position: absolute;
         left: 50%;
-        top: -10px;
+        top: 4px;
         text-decoration: none;
     }
     
     .logo img{
-        max-width: 75px;
+        max-width: 36px;
     }
     
     .logo:hover {
@@ -242,12 +237,12 @@ body {
     .logo {
         position: absolute;
         left: 50%;
-        top: -11px;
+        top: 4px;
         text-decoration: none;
     }
     
     .logo img{
-        max-width: 70px;
+        max-width: 30px;
     }
     
     .logo:hover {
@@ -352,13 +347,13 @@ body {
     
     .logo {
         position: absolute;
-        left: 60%;
-        top: -11px;
+        left: 65%;
+        top: 4px;
         text-decoration: none;
     }
     
     .logo img{
-        max-width: 70px;
+        max-width: 30px;
     }
     
     .logo:hover {
@@ -382,6 +377,26 @@ body {
         text-decoration: none;
     }
     
+    .menuadmin {
+        display: none;
+        background-color: #465257;
+        position: absolute;
+        border-radius: 15px;
+        top: 65px;
+        width: 99.7%;
+        height: 30px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .menuadmin a {
+        height: 100%;
+        display: inline-block; 
+        position:relative;
+        text-align: center;
+        top: 25%;
+        color: #ffffff; 
+        text-decoration: none; 
+    }
     .menu {
         display: none;
         position: fixed; 
@@ -417,5 +432,5 @@ body {
 }
 
 .navbar.navbar-hidden {
-    transform: translateY(-200%); /* Ajustez si nécessaire selon la hauteur de votre navbar */
+    transform: translateY(-200%); 
 }
