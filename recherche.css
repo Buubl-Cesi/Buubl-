@@ -3,9 +3,9 @@ body{
     color: azure;
     font-family: Helvetica;
 }
-/*---------------------------------------------------------------------------------------------*/
+
 .navbar {
-    position: fixed; /* Fixe la navbar en haut de la page */
+    position: fixed; 
     font-family: Arial, sans-serif;
     display: flex;
     align-items: center; 
@@ -387,13 +387,9 @@ body{
 }
 
 .navbar.navbar-hidden {
-    transform: translateY(-200%); /* Ajustez si nécessaire selon la hauteur de votre navbar */
+    transform: translateY(-200%); 
 }
 
-
-  
-
-/*---------------------------------------------------------------------------------------------*/
 
 .flex-container {
     display: flex;
@@ -458,8 +454,8 @@ body{
     margin-bottom: 4%;
     border-radius: 15px; 
     padding-left: 3%; 
-    line-height: 350%; /* Pour centrer le texte verticalement */
-    cursor: pointer; /* Change le curseur en une main lorsqu'il survole la boîte */
+    line-height: 350%; 
+    cursor: pointer; 
 }
 .click-box:hover{
   padding: 1%;
@@ -493,7 +489,6 @@ body{
         border-color: grey;
     }
 
-    /* Pour les tablettes en mode portrait et paysage */
 @media screen and (min-width: 280px) and (max-width: 1024px) {
 
   .navbar {
@@ -559,8 +554,8 @@ body{
     margin-bottom: 4%;
     border-radius: 15px; 
     padding-left: 3%; 
-    line-height: 350%; /* Pour centrer le texte verticalement */
-    cursor: pointer; /* Change le curseur en une main lorsqu'il survole la boîte */
+    line-height: 350%; 
+    cursor: pointer; 
 }
 
 
