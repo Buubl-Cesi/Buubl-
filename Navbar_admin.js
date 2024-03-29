@@ -26,7 +26,7 @@ function change_logo() {
     var largeurFenetre = window.innerWidth; 
     var monImage = document.getElementById('logoad'); 
   
-    if (largeurFenetre < 1210) { 
+    if (largeurFenetre < 1450) { 
       monImage.src = 'Images/logo-admin_min.png';
     }  
     else { 

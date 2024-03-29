@@ -43,7 +43,7 @@ body {
     display: block;  
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 2000px) {
     .menu2 {   
         display: none;  
     }
@@ -117,7 +117,7 @@ body {
     }
 }
 
-@media (max-width: 1210px) {
+@media (max-width: 1450px) {
     .menu1{
         display: none;
     }
@@ -273,7 +273,7 @@ body {
         right: 4.6%; 
         left: auto;
         width: 200px; 
-        height: 295px; 
+        height: 413px; 
         background-color: #ffffff; 
         z-index: 1000; 
         text-align: center; 
@@ -283,7 +283,6 @@ body {
     .menu a {
         display: block; 
         padding: 20px; 
-        border-bottom: 1px solid #ddd; 
         color: #333; 
         text-decoration: none; 
         border-radius: 10px;
@@ -404,7 +403,7 @@ body {
         right: 4.6%; 
         left: auto;
         width: 200px; 
-        height: 295px; 
+        height: 413px; 
         background-color: #ffffff; 
         z-index: 1000; 
         text-align: center; 
