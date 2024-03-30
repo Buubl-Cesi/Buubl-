@@ -17,8 +17,8 @@ class StudentController {
         $this->smarty->display('views/templates/stat_student.tpl');
     }
     
-    public function showStatsWithParam($orderBy, $orderByCrease, $parameter, $sector) {
-        $stats = $this->model->getAllStatWithParam($orderBy, $orderByCrease, $parameter, $sector);
+    public function showStatsWithParam($orderBy, $orderByCrease, $parameter) {
+        $stats = $this->model->getAllStatWithParam($orderBy, $orderByCrease, $parameter);
         $this->smarty->assign('stats', $stats);
         $this->smarty->display('views/templates/stat_student.tpl');
     }
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $pdo = Connexion();
     $controller = new StudentController($pdo);
-    $controller->showStatsWithParam($orderBy, $orderByCrease, $parameter, $sector);
+    $controller->showStatsWithParam($orderBy, $orderByCrease, $parameter);
 } else {
     $pdo = Connexion();
     $controller = new StudentController($pdo);

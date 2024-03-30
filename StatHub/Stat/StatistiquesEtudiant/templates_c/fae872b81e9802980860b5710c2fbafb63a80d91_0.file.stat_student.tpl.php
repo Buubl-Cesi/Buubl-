@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-03-30 17:16:23
+/* Smarty version 3.1.47, created on 2024-03-30 17:42:15
   from 'C:\Users\flori\Desktop\Buubl-\StatHub\Stat\StatistiquesEtudiant\views\templates\stat_student.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_66083ad708b8c1_96091719',
+  'unifunc' => 'content_660840e7207ad3_63514657',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fae872b81e9802980860b5710c2fbafb63a80d91' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\StatHub\\Stat\\StatistiquesEtudiant\\views\\templates\\stat_student.tpl',
-      1 => 1711815382,
+      1 => 1711816931,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66083ad708b8c1_96091719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660840e7207ad3_63514657 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUUBL | STATISTIQUES DASHBOARD</title>
-    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" type="text/css" href="../../../style.css?v=1">
 </head>
 <body>
 
@@ -53,13 +53,18 @@ function content_66083ad708b8c1_96091719 (Smarty_Internal_Template $_smarty_tpl)
                             </div>
                         
                             <div>
-                                <input type="radio" id="Promotion" name="Orderby" value="Promotion" />
-                                <label for="Localisation">Promotion</label>
+                                <input type="radio" id="Surname" name="Orderby" value="Surname" />
+                                <label for="Localisation">Prénom</label>
                             </div>
                         
                             <div>
-                                <input type="radio" id="Bestoffer" name="Orderby" value="Bestoffer" />
-                                <label for="Bestoffer">Le plus d'offres en like</label>
+                                <input type="radio" id="Promotion" name="Orderby" value="Promotion" />
+                                <label for="Bestoffer">Promotion</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="Activity" name="Orderby" value="Activity" />
+                                <label for="Bestoffer">Activité</label>
                             </div>
 
                         </fieldset>

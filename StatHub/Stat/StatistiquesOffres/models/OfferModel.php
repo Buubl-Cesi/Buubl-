@@ -43,6 +43,7 @@ class OfferModel {
     WHERE 
         u.STUDENT_NAME = :parameter
     ");
+
     
         $stmt->bindParam(':parameter', $parameter);
         

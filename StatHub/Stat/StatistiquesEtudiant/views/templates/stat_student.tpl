@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUUBL | STATISTIQUES DASHBOARD</title>
-    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" type="text/css" href="../../../style.css?v=1">
 </head>
 <body>
 
@@ -30,13 +30,18 @@
                             </div>
                         
                             <div>
-                                <input type="radio" id="Promotion" name="Orderby" value="Promotion" />
-                                <label for="Localisation">Promotion</label>
+                                <input type="radio" id="Surname" name="Orderby" value="Surname" />
+                                <label for="Localisation">Prénom</label>
                             </div>
                         
                             <div>
-                                <input type="radio" id="Bestoffer" name="Orderby" value="Bestoffer" />
-                                <label for="Bestoffer">Le plus d'offres en like</label>
+                                <input type="radio" id="Promotion" name="Orderby" value="Promotion" />
+                                <label for="Bestoffer">Promotion</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="Activity" name="Orderby" value="Activity" />
+                                <label for="Bestoffer">Activité</label>
                             </div>
 
                         </fieldset>
@@ -82,14 +87,18 @@
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Promotion</th>
-                        <th>Compteur</th>
+                        <th>Nombre en wishlist</th>
+                        <th>Nombre en application</th>
                     </tr>
                     {foreach $stats as $stat}
                     <tr>
+
+                        # Faudra remplacer Nom, Prenom, ... par les noms des colonnes de retour des fonctions de recherche
                         <td>{$stat.Nom}</td>
                         <td>{$stat.Prenom}</td>
                         <td>{$stat.Promotion}</td>
-                        <td>{$stat.Compteur}</td>
+                        <td>{$stat.wishlist}</td>
+                        <td>{$stat.application}</td>
                     </tr>
                     {/foreach}
                 </table>
