@@ -63,86 +63,445 @@
         </div>
         
         <div class="green-box">
-            <img class="background-img-brand" src="Images/Logo_unique.png" alt="Logo">
+            <div class="select-form">
+                <div>
+                    <img class="background-img-hub" src="Images/student.png" alt="Espace Student" onclick="changeForm('form1')">
+                    <img class="background-img-hub" src="Images/company.png" alt="Espace Candidat" onclick="changeForm('form2')">
+                    <img class="background-img-hub" src="Images/pilote.png" alt="Espace Pilote" onclick="changeForm('form3')">
+                    <img class="background-img-hub" src="Images/offer.png" alt="Espace Offre" onclick="changeForm('form4')">
+                </div>
+            </div>
             <section>
+                <form id="form1">
+                    <fieldset class="fieldset-1">
+                        <div>
+                            <div>
+                                <h1 class="text-title">Dashboard Administrateur : Espace Etudiant</h1>
+                                <h2 class="text-subtitle">Ici : Modifier, Supprimer et Ajouter vos données</h2>
+                            </div>
+
+                            <div class="flex-alignement">
+                                <div class="flex-container">
+                                    <div>
+                                        <div>
+                                            <h3 class="text-data">Nom :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : DAVID" required>
+                                            </fieldset>
+                                        </div>
+            
+                                        <div>
+                                            <h3 class="text-data">Prénom :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : Maxence" required>
+                                            </fieldset>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-data">Adresse mail :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="email" placeholder="Exemple : email.t@test.fr" required>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container">
+                                    <div>
+                                        <div>
+                                            <h3 class="text-data">Login :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : Jule20" required>
+                                            </fieldset>
+                                        </div>
+            
+                                        <div>
+                                            <h3 class="text-data">Mot de passe :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="password" placeholder="Exemple : 12345" required>
+                                            </fieldset>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-data">Promotion :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : CPIA2" required>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container">
+                                    <div>
+                                        <div>
+                                            <h3 class="text-data">Pays :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : France" required>
+                                            </fieldset>
+                                        </div>
+            
+                                        <div>
+                                            <h3 class="text-data">Code Postal :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : France" required>
+                                            </fieldset>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-data">Ville :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : Rouen" required>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container">
+                                    <div>
+                                        <div>
+                                            <h3 class="text-data">Rue :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : 8 Rue du Four" required>
+                                            </fieldset>
+                                        </div>
+            
+                                        <div>
+                                            <h3 class="text-data">Numéro d'appartement :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : 1B" required>
+                                            </fieldset>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-data">Image de Profil :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : Rouen" required>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <fieldset class="fieldset-button">
+                                    <button class="button" type="button">Ajouter</button>
+                                    <button class="button2" type="button">Modifier</button>
+                                    <button class="button3" type="button">Supprimer</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <form id="form2">
+                    <fieldset class="fieldset-1">
+                        <div>
+                            <div>
+                                <h1 class="text-title">Dashboard Administrateur : Espace Entreprise</h1>
+                                <h2 class="text-subtitle">Ici : Modifier, Supprimer et Ajouter vos données</h2>
+                            </div>
+
+                            <div class="flex-alignement">
+                                <div class="flex-container-1">
+                                    <div>
+                                        <div>
+                                            <h3 class="text-data">Nom :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : DAVID" required>
+                                            </fieldset>
+                                        </div>
+            
+                                        <div>
+                                            <h3 class="text-data">Secteur d'activité :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : Agroalimentaire" required>
+                                            </fieldset>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-data">Description :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="email" placeholder="Exemple : Le site a été créee en ..." required>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container-1">
+                                    <div>
+                                        <div>
+                                            <h3 class="text-data">Pays :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : France" required>
+                                            </fieldset>
+                                        </div>
+            
+                                        <div>
+                                            <h3 class="text-data">Code Postal :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : France" required>
+                                            </fieldset>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-data">Ville :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : Rouen" required>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container-1">
+                                    <div>
+                                        <div>
+                                            <h3 class="text-data">Rue :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : 8 Rue du Four" required>
+                                            </fieldset>
+                                        </div>
+            
+                                        <div>
+                                            <h3 class="text-data">Numéro d'appartement :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : 1B" required>
+                                            </fieldset>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-data">Image de Profil :</h3>
+                                            <fieldset class="fieldset-text">
+                                                <input class="text-fieldset" type="text" placeholder="Exemple : Rouen" required>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <fieldset class="fieldset-button">
+                                    <button class="button" type="button">Ajouter</button>
+                                    <button class="button2" type="button">Modifier</button>
+                                    <button class="button3" type="button">Supprimer</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+
+
+            <form id="form3">
                 <fieldset class="fieldset-1">
                     <div>
-                        <div class="alignement">
-                            <h1 class="text-title">Bubbl</h1>
-                            <h2 class="text-subtitle">Découvrez tout ce qu'il faut savoir sur votre entreprise</h2>
+                        <div>
+                            <h1 class="text-title">Dashboard Administrateur : Espace Pilote</h1>
+                            <h2 class="text-subtitle">Ici : Modifier, Supprimer et Ajouter vos données</h2>
                         </div>
-
-                        
-                        <div class="flex-container">
-                            <div>
+                        <div class="flex-alignement">
+                            <div class="flex-container">
                                 <div>
-                                    <h3 class="text-data">Adresse :</h3>
-                                    <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">20 rue des Tuilliers</p>
-                                    </fieldset>
-                                </div>
-    
-                                <div>
-                                    <h3 class="text-data">Email :</h3>
-                                    <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">email.test@test.fr</p>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        
-                            <div class="text-alignement">
-                                <div>
-                                    <h3 class="text-data">Secteur :</h3>
-                                    <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">Ordinateur</p>
-                                     </fieldset>
-                                </div>
-                                <div>
-                                    <h3 class="text-data">Offres :</h3>
-                                    <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">50</p>
-                                    </fieldset>
+                                    <div>
+                                        <h3 class="text-data">Nom :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : DAVID" required>
+                                        </fieldset>
+                                    </div>
+        
+                                    <div>
+                                        <h3 class="text-data">Prénom :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : Maxence" required>
+                                        </fieldset>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-data">Adresse mail :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="email" placeholder="Exemple : email.t@test.fr" required>
+                                        </fieldset>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="flex-container">
+                                <div>
+                                    <div>
+                                        <h3 class="text-data">Login :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : Jule20" required>
+                                        </fieldset>
+                                    </div>
+        
+                                    <div>
+                                        <h3 class="text-data">Mot de passe :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="password" placeholder="Exemple : 12345" required>
+                                        </fieldset>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-data">Promotion :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : CPIA2" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-container">
+                                <div>
+                                    <div>
+                                        <h3 class="text-data">Pays :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : France" required>
+                                        </fieldset>
+                                    </div>
+        
+                                    <div>
+                                        <h3 class="text-data">Code Postal :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : France" required>
+                                        </fieldset>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-data">Ville :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : Rouen" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-container">
+                                <div>
+                                    <div>
+                                        <h3 class="text-data">Rue :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : 8 Rue du Four" required>
+                                        </fieldset>
+                                    </div>
+        
+                                    <div>
+                                        <h3 class="text-data">Numéro d'appartement :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : 1B" required>
+                                        </fieldset>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-data">Secteur d'activité :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : POO" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <fieldset class="fieldset-button">
+                                <button class="button" type="button">Ajouter</button>
+                                <button class="button2" type="button">Modifier</button>
+                                <button class="button3" type="button">Supprimer</button>
+                            </fieldset>
                         </div>
                     </div>
-                    
+                </fieldset>
+            </form>
+
+
+            <form id="form4">
+                <fieldset class="fieldset-1">
                     <div>
-                        <h3 class="text-data">Commentaires :</h3>
-                        <fieldset class="fieldset-comment">
-                            <p class="text-comment">Lorem ipssum . Donec in magna massa. VivaLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet ut tortor a consequat. Vivamus sit amet massa quis nisi sagittis auctor sit amet ac nibh. Integer luctus bibendum lectus id eleifend. Nunc congue volutpat gravida. Duis cursus ultricies eros, vel tincidunt erat interdum a. Maecenas placerat in leo consequat faucibus. Donec scelerisque, nibh non feugiat dapibus, sem nibh egestas massa, vitae ornare dolor dolor id felis. Vivamus interdum congue mi, vitae dapibus nisi aliquam at. Aenean dui dolor, euismod in orci auctor, ultrices fringilla urna. Phasellus maximus nisl ut molestie tristique. Fusce pharetra pulvinar erat, ac laoreet dolor convallis et. Proin ut elit tempor justo facilisis pulvinar. Morbi rutrum libero vitae velit dignissim, vel fermentum ipsum laoreet. Integer eros purus, sodales vel ullamcorper sit amet, placerat at nibh. Suspendisse potenti.
+                        <div>
+                            <h1 class="text-title">Bubbl - Dashboard administrateur : Espace Offres</h1>
+                            <h2 class="text-subtitle">Votre meilleur ami dans la gestion de vos données</h2>
+                        </div>
 
-                                Donec rutrum nisl id tortor viverra ultricies. Aliquam ut risus vel orci laoreet tempor. Sed eu augue eget enim mollis laoreet vel quis turpis. Integer luctus diam eros, nec molestie felis porttitor sit amet. In hac habitasse platea dictumst. Quisque quis purus feugiat, pharetra metus nec, ultricies risus. In hac habitasse platea dictumst.
-                                
-                                Integer ultrices molestie quam, sed elementum massa auctor et. Suspendisse eu enim sit amet ante dignissim posuere ut vel metus. Sed semper quam et porttitor vulputate. Nulla sit amet ultrices dolor, et vestibulum nibh. Proin vel turpis lobortis, luctus mi convallis, vulputate quam. Donec et tellus at quam euismod sollicitudin a at lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu ante auctor eros congue posuere. Pellentesque eleifend porta nulla, ac pretium neque molestie id. Suspendisse potenti. Nunc ut enim at leo pulvinar commodo. Duis a ante vitae magna ultrices facilisis ac quis velit. Nam mi enim, sollicitudin ut imperdiet id, pulvinar a magna. In elementum aliquet libero, vel molestie nisi congue semper. Quisque nec turpis vel lectus interdum rutrum. Proin vestibulum dui ut malesuada lacinia.
-                                
-                                Maecenas eros augue, commodo nec feug</p>
-                        </fieldset>
+                        <div class="flex-alignement">
+                            <div class="flex-container-1">
+                                <div>
+                                    <div>
+                                        <h3 class="text-data">Nom :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : Recherche 'Responsable Informatique'" required>
+                                        </fieldset>
+                                    </div>
+        
+                                    <div>
+                                        <h3 class="text-data">Description du poste :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : L'entreprise recherche un nouveau membre pour son équipe ..." required>
+                                        </fieldset>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-data">Durée du poste :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="email" placeholder="Exemple : '...' mois" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex-container-1">
+                                <div>
+                                    <div>
+                                        <h3 class="text-data">Date de début :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : YYYY-MM-DD" required>
+                                        </fieldset>
+                                    </div>
+        
+                                    <div>
+                                        <h3 class="text-data">Date de fin :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : YYYY-MM-DD" required>
+                                        </fieldset>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-data">Nombre d'heure par semaine :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : '35'" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex-container-1">
+                                <div>
+                                    <div>
+                                        <h3 class="text-data">Tarification :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : " required>
+                                        </fieldset>
+                                    </div>
+        
+                                    <div>
+                                        <h3 class="text-data">Compétences requises :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : 1B" required>
+                                        </fieldset>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-data">Nombre de postes :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="text" placeholder="Exemple : Rouen" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <fieldset class="fieldset-button">
+                                <button class="button" type="button">Ajouter</button>
+                                <button class="button2" type="button">Modifier</button>
+                                <button class="button3" type="button">Supprimer</button>
+                            </fieldset>
+                        </div>
                     </div>
-
                 </fieldset>
-
-                <fieldset class="fieldset-2">
-                    <div class="star-container">
-                        <input type="radio" id="star5" name="rating" value="5"><label for="star5" class="star">&#9733;</label>
-                        <input type="radio" id="star4" name="rating" value="4"><label for="star4" class="star">&#9733;</label>
-                        <input type="radio" id="star3" name="rating" value="3"><label for="star3" class="star">&#9733;</label>
-                        <input type="radio" id="star2" name="rating" value="2"><label for="star2" class="star">&#9733;</label>
-                        <input type="radio" id="star1" name="rating" value="1"><label for="star1" class="star">&#9733;</label>
-                      </div>
-
-                      <div>
-                        <p class="text-feedback">Avis</p>
-                      </div>
-                </fieldset>
-
-                <fieldset class="fieldset-3">
-                    <img class="background-img-joint" src="Images/Profil.jpg" alt="Joint">
-                </fieldset>
+            </form>
             </section>
         </div>
 
-        <script src="company.js"></script>
+        <script src="admin.js"></script>
     </main>
 </body>
 </html>

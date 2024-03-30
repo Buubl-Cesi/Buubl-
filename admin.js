@@ -102,6 +102,18 @@ function updateImageSource() {
   window.addEventListener('resize', updateImageSource);
   updateImageSource();
 
+////////////
+
+function changeForm(formName) {
+
+    document.getElementById('form1').style.display = 'none';
+    document.getElementById('form2').style.display = 'none';
+    document.getElementById('form3').style.display = 'none';
+    document.getElementById('form4').style.display = 'none';
+
+
+    document.getElementById(formName).style.display = 'block';
+}
 
 
 

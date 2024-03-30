@@ -400,13 +400,6 @@ body {
     overflow: hidden;
 }
 
-input {
-    display: none;
-}
-
-input:checked ~ .star {
-    color: gold;
-}
 
 /*Classes Img & Shapes*/
 
@@ -418,20 +411,28 @@ input:checked ~ .star {
     left: 71%;
 }
 
-.background-img-brand{
+.select-form{
     position: absolute;
     left: 2%;
     top: 4%;
     width: 20%;
-    height: 40%;
+    height: 11%;
+    min-width: 250px;
     border: 8px solid rgba(214, 207, 207, 0.5);
     border-radius: 2px;
-    background-color: whitesmoke;
+    background-color: whitesmoke;    
 }
 
 .background-img-joint {
     width: 75%;
     height: auto;
+}
+
+.background-img-hub {
+    padding-top: 2.5% ;
+    width: 15%;
+    height: 15%;
+    padding-left: 7% ;
 }
 
 .background-img-turn{
@@ -443,45 +444,56 @@ input:checked ~ .star {
     height: 90%;
 }
 
-.fieldset-1, .fieldset-2, .fieldset-3 {
+.fieldset-1 {
     position: absolute;
     border: 2px solid rgba(214, 207, 207, 0.5);
     height: 85%;
-    width: 57.7%;
-}
-
-.fieldset-1 {
+    width: 92.5%;
     left: 2.5%;
     top: 5%;
     border-radius: 5px;
     background-color: whitesmoke;
-    clip-path: polygon(36% 0, 100% 0, 100% 100%, 0 100%, 0 50%, 36% 50%);
+    clip-path: polygon(22.75% 0, 100% 0, 100% 100%, 0 100%, 0 17%, 22.75% 17%);
 }
 
-
-
-
-.fieldset-2 {
-    left: 62%;
-    top: 66%;
-    width: 33%;
-    height: 25%;
-    background-color: whitesmoke;
-    border: 8px solid rgba(214, 207, 207, 0.5) ;
-    border-radius: 5px;
+.button, .button2, .button3 {
+    position: absolute;
+    width:33%;
+    top: -1%;
+    height:75%;
+    border: 1.5px solid black;
+    border-radius: 0%;
+    font-weight:bold;
 }
 
-.fieldset-3 {
-    left: 62%;
-    top: 2.5%;
-    width: 33%;
-    height: 60%;
+button:hover{
+    background-color:rgb(113, 194, 133);
+}
+
+.button {
     background-color: whitesmoke;
-    border: 8px solid rgba(214, 207, 207, 0.5) ;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.button2 {
+    background-color: whitesmoke;
+    left: 34%;
+}
+
+.button3 {
+    background-color: whitesmoke;
+    left: 66%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.fieldset-button {
+    position: absolute;
+    top: 77.5%;
+    left: 12%;
+    width: 75%;
+    height: 15%;
+    border: none;
 }
 
 .green-box {
@@ -494,26 +506,6 @@ input:checked ~ .star {
     border-radius: 15px;
     box-shadow: 0.40vw 0.40vw 0.64vw rgba(0, 0, 0, 0.35);
 }
-
-/*Star*/
-
-.star-container {
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    direction: rtl;
-}
- 
-.star {
-    font-size: 6vw;
-    color: lightgray;
-    cursor: pointer;
-}
-
-.star:hover,
-  .star:hover ~ .star {
-    color: gold;
-}
   
 /*Text only*/
 
@@ -522,8 +514,8 @@ input:checked ~ .star {
     font-family: "Arial", "Arial Normal", sans-serif;
     font-size:150%;
     position: absolute;
-    top: 4%;
-    left:40%;
+    top: 3%;
+    left:26.5%;
     margin-bottom: 5%;
 }
 
@@ -532,8 +524,8 @@ input:checked ~ .star {
     color: grey;
     font-size: 100%;
     font-family: "Arial", "Arial Normal", sans-serif;
-    padding-left:39.90%;
-    padding-top: 8%;
+    padding-left:26.30%;
+    padding-top: 4.25%;
     padding-right:1%;
 }
 
@@ -543,13 +535,20 @@ input:checked ~ .star {
     font-size: small;
     font-family: "Arial", "Arial Normal", sans-serif;
     padding-left:2.5%;
+    margin-bottom: 2.5%;
+    margin-top: 7%;
 }
 
 .text-fieldset{
-    color: grey;
     font-size: small;
     font-family: "Arial", "Arial Normal", sans-serif;
     margin: auto;
+    margin-right: 1%;
+    border: none;
+    color: rgb(0, 0, 0);
+    background-color: rgba(238, 238, 238, 1);
+    outline: none;
+    overflow: auto;
 }
 
 .text-comment{
@@ -568,20 +567,11 @@ input:checked ~ .star {
     margin-top: -3%;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-    display: flex;
-    padding-left:42% ;
-    margin-right: 10%;
-}
-
 .fieldset-text {
     background-color: rgba(238, 238, 238, 1);
     border: 1.5px solid #000000;
     border-radius: 10px;
-    width: 96%;
+    width: 100%;
     margin-bottom:-2%;
 }
 
@@ -594,6 +584,31 @@ input:checked ~ .star {
     margin-left: 2.5%;
     height: 10vw;
 }
+
+/*  */
+
+.flex-container, .flex-container-1, .flex-container-2, .flex-container-3{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5.5%;
+    width: 18%;    
+}
+
+.flex-container:nth-child(3n) {
+    margin-left: 5.5%;
+}
+
+.flex-container-1:nth-child(1n) {
+    margin-left: 11.9%;
+}
+
+.flex-alignement {
+    display: flex;
+    flex-wrap:wrap;
+}
+
+/*  */
+
 
 /*Media Queries*/
 
