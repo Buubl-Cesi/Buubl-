@@ -494,7 +494,7 @@ button:hover{
 }
 
 .green-box {
-    background-color: rgb(113, 194, 133);
+    background-color: rgba(113, 194, 133,0.15);
     position: absolute;
     height: 75%;
     width: 87.5%;
