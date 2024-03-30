@@ -6,12 +6,6 @@ class StudentModel {
         $this->pdo = $pdo;
     }
 
-    public function getSector() {	
-        $stmt = $this->pdo->prepare("SELECT DISTINCT `COMPANY_ACTIVITY` FROM `COMPANY`;");
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
     public function getAllStat() {
         $stmt = $this->pdo->prepare("SELECT 
                 u.STUDENT_NAME AS Nom,

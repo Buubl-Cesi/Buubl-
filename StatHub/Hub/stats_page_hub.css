@@ -169,7 +169,8 @@ a.button {
 
         justify-content: center;
         margin: auto;
-        margin : auto
+
+        min-height: 5000%;
     }
 
     .stats-result {
