@@ -46,7 +46,7 @@ body {
     display: block;  
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 2800px) {
     .menu2 {   
         display: none;  
     }
@@ -471,17 +471,14 @@ button:hover{
 }
 
 .button {
-    background-color: whitesmoke;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
 .button2 {
-    background-color: whitesmoke;
     left: 34%;
 }
 
 .button3 {
-    background-color: whitesmoke;
     left: 66%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -585,9 +582,10 @@ button:hover{
     height: 10vw;
 }
 
+
 /*  */
 
-.flex-container, .flex-container-1, .flex-container-2, .flex-container-3{
+.flex-container, .flex-container-1 {
     display: flex;
     justify-content: space-between;
     margin-left: 5.5%;

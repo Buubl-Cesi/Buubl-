@@ -104,20 +104,36 @@ function updateImageSource() {
 
 ////////////
 
-function changeForm(formName) {
 
-    document.getElementById('form1').style.display = 'none';
-    document.getElementById('form2').style.display = 'none';
-    document.getElementById('form3').style.display = 'none';
-    document.getElementById('form4').style.display = 'none';
-
-
-    document.getElementById(formName).style.display = 'block';
+function InputsResets(IdOfForm) {
+    var reset = document.getElementById(IdOfForm);
+    for (var i = 0; i < reset.elements.length; i++) {
+        if (reset.elements[i].type == "text") {
+            reset.elements[i].value = "";
+        }
+    }
 }
 
 
+function changeForm(nameOfForm) {
+    document.getElementById('form1').style.display = 'none';
+    document.getElementById('form2').style.display = 'none';
+    document.getElementById('form3').style.display = 'none';
+    document.getElementById('form4').style.display = 'none';    
 
+    var change = ['form1', 'form2', 'form3', 'form4'];
+    for (var i = 0; i < change.length; i++) {
+        document.getElementById(change[i]).style.display = 'none';
+        InputsResets(change[i]);
+    }
 
-
-
+    document.getElementById(nameOfForm).style.display = 'block';
+}
     
+
+function validateInput(input) {
+    var max = Number(input.getAttribute('max'));
+    if (Number(input.value) > max) {
+        input.value = "";
+    }
+}
