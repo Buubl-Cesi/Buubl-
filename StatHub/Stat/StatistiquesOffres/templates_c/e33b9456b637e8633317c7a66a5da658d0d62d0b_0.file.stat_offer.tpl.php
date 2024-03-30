@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-03-30 16:31:50
+/* Smarty version 3.1.47, created on 2024-03-30 17:16:45
   from 'C:\Users\flori\Desktop\Buubl-\StatHub\Stat\StatistiquesOffres\views\templates\stat_offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660830667bc177_13319694',
+  'unifunc' => 'content_66083aede5ca75_36994195',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e33b9456b637e8633317c7a66a5da658d0d62d0b' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\StatHub\\Stat\\StatistiquesOffres\\views\\templates\\stat_offer.tpl',
-      1 => 1711810636,
+      1 => 1711815397,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660830667bc177_13319694 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66083aede5ca75_36994195 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUUBL | STATISTIQUES DASHBOARD</title>
-    <link rel="stylesheet" href="../../stats_page.css">
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
     <div class = "container">
