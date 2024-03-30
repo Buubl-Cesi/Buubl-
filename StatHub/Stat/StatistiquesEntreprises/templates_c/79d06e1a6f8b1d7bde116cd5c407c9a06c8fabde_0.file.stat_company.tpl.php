@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-03-30 16:47:47
+  from 'C:\Users\flori\Desktop\Buubl-\StatHub\Stat\StatistiquesEntreprises\views\templates\stat_company.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_6608342370a279_76077140',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '79d06e1a6f8b1d7bde116cd5c407c9a06c8fabde' => 
+    array (
+      0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\StatHub\\Stat\\StatistiquesEntreprises\\views\\templates\\stat_company.tpl',
+      1 => 1711813662,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6608342370a279_76077140 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -67,9 +90,18 @@
                                     <label class="Parameter-label">Secteur :</label>
                                     <select name="sector">
                                         <option value="NoOne">Indiquez un secteur</option>
-                                        {foreach $sector as $s}
-                                            <option value="{$s['COMPANY_ACTIVITY']}">{$s['COMPANY_ACTIVITY']}</option>
-                                        {/foreach}
+                                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['sector']->value, 's');
+$_smarty_tpl->tpl_vars['s']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['s']->value) {
+$_smarty_tpl->tpl_vars['s']->do_else = false;
+?>
+                                            <option value="<?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_ACTIVITY'];?>
+"><?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_ACTIVITY'];?>
+</option>
+                                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     </select>
                             </div>
                             <input class = "object-param-button" type="submit" value="Rechercher" />
@@ -89,14 +121,25 @@
                         <th>Nombre d'offres</th>
                         <th>Note</th>
                     </tr>
-                    {foreach $stats as $stat}
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['stats']->value, 'stat');
+$_smarty_tpl->tpl_vars['stat']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['stat']->value) {
+$_smarty_tpl->tpl_vars['stat']->do_else = false;
+?>
                     <tr>
-                        <td>{$stat.Nom}</td>
-                        <td>{$stat.Prenom}</td>
-                        <td>{$stat.Promotion}</td>
-                        <td>{$stat.Compteur}</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Nom'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Prenom'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Promotion'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Compteur'];?>
+</td>
                     </tr>
-                    {/foreach}
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </table>
             </div>
         </div>
@@ -105,3 +148,5 @@
 </html>
 
 
+<?php }
+}

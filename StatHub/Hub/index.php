@@ -1,5 +1,5 @@
 <?php
-require_once('controllers/CompanyController.php');
+require_once('controllers/HubController.php');
 
 function Connexion() {
     try {
@@ -11,8 +11,9 @@ function Connexion() {
     }
 }
 
+
 // Affichage initial
 $pdo = Connexion();
-$companyController = new CompanyController($pdo);
+$companyController = new HubController($pdo);
 
 
