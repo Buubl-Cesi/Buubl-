@@ -415,9 +415,8 @@ body {
     position: absolute;
     left: 2%;
     top: 4%;
-    width: 20%;
-    height: 11%;
-    min-width: 250px;
+    width: 17.5vw;
+    height: 4vw;
     border: 8px solid rgba(214, 207, 207, 0.5);
     border-radius: 2px;
     background-color: whitesmoke;    
@@ -462,7 +461,7 @@ body {
 }
 
 button:hover{
-    background-color:rgb(113, 194, 133);
+    background-color:rgba(113, 194, 133,0.15);
 }
 
 .button {
@@ -470,11 +469,11 @@ button:hover{
     border-bottom-left-radius: 15px;
 }
 .button2 {
-    left: 34%;
+    left: 34.75%;
 }
 
 .button3 {
-    left: 66%;
+    left: 68.25%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
@@ -482,7 +481,7 @@ button:hover{
 .fieldset-button {
     position: absolute;
     top: 77.5%;
-    left: 12%;
+    left: 10%;
     width: 75%;
     height: 15%;
     border: none;
@@ -557,7 +556,8 @@ button:hover{
     display: flex;
     justify-content: space-between;
     margin-left: 5.5%;
-    width: 18%;    
+    width: 18%;  
+    margin-top: 0.5%;  
 }
 
 .flex-container:nth-child(3n) {
@@ -577,4 +577,137 @@ button:hover{
 
 
 /*Media Queries*/
-/**/
+/*FullScreen*/
+
+@media (display-mode: fullscreen) {
+    .flex-container, .flex-container-1{
+        margin-top: 3.5%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .background-img-green{
+        display: none;
+    }
+
+
+    body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .text-title{
+        margin-top: 0.5%;
+    }
+
+    .text-subtitle {
+        margin-top: 4.5%;
+        margin-left: -0.25%;
+    }
+
+    .green-box {
+        height: 190%;
+
+    }
+
+    .flex-alignement{
+        flex-direction: column;
+    }
+
+    .flex-container {
+        margin-left: 19%;
+    }
+
+    .select-form {
+        height: 45px;
+    }
+
+    .fieldset-text {
+        position: relative;
+        width: 275%;
+    }
+    .fieldset-1 {
+        height: 88%;
+        clip-path: polygon(23% 0, 100% 0, 100% 100%, 0 100%, 0 5.5%, 23% 5.5%);
+    }
+
+    .button, .button2, .button3 {
+        height: 40%;
+        top: 60%;
+    }
+
+    .flex-container:nth-child(3n) {
+        margin-left: 19%;
+    }
+    
+    .flex-container-1:nth-child(1n) {
+        margin-left: 20%;
+    }
+
+
+    .button2 {
+        left: 35%;
+    }
+} 
+
+@media screen and (max-width:1000px) {
+
+    .fieldset-1 {
+        clip-path: none;
+        height: 90%;
+        width: 89.5%;
+    }
+
+    .text-title {
+        margin-left: -9%;
+        margin-top: 7%;
+    }
+
+    .select-form {
+        align-items: center;
+        margin-top: -2%;
+        margin-left: 22%;
+        z-index: 1;
+        width: 50%;
+        height: 8vw;
+    }
+    .fieldset-text{
+        width: 180%;
+
+    }
+
+    .text-data{
+        position: relative;
+        ;
+    }
+
+
+    .flex-alignement {
+        margin-top: 20%;
+        margin-left: 6%;
+    }
+
+    .text-subtitle {
+        display: none;
+    }
+
+    .button {
+        left: 1.5%;
+    }
+
+}
+
+@media screen and (max-width:900px) {
+    .text-title {
+        margin-left: -14%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .fieldset-1 {
+        width: 87%;
+    }
+}
+
+/*Laptop*/
+
