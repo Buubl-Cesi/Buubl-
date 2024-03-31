@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-03-30 17:42:15
+/* Smarty version 3.1.47, created on 2024-03-31 20:52:28
   from 'C:\Users\flori\Desktop\Buubl-\StatHub\Stat\StatistiquesEtudiant\views\templates\stat_student.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660840e7207ad3_63514657',
+  'unifunc' => 'content_6609b0ec0b0ab2_44316143',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fae872b81e9802980860b5710c2fbafb63a80d91' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\StatHub\\Stat\\StatistiquesEtudiant\\views\\templates\\stat_student.tpl',
-      1 => 1711816931,
+      1 => 1711910728,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660840e7207ad3_63514657 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6609b0ec0b0ab2_44316143 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -55,7 +55,7 @@ function content_660840e7207ad3_63514657 (Smarty_Internal_Template $_smarty_tpl)
                             <div>
                                 <input type="radio" id="Surname" name="Orderby" value="Surname" />
                                 <label for="Localisation">Prénom</label>
-                            </div>
+                            </div> 
                         
                             <div>
                                 <input type="radio" id="Promotion" name="Orderby" value="Promotion" />
@@ -110,7 +110,8 @@ function content_660840e7207ad3_63514657 (Smarty_Internal_Template $_smarty_tpl)
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Promotion</th>
-                        <th>Compteur</th>
+                        <th>Nombre en wishlist</th>
+                        <th>Nombre en application</th>
                     </tr>
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['stats']->value, 'stat');
@@ -123,9 +124,11 @@ $_smarty_tpl->tpl_vars['stat']->do_else = false;
 </td>
                         <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Prenom'];?>
 </td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Promotion'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Promo'];?>
 </td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Compteur'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Nombre_Likes'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Nombre_Stage'];?>
 </td>
                     </tr>
                     <?php

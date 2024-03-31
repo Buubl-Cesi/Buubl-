@@ -1,3 +1,4 @@
+
 body {
     background-color: #2A2B34;
     font-family: 'Arial', sans-serif;
@@ -12,14 +13,14 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.7em;
     margin-left : 5%;
 }
 
 h3 {
     margin-top : 5%;
     margin-left : 5%;
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
 .container {
@@ -27,10 +28,11 @@ h3 {
 
     justify-content: center;
     margin: auto;
-    min-width: 90%;
+    
     margin-top : 5%;
-
+    min-width: 90%;
     width: 90%;
+
     min-height: 100%;  
 }
 
@@ -46,6 +48,7 @@ h3 {
 
 .stats-container {
     align-items: center;
+    min-height: 100%;
 }
 
 .left-part-frame {
@@ -93,13 +96,14 @@ h3 {
 
 .option-frame {
     width: 90%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius : 15px;
     background-color : rgb(230, 230, 230);
-    border: 1px solid black;
+    border: 5px solid rgb(0, 0, 0);
     margin-top : 2%;
     margin-bottom: 2%;
 }
@@ -114,7 +118,7 @@ h3 {
 }
 
 .stats-result {
-    font-size : 3em;
+    font-size : 2em;
 }
 
 .button {
@@ -174,7 +178,7 @@ a.button {
     }
 
     .stats-result {
-        font-size : 2em;
+        font-size : 1.5em;
     }
 
     .button {

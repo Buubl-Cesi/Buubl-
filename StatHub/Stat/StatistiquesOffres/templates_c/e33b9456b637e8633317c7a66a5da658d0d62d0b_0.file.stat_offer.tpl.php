@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-03-30 17:35:37
+/* Smarty version 3.1.47, created on 2024-03-31 21:39:23
   from 'C:\Users\flori\Desktop\Buubl-\StatHub\Stat\StatistiquesOffres\views\templates\stat_offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_66083f596dcee5_94351465',
+  'unifunc' => 'content_6609bbebd7e0d2_43189719',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e33b9456b637e8633317c7a66a5da658d0d62d0b' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\StatHub\\Stat\\StatistiquesOffres\\views\\templates\\stat_offer.tpl',
-      1 => 1711816533,
+      1 => 1711913962,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66083f596dcee5_94351465 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6609bbebd7e0d2_43189719 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUUBL | STATISTIQUES DASHBOARD</title>
-    <link rel="stylesheet" type="text/css" href="../../../style.css?v=1">
+    <link rel="stylesheet" type="text/css" href="../stats.css?v=1">
 </head>
 <body>
     <div class = "container">
@@ -36,6 +36,8 @@ function content_66083f596dcee5_94351465 (Smarty_Internal_Template $_smarty_tpl)
             <div class = "title-frame">
                 <h1>STATISTIQUES | Offres</h1>
             </div>
+
+
 
             <div class = "search-parameters">
                 <h2>Filtres pour votre recherche</h2>
@@ -57,7 +59,7 @@ function content_66083f596dcee5_94351465 (Smarty_Internal_Template $_smarty_tpl)
                         
                           <div>
                               <input type="radio" id="Bestoffer" name="Orderby" value="Bestoffer" />
-                              <label for="Bestoffer">Top des offres en wishlist</label>
+                              <label for="Bestoffer">Top des offres en like</label>
                           </div>
       
                       </fieldset>
@@ -125,6 +127,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <tr>
                     <th>Nom d'entreprise</th>
                     <th>Intitulé de l'offre</th>
+                    <th>Secteur</th>
                     <th>Ville</th>
                     <th>Durée</th>
                     <th>Date de début</th>
@@ -132,7 +135,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <th>Nombre d'heures</th>
                     <th>Rémunération</th>
                     <th>Nombre de place</th>
-                    <th>Popularité</th>
+                    <th>Durée du stage</th>
+                    <th>Like</th>
+                    <th>Nombre de postulations</th>
                 </tr>
               <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['stats']->value, 'stat');
@@ -141,13 +146,31 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['stat']->value) {
 $_smarty_tpl->tpl_vars['stat']->do_else = false;
 ?>
                 <tr>
-                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Nom'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['cnom'];?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Prenom'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['nom'];?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Promotion'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['secteur'];?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Compteur'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['ville'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['temps'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['deb'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['fin'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['heure'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['euro'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['place'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['temps'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['NombreLikes'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['NombreApplications'];?>
 </td>
                 </tr>
               <?php
