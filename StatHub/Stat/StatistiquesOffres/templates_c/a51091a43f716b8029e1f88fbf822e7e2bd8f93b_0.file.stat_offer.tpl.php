@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-03-31 18:53:07
+  from 'C:\Users\laine\Desktop\Serveur\StatHub\Stat\StatistiquesOffres\views\templates\stat_offer.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_660994f3b89e98_00769449',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a51091a43f716b8029e1f88fbf822e7e2bd8f93b' => 
+    array (
+      0 => 'C:\\Users\\laine\\Desktop\\Serveur\\StatHub\\Stat\\StatistiquesOffres\\views\\templates\\stat_offer.tpl',
+      1 => 1711903975,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660994f3b89e98_00769449 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -71,9 +94,18 @@
 
                                     <option value="NoOne">Indiquez un secteur</option>
 
-                                    {foreach $sector as $s}
-                                    <option value="{$s['COMPANY_ACTIVITY']}">{$s['COMPANY_ACTIVITY']}</option>
-                                    {/foreach}
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['sector']->value, 's');
+$_smarty_tpl->tpl_vars['s']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['s']->value) {
+$_smarty_tpl->tpl_vars['s']->do_else = false;
+?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_ACTIVITY'];?>
+"><?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_ACTIVITY'];?>
+</option>
+                                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                                 </select>
                             </div>
@@ -104,23 +136,43 @@
                     <th>Like</th>
                     <th>Postule</th>
                 </tr>
-              {foreach $stats as $stat}
+              <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['stats']->value, 'stat');
+$_smarty_tpl->tpl_vars['stat']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['stat']->value) {
+$_smarty_tpl->tpl_vars['stat']->do_else = false;
+?>
                 <tr>
-                    <td>{$stat.cnom}</td>
-                    <td>{$stat.nom}</td>
-                    <td>{$stat.secteur}</td>
-                    <td>{$stat.ville}</td>
-                    <td>{$stat.temps}</td>
-                    <td>{$stat.deb}</td>
-                    <td>{$stat.fin}</td>
-                    <td>{$stat.heure}</td>
-                    <td>{$stat.euro}</td>
-                    <td>{$stat.place}</td>
-                    <td>{$stat.temps}</td>
-                    <td>{$stat.NombreLikes}</td>
-                    <td>{$stat.NombreApplications}</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['cnom'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['nom'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['secteur'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['ville'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['temps'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['deb'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['fin'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['heure'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['euro'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['place'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['temps'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['NombreLikes'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['NombreApplications'];?>
+</td>
                 </tr>
-              {/foreach}
+              <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </table>
             </div>
 
@@ -128,4 +180,5 @@
 
     </div>
 </body>
-</html>
+</html><?php }
+}
