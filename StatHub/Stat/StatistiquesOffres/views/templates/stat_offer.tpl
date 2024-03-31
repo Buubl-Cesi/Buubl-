@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUUBL | STATISTIQUES DASHBOARD</title>
-    <link rel="stylesheet" type="text/css" href="../../../style.css?v=1">
+    <link rel="stylesheet" type="text/css" href="../stats.css?v=1">
 </head>
 <body>
     <div class = "container">
@@ -13,6 +13,8 @@
             <div class = "title-frame">
                 <h1>STATISTIQUES | Offres</h1>
             </div>
+
+
 
             <div class = "search-parameters">
                 <h2>Filtres pour votre recherche</h2>
@@ -101,8 +103,9 @@
                     <th>Nombre d'heures</th>
                     <th>Rémunération</th>
                     <th>Nombre de place</th>
+                    <th>Durée du stage</th>
                     <th>Like</th>
-                    <th>Postule</th>
+                    <th>Nombre de postulations</th>
                 </tr>
               {foreach $stats as $stat}
                 <tr>

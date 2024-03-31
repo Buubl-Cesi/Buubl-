@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-03-30 17:31:55
+/* Smarty version 3.1.47, created on 2024-04-02 09:30:56
   from 'C:\Users\flori\Desktop\Buubl-\StatHub\Stat\StatistiquesEntreprises\views\templates\stat_company.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_66083e7b599c95_23222541',
+  'unifunc' => 'content_660bb430e7cd32_25992349',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '79d06e1a6f8b1d7bde116cd5c407c9a06c8fabde' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\StatHub\\Stat\\StatistiquesEntreprises\\views\\templates\\stat_company.tpl',
-      1 => 1711816313,
+      1 => 1712043052,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66083e7b599c95_23222541 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660bb430e7cd32_25992349 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,8 +28,7 @@ function content_66083e7b599c95_23222541 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUUBL | STATISTIQUES DASHBOARD</title>
 
-    <link rel="stylesheet" type="text/css" href="../../../style.css?v=1">
-
+    <link rel="stylesheet" type="text/css" href="../stats.css?v=1">
 </head>
 <body>
     <div class = "container">
@@ -84,7 +83,7 @@ function content_66083e7b599c95_23222541 (Smarty_Internal_Template $_smarty_tpl)
 
                             <div class = "parameter">
                             <label class = "Parameter-label">Paramètre de recherche :</label>
-                            <input type="text" name="nom" placeholder="Entrez un potentiel paramètre ici.">
+                            <input type="text" name="parameter" placeholder="Entrez un potentiel paramètre ici.">
                             </div>
 
                             <div class="parameter">
@@ -129,13 +128,15 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['stat']->value) {
 $_smarty_tpl->tpl_vars['stat']->do_else = false;
 ?>
                     <tr>
-                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Nom'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['nom'];?>
 </td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Prenom'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['activite'];?>
 </td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Promotion'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['ville'];?>
 </td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Compteur'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['NombreApplications'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['note'];?>
 </td>
                     </tr>
                     <?php
