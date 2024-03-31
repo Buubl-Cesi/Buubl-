@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-03-31 16:12:06
+/* Smarty version 3.1.47, created on 2024-03-31 19:51:55
   from 'C:\Users\laine\Desktop\Serveur\StatHub\Stat\StatistiquesEtudiant\views\templates\stat_student.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_66096f36354241_98289759',
+  'unifunc' => 'content_6609a2bb110d25_56650185',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd4b0d53a8aba63a26babd6809ff28a395d86500d' => 
     array (
       0 => 'C:\\Users\\laine\\Desktop\\Serveur\\StatHub\\Stat\\StatistiquesEtudiant\\views\\templates\\stat_student.tpl',
-      1 => 1711894314,
+      1 => 1711895554,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66096f36354241_98289759 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6609a2bb110d25_56650185 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -55,10 +55,10 @@ function content_66096f36354241_98289759 (Smarty_Internal_Template $_smarty_tpl)
                             <div>
                                 <input type="radio" id="Surname" name="Orderby" value="Surname" />
                                 <label for="Localisation">Prénom</label>
-                            </div>
+                            </div> 
                         
                             <div>
-                                <input type="radio" id="Promotion" name="OrderByCrease" value="Promotion" />
+                                <input type="radio" id="Promotion" name="Orderby" value="Promotion" />
                                 <label for="Bestoffer">Promotion</label>
                             </div>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-03-31 17:36:49
+/* Smarty version 3.1.47, created on 2024-03-31 19:51:47
   from 'C:\Users\laine\Desktop\Serveur\StatHub\Stat\StatistiquesEntreprises\views\templates\stat_company.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_66098311d46f97_43802124',
+  'unifunc' => 'content_6609a2b39fc869_78519504',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a0da2029fb767d5e8750ef28ed2406ca029ab25c' => 
     array (
       0 => 'C:\\Users\\laine\\Desktop\\Serveur\\StatHub\\Stat\\StatistiquesEntreprises\\views\\templates\\stat_company.tpl',
-      1 => 1711899408,
+      1 => 1711904739,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66098311d46f97_43802124 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6609a2b39fc869_78519504 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>

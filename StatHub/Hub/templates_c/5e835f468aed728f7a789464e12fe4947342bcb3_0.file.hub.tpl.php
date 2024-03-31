@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-03-31 20:01:15
+  from 'C:\Users\laine\Desktop\Serveur\StatHub\Hub\views\templates\hub.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_6609a4eb187c28_60179663',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5e835f468aed728f7a789464e12fe4947342bcb3' => 
+    array (
+      0 => 'C:\\Users\\laine\\Desktop\\Serveur\\StatHub\\Hub\\views\\templates\\hub.tpl',
+      1 => 1711908073,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6609a4eb187c28_60179663 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -19,16 +42,20 @@
 
                 <div class = "stats-frame">
                     <h4>Nombre d'utilisateur:</h4>
-                    <label class="stats-result">{$stats.NombreUtilisateurs}</label>
+                    <label class="stats-result"><?php echo $_smarty_tpl->tpl_vars['stats']->value['NombreUtilisateurs'];?>
+</label>
                     
                     <h4>Nombre d'entreprise:</h4>
-                    <label class="stats-result">{$stats.NombreCompagnies}</label>
+                    <label class="stats-result"><?php echo $_smarty_tpl->tpl_vars['stats']->value['NombreCompagnies'];?>
+</label>
                     
                     <h4>Nombre d'offre:</h3>
-                    <label class="stats-result">{$stats.NombreInternships}</label>
+                    <label class="stats-result"><?php echo $_smarty_tpl->tpl_vars['stats']->value['NombreInternships'];?>
+</label>
                     
                     <h4>Stats générales 4:</h4>
-                    <label class="stats-result">{$stats.NombreStudent}</label>
+                    <label class="stats-result"><?php echo $_smarty_tpl->tpl_vars['stats']->value['NombreUtilisateurs'];?>
+</label>
                 </div>
             </div>
         </div>
@@ -50,3 +77,5 @@
     </div>
 </body>
 </html>
+<?php }
+}

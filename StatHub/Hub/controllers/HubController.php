@@ -20,6 +20,6 @@ class HubController {
 
 }
 $pdo = Connexion();
-$controller = new HubController($pdo);
-$controller->showStats();
+$hubController = new HubController($pdo);
+$hubController->showStats();
 

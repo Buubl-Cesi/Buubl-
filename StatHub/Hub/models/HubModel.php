@@ -7,20 +7,13 @@ class HubModel {
     }
 
     public function getAllStat() {
-        $stmt = $this->pdo->prepare("SELECT 
-        COUNT(u.STUDENT_NAME) AS Nombre_de_noms,
-        COUNT(u.STUDENT_FNAME) AS Nombre_de_prenoms,
-        COUNT(DISTINCT p.PROMOTION_NAME) AS Nombre_de_promotions,
-        COUNT(s.STUDENTS_CMPT) AS Compteur_total
-    FROM
-        STUDENTS s
-    JOIN
-        _USER u ON s.ID_USER = u.ID_USER
-    LEFT JOIN
-        PROMOTION p ON s.ID_PROMOTION = p.ID_PROMOTION;");
+    $stmt = $this->pdo->prepare("SELECT 
+        (SELECT COUNT(*) FROM USERS) AS NombreUtilisateurs,
+        (SELECT COUNT(*) FROM COMPANY) AS NombreCompagnies,
+        (SELECT COUNT(*) FROM INTERNSHIP) AS NombreInternships
+        (SELECT COUNT(*) FROM STUDENT) AS NombreStudent;");
 
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
     }
 }

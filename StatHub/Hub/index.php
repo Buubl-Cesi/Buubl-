@@ -14,6 +14,6 @@ function Connexion() {
 
 // Affichage initial
 $pdo = Connexion();
-$companyController = new HubController($pdo);
+$hubController = new HubController($pdo);
 
 
