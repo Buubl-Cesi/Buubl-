@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
     <link rel="stylesheet" href="admin.css">
     <title>Document</title>
@@ -26,39 +26,40 @@
                 </div>
             
                 <div class="logo">
-                <a href="accueil">
-                    <img src="Images/logo.png" alt="Logo" id="logo">
-                </a>
-            </div>
-            
-            <div class="menu1">
-                <div class="page"> 
-                <a href="#accueil">Accueil</a>
-                <a href="#services">Offre</a>
-                <a href="#apropos">Entreprise</a>
-                <a href="#contact">Demande</a>
-                <a href="#contact">Profil</a>
+                    <a href="accueil">
+                        <img src="Images/logo.png" alt="Logo" id="logo">
+                    </a>
                 </div>
-                <a href="like">
-                    <img src="Images/coeur.png" alt="Coeur" class="coeur" id="coeur" onmouseover="changecoeur()" onmouseout="resetcoeur()">
-                </a>
-            </div>
             
-            
-            <div class="menu2">
-                <div class="hamburger-menu">
-                <a>
-                <img src="Images/slider.png" alt="menu" id="menuGR" onmouseover="changemenu()" onmouseout="resetmenu()" onclick="toggleMenu()">
-                </a>
-                </div>
-                <div class="menu" id="menu">
+                <div class="menu1">
+                    <div class="page"> 
                     <a href="#accueil">Accueil</a>
                     <a href="#services">Offre</a>
                     <a href="#apropos">Entreprise</a>
                     <a href="#contact">Demande</a>
                     <a href="#contact">Profil</a>
-                    <a href="like">Like</a>
-                </div> 
+                    </div>
+                    <a href="like">
+                        <img src="Images/coeur.png" alt="Coeur" class="coeur" id="coeur" onmouseover="changecoeur()" onmouseout="resetcoeur()">
+                    </a>
+                </div>
+
+
+                <div class="menu2">
+                    <div class="hamburger-menu">
+                        <a>
+                        <img src="Images/slider.png" alt="menu" id="menuGR" onmouseover="changemenu()" onmouseout="resetmenu()" onclick="toggleMenu()">
+                        </a>
+                    </div>
+                    <div class="menu" id="menu">
+                        <a href="#accueil">Accueil</a>
+                        <a href="#services">Offre</a>
+                        <a href="#apropos">Entreprise</a>
+                        <a href="#contact">Demande</a>
+                        <a href="#contact">Profil</a>
+                        <a href="like">Like</a>
+                    </div> 
+                </div>
             </div>
         </div>
         
@@ -239,7 +240,7 @@
                                         <div>
                                             <h3 class="text-data">Code Postal :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="number" placeholder="Exemple : 76000" max="98800" oninput="validateInput(this)" required>
+                                                <input class="text-fieldset" type="number" max="98800" oninput="validateInput(this)" required>
                                             </fieldset>
                                         </div>
 
@@ -442,7 +443,7 @@
                                     <div>
                                         <h3 class="text-data">Date de début :</h3>
                                         <fieldset class="fieldset-text">
-                                            <input class="text-fieldset" type="date" placeholder="Exemple : YYYY-MM-DD" required>
+                                            <input class="text-fieldset" type="date" required>
                                         </fieldset>
                                     </div>
         
