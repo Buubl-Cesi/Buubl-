@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-03-31 16:12:06
+  from 'C:\Users\laine\Desktop\Serveur\StatHub\Stat\StatistiquesEtudiant\views\templates\stat_student.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_66096f36354241_98289759',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'd4b0d53a8aba63a26babd6809ff28a395d86500d' => 
+    array (
+      0 => 'C:\\Users\\laine\\Desktop\\Serveur\\StatHub\\Stat\\StatistiquesEtudiant\\views\\templates\\stat_student.tpl',
+      1 => 1711894314,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_66096f36354241_98289759 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -32,10 +55,10 @@
                             <div>
                                 <input type="radio" id="Surname" name="Orderby" value="Surname" />
                                 <label for="Localisation">Prénom</label>
-                            </div> 
+                            </div>
                         
                             <div>
-                                <input type="radio" id="Promotion" name="Orderby" value="Promotion" />
+                                <input type="radio" id="Promotion" name="OrderByCrease" value="Promotion" />
                                 <label for="Bestoffer">Promotion</label>
                             </div>
 
@@ -90,19 +113,32 @@
                         <th>Nombre en wishlist</th>
                         <th>Nombre en application</th>
                     </tr>
-                    {foreach $stats as $stat}
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['stats']->value, 'stat');
+$_smarty_tpl->tpl_vars['stat']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['stat']->value) {
+$_smarty_tpl->tpl_vars['stat']->do_else = false;
+?>
                     <tr>
-                        <td>{$stat.Nom}</td>
-                        <td>{$stat.Prenom}</td>
-                        <td>{$stat.Promo}</td>
-                        <td>{$stat.Nombre_Likes}</td>
-                        <td>{$stat.Nombre_Stage}</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Nom'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Prenom'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Promo'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Nombre_Likes'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['stat']->value['Nombre_Stage'];?>
+</td>
                     </tr>
-                    {/foreach}
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </table>
             </div>
         </div>
     </div>
 </body>
 
-</html>
+</html><?php }
+}
