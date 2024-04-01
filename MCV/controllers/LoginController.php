@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('models/LoginModel.php');
 require_once('libs/Smarty.class.php');
 
@@ -17,11 +18,24 @@ class LoginController {
 
     public function verifyLogin($login, $password) {
         if ($this->model->checkmdp($login, $password)) {
-            echo "Connexion réussie!";
-        } else {
-            echo "Échec de la connexion. Veuillez vérifier vos identifiants.";
+            echo "Connexion réussie!<br>";
+            if ($this->model->checkadmin($login)) {
+                $_SESSION['id'] = $this->model->checkid($login);
+                $_SESSION['isLoggedIn'] = true;
+                $_SESSION['isAdmin'] = true;
+                print_r($_SESSION);
+            }
+            else{
+                $_SESSION['id'] = $this->model->checkid($login);
+                $_SESSION['isLoggedIn'] = true;
+                $_SESSION['isAdmin'] = false;
+                print_r($_SESSION);
+            }
+        } 
+        else {
+            echo "Échec de la connexion. Veuillez vérifier vos identifiants.<br>";
         }
-        $this->smarty->display('views/templates/login.tpl');
+        
     }
 }
 
@@ -32,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pdo = Connexion();
     $Controller = new LoginController($pdo);
     $Controller->verifyLogin($login, $password);
-    echo "verification";
 } 
 else {
     $pdo = Connexion();
