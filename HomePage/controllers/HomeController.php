@@ -24,11 +24,15 @@ class HomeController {
         $this->smarty->assign('LastAdded', $LastAdded);
         $this->smarty->assign('LastLiked', $LastApplied);
         $this->smarty->assign('PilotInfo', $PilotInfo);
-        
+
         $this->smarty->display('views/templates/hub.tpl');
     }
 }
+
 $pdo = Connexion();
 $homeController = new HomeController($pdo);
 $homeController->LoadPage();
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+   // ... Génération des pages pour chaque entreprise
+}
