@@ -22,10 +22,10 @@
 
                     <div class = "div-proposition">
                         <section class = "div-proposition-text">
-                            <h3>{$Last['INTERNSHIP_NAME']}</h3>
+                            <h3>{$Last['AddedNAME']}</h3>
                         </section>
                         <section class = "div-proposition-img">
-                            <img class="proposition-logo" src="{$Last['COMPANY_IMG']}" alt="Logo 1">
+                            <img class="proposition-logo" src="{$Last['AddedIMG']}" alt="Logo 1">
                         </section>
                     </div>
                 {/foreach}
@@ -35,14 +35,14 @@
             <section class = "section-demand">
                 <h1>Vos dernières demandes</h1>
 
-                {foreach $LastApplied as $Last}
+                {foreach $LastApplied as $Last2}
 
                     <div class = "div-proposition">
                         <section class = "div-proposition-text">
-                            <h3>{$Last['INTERNSHIP_NAME']}</h3>
+                            <h3>{$Last2['LikedNAME']}</h3>
                         </section>
                         <section class = "div-proposition-img">
-                            <img class="proposition-logo" src="{$Last['COMPANY_IMG']}" alt="Logo 1">
+                            <img class="proposition-logo" src="{$Last2['LikedIMG']}" alt="Logo 1">
                         </section>
                     </div>
                 {/foreach}
@@ -56,17 +56,18 @@
 
         <div class = "div-bottom">
 
+        {foreach $PilotInfo as $Pilot}
             <section class="section3">
                 <h2>A propos de votre pilote</h2>
-                <p>Nom : {$pilot['USERS_NAME']}</p>
-                <p>Prénom : {$pilot['USERS_FNAME']}</p>
-                <p>Contact : {$pilot['USERS_MAIL']}</p>
+                <p>Nom : {$Pilot['InfoNAME']}</p>
+                <p>Prénom : {$Pilot['InfoFNAME']}</p>
+                <p>Contact : {$Pilot['InfoMAIL']}</p>
             </section>
 
             <section class="section4">
-                <img class="profil" src="{$PilotInfo['USERS_IMG']}" alt="Profil">
+                <img class="profil" src="{$PilotInfo['InfoIMG']}" alt="Profil">
             </section>
-            
+        {/foreach}    
         </div>
         
     </main>
