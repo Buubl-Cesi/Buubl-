@@ -12,7 +12,6 @@ function Connexion() {
 }
 
 
-// Affichage initial
 $pdo = Connexion();
 $Controller = new OfferPageController($pdo);
 

@@ -11,13 +11,22 @@ class OfferPageController {
         $this->smarty = new Smarty;
     }
 
-
-    public function assign($var, $value) {
-        $this->smarty->assign($var, $value);
+    public function getSector() {
+        $sector = $this->model->getSector();
+        $this->smarty->assign('sector', $sector);
+        return $sector;
     }
 
+    public function getSkills() {
+        $skills = $this->model->getSkills();
+        $this->smarty->assign('skills', $skills);
+        return $skills;
+    }
+
+
+
     public function getNumberOffer() {
-        $numberOffer = $this->model->getNumberOffer(); // Ici ça récupère 
+        $numberOffer = $this->model->getNumberOffer();
         $this->smarty->assign('numberOffer', $numberOffer);
         return $numberOffer;
     }
@@ -30,11 +39,29 @@ class OfferPageController {
         return $offers;
     }
 
-    public function display($NumberPage, $currentPage, $data) {
+    public function getWithLimitParameters($currentPage, $limit) {
+        $name = $_POST['name'];
+        $sector = $_POST['sector'];
+        $skills = $_POST['skills'];
+        $city = $_POST['city'];
+        $duration = $_POST['duration'];
+
+        $offset = ($currentPage - 1) * $limit;
+        $offers = $this->model->getWithLimitParameters($limit, $offset, $name, $sector, $skills, $city, $duration);
+        $this->smarty->assign('offers', $offers);
+        return $offers;
+    }
+
+    public function display($NumberPage, $currentPage) {
         $this->smarty->assign('numberPages', $NumberPage);
         $this->smarty->assign('currentPage', $currentPage);
-        $this->smarty->assign('data', $data);
         $this->smarty->display('views/templates/search_offer.tpl');
+    }
+
+    public function generateOfferPage() {
+        $idOffer = $this->model->getIdOffer();
+        
+        return $idOffer;
     }
 }
 
@@ -44,7 +71,7 @@ $controller = new OfferPageController($pdo);
 
 // Valeurs utiles de la pagination
 $NumberOffer = $controller->getNumberOffer();
-$Limit = 6;
+$Limit = 3;
 
 // Calcul du nombre total de pages avec ceil()
 $NumberPage = ceil($NumberOffer / $Limit);
@@ -52,5 +79,9 @@ $NumberPage = ceil($NumberOffer / $Limit);
 // Obtenez le numéro de page actuel à partir de la requête GET
 $currentPage = isset($_GET['p']) ? intval($_GET['p']) : 1;
 
-$data = $controller->getOfferWithLimit($currentPage, $Limit);
-$controller->display($NumberPage, $currentPage, $data);
+$controller->getSector();
+$controller->getSkills();
+
+$controller->getOfferWithLimit($currentPage, $Limit);
+
+$controller->display($NumberPage, $currentPage);

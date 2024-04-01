@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-01 16:48:03
+/* Smarty version 3.1.47, created on 2024-04-01 17:59:34
   from 'C:\Users\flori\Desktop\Buubl-\Search_offer\views\templates\search_offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660ac9231cda05_85509682',
+  'unifunc' => 'content_660ad9e64f8f36_82327022',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '264781da574ea42a26938675bab8e7c2c84d18af' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Search_offer\\views\\templates\\search_offer.tpl',
-      1 => 1711982881,
+      1 => 1711987173,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660ac9231cda05_85509682 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660ad9e64f8f36_82327022 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -36,38 +36,70 @@ function content_660ac9231cda05_85509682 (Smarty_Internal_Template $_smarty_tpl)
     
     <div class="flex-container">
         <fieldset class="fieldset-left">
-        <div class="legend-right">Filtres de recherche :</div>
 
+            <div class="legend-right">Filtres de recherche :</div>
 
-        <div class="form-group"> 
-          <label>Secteur :</label>
-          <input type="text" placeholder="Nom de la Société" required>
-        </div>
-        <div class="form-group"> 
-            <label>Secteur :</label>
-            <input type="text" placeholder="Nom de la Société" required>
-          </div>
-          <div class="form-group"> 
-            <label>Secteur :</label>
-            <input type="text" placeholder="Nom de la Société" required>
-          </div>
-          <div class="form-group"> 
-            <label>Secteur :</label>
-            <input type="text" placeholder="Nom de la Société" required>
-          </div>
-          <div class="form-group"> 
-            <label>Secteur :</label>
-            <input type="text" placeholder="Nom de la Société" required>
-          </div>
-          <div class="form-group">
-            <label>Secteur :</label>
-            <input type="text" placeholder="Nom de la Société" required>
-          </div>
+            <form action="index.php" method="post">
 
-          <button class="custom-button">
-            Rechercher
-          </button>
+          
+              <div class="form-group"> 
+                <label>Nom de l'entreprise :</label>
+                <input class = "inputtxt" type="text" placeholder="Nom de l'entreprise">
+              </div>
 
+              <div class="form-group"> 
+                  <label>Secteur d'activité de l'entreprise :</label>
+                  
+                  <select name="sector">
+                      <option value="NoOne">Indiquez un secteur</option>
+
+                      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['sector']->value, 's');
+$_smarty_tpl->tpl_vars['s']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['s']->value) {
+$_smarty_tpl->tpl_vars['s']->do_else = false;
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_ACTIVITY'];?>
+"><?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_ACTIVITY'];?>
+</option>
+                      <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                  </select>
+              </div>
+
+              <div class="form-group"> 
+                  <label>Compétence demandée :</label>
+                  <select name="sector">
+                      <option value="NoOne">Indiquez une compétence</option>
+
+                      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['skills']->value, 's');
+$_smarty_tpl->tpl_vars['s']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['s']->value) {
+$_smarty_tpl->tpl_vars['s']->do_else = false;
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['s']->value['INTERNSHIP_SKILLS'];?>
+"><?php echo $_smarty_tpl->tpl_vars['s']->value['INTERNSHIP_SKILLS'];?>
+</option>
+                      <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label>Ville :</label>
+                  <input class = "inputtxt" type="text" placeholder="Nom de la Société">
+              </div>
+              <div class="form-group"> 
+                  <label>Durée :</label>
+                  <input class = "inputtxt" type="text" placeholder="Nom de la Société">
+              </div>
+              
+              <button class="custom-button">
+                Rechercher
+              </button>
+            </form>
         </fieldset>
       
       
@@ -78,6 +110,7 @@ function content_660ac9231cda05_85509682 (Smarty_Internal_Template $_smarty_tpl)
           
             <label>Résultat de votre recherche :<label>
             <div class="pagination">
+              <label class = "Legend-Pagination">Page :<label>
                 <?php if ($_smarty_tpl->tpl_vars['currentPage']->value > 1) {?>
                     <a href="?p=<?php echo $_smarty_tpl->tpl_vars['currentPage']->value-1;?>
 ">Précédent</a>
@@ -105,7 +138,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
 
              
             <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data']->value, 'offer');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['offers']->value, 'offer');
 $_smarty_tpl->tpl_vars['offer']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['offer']->value) {
 $_smarty_tpl->tpl_vars['offer']->do_else = false;

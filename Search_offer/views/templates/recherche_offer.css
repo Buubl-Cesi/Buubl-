@@ -2,20 +2,17 @@ body{
     background-color: #2A2B34;
     color: azure;
     font-family: Helvetica;
+    overflow: hidden;
 }
-
-.navbar.navbar-hidden {
-    transform: translateY(-200%); 
-}
-
 
 
 .flex-container {
-    display: flex;
-    justify-content: space-between; 
-    margin-top: 130px;
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 130px;
+  min-height: 80vh;
 }
-  
+
 .fieldset-left, .fieldset-right {
     flex: 1;
     margin: 0 1%; 
@@ -26,8 +23,9 @@ body{
     border: 1px solid #465257;
     border-radius: 8px; 
     display: flex;
+    flex-direction: column; 
     flex-wrap: wrap;
-    gap: 2%; 
+    gap: 2%;
     margin-bottom: 2%;
 }
 
@@ -37,7 +35,6 @@ body{
 }
  
 .legend-right{
-    margin-right: 40%;
     margin-bottom: 1%;
     font-weight: bold;
     font-size: 120%;
@@ -75,12 +72,13 @@ body{
     border-radius: 15px; 
     padding-left: 3%; 
     line-height: 350%; 
-    cursor: pointer; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
 }
 .click-box:hover{
   padding: 1%;
   cursor: pointer; 
-  transition: all 0.3s ease; 
+  
 }
 
 .click-box img {
@@ -93,63 +91,66 @@ body{
 }
   
 .custom-button {
-    margin-top: 8%;
-    width: 100%; 
-    color: black; 
-    border: 2px solid white;
-    background-color: white; 
-    font-size: 100%; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    transition: all 0.3s ease; 
+  margin-top: 8%;
+  width: 100%; 
+  color: black; 
+  border: 2px solid white;
+  background-color: white; 
+  font-size: 100%; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
 }
     
 .custom-button:hover {
-    background-color: grey; 
-    border-color: grey;
+  background-color: grey; 
+  border-color: grey;
 }
 
-a {
-    color: white; 
-    text-decoration: none; 
+a, .Legend-Pagination {
+  color: white;
+  font-size: 0.8em;
+  text-decoration: none;
 }
 
 .active {
   color : grey;
 }
 
-@media screen and (min-width: 280px) and (max-width: 1024px) {
+.pagination {
+  margin-top:3%;
+}
 
-  .navbar {
-    margin-top: 2%;
-    margin-bottom: 2%;
+.Legend-Pagination {
+  font-size: 0.8em;
+}
+
+
+@media screen and (max-width: 1024px) {
+
+  body{
+    overflow: auto;
   }
 
   .flex-container {
     flex-direction: column; 
   }
 
-  
-  
   .fieldset-left{
     background-color: #465257;
-    border: 1px solid #465257;
     border-radius: 8px; 
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2%; 
     margin-bottom: 2%;
+    height: 80vh;
   }
+
   .fieldset-right{
     background-color: #2A2B34;
-    border: 1px solid #2A2B34;
   }
  
   .legend-right{
     margin-bottom: 3%;
     font-weight: bold;
     font-size: 120%;
-    width: 100%;
   }
 
   .legend-left{
