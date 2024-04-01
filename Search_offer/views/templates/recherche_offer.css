@@ -1,0 +1,219 @@
+body{
+    background-color: #2A2B34;
+    color: azure;
+    font-family: Helvetica;
+}
+
+.navbar.navbar-hidden {
+    transform: translateY(-200%); 
+}
+
+
+
+.flex-container {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 130px;
+}
+  
+.fieldset-left, .fieldset-right {
+    flex: 1;
+    margin: 0 1%; 
+}
+
+.fieldset-left{
+    background-color: #465257;
+    border: 1px solid #465257;
+    border-radius: 8px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%; 
+    margin-bottom: 2%;
+}
+
+.fieldset-right{
+    background-color: #2A2B34;
+    border: 1px solid #2A2B34;
+}
+ 
+.legend-right{
+    margin-right: 40%;
+    margin-bottom: 1%;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.legend-left{
+    margin-bottom: 3%;
+    font-weight: bold;
+    font-size: 150%;
+}
+  
+.form-group {
+    width: 48%;
+    margin-bottom: 1%;
+}
+
+.form-group label {
+    display: block; 
+    margin-bottom: 1%; 
+    color: white; 
+    font-size: 80%;
+} 
+  
+.form-group input {
+    width: 80%;  
+    padding: 5%; 
+    border: 1px solid #ccc; 
+    border-radius: 7px;  
+}
+
+.click-box {
+    background-color: #39415A;
+    border: 1px solid #596469;
+    margin-bottom: 4%;
+    border-radius: 15px; 
+    padding-left: 3%; 
+    line-height: 350%; 
+    cursor: pointer; 
+}
+.click-box:hover{
+  padding: 1%;
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+}
+
+.click-box img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 15px; 
+    right: 4%;
+    margin-top: 0.8%;
+}
+  
+.custom-button {
+    margin-top: 8%;
+    width: 100%; 
+    color: black; 
+    border: 2px solid white;
+    background-color: white; 
+    font-size: 100%; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+    
+.custom-button:hover {
+    background-color: grey; 
+    border-color: grey;
+}
+
+a {
+    color: white; 
+    text-decoration: none; 
+}
+
+.active {
+  color : grey;
+}
+
+@media screen and (min-width: 280px) and (max-width: 1024px) {
+
+  .navbar {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .flex-container {
+    flex-direction: column; 
+  }
+
+  
+  
+  .fieldset-left{
+    background-color: #465257;
+    border: 1px solid #465257;
+    border-radius: 8px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%; 
+    margin-bottom: 2%;
+  }
+  .fieldset-right{
+    background-color: #2A2B34;
+    border: 1px solid #2A2B34;
+  }
+ 
+  .legend-right{
+    margin-bottom: 3%;
+    font-weight: bold;
+    font-size: 120%;
+    width: 100%;
+  }
+
+  .legend-left{
+    margin-bottom: 3%;
+    font-weight: bold;
+    font-size: 150%;
+  }
+  
+  .form-group {
+    width: 48%;
+    margin-bottom: 1%;
+  }
+
+  .form-group label {
+    display: block; 
+    margin-bottom: 1%; 
+    color: white; 
+    font-size: 80%;
+  } 
+  
+  .form-group input {
+    width: 80%;  
+    padding: 2%; 
+    border: 1px solid #ccc; 
+    border-radius: 7px;  
+  }
+
+
+.click-box {
+    background-color: #39415A;
+    border: 1px solid #596469;
+    margin-bottom: 4%;
+    border-radius: 15px; 
+    padding-left: 3%; 
+    line-height: 350%; 
+    cursor: pointer; 
+}
+
+
+.click-box img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 15px; 
+    right: 4%;
+    margin-top: 0.8%;
+}
+  
+    .custom-button {
+        margin-top: 4%;
+        width: 100%; 
+        color: black; 
+        border: 2px solid white;
+        background-color: white; 
+        padding: 2%; 
+        font-size: 80%; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        transition: all 0.3s ease; 
+    }
+    
+    .custom-button:hover {
+        background-color: grey; 
+        border-color: grey;
+    }
+}
+   
