@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-01 00:58:16
+/* Smarty version 3.1.47, created on 2024-04-01 01:56:33
   from 'C:\Users\laine\Desktop\Buubl-\MCV\views\templates\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_6609ea88b6d9d6_31539601',
+  'unifunc' => 'content_6609f831030e84_11449988',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58e362acf1ac129811cfdd5a2834cfb71b91cdab' => 
     array (
       0 => 'C:\\Users\\laine\\Desktop\\Buubl-\\MCV\\views\\templates\\Login.tpl',
-      1 => 1711925889,
+      1 => 1711929388,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6609ea88b6d9d6_31539601 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6609f831030e84_11449988 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +52,7 @@ function content_6609ea88b6d9d6_31539601 (Smarty_Internal_Template $_smarty_tpl)
                     <p class="text-title-2">Identification</p>
                     <div>
                         <fieldset>
-                            <input type="text" id="email" name="Email" placeholder="Email" required>
+                            <input type="text" id="email" name="login" placeholder="Email" required>
                         </fieldset>
                         <p><a class="text-login-forgot" href="google.com">Adresse email oublié ?</a></p>
 

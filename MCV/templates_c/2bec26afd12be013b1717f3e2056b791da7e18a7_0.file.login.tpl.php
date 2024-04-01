@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-04-01 16:12:47
+  from 'C:\Users\laine\Desktop\Buubl-\MCV\views\templates\login.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_660ac0df476c03_58762734',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2bec26afd12be013b1717f3e2056b791da7e18a7' => 
+    array (
+      0 => 'C:\\Users\\laine\\Desktop\\Buubl-\\MCV\\views\\templates\\login.tpl',
+      1 => 1711980761,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660ac0df476c03_58762734 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +29,9 @@
     <title>Bubbl-Login</title>
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
     <link rel="stylesheet" href="views/templates/login.css">
-    <script src="views/templates/login.js"></script>
+    <?php echo '<script'; ?>
+ src="views/templates/login.js"><?php echo '</script'; ?>
+>
 </head>
 <body>
     <header>
@@ -67,4 +92,5 @@
         </section>
     </main>
 </body>
-</html>
+</html><?php }
+}

@@ -7,15 +7,22 @@ class LoginModel {
     }
 
     public function checkmdp($login, $password) {
-        $stmt = $this->pdo->prepare("SELECT USERS_PASSWORD FROM USERS WHERE USERS_LOGIN = :logi");
-        $stmt->bindParam(':logi', $login);
-        $stmt->execute();
-        
-        if ($row = $stmt->fetch()) {
-            if (password_verify($password, $row['USERS_PASSWORD'])) {
-                return true; 
+        if (!empty($login)) {
+            $stmt = $this->pdo->prepare("SELECT USERS_PASSWORD AS mdp FROM USERS WHERE USERS_LOGIN = :logi");
+            $stmt->bindParam(':logi', $login);
+            $stmt->execute();
+            $row = $stmt->fetch();
+    
+            if ($password == $row['mdp']) {
+                echo "AAA";
+                return true;
+            } else {
+                echo "rrr";
+                return false;
             }
+        } else {
+            echo "rrr";
+            return false;
         }
-        return false; 
     }
 }

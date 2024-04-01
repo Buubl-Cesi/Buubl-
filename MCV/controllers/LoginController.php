@@ -11,23 +11,32 @@ class LoginController {
         $this->smarty = new Smarty;
     }
 
-    public function verifyLogin() {
-        $this->smarty->display('views/templates/Login.tpl');
-        $login = $_POST['login'];
-        $password = $_POST['password'];
-        
-        
+    public function showLog() {
+        $this->smarty->display('views/templates/login.tpl');
+    }
+
+    public function verifyLogin($login, $password) {
         if ($this->model->checkmdp($login, $password)) {
             echo "Connexion réussie!";
         } else {
             echo "Échec de la connexion. Veuillez vérifier vos identifiants.";
         }
+        $this->smarty->display('views/templates/login.tpl');
     }
-    
-
 }
-$pdo = Connexion();
-$Controller = new LoginController($pdo);
-$Controller->verifyLogin();
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $login = isset($_POST["login"]) ? $_POST["login"] : '';
+    $password = isset($_POST["Password"]) ? $_POST["Password"] : '';
 
+    $pdo = Connexion();
+    $Controller = new LoginController($pdo);
+    $Controller->verifyLogin($login, $password);
+    echo "verification";
+} 
+else {
+    $pdo = Connexion();
+    $Controller = new LoginController($pdo);
+    $Controller->showLog();
+    echo "non verification";
+}
