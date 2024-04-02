@@ -1,25 +1,25 @@
 function changelike_img() {
-    document.getElementById('like_img').src = 'Images/coeur-bleu.png'; 
+    document.getElementById('like_img').src = '../Images/coeur-bleu.png'; 
 }
 
 function resetlike_img() {
-    document.getElementById('like_img').src = 'Images/coeur.png'; 
+    document.getElementById('like_img').src = '../Images/coeur.png'; 
 }
 
 function changesearch_img() {
-    document.getElementById('search_img').src = 'Images/loupe-bleu.png'; 
+    document.getElementById('search_img').src = '../Images/loupe-bleu.png'; 
 }
 
 function resetsearch_img() {
-    document.getElementById('search_img').src = 'Images/loupe.png'; 
+    document.getElementById('search_img').src = '../Images/loupe.png'; 
 }
 
 function changemenu() {
-    document.getElementById('menuGR').src = 'Images/slider-bleu.png'; 
+    document.getElementById('menuGR').src = '../Images/slider-bleu.png'; 
 }
 
 function resetmenu() {
-    document.getElementById('menuGR').src = 'Images/slider.png'; 
+    document.getElementById('menuGR').src = '../Images/slider.png'; 
 }
 
 /*----------------Afficher navbar------------------------------------------------*/
@@ -88,13 +88,13 @@ function updateImageSource() {
     var image = document.getElementById('logo');
   
     if (width < 2000 && width > 1300) {
-      image.src = 'Images/logo.png';
+      image.src = '../Images/logo.png';
     } 
     else if (width < 1300 && width > 400) {
-      image.src = 'Images/mini-logo.png';
+      image.src = '../Images/mini-logo.png';
     }
     else if (width < 400){
-      image.src = 'Images/mini-logo.png';
+      image.src = '../Images/mini-logo.png';
     }
     
     

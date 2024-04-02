@@ -3,7 +3,7 @@
 
 /*--------------------------navbar-grande------------------------------------------------------------------------------------*/
 
-.navbar {
+.monTemplateSpecifiqueId .navbar {
     position: fixed; 
     font-family: Arial, sans-serif;
     display: flex;
@@ -18,19 +18,19 @@
     z-index: 1000;
 }
 
-.search_img {
+.monTemplateSpecifiqueId .search_img {
     width: 40px;
     height: auto;
     margin: 10px;
     margin-top: 25%;
 }
 
-.search-box {
+.monTemplateSpecifiqueId .search-box {
     width: 150px; 
     margin-right: 22%;
 }
 
-.search-box input {
+.monTemplateSpecifiqueId .search-box input {
     border-radius: 15px; 
     height: 25px;
     border: 0px;
@@ -38,22 +38,22 @@
     width: 100%;
 }
 
-.menu1 {   
+.monTemplateSpecifiqueId .menu1 {   
     display: block;  
 }
 
 @media (max-width: 2000px) {
-    .menu2 {   
+    .monTemplateSpecifiqueId .menu2 {   
         display: none;  
     }
 
-    .page{
+    .monTemplateSpecifiqueId .page{
         position: absolute;
         right: 6%;
         top: 22px;
         }
 
-    .like_img {
+    .monTemplateSpecifiqueId .like_img {
         position: absolute;
         width: 30px;
         top: 17px;
@@ -61,58 +61,58 @@
         
     }
         
-    .navbar a {
+    .monTemplateSpecifiqueId .navbar a {
         color: #fff; 
         padding: 0 10px;
         text-decoration: none;
     }
         
-    .navbar a:hover {
+    .monTemplateSpecifiqueId .navbar a:hover {
         transition: 0.3s;
         color: #7fb7f8; 
     }
 
-    .logo {
+    .monTemplateSpecifiqueId .logo {
         position: absolute;
         left: 43%;
         top: -6px;
         text-decoration: none;
     }
     
-    .logo img{
+    .monTemplateSpecifiqueId .logo img{
         max-width: 150px;
     }
     
-    .logo:hover {
+    .monTemplateSpecifiqueId .logo:hover {
         transform: scale(1.1);
     }
     
 }
 
 @media (max-width: 1300px) {
-    .menu1{
+    .monTemplateSpecifiqueId .menu1{
         display: none;
     }
-    .menu2{
+    .monTemplateSpecifiqueId .menu2{
         display: block;
     }
     
-    .logo {
+    .monTemplateSpecifiqueId .logo {
         position: absolute;
         left: 50%;
         top: -10px;
         text-decoration: none;
     }
     
-    .logo img{
+    .monTemplateSpecifiqueId .logo img{
         max-width: 75px;
     }
     
-    .logo:hover {
+    .monTemplateSpecifiqueId .logo:hover {
         transform: scale(1.1);
     }
 
-    .hamburger-menu {  
+    .monTemplateSpecifiqueId .hamburger-menu {  
         position: absolute;
         left: 92%;
         top: 0%;
@@ -120,17 +120,17 @@
         z-index: 1001; 
     }
     
-    .hamburger-menu img{
+    .monTemplateSpecifiqueId .hamburger-menu img{
         width: 45px;
     }
     
-    .navbarGR a {
+    .monTemplateSpecifiqueId .navbarGR a {
         color: #fff; 
         padding: 0 10px;
         text-decoration: none;
     }
     
-    .menu {
+    .monTemplateSpecifiqueId .menu {
         display: none;
         position: fixed; 
         margin-top: 35px; 
@@ -144,7 +144,7 @@
         border-radius: 10px;
     }
     
-    .menu a {
+    .monTemplateSpecifiqueId .menu a {
         display: block; 
         padding: 20px; 
         border-bottom: 1px solid #ddd; 
@@ -153,13 +153,13 @@
         border-radius: 10px;
     }
     
-    .menu a:hover {
+    .monTemplateSpecifiqueId .menu a:hover {
         background-color: #cecece; 
         border-radius: 10px;
         color: #333; 
     }
     
-    .menu.show {
+    .monTemplateSpecifiqueId .menu.show {
         display: block;
     }
 
@@ -167,14 +167,14 @@
 }
 
 @media (max-width: 800px) {
-    .menu1{
+    .monTemplateSpecifiqueId .menu1{
         display: none;
     }
-    .menu2{
+    .monTemplateSpecifiqueId .menu2{
         display: block;
     }
 
-    .navbar {
+    .monTemplateSpecifiqueId .navbar {
         position: absolute;
         font-family: Arial, sans-serif;
         display: flex;
@@ -189,18 +189,18 @@
         z-index: 1000;
     }
     
-    .search_img {
+    .monTemplateSpecifiqueId .search_img {
         width: 30px;
         margin: 10px;
         margin-top: 28%;
     }
     
-    .search-box {
+    .monTemplateSpecifiqueId .search-box {
         width: 120px; 
         
     }
     
-    .search-box input {
+    .monTemplateSpecifiqueId .search-box input {
         border-radius: 15px; 
         height: 25px;
         border: 0px;
@@ -208,39 +208,39 @@
         width: 100%;
     }
     
-    .logo {
+    .monTemplateSpecifiqueId .logo {
         position: absolute;
         left: 50%;
         top: -11px;
         text-decoration: none;
     }
     
-    .logo img{
+    .monTemplateSpecifiqueId .logo img{
         max-width: 70px;
     }
     
-    .logo:hover {
+    .monTemplateSpecifiqueId .logo:hover {
         transform: scale(1.1);
     }
 
-    .hamburger-menu {  
+    .monTemplateSpecifiqueId .hamburger-menu {  
         position: absolute;
         left: 89%;
         top: 5px;
         z-index: 1001; 
     }
     
-    .hamburger-menu img{
+    .monTemplateSpecifiqueId .hamburger-menu img{
         width: 40px;
     }
     
-    .navbarGR a {
+    .monTemplateSpecifiqueId .navbarGR a {
         color: #fff; 
         padding: 0 10px;
         text-decoration: none;
     }
     
-    .menu {
+    .monTemplateSpecifiqueId .menu {
         display: none;
         position: fixed; 
         margin-top: 35px; 
@@ -254,7 +254,7 @@
         border-radius: 10px;
     }
     
-    .menu a {
+    .monTemplateSpecifiqueId .menu a {
         display: block; 
         padding: 20px; 
         border-bottom: 1px solid #ddd; 
@@ -263,13 +263,13 @@
         border-radius: 10px;
     }
     
-    .menu a:hover {
+    .monTemplateSpecifiqueId .menu a:hover {
         background-color: #cecece; 
         border-radius: 10px;
         color: #333; 
     }
     
-    .menu.show {
+    .monTemplateSpecifiqueId .menu.show {
         display: block;
     }
 
@@ -278,14 +278,14 @@
 
 
 @media (max-width: 500px) {
-    .menu1{
+    .monTemplateSpecifiqueId .menu1{
         display: none;
     }
-    .menu2{
+    .monTemplateSpecifiqueId .menu2{
         display: block;
     }
 
-    .navbar {
+    .monTemplateSpecifiqueId .navbar {
         position: absolute;
         font-family: Arial, sans-serif;
         display: flex;
@@ -300,18 +300,18 @@
         z-index: 1000;
     }
     
-    .search_img {
+    .monTemplateSpecifiqueId .search_img {
         width: 30px;
         margin: 10px;
         margin-top: 28%;
     }
     
-    .search-box {
+    .monTemplateSpecifiqueId .search-box {
         width: 120px; 
         
     }
     
-    .search-box input {
+    .monTemplateSpecifiqueId .search-box input {
         border-radius: 15px; 
         height: 25px;
         border: 0px;
@@ -319,39 +319,39 @@
         width: 100%;
     }
     
-    .logo {
+    .monTemplateSpecifiqueId .logo {
         position: absolute;
         left: 60%;
         top: -11px;
         text-decoration: none;
     }
     
-    .logo img{
+    .monTemplateSpecifiqueId .logo img{
         max-width: 70px;
     }
     
-    .logo:hover {
+    .monTemplateSpecifiqueId .logo:hover {
         transform: scale(1.1);
     }
 
-    .hamburger-menu {  
+    .monTemplateSpecifiqueId .hamburger-menu {  
         position: absolute;
         left: 84%;
         top: 5px;
         z-index: 1001; 
     }
     
-    .hamburger-menu img{
+    .monTemplateSpecifiqueId .hamburger-menu img{
         width: 40px;
     }
     
-    .navbarGR a {
+    .monTemplateSpecifiqueId .navbarGR a {
         color: #fff; 
         padding: 0 10px;
         text-decoration: none;
     }
     
-    .menu {
+    .monTemplateSpecifiqueId .menu {
         display: none;
         position: fixed; 
         margin-top: 35px; 
@@ -365,7 +365,7 @@
         border-radius: 10px;
     }
     
-    .menu a {
+    .monTemplateSpecifiqueId .menu a {
         display: block; 
         padding: 20px; 
         border-bottom: 1px solid #ddd; 
@@ -374,17 +374,17 @@
         border-radius: 10px;
     }
     
-    .menu a:hover {
+    .monTemplateSpecifiqueId .menu a:hover {
         background-color: #cecece; 
         border-radius: 10px;
         color: #333; 
     }
     
-    .menu.show {
+    .monTemplateSpecifiqueId .menu.show {
         display: block;
     }
 }
 
-.navbar.navbar-hidden {
+.monTemplateSpecifiqueId .navbar.navbar-hidden {
     transform: translateY(-200%);
 }

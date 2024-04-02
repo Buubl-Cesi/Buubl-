@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-02 15:18:38
+/* Smarty version 3.1.47, created on 2024-04-02 16:18:18
   from 'C:\Users\laine\Desktop\Buubl-\HomePage\views\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660c05aedafe35_76045984',
+  'unifunc' => 'content_660c13aaa08b15_01709633',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce77f91ca9784c2eebfbb760d721b765bdcd48c5' => 
     array (
       0 => 'C:\\Users\\laine\\Desktop\\Buubl-\\HomePage\\views\\templates\\home.tpl',
-      1 => 1712063911,
+      1 => 1712067462,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660c05aedafe35_76045984 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660c13aaa08b15_01709633 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,7 +34,6 @@ function content_660c05aedafe35_76045984 (Smarty_Internal_Template $_smarty_tpl)
 <body>
     <header>
     </header>
-
     <main>
         <div class = "container-offer">
 
@@ -126,6 +125,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php echo '<script'; ?>
  src = "views/templates/home.js"><?php echo '</script'; ?>
 >
+
 </body>
 </html><?php }
 }

@@ -11,7 +11,6 @@
 <body>
     <header>
     </header>
-
     <main>
         <div class = "container-offer">
 
@@ -72,5 +71,6 @@
         
     </main>
     <script src = "views/templates/home.js"></script>
+
 </body>
 </html>
