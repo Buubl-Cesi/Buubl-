@@ -71,6 +71,6 @@
         </div>
         
     </main>
-    <script src = "home.js"></script>
+    <script src = "views/templates/home.js"></script>
 </body>
 </html>

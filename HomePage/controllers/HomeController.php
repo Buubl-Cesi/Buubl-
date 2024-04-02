@@ -22,7 +22,8 @@ class HomeController {
         $this->smarty->assign('LastAdded', $LastAdded);
         $this->smarty->assign('LastLiked', $LastApplied);
         $this->smarty->assign('PilotInfo', $PilotInfo);
-
+        
+        $this->smarty->display('views/templates/navbar.tpl');
         $this->smarty->display('views/templates/home.tpl');
     }
 }

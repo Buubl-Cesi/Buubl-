@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-04-02 15:18:38
+  from 'C:\Users\laine\Desktop\Buubl-\HomePage\views\templates\navbar.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_660c05aed7a873_37678057',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a4084d62af0b27f2c52493e106720dcb79cc9f10' => 
+    array (
+      0 => 'C:\\Users\\laine\\Desktop\\Buubl-\\HomePage\\views\\templates\\navbar.tpl',
+      1 => 1712063916,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660c05aed7a873_37678057 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -59,6 +82,10 @@
     </div> 
 </div>
 </div>
-<script src="views/templates/Navbar.js"></script>
+<?php echo '<script'; ?>
+ src="views/templates/Navbar.js"><?php echo '</script'; ?>
+>
 </body>
 </html>
+<?php }
+}
