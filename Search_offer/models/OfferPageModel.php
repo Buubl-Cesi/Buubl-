@@ -88,14 +88,15 @@ class OfferPageModel {
     
 
     public function getWithLimitParameters($limit, $offset, $name, $sector, $skills, $city, $duration) {
-        $sql = "SELECT
+        $sql = ("SELECT
         I.INTERNSHIP_NAME,
         C.COMPANY_IMG
         FROM INTERNSHIP I
         JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
         JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
         JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-        WHERE 1=1";
+        WHERE 1=1
+        LIMIT :offset, :Limit;");
 
         $params = array();
 
