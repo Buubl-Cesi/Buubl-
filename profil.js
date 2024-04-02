@@ -17,14 +17,11 @@ document.getElementById('selecteurFichier').addEventListener('change', function(
                 
                 var ctx = canvas.getContext('2d');
                 
-                // Calcule le point de départ pour le redécoupage
                 var startX = (img.width - taille) / 2;
                 var startY = (img.height - taille) / 2;
                 
-                // Dessine l'image redécoupée sur le canvas
                 ctx.drawImage(img, startX, startY, taille, taille, 0, 0, taille, taille);
                 
-                // Met à jour l'image sur la page avec la nouvelle image redécoupée
                 document.getElementById('imageCliquee').src = canvas.toDataURL();
             };
             
@@ -39,9 +36,9 @@ document.getElementById('selecteurFichier').addEventListener('change', function(
 document.addEventListener("DOMContentLoaded", function() {
     var bouton = document.getElementById("boutonGriser");
     var champs = document.querySelectorAll("input[type='text']");
-    var estActive = false; // Initialisation à false pour indiquer que les champs sont désactivés
+    var estActive = false; 
 
-    // Fonction pour désactiver les champs
+ 
     function desactiverChamps() {
         champs.forEach(function(champ) {
             champ.disabled = true;
@@ -49,13 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Désactiver les champs au chargement de la page
     desactiverChamps();
 
     bouton.addEventListener("click", function() {
-        estActive = !estActive; // Inverse l'état à chaque clic
+        estActive = !estActive; 
 
-        // Active ou désactive les champs
         champs.forEach(function(champ) {
             champ.disabled = !estActive;
             if (!estActive) {
@@ -65,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Change le style et le texte du bouton selon l'état
         if (estActive) {
             bouton.classList.add("bouton-actif");
             bouton.textContent = "Sauvegarder";
@@ -75,6 +69,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-
-
