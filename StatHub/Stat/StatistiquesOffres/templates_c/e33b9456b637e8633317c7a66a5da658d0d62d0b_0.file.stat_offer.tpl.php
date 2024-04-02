@@ -1,18 +1,30 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.47, created on 2024-04-02 09:30:31
+=======
+/* Smarty version 3.1.47, created on 2024-03-31 21:39:23
+>>>>>>> 3486ef35fa84d6ec47190391f872fc977cbff2f0
   from 'C:\Users\flori\Desktop\Buubl-\StatHub\Stat\StatistiquesOffres\views\templates\stat_offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
+<<<<<<< HEAD
   'unifunc' => 'content_660bb417489bc0_33418245',
+=======
+  'unifunc' => 'content_6609bbebd7e0d2_43189719',
+>>>>>>> 3486ef35fa84d6ec47190391f872fc977cbff2f0
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e33b9456b637e8633317c7a66a5da658d0d62d0b' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\StatHub\\Stat\\StatistiquesOffres\\views\\templates\\stat_offer.tpl',
+<<<<<<< HEAD
       1 => 1712043016,
+=======
+      1 => 1711913962,
+>>>>>>> 3486ef35fa84d6ec47190391f872fc977cbff2f0
       2 => 'file',
     ),
   ),
@@ -20,7 +32,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_660bb417489bc0_33418245 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_6609bbebd7e0d2_43189719 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> 3486ef35fa84d6ec47190391f872fc977cbff2f0
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
