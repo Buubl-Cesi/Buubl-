@@ -6,14 +6,6 @@ function resetlike_img() {
     document.getElementById('like_img').src = 'Images/coeur.png'; 
 }
 
-function changesearch_img() {
-    document.getElementById('search_img').src = 'Images/loupe-bleu.png'; 
-}
-
-function resetsearch_img() {
-    document.getElementById('search_img').src = 'Images/loupe.png'; 
-}
-
 function changemenu() {
     document.getElementById('menuGR').src = 'Images/slider-bleu.png'; 
 }
@@ -22,19 +14,23 @@ function resetmenu() {
     document.getElementById('menuGR').src = 'Images/slider.png'; 
 }
 
-function change_logo() {
-    var largeurFenetre = window.innerWidth; 
-    var monImage = document.getElementById('logoad'); 
+  function updateImageSource() {
+    var width = window.innerWidth;
+    var image = document.getElementById('logoad');
   
-    if (largeurFenetre < 1450) { 
-      monImage.src = 'Images/logo-admin_min.png';
-    }  
-    else { 
-      monImage.src = 'Images/logo-admin.png';
+    if (width < 2000 && width > 900) {
+      image.src = 'Images/logo-admin.png';
+    } 
+    else if (width < 900 && width > 400) {
+      image.src = 'Images/logo-admin.png';
+    }
+    else if (width < 400){
+      image.src = 'Images/logo-admin_min.png';
     }
   }
-  window.addEventListener('resize', change_logo);
-  change_logo();
+  window.addEventListener('resize', updateImageSource);
+  updateImageSource();
+
 
 let pagetop = true;
 let menus = false;

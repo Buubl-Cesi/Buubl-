@@ -87,11 +87,11 @@ function updateImageSource() {
     var width = window.innerWidth;
     var image = document.getElementById('logo');
   
-    if (width < 2000 && width > 1300) {
+    if (width < 2000 && width > 800) {
       image.src = 'Images/logo.png';
     } 
-    else if (width < 1300 && width > 400) {
-      image.src = 'Images/mini-logo.png';
+    else if (width < 800 && width > 400) {
+      image.src = 'Images/logo.png';
     }
     else if (width < 400){
       image.src = 'Images/mini-logo.png';
