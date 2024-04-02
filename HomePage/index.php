@@ -14,6 +14,6 @@ function Connexion() {
 
 // Affichage initial
 $pdo = Connexion();
-$hubController = new HomeController($pdo);
+$homeController = new HomeController($pdo);
 
 

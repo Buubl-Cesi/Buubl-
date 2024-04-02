@@ -42,7 +42,7 @@
                             <h3>{$Last2['LikedNAME']}</h3>
                         </section>
                         <section class = "div-proposition-img">
-                            <img class="proposition-logo" src="{$Last2['LikedIMG']}" alt="Logo 1">
+                            <img class="proposition-logo" src="{$Last2['LikedIMG']}" alt="Logo 2">
                         </section>
                     </div>
                 {/foreach}
@@ -65,7 +65,7 @@
             </section>
 
             <section class="section4">
-                <img class="profil" src="{$PilotInfo['InfoIMG']}" alt="Profil">
+                <img class="profil" src="{$Pilot['InfoIMG']}" alt="Profil">
             </section>
         {/foreach}    
         </div>
