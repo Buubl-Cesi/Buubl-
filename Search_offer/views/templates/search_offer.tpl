@@ -69,20 +69,26 @@
           <div class="legend-left">
           
             <label>Résultat de votre recherche :<label>
+            
+            <div class="filters">
+              {foreach $parameters as $key => $value}
+                <label class = "small-label">{$key}: {$value}/</label>
+              {/foreach}
+            </div>
+            
             <div class="pagination">
-              <label class = "Legend-Pagination">Page :<label>
+            <label class="Legend-Pagination">Page :<label>
                 {if $currentPage > 1}
-                    <a href="?p={$currentPage-1}">Précédent</a>
+                    <a href="?{$queryString}&p={$currentPage-1}">Précédent</a>
                 {/if}
 
                 {for $i = 1 to $numberPages}
-                    <a href="?p={$i}" {if $i == $currentPage}class="active"{/if}>{$i}</a>
+                    <a href="?{$queryString}&p={$i}" {if $i == $currentPage}class="active"{/if}>{$i}</a>
                 {/for}
 
                 {if $currentPage < $numberPages}
-                    <a href="?p={$currentPage+1}">Suivant</a>
+                    <a href="?{$queryString}&p={$currentPage+1}">Suivant</a>
                 {/if}
-
             </div>
           </div>
 

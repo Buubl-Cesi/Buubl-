@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-02 22:56:38
+/* Smarty version 3.1.47, created on 2024-04-02 23:35:53
   from 'C:\Users\flori\Desktop\Buubl-\Search_offer\views\templates\search_offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660c7106ef8063_26084553',
+  'unifunc' => 'content_660c7a39190bb9_37851475',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '264781da574ea42a26938675bab8e7c2c84d18af' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Search_offer\\views\\templates\\search_offer.tpl',
-      1 => 1712091396,
+      1 => 1712093750,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660c7106ef8063_26084553 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660c7a39190bb9_37851475 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -110,10 +110,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           <div class="legend-left">
           
             <label>Résultat de votre recherche :<label>
+            
+            <div class="filters">
+              <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['parameters']->value, 'value', false, 'key');
+$_smarty_tpl->tpl_vars['value']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['value']->value) {
+$_smarty_tpl->tpl_vars['value']->do_else = false;
+?>
+                <label class = "small-label"><?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+: <?php echo $_smarty_tpl->tpl_vars['value']->value;?>
+/</label>
+              <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </div>
+            
             <div class="pagination">
-              <label class = "Legend-Pagination">Page :<label>
+            <label class="Legend-Pagination">Page :<label>
                 <?php if ($_smarty_tpl->tpl_vars['currentPage']->value > 1) {?>
-                    <a href="?p=<?php echo $_smarty_tpl->tpl_vars['currentPage']->value-1;?>
+                    <a href="?<?php echo $_smarty_tpl->tpl_vars['queryString']->value;?>
+&p=<?php echo $_smarty_tpl->tpl_vars['currentPage']->value-1;?>
 ">Précédent</a>
                 <?php }?>
 
@@ -122,7 +139,8 @@ $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderin
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
-                    <a href="?p=<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+                    <a href="?<?php echo $_smarty_tpl->tpl_vars['queryString']->value;?>
+&p=<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
 " <?php if ($_smarty_tpl->tpl_vars['i']->value == $_smarty_tpl->tpl_vars['currentPage']->value) {?>class="active"<?php }?>><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
 </a>
                 <?php }
@@ -130,10 +148,10 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
 ?>
 
                 <?php if ($_smarty_tpl->tpl_vars['currentPage']->value < $_smarty_tpl->tpl_vars['numberPages']->value) {?>
-                    <a href="?p=<?php echo $_smarty_tpl->tpl_vars['currentPage']->value+1;?>
+                    <a href="?<?php echo $_smarty_tpl->tpl_vars['queryString']->value;?>
+&p=<?php echo $_smarty_tpl->tpl_vars['currentPage']->value+1;?>
 ">Suivant</a>
                 <?php }?>
-
             </div>
           </div>
 

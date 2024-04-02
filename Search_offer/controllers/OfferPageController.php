@@ -59,10 +59,26 @@ class OfferPageController {
         $idOffer = $this->model->getIdOffer();
         return $idOffer;
     }
+
+    public function GiveParameters($name, $sector, $skill, $city, $duration) {
+        $parameters = array(
+            'name' => $name,
+            'sector' => $sector,
+            'skill' => $skill,
+            'city' => $city,
+            'duration' => $duration
+        );
+
+        $this->smarty->assign('parameters', $parameters);
+    }
+
+    public function assignRequest($request) {
+        $this->smarty->assign('queryString', $request);
+    }
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    // Récupérer les paramètres de recherche et de pagination depuis l'URL
+    
     $name = isset($_GET["name"]) ? $_GET["name"] : '';
     $sector = isset($_GET["sector"]) ? $_GET["sector"] : 'NoOne';
     $skill = isset($_GET["skill"]) ? $_GET["skill"] : 'NoOne';
@@ -70,14 +86,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $duration = isset($_GET["duration"]) ? $_GET["duration"] : '';
     $page = isset($_GET['p']) ? intval($_GET['p']) : 1;
 
-    // Code pour la pagination
-    $limit = 3;
+    $limit = 6;
     $offset = ($page - 1) * $limit;
 
     $pdo = Connexion();
     $controller = new OfferPageController($pdo);
 
-    // Effectuer la recherche avec les paramètres ou récupérer toutes les offres si aucun paramètre de recherche n'est spécifié
+    $queryParams = $_GET;
+    unset($queryParams['p']);
+    $queryString = http_build_query($queryParams);
+    
+    $controller->assignRequest($queryString);
+    
     if (empty($name) && $sector == "NoOne" && $skill == "NoOne" && empty($city) && empty($duration)) {
         $NumberOffer = $controller->getNumberOffer();
         $offers = $controller->getOfferWithLimit($page, $limit);
@@ -86,11 +106,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $offers = $controller->getWithLimitParameters($page, $limit, $name, $sector, $skill, $city, $duration);
     }
 
-    // Calculer le nombre de pages nécessaires pour la pagination
     $NumberPage = ceil($NumberOffer / $limit);
 
-    // Afficher les résultats
     $controller->getSector();
     $controller->getSkills();
+    $controller->GiveParameters($name, $sector, $skill, $city, $duration);
     $controller->display($NumberPage, $page);
 }
