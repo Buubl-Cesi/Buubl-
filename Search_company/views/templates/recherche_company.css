@@ -73,8 +73,13 @@ body{
     padding-left: 3%; 
     line-height: 350%; 
     cursor: pointer;
-    transition: all 0.3s ease; 
-}
+    transition: all 0.3s ease;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+  }
+
 .click-box:hover{
   padding: 1%;
   cursor: pointer; 
@@ -129,6 +134,26 @@ a, .Legend-Pagination {
   font-size: 17px;
 }
 
+.info-company {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-company label,
+.info-company .description {
+  margin-bottom: 5px; /* Réduisez la marge en bas */
+  line-height: 1.2; /* Ajustez la hauteur de ligne */
+}
+
+.description {
+  font-size : 0.8em;
+}
+
+.img {
+  max-width: 100px; /* Ajustez cette valeur en fonction de la taille souhaitée pour l'image */
+  height: auto;
+  border : 1px solid white;
+}
 
 @media screen and (max-width: 1024px) {
 

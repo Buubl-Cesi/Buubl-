@@ -81,9 +81,14 @@
              
             {foreach $company as $c}
               <div class="click-box">
-                {$c.COMPANY_NAME}
-                <p class="description">{$c.COMPANY_DESCRIPTION}</p>
-                <img class="img" src="{$c.COMPANY_IMG}" alt="logo_entreprise">
+                <div class = "info-company">
+                  <label>{$c.COMPANY_NAME}</label>
+                  <p class="description">{$c.COMPANY_DESCRIPTION}</p>
+                </div>
+
+                <div>
+                  <img class="img" src="{$c.COMPANY_IMG}" alt="logo_entreprise">
+                </div>
               </div>
             {/foreach}
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-03 00:33:47
+/* Smarty version 3.1.47, created on 2024-04-03 00:41:26
   from 'C:\Users\flori\Desktop\Buubl-\Search_company\views\templates\search_company.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660c87cba35ef7_35429503',
+  'unifunc' => 'content_660c8996abf2e5_89630038',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99cc58e0f3bbff1cd72d32eb8b71b65cc343c729' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Search_company\\views\\templates\\search_company.tpl',
-      1 => 1712097226,
+      1 => 1712097583,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660c87cba35ef7_35429503 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660c8996abf2e5_89630038 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -140,12 +140,17 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['c']->value) {
 $_smarty_tpl->tpl_vars['c']->do_else = false;
 ?>
               <div class="click-box">
-                <?php echo $_smarty_tpl->tpl_vars['c']->value['COMPANY_NAME'];?>
-
-                <p class="description"><?php echo $_smarty_tpl->tpl_vars['c']->value['COMPANY_DESCRIPTION'];?>
+                <div class = "info-company">
+                  <label><?php echo $_smarty_tpl->tpl_vars['c']->value['COMPANY_NAME'];?>
+</label>
+                  <p class="description"><?php echo $_smarty_tpl->tpl_vars['c']->value['COMPANY_DESCRIPTION'];?>
 </p>
-                <img class="img" src="<?php echo $_smarty_tpl->tpl_vars['c']->value['COMPANY_IMG'];?>
+                </div>
+
+                <div>
+                  <img class="img" src="<?php echo $_smarty_tpl->tpl_vars['c']->value['COMPANY_IMG'];?>
 " alt="logo_entreprise">
+                </div>
               </div>
             <?php
 }
