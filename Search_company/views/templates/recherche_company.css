@@ -141,8 +141,8 @@ a, .Legend-Pagination {
 
 .info-company label,
 .info-company .description {
-  margin-bottom: 5px; /* Réduisez la marge en bas */
-  line-height: 1.2; /* Ajustez la hauteur de ligne */
+  margin-bottom: 5px;
+  line-height: 1.2;
 }
 
 .description {
