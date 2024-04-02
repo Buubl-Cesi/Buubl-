@@ -23,14 +23,17 @@ class OfferPageController {
         return $skills;
     }
 
-
-
     public function getNumberOffer() {
         $numberOffer = $this->model->getNumberOffer();
         $this->smarty->assign('numberOffer', $numberOffer);
         return $numberOffer;
     }
 
+    public function getNumberOfferWithParameters($name, $sector, $skills, $city, $duration) {
+        $numberOffer = $this->model->getNumberOfferWithParameters($name, $sector, $skills, $city, $duration);
+        $this->smarty->assign('numberOffer', $numberOffer);
+        return $numberOffer;
+    }
 
     public function getOfferWithLimit($currentPage, $limit) {
         $offset = ($currentPage - 1) * $limit;
@@ -39,15 +42,9 @@ class OfferPageController {
         return $offers;
     }
 
-    public function getWithLimitParameters($currentPage, $limit) {
-        $name = $_POST['name'];
-        $sector = $_POST['sector'];
-        $skills = $_POST['skills'];
-        $city = $_POST['city'];
-        $duration = $_POST['duration'];
-
+    public function getWithLimitParameters($currentPage, $limit, $name, $sector, $skill, $city, $duration) {
         $offset = ($currentPage - 1) * $limit;
-        $offers = $this->model->getWithLimitParameters($limit, $offset, $name, $sector, $skills, $city, $duration);
+        $offers = $this->model->getWithLimitParameters($limit, $offset, $name, $sector, $skill, $city, $duration);
         $this->smarty->assign('offers', $offers);
         return $offers;
     }
@@ -60,28 +57,40 @@ class OfferPageController {
 
     public function generateOfferPage() {
         $idOffer = $this->model->getIdOffer();
-        
         return $idOffer;
     }
 }
 
-// connexion et instanciation du controller pour récupérer les méthodes
-$pdo = Connexion();
-$controller = new OfferPageController($pdo);
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    // Récupérer les paramètres de recherche et de pagination depuis l'URL
+    $name = isset($_GET["name"]) ? $_GET["name"] : '';
+    $sector = isset($_GET["sector"]) ? $_GET["sector"] : 'NoOne';
+    $skill = isset($_GET["skill"]) ? $_GET["skill"] : 'NoOne';
+    $city = isset($_GET["city"]) ? $_GET["city"] : '';
+    $duration = isset($_GET["duration"]) ? $_GET["duration"] : '';
+    $page = isset($_GET['p']) ? intval($_GET['p']) : 1;
 
-// Valeurs utiles de la pagination
-$NumberOffer = $controller->getNumberOffer();
-$Limit = 3;
+    // Code pour la pagination
+    $limit = 3;
+    $offset = ($page - 1) * $limit;
 
-// Calcul du nombre total de pages avec ceil()
-$NumberPage = ceil($NumberOffer / $Limit);
+    $pdo = Connexion();
+    $controller = new OfferPageController($pdo);
 
-// Obtenez le numéro de page actuel à partir de la requête GET
-$currentPage = isset($_GET['p']) ? intval($_GET['p']) : 1;
+    // Effectuer la recherche avec les paramètres ou récupérer toutes les offres si aucun paramètre de recherche n'est spécifié
+    if (empty($name) && $sector == "NoOne" && $skill == "NoOne" && empty($city) && empty($duration)) {
+        $NumberOffer = $controller->getNumberOffer();
+        $offers = $controller->getOfferWithLimit($page, $limit);
+    } else {
+        $NumberOffer = $controller->getNumberOfferWithParameters($name, $sector, $skill, $city, $duration);
+        $offers = $controller->getWithLimitParameters($page, $limit, $name, $sector, $skill, $city, $duration);
+    }
 
-$controller->getSector();
-$controller->getSkills();
+    // Calculer le nombre de pages nécessaires pour la pagination
+    $NumberPage = ceil($NumberOffer / $limit);
 
-$controller->getOfferWithLimit($currentPage, $Limit);
-
-$controller->display($NumberPage, $currentPage);
+    // Afficher les résultats
+    $controller->getSector();
+    $controller->getSkills();
+    $controller->display($NumberPage, $page);
+}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-01 17:59:34
+/* Smarty version 3.1.47, created on 2024-04-02 22:56:38
   from 'C:\Users\flori\Desktop\Buubl-\Search_offer\views\templates\search_offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660ad9e64f8f36_82327022',
+  'unifunc' => 'content_660c7106ef8063_26084553',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '264781da574ea42a26938675bab8e7c2c84d18af' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Search_offer\\views\\templates\\search_offer.tpl',
-      1 => 1711987173,
+      1 => 1712091396,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660ad9e64f8f36_82327022 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660c7106ef8063_26084553 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -39,12 +39,13 @@ function content_660ad9e64f8f36_82327022 (Smarty_Internal_Template $_smarty_tpl)
 
             <div class="legend-right">Filtres de recherche :</div>
 
-            <form action="index.php" method="post">
+            <form action="" method="GET">
 
-          
+              
+              
               <div class="form-group"> 
                 <label>Nom de l'entreprise :</label>
-                <input class = "inputtxt" type="text" placeholder="Nom de l'entreprise">
+                <input class = "inputtxt" name = "name" type="text" placeholder="Nom de l'entreprise">
               </div>
 
               <div class="form-group"> 
@@ -70,7 +71,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
               <div class="form-group"> 
                   <label>Compétence demandée :</label>
-                  <select name="sector">
+                  <select name="skill">
                       <option value="NoOne">Indiquez une compétence</option>
 
                       <?php
@@ -89,19 +90,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
               </div>
               <div class="form-group">
                   <label>Ville :</label>
-                  <input class = "inputtxt" type="text" placeholder="Nom de la Société">
+                  <input name = "city" class = "inputtxt" type="text" placeholder="Nom de la Société">
               </div>
               <div class="form-group"> 
                   <label>Durée :</label>
-                  <input class = "inputtxt" type="text" placeholder="Nom de la Société">
+                  <input name = "duration" class = "inputtxt" type="text" placeholder="Nom de la Société">
               </div>
               
-              <button class="custom-button">
-                Rechercher
-              </button>
+              <input type="submit" value="Rechercher">
+              <input type="hidden" name="p" value="1">
+
             </form>
         </fieldset>
-      
+</form>
       
       <fieldset class="fieldset-right">
         <div  class="genre">

@@ -16,12 +16,13 @@
 
             <div class="legend-right">Filtres de recherche :</div>
 
-            <form action="index.php" method="post">
+            <form action="" method="GET">
 
-          
+              
+              
               <div class="form-group"> 
                 <label>Nom de l'entreprise :</label>
-                <input class = "inputtxt" type="text" placeholder="Nom de l'entreprise">
+                <input class = "inputtxt" name = "name" type="text" placeholder="Nom de l'entreprise">
               </div>
 
               <div class="form-group"> 
@@ -38,7 +39,7 @@
 
               <div class="form-group"> 
                   <label>Compétence demandée :</label>
-                  <select name="sector">
+                  <select name="skill">
                       <option value="NoOne">Indiquez une compétence</option>
 
                       {foreach $skills as $s}
@@ -48,19 +49,19 @@
               </div>
               <div class="form-group">
                   <label>Ville :</label>
-                  <input class = "inputtxt" type="text" placeholder="Nom de la Société">
+                  <input name = "city" class = "inputtxt" type="text" placeholder="Nom de la Société">
               </div>
               <div class="form-group"> 
                   <label>Durée :</label>
-                  <input class = "inputtxt" type="text" placeholder="Nom de la Société">
+                  <input name = "duration" class = "inputtxt" type="text" placeholder="Nom de la Société">
               </div>
               
-              <button class="custom-button">
-                Rechercher
-              </button>
+              <input type="submit" value="Rechercher">
+              <input type="hidden" name="p" value="1">
+
             </form>
         </fieldset>
-      
+</form>
       
       <fieldset class="fieldset-right">
         <div  class="genre">
