@@ -31,3 +31,4 @@ class HomeController {
 $pdo = Connexion();
 $homeController = new HomeController($pdo);
 $homeController->LoadPage();
+print_r($_SESSION);
