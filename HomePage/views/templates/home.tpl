@@ -71,6 +71,6 @@
         </div>
         
     </main>
-
+    <script src = "home.js"></script>
 </body>
 </html>

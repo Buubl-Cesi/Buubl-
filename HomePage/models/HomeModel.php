@@ -15,7 +15,7 @@ class HomeModel {
         JOIN APPLICATIONS A ON S.ID_STUDENTS = A.ID_STUDENTS 
         JOIN INTERNSHIP I ON A.ID_INTERNSHIP = I.ID_INTERNSHIP
         JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
-        ORDER BY A.ID_APPLICATION DESC LIMIT 4;");
+        ORDER BY A.ID_APPLICATIONS DESC LIMIT 4;");
         
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -31,7 +31,7 @@ class HomeModel {
         JOIN STUDENTS S ON A.ID_STUDENTS = S.ID_STUDENTS
         JOIN USERS U ON S.ID_STUDENTS = U.ID_STUDENTS 
         WHERE U.ID_USERS = :id_user  
-        ORDER BY A.ID_APPLICATION DESC LIMIT 4;");
+        ORDER BY A.ID_APPLICATIONS DESC LIMIT 4;");
 
         $stmt->bindParam(':id_user', $id);
         $stmt->execute();
