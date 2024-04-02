@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-02 11:11:00
+/* Smarty version 3.1.47, created on 2024-04-02 11:34:42
   from 'C:\Users\laine\Desktop\Buubl-\HomePage\views\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660bcba4b38853_97005869',
+  'unifunc' => 'content_660bd1325eb532_82385880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce77f91ca9784c2eebfbb760d721b765bdcd48c5' => 
     array (
       0 => 'C:\\Users\\laine\\Desktop\\Buubl-\\HomePage\\views\\templates\\home.tpl',
-      1 => 1712049057,
+      1 => 1712050479,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660bcba4b38853_97005869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660bd1325eb532_82385880 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -68,7 +68,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <h1>Vos dernières demandes</h1>
 
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['LastApplied']->value, 'Last2');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['LastLiked']->value, 'Last2');
 $_smarty_tpl->tpl_vars['Last2']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['Last2']->value) {
 $_smarty_tpl->tpl_vars['Last2']->do_else = false;

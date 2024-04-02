@@ -35,7 +35,7 @@
             <section class = "section-demand">
                 <h1>Vos dernières demandes</h1>
 
-                {foreach $LastApplied as $Last2}
+                {foreach $LastLiked as $Last2}
 
                     <div class = "div-proposition">
                         <section class = "div-proposition-text">
