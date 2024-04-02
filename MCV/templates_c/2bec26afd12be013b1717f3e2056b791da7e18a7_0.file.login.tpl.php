@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-01 17:58:56
+/* Smarty version 3.1.47, created on 2024-04-02 10:16:58
   from 'C:\Users\laine\Desktop\Buubl-\MCV\views\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660ad9c02c0d18_52912697',
+  'unifunc' => 'content_660bbefacebcc4_79125621',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2bec26afd12be013b1717f3e2056b791da7e18a7' => 
     array (
       0 => 'C:\\Users\\laine\\Desktop\\Buubl-\\MCV\\views\\templates\\login.tpl',
-      1 => 1711984773,
+      1 => 1712045815,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660ad9c02c0d18_52912697 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660bbefacebcc4_79125621 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +37,7 @@ function content_660ad9c02c0d18_52912697 (Smarty_Internal_Template $_smarty_tpl)
     <header>
         <img class="background-img-brand" src="Images/normal_u9.png" alt="Logo">
         <img class="background-img" src="Images/Login_image.png" alt="Chatting">
-        <img class="background-img-green" src="Images/1137799.png" alt="Kelp">
+        <img class="background-img-green" src="Images/Background.png" alt="Kelp">
         <img class="background-img-bubble" src="Images/normal_u22.png" alt="Bubble">
         <img class="background-img-turn" src="Images/turn.png" alt="Turn">
     </header>

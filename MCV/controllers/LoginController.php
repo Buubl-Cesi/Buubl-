@@ -35,7 +35,7 @@ class LoginController {
         else {
             echo "Échec de la connexion. Veuillez vérifier vos identifiants.<br>";
         }
-        
+        $this->smarty->display('views/templates/login.tpl');
     }
 }
 

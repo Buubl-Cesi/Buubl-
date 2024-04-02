@@ -12,7 +12,7 @@
     <header>
         <img class="background-img-brand" src="Images/normal_u9.png" alt="Logo">
         <img class="background-img" src="Images/Login_image.png" alt="Chatting">
-        <img class="background-img-green" src="Images/1137799.png" alt="Kelp">
+        <img class="background-img-green" src="Images/Background.png" alt="Kelp">
         <img class="background-img-bubble" src="Images/normal_u22.png" alt="Bubble">
         <img class="background-img-turn" src="Images/turn.png" alt="Turn">
     </header>

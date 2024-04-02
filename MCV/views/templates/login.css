@@ -291,9 +291,13 @@ input[type="checkbox"] {
         transform : translateX(-275px)
     }
 
+    .blue-box{
+        height: auto;
+    }
+
 }
 
-@media only screen and (max-device-width: 800px) and (max-width:800px) and (orientation: landscape) {
+@media only screen and (max-width: 800px) and (max-height:500px) and (orientation: landscape) {
     .background-img-green,
     .background-img,
     .background-img-bubble,
@@ -307,6 +311,13 @@ input[type="checkbox"] {
     }
 }
 
+@media screen and (min-width:1256px) and (max-width:1496px) {
+
+    .blue-box{
+        top: 10%;
+        height: 82.5%;
+    }
+}
 
 /*Media Queries Fullscreen*/
 /*Permet d'avoir un plein écran fonctionnel*/
@@ -397,5 +408,3 @@ input[type="checkbox"] {
 
 
 /*Reste de code non-utilisé*/
-
-
