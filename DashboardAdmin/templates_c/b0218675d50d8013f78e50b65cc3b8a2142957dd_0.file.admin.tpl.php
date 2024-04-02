@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-02 10:04:04
+/* Smarty version 3.1.47, created on 2024-04-02 11:53:23
   from 'C:\Server\Buubl-\DashboardAdmin\view\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660bbbf4d1e4a0_69908088',
+  'unifunc' => 'content_660bd593954473_86402755',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0218675d50d8013f78e50b65cc3b8a2142957dd' => 
     array (
       0 => 'C:\\Server\\Buubl-\\DashboardAdmin\\view\\admin.tpl',
-      1 => 1712045032,
+      1 => 1712051600,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660bd593954473_86402755 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +33,7 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
 <body>
     <header>
         <img class="background-img-green" src="Images/Background.png" alt="Kelp">
-        <img class="background-img-turn" src="Images/Images/turn.png" alt="Turn">
+        <img class="background-img-turn" src="Images/turn.png" alt="Turn">
     </header>
 
     <main>
@@ -96,7 +96,7 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
             </div>
             <section>
-                <form id="form1">
+                <form id="form1" method="post">
                     <fieldset class="fieldset-1">
                         <div>
                             <div>
@@ -110,21 +110,21 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
                                         <div>
                                             <h3 class="text-data">Nom :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : DAVID" required>
+                                                <input class="text-fieldset" type="text" name="prenom" placeholder="Exemple : DAVID" required>
                                             </fieldset>
                                         </div>
             
                                         <div>
                                             <h3 class="text-data">Prénom :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : Maxence" required>
+                                                <input class="text-fieldset" type="text" name="nom" placeholder="Exemple : Maxence" required>
                                             </fieldset>
                                         </div>
 
                                         <div>
                                             <h3 class="text-data">Adresse mail :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="email" placeholder="Exemple : email.t@test.fr" required>
+                                                <input class="text-fieldset" type="email" name="mail" placeholder="Exemple : email.t@test.fr" required>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -135,21 +135,21 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
                                         <div>
                                             <h3 class="text-data">Login :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : Jule20" required>
+                                                <input class="text-fieldset" type="text" name="login" placeholder="Exemple : Jule20" required>
                                             </fieldset>
                                         </div>
             
                                         <div>
                                             <h3 class="text-data">Mot de passe :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : 12345abcd" required>
+                                                <input class="text-fieldset" type="text" name="mdp" placeholder="Exemple : 12345abcd" required>
                                             </fieldset>
                                         </div>
 
                                         <div>
                                             <h3 class="text-data">Promotion :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : CPIA2" required>
+                                                <input class="text-fieldset" type="text" name="promotion" placeholder="Exemple : CPIA2" required>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -160,21 +160,21 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
                                         <div>
                                             <h3 class="text-data">Pays :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : France" required>
+                                                <input class="text-fieldset" type="text" name="pays" placeholder="Exemple : France" required>
                                             </fieldset>
                                         </div>
             
                                         <div>
                                             <h3 class="text-data">Code Postal :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="number" placeholder="Exemple : 76000" max="98800" oninput="validateInput(this)" required>
+                                                <input class="text-fieldset" type="number" name="cp" placeholder="Exemple : 76000" max="98800" oninput="validateInput(this)" required>
                                             </fieldset>
                                         </div>
 
                                         <div>
                                             <h3 class="text-data">Ville :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : Rouen" required>
+                                                <input class="text-fieldset" type="text" name="ville" placeholder="Exemple : Rouen" required>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -185,21 +185,21 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
                                         <div>
                                             <h3 class="text-data">Rue :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : 8 Rue du Four" required>
+                                                <input class="text-fieldset" type="text" name="rue" placeholder="Exemple : 8 Rue du Four" required>
                                             </fieldset>
                                         </div>
             
                                         <div>
                                             <h3 class="text-data">Numéro d'appartement :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : 1B" required>
+                                                <input class="text-fieldset" type="text" name="numap" placeholder="Exemple : 1B" required>
                                             </fieldset>
                                         </div>
 
                                         <div>
                                             <h3 class="text-data">Image de Profil :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="text" placeholder="Exemple : Lien vers l'image" required>
+                                                <input class="text-fieldset" type="text" name="pfp" placeholder="Exemple : Lien vers l'image" required>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
                     </fieldset>
                 </form>
 
-                <form id="form2">
+                <form id="form2" method="post">
                     <fieldset class="fieldset-1">
                         <div>
                             <div>
@@ -263,7 +263,7 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
                                         <div>
                                             <h3 class="text-data">Code Postal :</h3>
                                             <fieldset class="fieldset-text">
-                                                <input class="text-fieldset" type="number" max="98800" oninput="validateInput(this)" required>
+                                                <input class="text-fieldset" type="number" placeholder="Exemple : 76500" max="98800" oninput="validateInput(this)" required>
                                             </fieldset>
                                         </div>
 
@@ -314,7 +314,7 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
                 </form>
 
 
-            <form id="form3">
+            <form id="form3" method="post">
                 <fieldset class="fieldset-1">
                     <div>
                         <div>
@@ -427,7 +427,7 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
             </form>
 
 
-            <form id="form4">
+            <form id="form4" method="post">
                 <fieldset class="fieldset-1">
                     <div>
                         <div>
@@ -524,9 +524,8 @@ function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl)
             </form>
             </section>
         </div>
-
         <?php echo '<script'; ?>
- src="admin.js"><?php echo '</script'; ?>
+ src="view/admin.js"><?php echo '</script'; ?>
 >
     </main>
 </body>
