@@ -15,3 +15,4 @@ function Connexion() {
 $pdo = Connexion();
 $dashboardAController = new DashboardAController($pdo);
 
+?>

@@ -6,154 +6,68 @@ class DashboardAModel {
         $this->pdo = $pdo;
     }
 
-    public function getSector() {	
-        $stmt = $this->pdo->prepare("SELECT DISTINCT C.COMPANY_ACTIVITY FROM COMPANY C;");
-        $stmt->execute();
+    // public function getStudents(){
+    // }
+
+    public function affichage($name_student, $fname_student, $mail_student, $login_student, $password_student, $promotion_student, $country_student, $pc_student, $city_student, $street_student, $numap_student, $pfp_student){
+        echo $name_student, $fname_student, $mail_student, $login_student, $password_student, $promotion_student, $country_student, $pc_student, $city_student, $street_student, $numap_student, $pfp_student;
+    }
+    
+    public function createStudents($name_student, $fname_student, $mail_student, $login_student, $password_student, $promotion_student, $country_student, $pc_student, $city_student, $street_student, $numap_student, $pfp_student){
+        $stmt = $this->pdo->prepare("INSERT INTO COUNTRY (COUNTRY_NAME) VALUES (?);
+        INSERT INTO CITY (CITY_NAME, CITY_PC, ID_COUNTRY) VALUES (?, ?, (SELECT MAX(ID_COUNTRY) FROM COUNTRY));
+        INSERT INTO ADDRESS (ADDRESS_STREET, ADDRESS_NB_APPARTEMENT, ID_CITY) VALUES (?, ?, (SELECT MAX(ID_CITY) FROM CITY));
+        INSERT INTO STUDENTS (STUDENTS_STATUS, STUDENTS_CMPT, STUDENT_COVER_LETTER, STUDENT_PROMOTION) VALUES ('Actif', 10, 'Voici ma lettre de motivation...', ?);
+        INSERT INTO USERS (
+          USERS_NAME, 
+          USERS_FNAME, 
+          USERS_LOGIN, 
+          USERS_PASSWORD, 
+          USERS_MAIL, 
+          USERS_IMG, 
+          ID_ADDRESS, 
+          ID_PILOT,
+          ID_STUDENTS, 
+          ID_ADMIN
+        ) VALUES (
+          ?, 
+          ?, 
+          ?,
+          ?, 
+          ?, 
+          'chemin/vers/imageUser.png', 
+          (SELECT MAX(ID_ADDRESS) FROM ADDRESS), 
+          NULL,
+          (SELECT MAX(ID_STUDENTS) FROM STUDENTS), 
+          NULL
+        );");
+        
+        $stmt->execute([$country_student, $city_student, $pc_student, $street_student, $numap_student, $promotion_student, $name_student, $fname_student, $login_student, $password_student, $mail_student]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
 
-    public function getAllStat() {
-        $stmt = $this->pdo->prepare("SELECT 
-        C.COMPANY_NAME AS nom,
-        C.COMPANY_ACTIVITY AS activite, 
-        CT.CITY_NAME AS ville,
-        C.COMPANY_MARK AS note, 
-        COUNT(AP.ID_APPLICATION) AS NombreApplications
-        FROM COMPANY C
-        JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
-        JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-        JOIN INTERNSHIP I ON C.ID_COMPANY = I.ID_COMPANY
-        JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP
-        GROUP BY C.ID_COMPANY;");
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+    // public function updateStudents(){
+    //     $stmt = $this->pdo->prepare("
+        
+        
+        
+        
+    //     ")
+    //     $stmt->execute();
+    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // }
 
-    public function getAllStatWithParam($orderBy, $orderByCrease, $parameter, $sector) {
-        if ($orderBy == "Sector") {
-            if ($sector == "NoOne") {
-                // Appel de la fonction qui trie par secteur sans paramètre
-                $stmt = $this->pdo->prepare("SELECT 
-                C.COMPANY_NAME AS nom,
-                C.COMPANY_ACTIVITY AS activite, 
-                CT.CITY_NAME AS ville,
-                C.COMPANY_MARK AS note, 
-                COUNT(AP.ID_APPLICATION) AS NombreApplications
-                FROM COMPANY C
-                JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
-                JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-                JOIN INTERNSHIP I ON C.ID_COMPANY = I.ID_COMPANY
-                JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP
-                GROUP BY C.ID_COMPANY
-                ORDER BY C.COMPANY_ACTIVITY ASC;");
-            } else {
-                // Appel de la fonction qui trie par secteur avec paramètre
-                $stmt = $this->pdo->prepare("SELECT 
-                C.COMPANY_NAME AS nom,
-                C.COMPANY_ACTIVITY AS activite, 
-                CT.CITY_NAME AS ville,
-                C.COMPANY_MARK AS note, 
-                COUNT(AP.ID_APPLICATION) AS NombreApplications
-                FROM COMPANY C
-                JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
-                JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-                JOIN INTERNSHIP I ON C.ID_COMPANY = I.ID_COMPANY
-                JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP
-                WHERE C.COMPANY_ACTIVITY = :secteur
-                GROUP BY C.ID_COMPANY;");
-             $stmt->bindParam(':secteur', $sector);
-            }
-        } 
-        else if ($orderBy == "Graduation") {
-            if ($parameter == "") {
-                if ($orderByCrease == "Increasing") {
-                    // Appel de la fonction qui trie par note croissante 
-                    $stmt = $this->pdo->prepare("SELECT 
-                    C.COMPANY_NAME AS nom,
-                    C.COMPANY_ACTIVITY AS activite, 
-                    CT.CITY_NAME AS ville,
-                    C.COMPANY_MARK AS note, 
-                    COUNT(AP.ID_APPLICATION) AS NombreApplications
-                    FROM COMPANY C
-                    JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
-                    JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-                    JOIN INTERNSHIP I ON C.ID_COMPANY = I.ID_COMPANY
-                    JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP
-                    GROUP BY C.ID_COMPANY
-                    ORDER BY C.COMPANY_MARK ASC;");
-                    
-                       
-                } else if ($orderByCrease == "Decreasing") {
-                    // Appel de la fonction qui trie par note décroissante 
-                    $stmt = $this->pdo->prepare("SELECT 
-                    C.COMPANY_NAME AS nom,
-                    C.COMPANY_ACTIVITY AS activite, 
-                    CT.CITY_NAME AS ville,
-                    C.COMPANY_MARK AS note, 
-                    COUNT(AP.ID_APPLICATION) AS NombreApplications
-                    FROM COMPANY C
-                    JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
-                    JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-                    JOIN INTERNSHIP I ON C.ID_COMPANY = I.ID_COMPANY
-                    JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP
-                    GROUP BY C.ID_COMPANY
-                    ORDER BY C.COMPANY_MARK DESC;");
-                }
-            } else {
-                // Appel de la fonction qui trie par note avec paramètre
-                $stmt = $this->pdo->prepare("SELECT 
-                    C.COMPANY_NAME AS nom,
-                    C.COMPANY_ACTIVITY AS activite, 
-                    CT.CITY_NAME AS ville,
-                    C.COMPANY_MARK AS note, 
-                    COUNT(AP.ID_APPLICATION) AS NombreApplications
-                    FROM COMPANY C
-                    JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
-                    JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-                    JOIN INTERNSHIP I ON C.ID_COMPANY = I.ID_COMPANY
-                    JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP
-                    WHERE C.COMPANY_MARK = :parameter
-                    GROUP BY C.ID_COMPANY;");
-                $stmt->bindParam(':parameter', $parameter);
-            }
-        } 
-        else if ($orderBy == "NumberOffer") {
-            if ($orderByCrease == "Increasing") {
-                // Appel de la fonction qui trie par nombre offre croissante 
-                $stmt = $this->pdo->prepare("SELECT 
-                C.COMPANY_NAME AS nom,
-                C.COMPANY_ACTIVITY AS activite, 
-                CT.CITY_NAME AS ville,
-                C.COMPANY_MARK AS note, 
-                COUNT(AP.ID_APPLICATION) AS NombreApplications
-                FROM COMPANY C
-                JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
-                JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-                JOIN INTERNSHIP I ON C.ID_COMPANY = I.ID_COMPANY
-                JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP
-                GROUP BY C.ID_COMPANY
-                ORDER BY NombreApplications ASC;");
-                
-                   
-            } else if ($orderByCrease == "Decreasing") {
-                // Appel de la fonction qui trie par nombre offre décroissante 
-                $stmt = $this->pdo->prepare("SELECT 
-                C.COMPANY_NAME AS nom,
-                C.COMPANY_ACTIVITY AS activite, 
-                CT.CITY_NAME AS ville,
-                C.COMPANY_MARK AS note, 
-                COUNT(AP.ID_APPLICATION) AS NombreApplications
-                FROM COMPANY C
-                JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
-                JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
-                JOIN INTERNSHIP I ON C.ID_COMPANY = I.ID_COMPANY
-                JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP
-                GROUP BY C.ID_COMPANY
-                ORDER BY NombreApplications DESC;");
-                
-            }
-        }
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+    // public function deleteStudents(){
+    //     $stmt = $this->pdo->prepare("
+        
+        
+        
+        
+    //     ")
+    //     $stmt->execute();
+    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // }
+
+    
 }

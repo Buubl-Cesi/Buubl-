@@ -73,7 +73,7 @@
                 </div>
             </div>
             <section>
-                <form id="form1" method="post">
+                <form id="form1" method="post" action="DashboardAController.php">
                     <fieldset class="fieldset-1">
                         <div>
                             <div>
@@ -185,9 +185,9 @@
 
                             <div>
                                 <fieldset class="fieldset-button">
-                                    <button class="button" type="button">Ajouter</button>
-                                    <button class="button2" type="button">Modifier</button>
-                                    <button class="button3" type="button">Supprimer</button>
+                                <button class="button" type="submit" name="action" value="createStudent">Ajouter</button>
+                                <button class="button2" type="submit" name="action" value="updateStudent">Modifier</button>
+                                <button class="button3" type="submit" name="action" value="deleteStudent">Supprimer</button>
                                 </fieldset>
                             </div>
                         </div>
