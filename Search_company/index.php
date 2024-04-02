@@ -1,5 +1,5 @@
 <?php
-require_once('controllers/OfferPageController.php');
+require_once('controllers/CompanyPageController.php');
 
 function Connexion() {
     try {
@@ -13,5 +13,5 @@ function Connexion() {
 
 
 $pdo = Connexion();
-$Controller = new OfferPageController($pdo);
+$Controller = new CompanyPageController($pdo);
 

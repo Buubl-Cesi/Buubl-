@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="views/templates/recherche_offer.css">
-<title>RECHERCHE D'OFFRE</title>
+    <link rel="stylesheet" href="views/templates/recherche_company.css">
+<title>RECHERCHE D'ENTREPRISES</title>
 </head>
 
 <body>
@@ -37,23 +37,9 @@
                   </select>
               </div>
 
-              <div class="form-group"> 
-                  <label>Compétence demandée :</label>
-                  <select name="skill">
-                      <option value="NoOne">Indiquez une compétence</option>
-
-                      {foreach $skills as $s}
-                        <option value="{$s['INTERNSHIP_SKILLS']}">{$s['INTERNSHIP_SKILLS']}</option>
-                      {/foreach}
-                  </select>
-              </div>
               <div class="form-group">
                   <label>Ville :</label>
                   <input name = "city" class = "inputtxt" type="text" placeholder="Nom de la Société">
-              </div>
-              <div class="form-group"> 
-                  <label>Durée :</label>
-                  <input name = "duration" class = "inputtxt" type="text" placeholder="Nom de la Société">
               </div>
               
               <input type="submit" value="Rechercher">
@@ -93,10 +79,11 @@
           </div>
 
              
-            {foreach $offers as $offer}
+            {foreach $company as $c}
               <div class="click-box">
-                {$offer.INTERNSHIP_NAME}
-                <img class="img" src="{$offer.COMPANY_IMG}" alt="logo_entreprise">
+                {$c.COMPANY_NAME}
+                <p class="description">{$c.COMPANY_DESCRIPTION}</p>
+                <img class="img" src="{$c.COMPANY_IMG}" alt="logo_entreprise">
               </div>
             {/foreach}
 

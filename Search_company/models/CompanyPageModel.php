@@ -1,5 +1,5 @@
 <?php
-class OfferPageModel {
+class CompanyPageModel {
     private $pdo;
 
     public function __construct($pdo) {
@@ -7,31 +7,25 @@ class OfferPageModel {
     }
 
     public function getSector() {
-        $stmt = $this->pdo->prepare("SELECT DISTINCT COMPANY_ACTIVITY FROM internship NATURAL JOIN Company;");
+        $stmt = $this->pdo->prepare("SELECT DISTINCT COMPANY_ACTIVITY FROM Company;");
         $stmt->execute();
         $sector = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $sector;
     }
 
-    public function getSkills() {
-        $stmt = $this->pdo->prepare("SELECT DISTINCT INTERNSHIP_SKILLS FROM internship;");
-        $stmt->execute();
-        $skills = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $skills;
-    }
 
-    public function getNumberOffer() {
-        $stmt = $this->pdo->query("SELECT COUNT(ID_INTERNSHIP) AS NUMBER_ARTICLE FROM INTERNSHIP NATURAL JOIN COMPANY;");
+    public function getNumberCompany() {
+        $stmt = $this->pdo->query("SELECT COUNT(ID_COMPANY) AS NUMBER_ARTICLE FROM COMPANY;");
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return intval($result['NUMBER_ARTICLE']);
     }
 
-    public function getOfferWithLimit($limit, $offset)
+    public function getCompanyWithLimit($limit, $offset)
     {
-        $stmt = $this->pdo->prepare("SELECT INTERNSHIP_NAME, 
+        $stmt = $this->pdo->prepare("SELECT COMPANY_NAME,
+        COMPANY_DESCRIPTION,
         COMPANY_IMG 
-        FROM internship 
-        NATURAL JOIN Company
+        FROM Company
         LIMIT :offset, :Limit;");
         $stmt->bindParam(':Limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
@@ -40,13 +34,12 @@ class OfferPageModel {
         return $stmt;
     }
 
-    public function getNumberOfferWithParameters($name, $sector, $skill, $city, $duration) {
+    public function getNumberCompanyWithParameters($name, $sector, $city) {
         // Début de la requête SQL
         
         $sql = "SELECT
-            COUNT(I.ID_INTERNSHIP) AS NUMBER_OFFER
-            FROM INTERNSHIP I
-            JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
+            COUNT(C.ID_COMPANY) AS NUMBER_COMPANY
+            FROM COMPANY C
             JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
             JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
             WHERE 1=1";
@@ -56,7 +49,7 @@ class OfferPageModel {
     
         // Vérifiez chaque paramètre et ajoutez une condition à la requête si le paramètre n'est pas vide
         if (!empty($name)) {
-            $sql .= " AND COMPANY_NAME = :name";  // 'SECTOR' should be replaced with the actual column name
+            $sql .= " AND COMPANY_NAME = :name";
             $params[':name'] = $name;
         }
 
@@ -64,18 +57,12 @@ class OfferPageModel {
             $sql .= " AND COMPANY_ACTIVITY = :sector";
             $params[':sector'] = $sector;
         }
-        if ($skill !== "NoOne") {
-            $sql .= " AND INTERNSHIP_SKILLS = :skill";
-            $params[':skill'] = $skill;
-        }
+        
         if (!empty($city)) {
             $sql .= " AND CITY_NAME = :city";
             $params[':city'] = $city;
         }
-        if (!empty($duration)) {
-            $sql .= " AND INTERNSHIP_DURATION = :duration";
-            $params[':duration'] = $duration;
-        }
+        
     
         // Préparez et exécutez la requête SQL
         $stmt = $this->pdo->prepare($sql);
@@ -83,16 +70,16 @@ class OfferPageModel {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
     
         // Retournez le nombre d'offres
-        return $result !== false ? intval($result['NUMBER_OFFER']) : 0;
+        return $result !== false ? intval($result['NUMBER_COMPANY']) : 0;
     }
     
 
-    public function getWithLimitParameters($limit, $offset, $name, $sector, $skills, $city, $duration) {
+    public function getWithLimitParameters($limit, $offset, $name, $sector, $city) {
         $sql = "SELECT
-        I.INTERNSHIP_NAME,
+        C.COMPANY_NAME,
+        COMPANY_DESCRIPTION,
         C.COMPANY_IMG
-        FROM INTERNSHIP I
-        JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
+        FROM COMPANY C
         JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
         JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
         WHERE 1=1";
@@ -108,18 +95,12 @@ class OfferPageModel {
             $sql .= " AND COMPANY_ACTIVITY = :sector";
             $params[':sector'] = $sector;
         }
-        if ($skills !== "NoOne") {
-            $sql .= " AND INTERNSHIP_SKILLS = :skills";
-            $params[':skills'] = $skills;
-        }
+        
         if (!empty($city)) {
             $sql .= " AND CITY_NAME = :city";
             $params[':city'] = $city;
         }
-        if (!empty($duration)) {
-            $sql .= " AND INTERNSHIP_DURATION = :duration";
-            $params[':duration'] = $duration;
-        }
+        
 
         // Préparez et exécutez la requête SQL
         $stmt = $this->pdo->prepare($sql);
