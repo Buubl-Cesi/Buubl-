@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-02 10:00:55
+/* Smarty version 3.1.47, created on 2024-04-02 10:04:04
   from 'C:\Server\Buubl-\DashboardAdmin\view\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660bbb37ddf543_16620916',
+  'unifunc' => 'content_660bbbf4d1e4a0_69908088',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0218675d50d8013f78e50b65cc3b8a2142957dd' => 
     array (
       0 => 'C:\\Server\\Buubl-\\DashboardAdmin\\view\\admin.tpl',
-      1 => 1712044853,
+      1 => 1712045032,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660bbb37ddf543_16620916 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660bbbf4d1e4a0_69908088 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +32,8 @@ function content_660bbb37ddf543_16620916 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
     <header>
-        <img class="background-img-green" src="../../../Background.png" alt="Kelp">
-        <img class="background-img-turn" src="../../Images/turn.png" alt="Turn">
+        <img class="background-img-green" src="Images/Background.png" alt="Kelp">
+        <img class="background-img-turn" src="Images/Images/turn.png" alt="Turn">
     </header>
 
     <main>

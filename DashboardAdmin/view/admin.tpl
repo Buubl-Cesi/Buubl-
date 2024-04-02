@@ -10,7 +10,7 @@
 <body>
     <header>
         <img class="background-img-green" src="Images/Background.png" alt="Kelp">
-        <img class="background-img-turn" src="../../Images/turn.png" alt="Turn">
+        <img class="background-img-turn" src="Images/Images/turn.png" alt="Turn">
     </header>
 
     <main>
