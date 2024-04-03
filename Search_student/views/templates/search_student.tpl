@@ -33,7 +33,7 @@
                   <input class = "inputtxt" name = "promo"type="text" placeholder="Promotion de l'étudiant">
               </div>
               
-              <input type="submit" value="Rechercher">
+              <input type="submit" value="Rechercher" class ="Button-submit">
               <input type="hidden" name="p" value="1">
 
             </form>
@@ -73,14 +73,14 @@
             {foreach $student as $s}
               <div class="click-box">
                 <div>
-                  <img class="img" src="{$s.USERS_IMG}" alt="logo_entreprise">
+                  <img class="img" src="{$s.USERS_IMG}" alt="photo_étudiant">
                 </div>
 
                 <div class = "info-company">
                   <div class = "names">
                     <label>{$s.USERS_NAME}</label>
                     <label>{$s.USERS_FNAME}</label>
-                    <label>{$s.STUDENT_PROMOTION}</label>
+                    <label class = "promo" >Promotion : {$s.STUDENT_PROMOTION}</label>
                   </div>
 
                   <div class = "mail">

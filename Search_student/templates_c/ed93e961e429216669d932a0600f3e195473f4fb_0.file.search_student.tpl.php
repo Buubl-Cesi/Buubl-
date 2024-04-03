@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-03 02:02:38
+/* Smarty version 3.1.47, created on 2024-04-03 15:46:53
   from 'C:\Users\flori\Desktop\Buubl-\Search_student\views\templates\search_student.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660c9c9eda4ab9_77520631',
+  'unifunc' => 'content_660d5dcdef31c5_80258882',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ed93e961e429216669d932a0600f3e195473f4fb' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Search_student\\views\\templates\\search_student.tpl',
-      1 => 1712102514,
+      1 => 1712152012,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660c9c9eda4ab9_77520631 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660d5dcdef31c5_80258882 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -56,7 +56,7 @@ function content_660c9c9eda4ab9_77520631 (Smarty_Internal_Template $_smarty_tpl)
                   <input class = "inputtxt" name = "promo"type="text" placeholder="Promotion de l'étudiant">
               </div>
               
-              <input type="submit" value="Rechercher">
+              <input type="submit" value="Rechercher" class ="Button-submit">
               <input type="hidden" name="p" value="1">
 
             </form>
@@ -124,7 +124,7 @@ $_smarty_tpl->tpl_vars['s']->do_else = false;
               <div class="click-box">
                 <div>
                   <img class="img" src="<?php echo $_smarty_tpl->tpl_vars['s']->value['USERS_IMG'];?>
-" alt="logo_entreprise">
+" alt="photo_étudiant">
                 </div>
 
                 <div class = "info-company">
@@ -133,7 +133,7 @@ $_smarty_tpl->tpl_vars['s']->do_else = false;
 </label>
                     <label><?php echo $_smarty_tpl->tpl_vars['s']->value['USERS_FNAME'];?>
 </label>
-                    <label><?php echo $_smarty_tpl->tpl_vars['s']->value['STUDENT_PROMOTION'];?>
+                    <label class = "promo" >Promotion : <?php echo $_smarty_tpl->tpl_vars['s']->value['STUDENT_PROMOTION'];?>
 </label>
                   </div>
 

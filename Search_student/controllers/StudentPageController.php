@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $promo = isset($_GET["promo"]) ? $_GET["promo"] : '';
     $page = isset($_GET['p']) ? intval($_GET['p']) : 1;
 
-    $limit = 2;
+    $limit = 4;
     $offset = ($page - 1) * $limit;
 
     $pdo = Connexion();
