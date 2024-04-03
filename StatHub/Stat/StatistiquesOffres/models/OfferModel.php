@@ -25,13 +25,13 @@ class OfferModel {
         I.INTERNSHIP_REMUNERATION AS euro,
         I.INTERNSHIP_PLACE_NB AS place,
         COUNT(DISTINCT L.ID_LIKES) AS NombreLikes,
-        COUNT(DISTINCT AP.ID_APPLICATION) AS NombreApplications
+        COUNT(DISTINCT AP.ID_APPLICATIONS) AS NombreApplications
         FROM INTERNSHIP I
         JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
         JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
         JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
         LEFT JOIN LIKES L ON I.ID_INTERNSHIP = L.ID_INTERNSHIP
-        LEFT JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
+        LEFT JOIN APPLICATIONS AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
         GROUP BY I.ID_INTERNSHIP
         ORDER BY I.INTERNSHIP_NAME;");
         $stmt->execute();
@@ -54,13 +54,13 @@ class OfferModel {
                 I.INTERNSHIP_REMUNERATION AS euro,
                 I.INTERNSHIP_PLACE_NB AS place,
                 COUNT(DISTINCT L.ID_LIKES) AS NombreLikes,
-                COUNT(DISTINCT AP.ID_APPLICATION) AS NombreApplications
+                COUNT(DISTINCT AP.ID_APPLICATIONS) AS NombreApplications
                 FROM INTERNSHIP I
                 JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
                 JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
                 JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
                 LEFT JOIN LIKES L ON I.ID_INTERNSHIP = L.ID_INTERNSHIP
-                LEFT JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
+                LEFT JOIN APPLICATIONS AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
                 GROUP BY I.ID_INTERNSHIP
                 ORDER BY secteur ASC;");
             } else {
@@ -77,13 +77,13 @@ class OfferModel {
                 I.INTERNSHIP_REMUNERATION AS euro,
                 I.INTERNSHIP_PLACE_NB AS place,
                 COUNT(DISTINCT L.ID_LIKES) AS NombreLikes,
-                COUNT(DISTINCT AP.ID_APPLICATION) AS NombreApplications
+                COUNT(DISTINCT AP.ID_APPLICATIONS) AS NombreApplications
                 FROM INTERNSHIP I
                 JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
                 JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
                 JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
                 LEFT JOIN LIKES L ON I.ID_INTERNSHIP = L.ID_INTERNSHIP
-                LEFT JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
+                LEFT JOIN APPLICATIONS AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
                 WHERE C.COMPANY_ACTIVITY = :secteur
                 GROUP BY I.ID_INTERNSHIP;");
              $stmt->bindParam(':secteur', $sector);
@@ -104,13 +104,13 @@ class OfferModel {
                 I.INTERNSHIP_REMUNERATION AS euro,
                 I.INTERNSHIP_PLACE_NB AS place,
                 COUNT(DISTINCT L.ID_LIKES) AS NombreLikes,
-                COUNT(DISTINCT AP.ID_APPLICATION) AS NombreApplications
+                COUNT(DISTINCT AP.ID_APPLICATIONS) AS NombreApplications
                 FROM INTERNSHIP I
                 JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
                 JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
                 JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
                 LEFT JOIN LIKES L ON I.ID_INTERNSHIP = L.ID_INTERNSHIP
-                LEFT JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
+                LEFT JOIN APPLICATIONS AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
                 GROUP BY I.ID_INTERNSHIP
                 ORDER BY CT.CITY_NAME ASC;");
             } else {
@@ -127,13 +127,13 @@ class OfferModel {
                 I.INTERNSHIP_REMUNERATION AS euro,
                 I.INTERNSHIP_PLACE_NB AS place,
                 COUNT(DISTINCT L.ID_LIKES) AS NombreLikes,
-                COUNT(DISTINCT AP.ID_APPLICATION) AS NombreApplications
+                COUNT(DISTINCT AP.ID_APPLICATIONS) AS NombreApplications
                 FROM INTERNSHIP I
                 JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
                 JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
                 JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
                 LEFT JOIN LIKES L ON I.ID_INTERNSHIP = L.ID_INTERNSHIP
-                LEFT JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
+                LEFT JOIN APPLICATIONS AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
                 WHERE CT.CITY_NAME = :parameter
                 GROUP BY I.ID_INTERNSHIP;");
                 $stmt->bindParam(':parameter', $parameter);
@@ -154,13 +154,13 @@ class OfferModel {
                 I.INTERNSHIP_REMUNERATION AS euro,
                 I.INTERNSHIP_PLACE_NB AS place,
                 COUNT(DISTINCT L.ID_LIKES) AS NombreLikes,
-                COUNT(DISTINCT AP.ID_APPLICATION) AS NombreApplications
+                COUNT(DISTINCT AP.ID_APPLICATIONS) AS NombreApplications
                 FROM INTERNSHIP I
                 JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
                 JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
                 JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
                 LEFT JOIN LIKES L ON I.ID_INTERNSHIP = L.ID_INTERNSHIP
-                LEFT JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
+                LEFT JOIN APPLICATIONS AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
                 GROUP BY I.ID_INTERNSHIP
                 ORDER BY NombreLikes ASC;");
                 
@@ -179,13 +179,13 @@ class OfferModel {
                 I.INTERNSHIP_REMUNERATION AS euro,
                 I.INTERNSHIP_PLACE_NB AS place,
                 COUNT(DISTINCT L.ID_LIKES) AS NombreLikes,
-                COUNT(DISTINCT AP.ID_APPLICATION) AS NombreApplications
+                COUNT(DISTINCT AP.ID_APPLICATIONS) AS NombreApplications
                 FROM INTERNSHIP I
                 JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
                 JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
                 JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
                 LEFT JOIN LIKES L ON I.ID_INTERNSHIP = L.ID_INTERNSHIP
-                LEFT JOIN APPLICATION AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
+                LEFT JOIN APPLICATIONS AP ON I.ID_INTERNSHIP = AP.ID_INTERNSHIP 
                 GROUP BY I.ID_INTERNSHIP
                 ORDER BY NombreLikes DESC;");
                 
