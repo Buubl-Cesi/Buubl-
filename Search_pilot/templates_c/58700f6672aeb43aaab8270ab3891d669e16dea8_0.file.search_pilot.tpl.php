@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-03 10:06:08
+/* Smarty version 3.1.47, created on 2024-04-03 15:49:38
   from 'C:\Users\flori\Desktop\Buubl-\Search_pilot\views\templates\search_pilot.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660d0df01882e2_13532323',
+  'unifunc' => 'content_660d5e728481e9_16747490',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58700f6672aeb43aaab8270ab3891d669e16dea8' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Search_pilot\\views\\templates\\search_pilot.tpl',
-      1 => 1712131566,
+      1 => 1712152176,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660d0df01882e2_13532323 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660d5e728481e9_16747490 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -47,7 +47,7 @@ function content_660d0df01882e2_13532323 (Smarty_Internal_Template $_smarty_tpl)
 
               <div class="form-group"> 
                 <label>Prénom du pilote :</label>
-                <input class = "inputtxt" name = "fname" type="text" placeholder="Prénom de l'étudiant">
+                <input class = "inputtxt" name = "fname" type="text" placeholder="Prénom du pilote">
               </div>
 
 
@@ -56,7 +56,7 @@ function content_660d0df01882e2_13532323 (Smarty_Internal_Template $_smarty_tpl)
                   <input class = "inputtxt" name = "promo"type="text" placeholder="Promotion de l'étudiant">
               </div>
               
-              <input type="submit" value="Rechercher">
+              <input type="submit" value="Rechercher" class = "Button-submit">
               <input type="hidden" name="p" value="1">
 
             </form>

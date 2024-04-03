@@ -33,7 +33,7 @@
                   <input class = "inputtxt" name = "promo"type="text" placeholder="Promotion de l'étudiant">
               </div>
               
-              <input type="submit" value="Rechercher">
+              <input type="submit" value="Rechercher" class = "Button-submit">
               <input type="hidden" name="p" value="1">
 
             </form>
