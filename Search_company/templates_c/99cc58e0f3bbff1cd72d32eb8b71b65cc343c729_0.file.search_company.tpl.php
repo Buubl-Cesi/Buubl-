@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-03 00:41:26
+/* Smarty version 3.1.47, created on 2024-04-03 15:24:18
   from 'C:\Users\flori\Desktop\Buubl-\Search_company\views\templates\search_company.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660c8996abf2e5_89630038',
+  'unifunc' => 'content_660d5882d31806_35398713',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99cc58e0f3bbff1cd72d32eb8b71b65cc343c729' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Search_company\\views\\templates\\search_company.tpl',
-      1 => 1712097583,
+      1 => 1712150654,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660c8996abf2e5_89630038 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660d5882d31806_35398713 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -74,7 +74,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   <input name = "city" class = "inputtxt" type="text" placeholder="Nom de la Société">
               </div>
               
-              <input type="submit" value="Rechercher">
+              <input type="submit" value="Rechercher" class = "Button-submit">
               <input type="hidden" name="p" value="1">
 
             </form>

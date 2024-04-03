@@ -42,7 +42,7 @@
                   <input name = "city" class = "inputtxt" type="text" placeholder="Nom de la Société">
               </div>
               
-              <input type="submit" value="Rechercher">
+              <input type="submit" value="Rechercher" class = "Button-submit">
               <input type="hidden" name="p" value="1">
 
             </form>
