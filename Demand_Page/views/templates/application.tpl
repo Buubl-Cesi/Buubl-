@@ -4,48 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="application.css">
+    <link rel="stylesheet" href="views/templates/application.css?v=1">
 <title>Demande d'offre</title>
 </head>
 
 <body>
-    <h1>VOS DEMANDE : </h1>
+
     
-    <div class = "container">
-      <div class = "pagination">
-        <label class="Legend-Pagination">Page :<label>
-        {if $currentPage > 1}
-            <a href="?{$queryString}&p={$currentPage-1}">Précédent</a>
-        {/if}
+    <div class = "demands">
+      <h1>VOS DEMANDES : </h1>
+      
+      <div class = "container">
 
-        {for $i = 1 to $numberPages}
-            <a href="?{$queryString}&p={$i}" {if $i == $currentPage}class="active"{/if}>{$i}</a>
-        {/for}
+      
+        <div class = "pagination">
+          <label class="Legend-Pagination">Page :<label>
+          {if $currentPage > 1}
+              <a href="?{$queryString}&p={$currentPage-1}">Précédent</a>
+          {/if}
 
-        {if $currentPage < $numberPages}
-            <a href="?{$queryString}&p={$currentPage+1}">Suivant</a>
-        {/if}
-      </div>
+          {for $i = 1 to $numberPages}
+              <a href="?{$queryString}&p={$i}" {if $i == $currentPage}class="active"{/if}>{$i}</a>
+          {/for}
 
-      {foreach $offers as $offer}
+          {if $currentPage < $numberPages}
+              <a href="?{$queryString}&p={$currentPage+1}">Suivant</a>
+          {/if}
+        </div>
 
-        <div class = "demand-box">
-          <div class = "img-box">
-            <img src="{$Demand.COMPANY_IMG}" alt="Logo_Entreprise">
-          </div>
+        {foreach $Demand as $d}
+          <div class = "click-box">
 
-          <div class = "Informations">
-            <h2>Entreprise : {$demand.COMPANY_NAME}</h2>
-            <p>Adresse : {$Demand.COMPANY_ADRESS}</p>
-            <p>Contact : {$Demand.COMPANY_MAIL}</p>
-          </div>
+            <div class = "Informations">
+              <h2>Entreprise : {$d.COMPANY_NAME}</h2>
+              <h3>Intitulé : {$d.INTERNSHIP_NAME}</h3>
 
-          <div>
-            <h2>Etat de la demande : {$demand.APPLICATION_STATUS}</h2>
-          </div>
+              <h4>Etat de la demande : 
+              {if $d.APPLICATIONS_STATUS == 1}Acceptée{else}Refusée{/if}
+              </h4>
+
+            </div>
         {{/foreach}}
 
+        </div>
       </div>
+    
     </div>
 </body>
 </html>

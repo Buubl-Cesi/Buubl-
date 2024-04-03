@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $id = 1; // factice, faudra récupérer dans les logs
 
-    $limit = 2;
+    $limit = 5;
     $offset = ($page - 1) * $limit;
 
     $pdo = Connexion();

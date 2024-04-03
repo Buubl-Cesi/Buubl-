@@ -8,10 +8,13 @@ class DemandPageModel {
 
     public function getNumberDemandWithParameters($id) {
     
-        $sql = "SELECT count(U.ID_DemandS) AS NUMBER_Demand
-        FROM users U
-        JOIN Demands S ON U.ID_DemandS = S.ID_DemandS
-        WHERE ID_USERS = :id";
+        $sql = "SELECT COUNT(A.ID_APPLICATIONS) AS NUMBER_DEMAND
+        FROM APPLICATIONS A
+        WHERE A.ID_STUDENTS = (
+            SELECT S.ID_STUDENTS 
+            FROM USERS U
+            LEFT JOIN STUDENTS S ON U.ID_STUDENTS = S.ID_STUDENTS 
+            WHERE U.ID_USERS = :id)";
     
         $stmt = $this->pdo->prepare($sql);
 
@@ -23,14 +26,18 @@ class DemandPageModel {
     }
 
     public function getWithLimitParameters($limit, $offset, $id) {
-        $sql = ("SELECT USERS_NAME,
-        USERS_FNAME,
-        Demand_PROMOTION,
-        USERS_MAIL,
-        USERS_IMG
-        FROM users U
-        JOIN Demands S ON U.ID_DemandS = S.ID_DemandS
-        WHERE ID_USERS = :id
+        $sql = ("SELECT COMPANY_NAME,
+        INTERNSHIP_NAME,
+        APPLICATIONS_STATUS
+        FROM APPLICATIONS A
+        JOIN STUDENTS S ON A.ID_STUDENTS = S.ID_STUDENTS
+        JOIN INTERNSHIP I ON I.ID_INTERNSHIP = A.ID_INTERNSHIP
+        JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
+        WHERE A.ID_STUDENTS = (
+            SELECT S.ID_STUDENTS 
+            FROM USERS U
+            LEFT JOIN STUDENTS S ON U.ID_STUDENTS = S.ID_STUDENTS 
+            WHERE U.ID_USERS = :id)
         LIMIT :offset, :limite;");
     
         $stmt = $this->pdo->prepare($sql);
