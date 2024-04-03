@@ -1,11 +1,34 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-04-03 18:46:41
+  from 'C:\Users\flori\Desktop\Buubl-\IndividualOffer_Page\views\templates\Offer.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_660d87f15845c8_06444551',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '4eaaa99e57e090db9bf1b32f2dd64f4248d47a80' => 
+    array (
+      0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\IndividualOffer_Page\\views\\templates\\Offer.tpl',
+      1 => 1712162795,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660d87f15845c8_06444551 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
-    <link rel="stylesheet" href="views/templates/company.css">
-    <title>Buubl | Entreprise</title>
+    <link rel="stylesheet" href="views/templates/Offer.css">
+    <title>Buubl | Offre</title>
 </head>
 <body>
     <header>
@@ -21,7 +44,8 @@
                 <fieldset class="fieldset-1">
                     <div>
                         <div class="alignement">
-                            <h1 class="text-title">{$IndividualCompany['COMPANY_NAME']}</h1>
+                            <h1 class="text-title"><?php echo $_smarty_tpl->tpl_vars['IndividualOffer']->value['INTERNSHIP_NAME'];?>
+</h1>
                             <h2 class="text-subtitle">Découvrez tout ce qu'il faut savoir sur votre entreprise</h2>
                         </div>
 
@@ -38,7 +62,8 @@
                                 <div>
                                     <h3 class="text-data">Note :</h3>
                                     <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">{$IndividualCompany['COMPANY_MARK']}</p>
+                                        <p class="text-fieldset"><?php echo $_smarty_tpl->tpl_vars['IndividualOffer']->value['Offer_MARK'];?>
+</p>
                                     </fieldset>
                                 </div>
                             </div>
@@ -47,7 +72,8 @@
                                 <div>
                                     <h3 class="text-data">Secteur :</h3>
                                     <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">{$IndividualCompany['COMPANY_ACTIVITY']}</p>
+                                        <p class="text-fieldset"><?php echo $_smarty_tpl->tpl_vars['IndividualOffer']->value['Offer_ACTIVITY'];?>
+</p>
                                      </fieldset>
                                 </div>
                                 <div>
@@ -65,7 +91,8 @@
                     <div>
                         <h3 class="text-data">Commentaires :</h3>
                         <fieldset class="fieldset-comment">
-                            <p class="text-comment">{$IndividualCompany['COMPANY_DESCRIPTION']}</p>
+                            <p class="text-comment"><?php echo $_smarty_tpl->tpl_vars['IndividualOffer']->value['Offer_DESCRIPTION'];?>
+</p>
                         </fieldset>
                     </div>
 
@@ -86,12 +113,16 @@
                 </fieldset>
 
                 <fieldset class="fieldset-3">
-                    <img class="background-img-joint" src="{$IndividualCompany['COMPANY_NAME']}" alt="Logo_entreprise">
+                    <img class="background-img-joint" src="<?php echo $_smarty_tpl->tpl_vars['IndividualOffer']->value['Offer_NAME'];?>
+" alt="Logo_entreprise">
                 </fieldset>
             </section>
         </div>
 
-        <script src="company.js"></script>
+        <?php echo '<script'; ?>
+ src="Offer.js"><?php echo '</script'; ?>
+>
     </main>
 </body>
-</html>
+</html><?php }
+}

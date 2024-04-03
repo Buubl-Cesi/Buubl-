@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
-    <link rel="stylesheet" href="views/templates/company.css">
-    <title>Buubl | Entreprise</title>
+    <link rel="stylesheet" href="views/templates/Offer.css">
+    <title>Buubl | Offre</title>
 </head>
 <body>
     <header>
@@ -21,7 +21,7 @@
                 <fieldset class="fieldset-1">
                     <div>
                         <div class="alignement">
-                            <h1 class="text-title">{$IndividualCompany['COMPANY_NAME']}</h1>
+                            <h1 class="text-title">{$IndividualOffer['INTERNSHIP_NAME']}</h1>
                             <h2 class="text-subtitle">Découvrez tout ce qu'il faut savoir sur votre entreprise</h2>
                         </div>
 
@@ -38,7 +38,7 @@
                                 <div>
                                     <h3 class="text-data">Note :</h3>
                                     <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">{$IndividualCompany['COMPANY_MARK']}</p>
+                                        <p class="text-fieldset">{$IndividualOffer['Offer_MARK']}</p>
                                     </fieldset>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 <div>
                                     <h3 class="text-data">Secteur :</h3>
                                     <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">{$IndividualCompany['COMPANY_ACTIVITY']}</p>
+                                        <p class="text-fieldset">{$IndividualOffer['Offer_ACTIVITY']}</p>
                                      </fieldset>
                                 </div>
                                 <div>
@@ -65,7 +65,7 @@
                     <div>
                         <h3 class="text-data">Commentaires :</h3>
                         <fieldset class="fieldset-comment">
-                            <p class="text-comment">{$IndividualCompany['COMPANY_DESCRIPTION']}</p>
+                            <p class="text-comment">{$IndividualOffer['Offer_DESCRIPTION']}</p>
                         </fieldset>
                     </div>
 
@@ -86,12 +86,12 @@
                 </fieldset>
 
                 <fieldset class="fieldset-3">
-                    <img class="background-img-joint" src="{$IndividualCompany['COMPANY_NAME']}" alt="Logo_entreprise">
+                    <img class="background-img-joint" src="{$IndividualOffer['Offer_NAME']}" alt="Logo_entreprise">
                 </fieldset>
             </section>
         </div>
 
-        <script src="company.js"></script>
+        <script src="Offer.js"></script>
     </main>
 </body>
 </html>

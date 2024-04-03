@@ -8,7 +8,7 @@ class IndividualCompanyPageModel {
 
     public function getCompanyInfo($id) {
     
-        $sql = ("SELECT * FROM COMPANY WHERE ID_COMPANY = :id");
+        $sql = ("SELECT * FROM COMPANY WHERE ID_COMPANY = :id"); // Faut retapper ça 
     
         $stmt = $this->pdo->prepare($sql);
 
