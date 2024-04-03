@@ -18,9 +18,7 @@
 
             <form action="" method="GET">
 
-              
-              
-              <div class="form-group"> 
+              <div class="form-group">
                 <label>Nom de l'entreprise :</label>
                 <input class = "inputtxt" name = "name" type="text" placeholder="Nom de l'entreprise">
               </div>
@@ -28,7 +26,7 @@
               <div class="form-group"> 
                   <label>Secteur d'activité de l'entreprise :</label>
                   
-                  <select name="sector">
+                  <select name="sector" class = "inputtxt">
                       <option value="NoOne">Indiquez un secteur</option>
 
                       {foreach $sector as $s}
@@ -39,7 +37,7 @@
 
               <div class="form-group"> 
                   <label>Compétence demandée :</label>
-                  <select name="skill">
+                  <select name="skill" class = "inputtxt">
                       <option value="NoOne">Indiquez une compétence</option>
 
                       {foreach $skills as $s}
@@ -56,7 +54,7 @@
                   <input name = "duration" class = "inputtxt" type="text" placeholder="Nom de la Société">
               </div>
               
-              <input type="submit" value="Rechercher">
+              <input type="submit" value="Rechercher" class = "Button-submit">
               <input type="hidden" name="p" value="1">
 
             </form>
