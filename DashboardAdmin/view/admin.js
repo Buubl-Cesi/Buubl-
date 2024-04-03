@@ -137,16 +137,3 @@ function validateInput(input) {
         input.value = "";
     }
 }
-
-///////////////////////////
-
-function setAction(action) {
-    var form = document.getElementById('form1');
-    if (action == 'create') {
-        form.action = 'create_student.php';
-    } else if (action == 'update') {
-        form.action = 'update_student.php';
-    } else if (action == 'delete') {
-        form.action = 'delete_student.php';
-    }
-}
