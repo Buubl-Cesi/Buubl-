@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $duration = isset($_GET["duration"]) ? $_GET["duration"] : '';
     $page = isset($_GET['p']) ? intval($_GET['p']) : 1;
 
-    $limit = 6;
+    $limit = 5;
     $offset = ($page - 1) * $limit;
 
     $pdo = Connexion();
