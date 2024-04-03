@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-03 13:17:10
+/* Smarty version 3.1.47, created on 2024-04-03 14:10:36
   from 'C:\Users\flori\Desktop\Buubl-\Demand_Page\views\templates\application.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660d3ab662e892_49964445',
+  'unifunc' => 'content_660d473ccd5138_11467106',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0af7f979c74d8f41d932d8d8977c15f428237e0f' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Demand_Page\\views\\templates\\application.tpl',
-      1 => 1712143027,
+      1 => 1712146235,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660d3ab662e892_49964445 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660d473ccd5138_11467106 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -68,33 +68,42 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
           <?php }?>
         </div>
 
-        <?php
+        
+
+        <?php if (count($_smarty_tpl->tpl_vars['Demand']->value) == 0) {?>
+          <div class="click-box">
+            <h1 class = "Informations">Vous n'avez pas postulé à des offres pour le moment</h1>
+          </div>
+        <?php } else { ?>
+          <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Demand']->value, 'd');
 $_smarty_tpl->tpl_vars['d']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['d']->value) {
 $_smarty_tpl->tpl_vars['d']->do_else = false;
 ?>
-          <div class = "click-box">
-
-            <div class = "Informations">
-              <h2>Entreprise : <?php echo $_smarty_tpl->tpl_vars['d']->value['COMPANY_NAME'];?>
+            <div class = "click-box">
+  
+              <div class = "Informations">
+                <h2>Entreprise : <?php echo $_smarty_tpl->tpl_vars['d']->value['COMPANY_NAME'];?>
 </h2>
-              <h3>Intitulé : <?php echo $_smarty_tpl->tpl_vars['d']->value['INTERNSHIP_NAME'];?>
+                <h3>Intitulé : <?php echo $_smarty_tpl->tpl_vars['d']->value['INTERNSHIP_NAME'];?>
 </h3>
-
-              <h4>Etat de la demande : 
-              <?php if ($_smarty_tpl->tpl_vars['d']->value['APPLICATIONS_STATUS'] == 1) {?>Acceptée<?php } else { ?>Refusée<?php }?>
-              </h4>
-
+  
+                <h4>Etat de la demande : 
+                <?php if ($_smarty_tpl->tpl_vars['d']->value['APPLICATIONS_STATUS'] == 1) {?>Acceptée<?php } else { ?>Refusée<?php }?>
+                </h4>
+  
+              </div>
             </div>
-        <?php ob_start();
+          <?php ob_start();
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 $_prefixVariable1 = ob_get_clean();
 echo $_prefixVariable1;?>
 
+        <?php }?>
 
-        </div>
+        
       </div>
     
     </div>

@@ -32,21 +32,30 @@
           {/if}
         </div>
 
-        {foreach $Demand as $d}
-          <div class = "click-box">
+        
 
-            <div class = "Informations">
-              <h2>Entreprise : {$d.COMPANY_NAME}</h2>
-              <h3>Intitulé : {$d.INTERNSHIP_NAME}</h3>
-
-              <h4>Etat de la demande : 
-              {if $d.APPLICATIONS_STATUS == 1}Acceptée{else}Refusée{/if}
-              </h4>
-
+        {if $Demand|@count eq 0}
+          <div class="click-box">
+            <h1 class = "Informations">Vous n'avez pas postulé à des offres pour le moment</h1>
+          </div>
+        {else}
+          {foreach $Demand as $d}
+            <div class = "click-box">
+  
+              <div class = "Informations">
+                <h2>Entreprise : {$d.COMPANY_NAME}</h2>
+                <h3>Intitulé : {$d.INTERNSHIP_NAME}</h3>
+  
+                <h4>Etat de la demande : 
+                {if $d.APPLICATIONS_STATUS == 1}Acceptée{else}Refusée{/if}
+                </h4>
+  
+              </div>
             </div>
-        {{/foreach}}
+          {{/foreach}}
+        {/if}
 
-        </div>
+        
       </div>
     
     </div>
