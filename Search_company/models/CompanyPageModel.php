@@ -13,27 +13,6 @@ class CompanyPageModel {
         return $sector;
     }
 
-
-    public function getNumberCompany() {
-        $stmt = $this->pdo->query("SELECT COUNT(ID_COMPANY) AS NUMBER_ARTICLE FROM COMPANY;");
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return intval($result['NUMBER_ARTICLE']);
-    }
-
-    public function getCompanyWithLimit($limit, $offset)
-    {
-        $stmt = $this->pdo->prepare("SELECT COMPANY_NAME,
-        COMPANY_DESCRIPTION,
-        COMPANY_IMG 
-        FROM Company
-        LIMIT :offset, :Limit;");
-        $stmt->bindParam(':Limit', $limit, PDO::PARAM_INT);
-        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
-        $stmt->execute();
-        $stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $stmt;
-    }
-
     public function getNumberCompanyWithParameters($name, $sector, $city) {
         // Début de la requête SQL
         
@@ -62,8 +41,6 @@ class CompanyPageModel {
             $sql .= " AND CITY_NAME = :city";
             $params[':city'] = $city;
         }
-        
-    
         // Préparez et exécutez la requête SQL
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
@@ -100,12 +77,25 @@ class CompanyPageModel {
             $sql .= " AND CITY_NAME = :city";
             $params[':city'] = $city;
         }
-        
 
-        // Préparez et exécutez la requête SQL
+        $sql .= " LIMIT :offset, :limit";
+
+        $params[':offset'] = $offset;
+        $params[':limit'] = $limit;
+
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute($params);
+
+        foreach ($params as $key => &$val) {
+            if (is_int($val)) {
+                $stmt->bindParam($key, $val, PDO::PARAM_INT);
+            } else {
+                $stmt->bindParam($key, $val);
+            }
+        }
+
+        $stmt->execute(); // No need to pass $params here as you've already bound them
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
         return $result;
     }
