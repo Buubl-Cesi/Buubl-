@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
-    <link rel="stylesheet" href="company.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="views/templates/company.css">
+    <title>Buubl | Entreprise</title>
 </head>
 <body>
     <header>
@@ -21,7 +21,7 @@
                 <fieldset class="fieldset-1">
                     <div>
                         <div class="alignement">
-                            <h1 class="text-title">Bubbl</h1>
+                            <h1 class="text-title">{$IndividualCompany['COMPANY_NAME']}</h1>
                             <h2 class="text-subtitle">Découvrez tout ce qu'il faut savoir sur votre entreprise</h2>
                         </div>
 
@@ -31,14 +31,14 @@
                                 <div>
                                     <h3 class="text-data">Adresse :</h3>
                                     <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">20 rue des Tuilliers</p>
+                                        <p class="text-fieldset"></p>
                                     </fieldset>
                                 </div>
     
                                 <div>
-                                    <h3 class="text-data">Email :</h3>
+                                    <h3 class="text-data">Note :</h3>
                                     <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">email.test@test.fr</p>
+                                        <p class="text-fieldset">{$IndividualCompany['COMPANY_MARK']}</p>
                                     </fieldset>
                                 </div>
                             </div>
@@ -47,29 +47,25 @@
                                 <div>
                                     <h3 class="text-data">Secteur :</h3>
                                     <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">Ordinateur</p>
+                                        <p class="text-fieldset">{$IndividualCompany['COMPANY_ACTIVITY']}</p>
                                      </fieldset>
                                 </div>
                                 <div>
                                     <h3 class="text-data">Offres :</h3>
                                     <fieldset class="fieldset-text">
-                                        <p class="text-fieldset">50</p>
+                                        <p class="text-fieldset"></p>
                                     </fieldset>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     
+                           
                     <div>
                         <h3 class="text-data">Commentaires :</h3>
                         <fieldset class="fieldset-comment">
-                            <p class="text-comment">Lorem ipssum . Donec in magna massa. VivaLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet ut tortor a consequat. Vivamus sit amet massa quis nisi sagittis auctor sit amet ac nibh. Integer luctus bibendum lectus id eleifend. Nunc congue volutpat gravida. Duis cursus ultricies eros, vel tincidunt erat interdum a. Maecenas placerat in leo consequat faucibus. Donec scelerisque, nibh non feugiat dapibus, sem nibh egestas massa, vitae ornare dolor dolor id felis. Vivamus interdum congue mi, vitae dapibus nisi aliquam at. Aenean dui dolor, euismod in orci auctor, ultrices fringilla urna. Phasellus maximus nisl ut molestie tristique. Fusce pharetra pulvinar erat, ac laoreet dolor convallis et. Proin ut elit tempor justo facilisis pulvinar. Morbi rutrum libero vitae velit dignissim, vel fermentum ipsum laoreet. Integer eros purus, sodales vel ullamcorper sit amet, placerat at nibh. Suspendisse potenti.
-
-                                Donec rutrum nisl id tortor viverra ultricies. Aliquam ut risus vel orci laoreet tempor. Sed eu augue eget enim mollis laoreet vel quis turpis. Integer luctus diam eros, nec molestie felis porttitor sit amet. In hac habitasse platea dictumst. Quisque quis purus feugiat, pharetra metus nec, ultricies risus. In hac habitasse platea dictumst.
-                                
-                                Integer ultrices molestie quam, sed elementum massa auctor et. Suspendisse eu enim sit amet ante dignissim posuere ut vel metus. Sed semper quam et porttitor vulputate. Nulla sit amet ultrices dolor, et vestibulum nibh. Proin vel turpis lobortis, luctus mi convallis, vulputate quam. Donec et tellus at quam euismod sollicitudin a at lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu ante auctor eros congue posuere. Pellentesque eleifend porta nulla, ac pretium neque molestie id. Suspendisse potenti. Nunc ut enim at leo pulvinar commodo. Duis a ante vitae magna ultrices facilisis ac quis velit. Nam mi enim, sollicitudin ut imperdiet id, pulvinar a magna. In elementum aliquet libero, vel molestie nisi congue semper. Quisque nec turpis vel lectus interdum rutrum. Proin vestibulum dui ut malesuada lacinia.
-                                
-                                Maecenas eros augue, commodo nec feug</p>
+                            <p class="text-comment">{$IndividualCompany['COMPANY_DESCRIPTION']}</p>
                         </fieldset>
                     </div>
 
@@ -90,7 +86,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset-3">
-                    <img class="background-img-joint" src="Images/Profil.jpg" alt="Joint">
+                    <img class="background-img-joint" src="{$IndividualCompany['COMPANY_NAME']}" alt="Logo_entreprise">
                 </fieldset>
             </section>
         </div>
