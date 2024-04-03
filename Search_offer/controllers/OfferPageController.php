@@ -85,19 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
     $controller->assignRequest($queryString);
     
-    /*
-    if (empty($name) && $sector == "NoOne" && $skill == "NoOne" && empty($city) && empty($duration)) {
-        $NumberOffer = $controller->getNumberOffer();
-        $offers = $controller->getOfferWithLimit($page, $limit);
-    } else {
-        
-    }
-    */
-
     $NumberOffer = $controller->getNumberOfferWithParameters($name, $sector, $skill, $city, $duration);
     $offers = $controller->getWithLimitParameters($page, $limit, $name, $sector, $skill, $city, $duration);
     
-
     $NumberPage = ceil($NumberOffer / $limit);
 
     $controller->getSector();

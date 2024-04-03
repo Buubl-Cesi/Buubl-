@@ -21,8 +21,6 @@ class OfferPageModel {
     }
 
     public function getNumberOfferWithParameters($name, $sector, $skill, $city, $duration) {
-        // Début de la requête SQL
-        
         $sql = "SELECT
             COUNT(I.ID_INTERNSHIP) AS NUMBER_OFFER
             FROM INTERNSHIP I
