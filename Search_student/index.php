@@ -13,5 +13,5 @@ function Connexion() {
 
 
 $pdo = Connexion();
-$Controller = new CompanyPageController($pdo);
+$Controller = new StudentPageController($pdo);
 

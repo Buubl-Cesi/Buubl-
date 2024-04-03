@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="views/templates/recherche_company.css">
-<title>RECHERCHE D'ENTREPRISES</title>
+    <link rel="stylesheet" href="views/templates/search_student.css">
+<title>RECHERCHE D'ETUDIANTS</title>
 </head>
 
 <body>
@@ -13,33 +13,24 @@
     
     <div class="flex-container">
         <fieldset class="fieldset-left">
-
             <div class="legend-right">Filtres de recherche :</div>
 
             <form action="" method="GET">
 
-              
-              
               <div class="form-group"> 
-                <label>Nom de l'entreprise :</label>
-                <input class = "inputtxt" name = "name" type="text" placeholder="Nom de l'entreprise">
+                <label>Nom de l'étudiant :</label>
+                <input class = "inputtxt" name = "name" type="text" placeholder="Nom de l'étudiant">
               </div>
 
               <div class="form-group"> 
-                  <label>Secteur d'activité de l'entreprise :</label>
-                  
-                  <select name="sector">
-                      <option value="NoOne">Indiquez un secteur</option>
-
-                      {foreach $sector as $s}
-                        <option value="{$s['COMPANY_ACTIVITY']}">{$s['COMPANY_ACTIVITY']}</option>
-                      {/foreach}
-                  </select>
+                <label>Prénom de l'étudiant :</label>
+                <input class = "inputtxt" name = "fname" type="text" placeholder="Prénom de l'étudiant">
               </div>
+
 
               <div class="form-group">
-                  <label>Ville :</label>
-                  <input name = "city" class = "inputtxt" type="text" placeholder="Nom de la Société">
+                  <label>Promotion de l'étudiant :</label>
+                  <input class = "inputtxt" name = "promo"type="text" placeholder="Promotion de l'étudiant">
               </div>
               
               <input type="submit" value="Rechercher">
@@ -79,21 +70,26 @@
           </div>
 
              
-            {foreach $company as $c}
+            {foreach $student as $s}
               <div class="click-box">
-                <div class = "info-company">
-                  <label>{$c.COMPANY_NAME}</label>
-                  <p class="description">{$c.COMPANY_DESCRIPTION}</p>
-                </div>
-
                 <div>
-                  <img class="img" src="{$c.COMPANY_IMG}" alt="logo_entreprise">
+                  <img class="img" src="{$s.USERS_IMG}" alt="logo_entreprise">
                 </div>
-              </div>
-            {/foreach}
 
-            
-            
+                <div class = "info-company">
+                  <div class = "names">
+                    <label>{$s.USERS_NAME}</label>
+                    <label>{$s.USERS_FNAME}</label>
+                    <label>{$s.STUDENT_PROMOTION}</label>
+                  </div>
+
+                  <div class = "mail">
+                    <p class="description">{$s.USERS_MAIL}</p>
+                  </div>
+
+                 </div>
+              </div>
+            {/foreach} 
           </div>
           </fieldset>
         </div>

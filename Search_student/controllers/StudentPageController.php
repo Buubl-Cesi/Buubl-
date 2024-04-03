@@ -44,18 +44,19 @@ class StudentPageController {
         $this->smarty->display('views/templates/search_student.tpl');
     }
 
-    public function generateOfferPage() {
-        $idOffer = $this->model->getIdOffer();
+    /*
+    public function generateStudentPage() {
+        $idOffer = $this->model->getIdStudent();
         return $idOffer;
     }
+    */
 
-    public function GiveParameters($name, $sector, $city) {
+    public function GiveParameters($name, $fname, $promo) {
         $parameters = array(
             'name' => $name,
-            'sector' => $sector,
-            'city' => $city,
+            'fname' => $fname,
+            'promo' => $promo,
         );
-
         $this->smarty->assign('parameters', $parameters);
     }
 
@@ -67,8 +68,8 @@ class StudentPageController {
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
     $name = isset($_GET["name"]) ? $_GET["name"] : '';
-    $sector = isset($_GET["sector"]) ? $_GET["sector"] : 'NoOne';
-    $city = isset($_GET["city"]) ? $_GET["city"] : '';
+    $fname = isset($_GET["fname"]) ? $_GET["fname"] : '';
+    $promo = isset($_GET["promo"]) ? $_GET["promo"] : '';
     $page = isset($_GET['p']) ? intval($_GET['p']) : 1;
 
     $limit = 2;
@@ -83,17 +84,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
     $controller->assignRequest($queryString);
     
-    if (empty($name) && $sector == "NoOne" && empty($city)) {
-        $NumberOffer = $controller->getNumberCompany();
-        $offers = $controller->getCompanyWithLimit($page, $limit);
+    if (empty($name) && empty($fname) && empty($promo)) {
+        $NumberOffer = $controller->getNumberStudent();
+        $offers = $controller->getStudentWithLimit($page, $limit);
     } else {
-        $NumberOffer = $controller->getNumberCompanyWithParameters($name, $sector, $city);
-        $offers = $controller->getWithLimitParameters($page, $limit, $name, $sector, $city);
+        $NumberOffer = $controller->getNumberStudentWithParameters($name, $fname, $promo);
+        $offers = $controller->getWithLimitParameters($page, $limit, $name, $fname, $promo);
     }
-
     $NumberPage = ceil($NumberOffer / $limit);
 
-    $controller->getSector();
-    $controller->GiveParameters($name, $sector, $city);
+    $controller->GiveParameters($name, $fname, $promo);
     $controller->display($NumberPage, $page);
 }
