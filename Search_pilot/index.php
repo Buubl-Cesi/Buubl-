@@ -10,6 +10,5 @@ function Connexion() {
         die("Erreur de connexion : " . $e->getMessage());
     }
 }
-
 $pdo = Connexion();
 $Controller = new PilotPageController($pdo);

@@ -19,14 +19,14 @@ body{
 }
 
 .fieldset-left{
-    background-color: #465257;
-    border: 1px solid #465257;
-    border-radius: 8px; 
-    display: flex;
-    flex-direction: column; 
-    flex-wrap: wrap;
-    gap: 2%;
-    margin-bottom: 2%;
+  background-color: #465257;
+  border: 1px solid #465257;
+  border-radius: 8px; 
+  display: flex;
+  flex-direction: column; 
+  flex-wrap: wrap;
+  gap: 2%;
+  margin-bottom: 2%;
 }
 
 .fieldset-right{
@@ -150,10 +150,11 @@ a, .Legend-Pagination {
 }
 
 .img {
-  max-width: 100px; /* Ajustez cette valeur en fonction de la taille souhaitée pour l'image */
+  max-width: 120px; /* Ajustez cette valeur en fonction de la taille souhaitée pour l'image */
   height: auto;
   border : 1px solid white;
 }
+
 
 @media screen and (max-width: 1024px) {
 

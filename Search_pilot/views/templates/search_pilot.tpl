@@ -18,18 +18,18 @@
             <form action="" method="GET">
 
               <div class="form-group"> 
-                <label>Nom de l'étudiant :</label>
-                <input class = "inputtxt" name = "name" type="text" placeholder="Nom de l'étudiant">
+                <label>Nom du pilote :</label>
+                <input class = "inputtxt" name = "name" type="text" placeholder="Nom du pilote">
               </div>
 
               <div class="form-group"> 
-                <label>Prénom de l'étudiant :</label>
-                <input class = "inputtxt" name = "fname" type="text" placeholder="Prénom de l'étudiant">
+                <label>Prénom du pilote :</label>
+                <input class = "inputtxt" name = "fname" type="text" placeholder="Prénom du pilote">
               </div>
 
 
               <div class="form-group">
-                  <label>Promotion de l'étudiant :</label>
+                  <label>Promotion du pilote :</label>
                   <input class = "inputtxt" name = "promo"type="text" placeholder="Promotion de l'étudiant">
               </div>
               

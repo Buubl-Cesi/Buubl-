@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-03 09:40:11
+/* Smarty version 3.1.47, created on 2024-04-03 10:06:08
   from 'C:\Users\flori\Desktop\Buubl-\Search_pilot\views\templates\search_pilot.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660d07db0fe262_41094007',
+  'unifunc' => 'content_660d0df01882e2_13532323',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58700f6672aeb43aaab8270ab3891d669e16dea8' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\Search_pilot\\views\\templates\\search_pilot.tpl',
-      1 => 1712130008,
+      1 => 1712131566,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660d07db0fe262_41094007 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660d0df01882e2_13532323 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -41,18 +41,18 @@ function content_660d07db0fe262_41094007 (Smarty_Internal_Template $_smarty_tpl)
             <form action="" method="GET">
 
               <div class="form-group"> 
-                <label>Nom de l'étudiant :</label>
-                <input class = "inputtxt" name = "name" type="text" placeholder="Nom de l'étudiant">
+                <label>Nom du pilote :</label>
+                <input class = "inputtxt" name = "name" type="text" placeholder="Nom du pilote">
               </div>
 
               <div class="form-group"> 
-                <label>Prénom de l'étudiant :</label>
+                <label>Prénom du pilote :</label>
                 <input class = "inputtxt" name = "fname" type="text" placeholder="Prénom de l'étudiant">
               </div>
 
 
               <div class="form-group">
-                  <label>Promotion de l'étudiant :</label>
+                  <label>Promotion du pilote :</label>
                   <input class = "inputtxt" name = "promo"type="text" placeholder="Promotion de l'étudiant">
               </div>
               
