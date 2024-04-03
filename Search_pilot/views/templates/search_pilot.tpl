@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="views/templates/search_student.css">
-<title>RECHERCHE D'ETUDIANTS</title>
+    <link rel="stylesheet" href="views/templates/search_pilot.css">
+<title>RECHERCHE DE PILOTES</title>
 </head>
 
 <body>
@@ -70,21 +70,21 @@
           </div>
 
              
-            {foreach $student as $s}
+            {foreach $pilot as $p}
               <div class="click-box">
                 <div>
-                  <img class="img" src="{$s.USERS_IMG}" alt="logo_entreprise">
+                  <img class="img" src="{$p.USERS_IMG}" alt="logo_entreprise">
                 </div>
 
                 <div class = "info-company">
                   <div class = "names">
-                    <label>{$s.USERS_NAME}</label>
-                    <label>{$s.USERS_FNAME}</label>
-                    <label>{$s.STUDENT_PROMOTION}</label>
+                    <label>{$p.USERS_NAME}</label>
+                    <label>{$p.USERS_FNAME}</label>
+                    <label>{$p.PILOT_PROMOTION}</label>
                   </div>
 
                   <div class = "mail">
-                    <p class="description">{$s.USERS_MAIL}</p>
+                    <p class="description">{$p.USERS_MAIL}</p>
                   </div>
 
                  </div>

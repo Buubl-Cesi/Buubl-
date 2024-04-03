@@ -1,40 +1,40 @@
 <?php
-require_once('models/StudentPageModel.php');
+require_once('models/PilotPageModel.php');
 require_once('libs/Smarty.class.php');
 
-class StudentPageController {
+class PilotPageController {
     private $model;
     private $smarty;
 
     public function __construct($pdo) {
-        $this->model = new StudentPageModel($pdo);
+        $this->model = new PilotPageModel($pdo);
         $this->smarty = new Smarty;
     }
 
 
-    public function getNumberStudentWithParameters($name, $fname, $promo) {
-        $numberStudent = $this->model->getNumberStudentWithParameters($name, $fname, $promo);
-        $this->smarty->assign('numberStudent', $numberStudent);
-        return $numberStudent;
+    public function getNumberPilotWithParameters($name, $fname, $promo) {
+        $numberPilot = $this->model->getNumberPilotWithParameters($name, $fname, $promo);
+        $this->smarty->assign('numberPilot', $numberPilot);
+        return $numberPilot;
     }
 
 
     public function getWithLimitParameters($currentPage, $limit, $name, $fname, $promo) {
         $offset = ($currentPage - 1) * $limit;
-        $student = $this->model->getWithLimitParameters($limit, $offset, $name, $fname, $promo);
-        $this->smarty->assign('student', $student);
-        return $student;
+        $pilot = $this->model->getWithLimitParameters($limit, $offset, $name, $fname, $promo);
+        $this->smarty->assign('pilot', $pilot);
+        return $pilot;
     }
 
     public function display($NumberPage, $currentPage) {
         $this->smarty->assign('numberPages', $NumberPage);
         $this->smarty->assign('currentPage', $currentPage);
-        $this->smarty->display('views/templates/search_student.tpl');
+        $this->smarty->display('views/templates/search_pilot.tpl');
     }
 
     /*
-    public function generateStudentPage() {
-        $idOffer = $this->model->getIdStudent();
+    public function generatePilotPage() {
+        $idOffer = $this->model->getIdPilot();
         return $idOffer;
     }
     */
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $offset = ($page - 1) * $limit;
 
     $pdo = Connexion();
-    $controller = new StudentPageController($pdo);
+    $controller = new PilotPageController($pdo);
 
     $queryParams = $_GET;
     unset($queryParams['p']);
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
     $controller->assignRequest($queryString);
 
-    $NumberOffer = $controller->getNumberStudentWithParameters($name, $fname, $promo);
+    $NumberOffer = $controller->getNumberPilotWithParameters($name, $fname, $promo);
     $offers = $controller->getWithLimitParameters($page, $limit, $name, $fname, $promo);
     
 

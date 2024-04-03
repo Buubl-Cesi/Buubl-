@@ -1,15 +1,15 @@
 <?php
-class StudentPageModel {
+class PilotPageModel {
     private $pdo;
 
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }
 
-    public function getNumberStudentWithParameters($name, $fname, $promo) {
-        $sql = "SELECT count(U.ID_STUDENTS) AS NUMBER_STUDENT
-        FROM users U
-        JOIN students S ON U.ID_STUDENTS = S.ID_STUDENTS
+    public function getNumberPilotWithParameters($name, $fname, $promo) {
+        $sql = "SELECT count(P.ID_PILOT) AS NUMBER_PILOT
+        FROM USERS U
+        JOIN PILOT P ON P.ID_PILOT = U.ID_PILOT
         WHERE 1=1";
     
         $params = array();
@@ -25,7 +25,7 @@ class StudentPageModel {
         }
     
         if (!empty($promo)) {
-            $sql .= " AND S.STUDENT_PROMOTION = :promo";
+            $sql .= " AND P.PILOT_PROMOTION = :promo";
             $params[':promo'] = $promo;
         }
     
@@ -33,17 +33,17 @@ class StudentPageModel {
         $stmt->execute($params);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
     
-        return $result !== false ? intval($result['NUMBER_STUDENT']) : 0;
+        return $result !== false ? intval($result['NUMBER_PILOT']) : 0;
     }
 
     public function getWithLimitParameters($limit, $offset, $name, $fname, $promo) {
         $sql = "SELECT USERS_NAME,
         USERS_FNAME,
-        STUDENT_PROMOTION,
+        PILOT_PROMOTION,
         USERS_MAIL,
         USERS_IMG
         FROM users U
-        JOIN students S ON U.ID_STUDENTS = S.ID_STUDENTS
+        JOIN PILOT P ON P.ID_PILOT = U.ID_PILOT
         WHERE 1=1";
 
         $params = array();
@@ -59,7 +59,7 @@ class StudentPageModel {
         }
 
         if (!empty($promo)) {
-            $sql .= " AND STUDENT_PROMOTION = :promo";
+            $sql .= " AND PILOT_PROMOTION = :promo";
             $params[':promo'] = $promo;
         }
 

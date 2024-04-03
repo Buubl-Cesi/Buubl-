@@ -1,5 +1,5 @@
 <?php
-require_once('controllers/StudentPageController.php');
+require_once('controllers/PilotPageController.php');
 
 function Connexion() {
     try {
@@ -11,7 +11,5 @@ function Connexion() {
     }
 }
 
-
 $pdo = Connexion();
-$Controller = new StudentPageController($pdo);
-
+$Controller = new PilotPageController($pdo);
