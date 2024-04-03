@@ -1,5 +1,5 @@
 <?php
-require_once('controllers/HomeController.php');
+require_once('controllers/ProfilController.php');
 
 function Connexion() {
     try {
@@ -14,6 +14,6 @@ function Connexion() {
 
 // Affichage initial
 $pdo = Connexion();
-$homeController = new HomeController($pdo);
+$ProfilController = new ProfilController($pdo);
 
 

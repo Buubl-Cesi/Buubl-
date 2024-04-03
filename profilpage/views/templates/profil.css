@@ -1,0 +1,206 @@
+body{
+    background-color: #2A2B34;
+    color: azure;
+    font-family: Helvetica;
+}
+
+  .fieldset-left{
+    background-color: whitesmoke;
+    border: 1px solid #465257;
+    border-radius: 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%; 
+    padding-left: 4%;
+    margin-bottom: 2%;
+    margin-top: 90px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .profil_photo{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 200px; 
+    margin-left: 37.5%;
+    margin-top: 3%;
+    margin-bottom: 6%;
+    border-radius: 50%;
+    transition: all 0.6s ease; 
+  }
+
+  .form-group {
+    width: 48%;
+    margin-bottom: 3%;
+    margin-left: 8px;
+  }
+
+  .form-group label {
+    display: block; 
+    margin-bottom: 1%; 
+    color: black; 
+    font-size: 80%;
+  } 
+  
+  .form-group input {
+    width: 80%;  
+    padding: 5%; 
+    border: 1px solid #ccc; 
+    border-radius: 7px;  
+  }
+
+.click-box:hover{
+  padding: 1%;
+}
+
+.click-box img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 15px; 
+    right: 4%;
+    margin-top: 0.8%;
+}
+  
+    .custom-button {
+        margin-top: 7%;
+        margin-bottom: 4%;
+        margin-left: 23%;
+        width: 50%; 
+        color: black; 
+        border: 2px solid white;
+        background-color: white; 
+        padding: 2%; 
+        font-size: 100%; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        transition: all 0.3s ease; 
+    }
+    
+    .custom-button:hover {
+        background-color: grey; 
+        border-color: grey;
+        padding: 2%;
+    }
+
+    .bouton-actif {
+        background-color: green;
+        color: white;
+      }
+      
+      .champs-desactives {
+        background-color: #ccc;
+      }
+      
+
+
+    @media screen and (min-width: 280px) and (max-width: 476px) {
+
+        .profil_photo{
+            height: 120px; 
+            margin-left: 20.5%;
+            margin-bottom: 10%;
+            transition: all 0.6s ease; 
+        }
+    }
+    
+ 
+    @media screen and (min-width: 476px) and (max-width: 610px) {
+
+    .profil_photo{
+        height: 120px; 
+        margin-left: 21.5%;
+        margin-bottom: 10%;
+        transition: all 0.6s ease; 
+    }
+    
+  }  
+  
+  @media screen and (min-width: 610px) and (max-width: 810px) {
+
+    .profil_photo{
+        height: 140px;
+        margin-left: 24.5%;
+        margin-bottom: 10%;
+        transition: all 0.6s ease; 
+    }
+    
+  }  
+  @media screen and (min-width: 810px) and (max-width: 900px) {
+
+    .profil_photo{
+        height: 160px; 
+        margin-left: 24.5%;
+        margin-bottom: 10%;
+        transition: all 0.6s ease; 
+    }
+    
+  }  
+
+  @media screen and (min-width: 900px) and (max-width: 1010px) {
+
+    .profil_photo{
+        height: 160px; 
+        margin-left: 35.5%;
+        transition: all 0.6s ease; 
+    }
+    
+  }  
+
+  @media screen and (min-width: 900px) and (max-width: 1086px) {
+
+    .profil_photo{
+        height: 160px; 
+        margin-left: 36.5%;
+        transition: all 0.6s ease; 
+    }
+    
+  }  
+  @media screen and (min-width: 1086px) and (max-width: 1186px) {
+
+    .profil_photo{
+        height: 180px; 
+        margin-left: 37.5%;
+        transition: all 0.6s ease; 
+    }
+  }  
+  @media screen and (min-width: 1186px) and (max-width: 1286px) {
+
+    .profil_photo{
+        height: 200px; 
+        margin-left: 37.5%;
+        transition: all 0.6s ease; 
+    }
+  }  
+@media screen and (min-width: 280px) and (max-width: 900px) {
+
+    .navbar {
+      margin-bottom: 2%;
+    }
+  
+    .form-group {
+      width: 80%;
+      margin-bottom: 6%;
+    }
+  
+    .fieldset-left{
+      padding-left: 14%;
+    }
+    .custom-button {
+      margin-bottom: 5%;
+      margin-left: 13%;
+  }
+  }
+
+  @media screen and (min-width: 900px) and (max-width: 1086px) {
+    
+    .fieldset-left{
+      padding-left: 5%;
+    }
+
+  .form-group {
+    width: 46%;
+    transition: all 0.8s ease; 
+  } 
+}

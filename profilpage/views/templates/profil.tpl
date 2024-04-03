@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="../../../profilpage/views/templates/profil.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buubl | Profil</title>
 </head>

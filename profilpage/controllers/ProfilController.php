@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once('models/HomeModel.php');
+require_once('models/ProfilModel.php');
 require_once('libs/Smarty.class.php');
 
-class HomeController {
+class ProfilController {
     private $model;
     private $smarty;
 
@@ -31,15 +31,15 @@ if ($_SESSION['isLoggedIn'] == 1){
     if ($_SESSION['isAdmin'] == 1){
         $navbar = '../navbar/navbar_admin.tpl';
         $pdo = Connexion();
-        $homeController = new HomeController($pdo);
-        $homeController->LoadPage($navbar);
+        $ProfilController = new ProfilController($pdo);
+        $ProfilController->LoadPage($navbar);
         print_r($_SESSION);
     }
     else if ($_SESSION['isAdmin'] == 0) {
         $navbar = '../navbar/navbar.tpl';
         $pdo = Connexion();
-        $homeController = new HomeController($pdo);
-        $homeController->LoadPage($navbar);
+        $ProfilController = new ProfilController($pdo);
+        $ProfilController->LoadPage($navbar);
         print_r($_SESSION);
     }
 }
