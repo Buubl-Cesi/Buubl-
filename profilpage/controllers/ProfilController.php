@@ -8,67 +8,45 @@ class ProfilController {
     private $smarty;
 
     public function __construct($pdo) {
-        $this->model = new HomeModel($pdo);
+        $this->model = new ProfilModel($pdo);
         $this->smarty = new Smarty;
     }
     
-    public function LoadPage($navbar) {
-        $id = $_SESSION['id'];
-
-        $LastAdded = $this->model->getLastFourCompanies();
-        $LastApplied = $this->model->getLastFourAppliedCompanies($id);
-        $PilotInfo = $this->model->getPilotInfo($id);
-
-        $this->smarty->assign('LastAdded', $LastAdded);
-        $this->smarty->assign('LastLiked', $LastApplied);
-        $this->smarty->assign('PilotInfo', $PilotInfo);
-
-        $this->smarty->display($navbar);
-        $this->smarty->display('views/templates/home.tpl');
+    public function LoadPage($id) {
+        $info = $this->model->getprofil($id);
+        $this->smarty->assign('info', $info);
+        $this->smarty->display('views/templates/profil.tpl');
     }
+
+    public function update($id, $prenom, $nom, $email, $adresse, $ville, $login) {
+        $infon = $this->model->update($id, $prenom, $nom, $email, $adresse, $ville, $login);
+        $this->smarty->assign('infon', $infon);
+        $this->smarty->display('views/templates/profil.tpl');
+    }
+
 }
-if ($_SESSION['isLoggedIn'] == 1){
-    if ($_SESSION['isAdmin'] == 1){
-        $navbar = '../navbar/navbar_admin.tpl';
-        $pdo = Connexion();
-        $ProfilController = new ProfilController($pdo);
-        $ProfilController->LoadPage($navbar);
-        print_r($_SESSION);
-    }
-    else if ($_SESSION['isAdmin'] == 0) {
-        $navbar = '../navbar/navbar.tpl';
-        $pdo = Connexion();
-        $ProfilController = new ProfilController($pdo);
-        $ProfilController->LoadPage($navbar);
-        print_r($_SESSION);
-    }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : '';
+    $nom = isset($_POST['nom']) ? $_POST['nom'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $adresse = isset($_POST['adresse']) ? $_POST['adresse'] : '';
+    $ville = isset($_POST['codePostal']) ? $_POST['codePostal'] : '';
+    $login = isset($_POST['login']) ? $_POST['login'] : '';
+
+    $id = 1;
+    $pdo = Connexion();
+    $ProfilController = new ProfilController($pdo);
+    $ProfilController->update($id, $prenom, $nom, $email, $adresse, $ville, $login);
+    echo "update";
 }
 else{
-    echo' <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-    <meta charset="UTF-8">
-    <title>Erreur 403 - Accès Refusé</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-        .full-page-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            position: fixed; 
-            top: 0;
-            left: 0;
-    }
-</style>
-</head>
-<body>
-
-<img src="../../../../Images/403.png" alt="Erreur 403 - Accès Refusé" class="full-page-image">
-
-</body>
-</html>';
+    $id = 1;
+    $pdo = Connexion();
+    $ProfilController = new ProfilController($pdo);
+    $ProfilController->LoadPage($id);
 }
+    
+     
+    
+  

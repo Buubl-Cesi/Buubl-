@@ -1,54 +1,52 @@
 <?php
-class HomeModel {
+class ProfilModel {
     private $pdo;
 
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }
 
-    public function getLastFourCompanies() {
-        $stmt = $this->pdo->prepare("SELECT 
-        I.INTERNSHIP_NAME AS AddedNAME,
-        C.COMPANY_IMG AS AddedIMG
+    public function getprofil($id) {
+        $stmt = $this->pdo->prepare("SELECT U.USERS_NAME AS nom,
+        U.USERS_IMG AS ing,
+        U.USERS_FNAME AS prenom,
+        U.USERS_MAIL AS mail,
+        U.USERS_LOGIN AS logn,
+        A.ADDRESS_STREET AS adresse,
+        C.CITY_NAME AS ville
         FROM USERS U
-        JOIN STUDENTS S ON U.ID_STUDENTS = S.ID_STUDENTS 
-        JOIN APPLICATIONS A ON S.ID_STUDENTS = A.ID_STUDENTS 
-        JOIN INTERNSHIP I ON A.ID_INTERNSHIP = I.ID_INTERNSHIP
-        JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
-        ORDER BY A.ID_APPLICATIONS DESC LIMIT 4;");
+        JOIN ADDRESS A ON U.ID_ADDRESS = A.ID_ADDRESS
+        JOIN CITY C ON A.ID_CITY = C.ID_CITY
+        WHERE U.ID_USERS = :id ;");
         
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getLastFourAppliedCompanies($id) {
-        $stmt = $this->pdo->prepare("SELECT 
-        I.INTERNSHIP_NAME AS LikedNAME, 
-        C.COMPANY_IMG AS LikedIMG
-        FROM APPLICATIONS A
-        JOIN INTERNSHIP I ON A.ID_INTERNSHIP = I.ID_INTERNSHIP
-        JOIN COMPANY C ON I.ID_COMPANY = C.ID_COMPANY
-        JOIN STUDENTS S ON A.ID_STUDENTS = S.ID_STUDENTS
-        JOIN USERS U ON S.ID_STUDENTS = U.ID_STUDENTS 
-        WHERE U.ID_USERS = :id_user  
-        ORDER BY A.ID_APPLICATIONS DESC LIMIT 4;");
-
-        $stmt->bindParam(':id_user', $id);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function getPilotInfo($id) {
-        $stmt = $this->pdo->prepare("SELECT 
-        U.USERS_NAME AS InfoNAME, 
-        U.USERS_FNAME AS InfoFNAME, 
-        U.USERS_MAIL AS InfoMAIL, 
-        U.USERS_IMG AS InfoIMG
-        FROM USERS U 
-        INNER JOIN PILOT P ON U.ID_PILOT = P.ID_PILOT
-        WHERE P.PILOT_PROMOTION = (SELECT STUDENT_PROMOTION FROM STUDENTS WHERE ID_STUDENTS = (SELECT ID_STUDENTS FROM USERS WHERE ID_USERS = :id_user))");
-
-        $stmt->bindParam(':id_user', $id);
+    public function update($id, $prenom, $nom, $email, $adresse, $ville, $login) {
+        $stmt = $this->pdo->prepare("UPDATE USERS
+        SET USERS_NAME = :nom,
+            USERS_FNAME = :prenom,
+            USERS_MAIL = :email,
+            USERS_LOGIN = :logine
+        WHERE ID_USERS = :id;
+        
+        UPDATE ADDRESS
+        SET ADDRESS_STREET = :adresse
+        WHERE ID_ADDRESS = (SELECT ID_ADDRESS FROM USERS WHERE ID_USERS = :id);
+        
+        UPDATE CITY
+        SET CITY_NAME = :ville
+        WHERE ID_CITY = (SELECT ID_CITY FROM ADDRESS WHERE ID_ADDRESS = (SELECT ID_ADDRESS FROM USERS WHERE ID_USERS = :id));");
+        
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':prenom', $prenom);
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':adresse', $adresse);
+        $stmt->bindParam(':ville', $ville);
+        $stmt->bindParam(':logine', $login);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
