@@ -12,24 +12,12 @@ class StudentPageController {
     }
 
 
-    public function getNumberStudent() {
-        $numberStudent = $this->model->getNumberStudent();
-        $this->smarty->assign('numberStudent', $numberStudent);
-        return $numberStudent;
-    }
-
     public function getNumberStudentWithParameters($name, $fname, $promo) {
         $numberStudent = $this->model->getNumberStudentWithParameters($name, $fname, $promo);
         $this->smarty->assign('numberStudent', $numberStudent);
         return $numberStudent;
     }
 
-    public function getStudentWithLimit($currentPage, $limit) {
-        $offset = ($currentPage - 1) * $limit;
-        $student = $this->model->getStudentWithLimit($limit, $offset);
-        $this->smarty->assign('student', $student);
-        return $student;
-    }
 
     public function getWithLimitParameters($currentPage, $limit, $name, $fname, $promo) {
         $offset = ($currentPage - 1) * $limit;
@@ -83,14 +71,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $queryString = http_build_query($queryParams);
     
     $controller->assignRequest($queryString);
+
+    $NumberOffer = $controller->getNumberStudentWithParameters($name, $fname, $promo);
+    $offers = $controller->getWithLimitParameters($page, $limit, $name, $fname, $promo);
     
-    if (empty($name) && empty($fname) && empty($promo)) {
-        $NumberOffer = $controller->getNumberStudent();
-        $offers = $controller->getStudentWithLimit($page, $limit);
-    } else {
-        $NumberOffer = $controller->getNumberStudentWithParameters($name, $fname, $promo);
-        $offers = $controller->getWithLimitParameters($page, $limit, $name, $fname, $promo);
-    }
+
     $NumberPage = ceil($NumberOffer / $limit);
 
     $controller->GiveParameters($name, $fname, $promo);

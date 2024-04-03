@@ -6,30 +6,6 @@ class StudentPageModel {
         $this->pdo = $pdo;
     }
 
-    public function getNumberStudent() {
-        $stmt = $this->pdo->query("SELECT count(ID_STUDENTS) AS NUMBER_STUDENT
-        FROM students;");
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return intval($result['NUMBER_STUDENT']);
-    }
-
-    public function getStudentWithLimit($limit, $offset)
-    {
-        $stmt = $this->pdo->prepare("SELECT USERS_NAME,
-        USERS_FNAME,
-        STUDENT_PROMOTION,
-        USERS_MAIL,
-        USERS_IMG
-        FROM users U
-        JOIN students S ON U.ID_STUDENTS = S.ID_STUDENTS
-        LIMIT :offset, :limit;");
-        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
-        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    }
-
     public function getNumberStudentWithParameters($name, $fname, $promo) {
         $sql = "SELECT count(U.ID_STUDENTS) AS NUMBER_STUDENT
         FROM users U
