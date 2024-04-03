@@ -14,39 +14,29 @@ class CompanyPageModel {
     }
 
     public function getNumberCompanyWithParameters($name, $sector, $city) {
-        // Début de la requête SQL
-        
         $sql = "SELECT
             COUNT(C.ID_COMPANY) AS NUMBER_COMPANY
             FROM COMPANY C
             JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
             JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
             WHERE 1=1";
-    
-        // Tableau pour stocker les paramètres de la requête
+
         $params = array();
-    
-        // Vérifiez chaque paramètre et ajoutez une condition à la requête si le paramètre n'est pas vide
         if (!empty($name)) {
             $sql .= " AND COMPANY_NAME = :name";
             $params[':name'] = $name;
         }
-
         if ($sector !== "NoOne") {
             $sql .= " AND COMPANY_ACTIVITY = :sector";
             $params[':sector'] = $sector;
         }
-        
         if (!empty($city)) {
             $sql .= " AND CITY_NAME = :city";
             $params[':city'] = $city;
         }
-        // Préparez et exécutez la requête SQL
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-        // Retournez le nombre d'offres
         return $result !== false ? intval($result['NUMBER_COMPANY']) : 0;
     }
     
@@ -92,8 +82,7 @@ class CompanyPageModel {
                 $stmt->bindParam($key, $val);
             }
         }
-
-        $stmt->execute(); // No need to pass $params here as you've already bound them
+        $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
