@@ -23,23 +23,10 @@ class OfferPageController {
         return $skills;
     }
 
-    public function getNumberOffer() {
-        $numberOffer = $this->model->getNumberOffer();
-        $this->smarty->assign('numberOffer', $numberOffer);
-        return $numberOffer;
-    }
-
     public function getNumberOfferWithParameters($name, $sector, $skills, $city, $duration) {
         $numberOffer = $this->model->getNumberOfferWithParameters($name, $sector, $skills, $city, $duration);
         $this->smarty->assign('numberOffer', $numberOffer);
         return $numberOffer;
-    }
-
-    public function getOfferWithLimit($currentPage, $limit) {
-        $offset = ($currentPage - 1) * $limit;
-        $offers = $this->model->getOfferWithLimit($limit, $offset);
-        $this->smarty->assign('offers', $offers);
-        return $offers;
     }
 
     public function getWithLimitParameters($currentPage, $limit, $name, $sector, $skill, $city, $duration) {
@@ -98,13 +85,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
     $controller->assignRequest($queryString);
     
+    /*
     if (empty($name) && $sector == "NoOne" && $skill == "NoOne" && empty($city) && empty($duration)) {
         $NumberOffer = $controller->getNumberOffer();
         $offers = $controller->getOfferWithLimit($page, $limit);
     } else {
-        $NumberOffer = $controller->getNumberOfferWithParameters($name, $sector, $skill, $city, $duration);
-        $offers = $controller->getWithLimitParameters($page, $limit, $name, $sector, $skill, $city, $duration);
+        
     }
+    */
+
+    $NumberOffer = $controller->getNumberOfferWithParameters($name, $sector, $skill, $city, $duration);
+    $offers = $controller->getWithLimitParameters($page, $limit, $name, $sector, $skill, $city, $duration);
+    
 
     $NumberPage = ceil($NumberOffer / $limit);
 
