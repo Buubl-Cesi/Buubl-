@@ -6,6 +6,8 @@ class HomeModel {
         $this->pdo = $pdo;
     }
 
+ 
+
     public function getLastFourCompanies() {
         $stmt = $this->pdo->prepare("SELECT 
         I.INTERNSHIP_NAME AS AddedNAME,

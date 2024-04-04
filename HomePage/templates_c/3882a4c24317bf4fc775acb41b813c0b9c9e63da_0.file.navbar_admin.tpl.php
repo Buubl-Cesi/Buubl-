@@ -1,4 +1,27 @@
+<?php
+/* Smarty version 3.1.47, created on 2024-04-05 00:00:19
+  from 'C:\WebProject\Buubl-\HomePage\views\templates\navbar_admin.tpl' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_660f22f34d6472_61848227',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3882a4c24317bf4fc775acb41b813c0b9c9e63da' => 
+    array (
+      0 => 'C:\\WebProject\\Buubl-\\HomePage\\views\\templates\\navbar_admin.tpl',
+      1 => 1712267851,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660f22f34d6472_61848227 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <link rel="stylesheet" href="views/templates/Navbar_admin.css">
     
 
@@ -58,6 +81,10 @@
     </div> 
 </div>
 </div>
-<script src="views/templates/Navbar_admin.js"></script>
+<?php echo '<script'; ?>
+ src="views/templates/Navbar_admin.js"><?php echo '</script'; ?>
+>
 </body>
 
+<?php }
+}

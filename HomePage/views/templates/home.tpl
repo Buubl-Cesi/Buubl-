@@ -49,7 +49,7 @@
 
         </div>
         
-
+        {$button}
 
         <h1 class = "contact">Contact</h1>
 
@@ -69,6 +69,9 @@
         {/foreach}    
         </div>
         
+
+
+
     </main>
     <script src = "views/templates/home.js"></script>
 
