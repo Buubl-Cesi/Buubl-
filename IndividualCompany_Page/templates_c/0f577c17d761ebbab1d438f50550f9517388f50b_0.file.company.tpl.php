@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-04-04 19:35:47
+  from 'C:\Server\Buubl-\IndividualCompany_Page\views\templates\company.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_660ee4f30a7209_83598015',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '0f577c17d761ebbab1d438f50550f9517388f50b' => 
+    array (
+      0 => 'C:\\Server\\Buubl-\\IndividualCompany_Page\\views\\templates\\company.tpl',
+      1 => 1712252146,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660ee4f30a7209_83598015 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -21,16 +44,22 @@
             <section>
                 <fieldset class="fieldset-1">
 
-                    <h1 class="text-title">{$IndividualCompany['COMPANY_NAME']}</h1>
+                    <h1 class="text-title"><?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['COMPANY_NAME'];?>
+</h1>
                     <div>
                         <h4 class="text-subtitle">Caractéristiques :</h4>
 
                         <fieldset class="fieldset-caracteristics">
-                            <p class="text-data"><span class="text-data-decoration">Adresse</span> :{$IndividualCompany['ADDRESS_STREET']}, {$IndividualCompany['ADDRESS_NB_APPARTEMENT']}, {$IndividualCompany['CITY_NAME']}, {$IndividualCompany['CITY_PC']}</p>
+                            <p class="text-data"><span class="text-data-decoration">Adresse</span> :<?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['ADDRESS_STREET'];?>
+, <?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['ADDRESS_NB_APPARTEMENT'];?>
+, <?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['CITY_NAME'];?>
+, <?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['CITY_PC'];?>
+</p>
                         </fieldset>
                     
                         <fieldset class="fieldset-caracteristics">
-                            <p class="text-data"><span class="text-data-decoration">Secteur d'activité</span> : {$IndividualCompany['COMPANY_ACTIVITY']}</p>
+                            <p class="text-data"><span class="text-data-decoration">Secteur d'activité</span> : <?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['COMPANY_ACTIVITY'];?>
+</p>
                         </fieldset>
 
                         <fieldset class="fieldset-caracteristics">
@@ -42,14 +71,16 @@
                         </fieldset>
 
                         <fieldset class="fieldset-caracteristics">
-                            <p class="text-data"><span class="text-data-decoration">Note</span> :{$IndividualCompany['COMPANY_MARK']}</p>
+                            <p class="text-data"><span class="text-data-decoration">Note</span> :<?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['COMPANY_MARK'];?>
+</p>
                         </fieldset>
                     </div>
                     
                     <div>
                         <h3 class="text-subtitle">Description :</h3>
                         <fieldset class="fieldset-comment">
-                            <p class="text-data">{$IndividualCompany['COMPANY_DESCRIPTION']}</p>
+                            <p class="text-data"><?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['COMPANY_DESCRIPTION'];?>
+</p>
                         </fieldset>
                     </div>
 
@@ -70,10 +101,12 @@
                 </fieldset>
 
                 <fieldset class="fieldset-3">
-                    <img class="background-img-joint" src="{$IndividualCompany['COMPANY_IMG']}" alt="Logo_entreprise">
+                    <img class="background-img-joint" src="<?php echo $_smarty_tpl->tpl_vars['IndividualCompany']->value['COMPANY_IMG'];?>
+" alt="Logo_entreprise">
                 </fieldset>
             </section>
         </div>
     </main>
 </body>
-</html>
+</html><?php }
+}

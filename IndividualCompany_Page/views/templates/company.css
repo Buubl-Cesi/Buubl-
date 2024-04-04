@@ -115,17 +115,36 @@ input:checked ~ .star {
 }
   
 /*Text only*/
-.text-data{
+
+.text-title{
+    color: black;
+    font-family: "Arial", "Arial Normal", sans-serif;
+    font-size:150%;
+    position: relative;
+    top:0.5%;
+    left:5%;
+    
+}
+
+.text-subtitle {
+    position: relative;
     color: black;
     font-size: small;
     font-family: "Arial", "Arial Normal", sans-serif;
-    padding-left:2.5%;
+    left: 7%;
 }
 
-.text-comment{
-    color: grey;
+
+.text-data{
+    color: rgb(101, 96, 90);
     font-size: small;
     font-family: "Arial", "Arial Normal", sans-serif;
+    margin-left: 2%;
+}
+
+.text-data-decoration {
+    text-decoration: underline;
+    color: #000000;
 }
 
 .text-feedback {
@@ -143,38 +162,45 @@ input:checked ~ .star {
     background-color: rgba(238, 238, 238, 1);
     border: 1.5px solid #000000;
     border-radius: 10px;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    height: 5vw;
+    margin-right: 7.5%;
+    margin-left: 7.5%;
+    padding-top: 0;
+    padding-bottom: 4%;
+}
+
+
+.fieldset-caracteristics {
+    overflow: auto;
+    background-color: rgba(238, 238, 238, 1);
+    border: 1.5px solid #000000;
+    border-radius: 10px;
+    margin-right: 7.5%;
+    margin-left: 7.5%;
+    margin-bottom: 1%;
+    padding: 0;
+    
 }
 
 /*Media Queries*/
-@media screen and (max-width:1280px){
-    .fieldset-comment {
-        height:3vw;
+
+@media (display-mode: fullscreen) {
+    .fieldset-comment{
+        height: 15%;
     }
 }
 
-@media screen and (max-width:1100px) {
-    .background-img-brand{
-        display: none;
+
+@media screen and (max-width:1280px){
+    body{
+        overflow-y:auto ;
     }
 
-    .fieldset-1{
-        clip-path: none;
+    .green-box{
+        height: 90%;
     }
 
-    .fieldset-text{
-        width: 120%;
-    }
-
-    .text-title {
-        left: 5%;
-    }
-
-    .text-subtitle {
-        padding-top: 11.75%;
-        padding-left: 2.7%;
+    .fieldset-comment{
+        height: 6vw;
     }
 }
 
@@ -191,9 +217,9 @@ input:checked ~ .star {
     }
 
     .fieldset-2{
-        width: 80%;
+        width: 70%;
         height: 5vw;
-        left: 7%;
+        left: 12%;
         top:82%;
         background-color: rgba(238, 238, 238, 1);
         border: 1.5px solid #000000;
@@ -227,30 +253,46 @@ input:checked ~ .star {
     }
 }
 
-@media screen and (max-width:389px) {
-    .fieldset-1{
-        left: 1.5%;
+@media screen and (max-width:420px) {
+
+    .green-box{
+        height: 100%;
     }
 
-    .fieldset-2{
-        height: 7vw;
+    .fieldset-1{
+        width: 82.5%;
     }
 
     .fieldset-comment{
-        margin-left: 2%;
-        height: 5vw;
-        width: 90%;
+        height: 20vw;
     }
 
-    .fieldset-text{
-        width: 100%;
-    }
-
-    .fieldset-text{
-        width: 110%;
+    .fieldset-2{
+        top: 85%;
+        width: 65%;
     }
 
     .star{
-        font-size: 140%;
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width:330px) {
+
+    .green-box{
+        height: 110%;
+    }
+
+    .fieldset-1{
+        width: 80%;
+    }
+
+    .fieldset-comment{
+        height: 20vw;
+    }
+
+
+    .star{
+        font-size: 90%;
     }
 }
