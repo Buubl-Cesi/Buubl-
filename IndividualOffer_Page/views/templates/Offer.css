@@ -1,7 +1,8 @@
 /*Sélecteur*/
 body {
     background-color: rgb(42, 43, 52);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -50,7 +51,7 @@ input:checked ~ .star {
 .fieldset-1, .fieldset-2, .fieldset-3 {
     position: absolute;
     border: 2px solid rgba(214, 207, 207, 0.5);
-    height: 85%;
+    height: 88%;
     width: 57.7%;
 }
 
@@ -65,7 +66,7 @@ input:checked ~ .star {
     left: 62%;
     top: 66%;
     width: 33%;
-    height: 25%;
+    height: 27.5%;
     background-color: whitesmoke;
     border: 8px solid rgba(214, 207, 207, 0.5) ;
     border-radius: 5px;
@@ -87,7 +88,7 @@ input:checked ~ .star {
 .green-box {
     background-color: rgba(113, 194, 133, 0.45);
     position: absolute;
-    height: 75%;
+    height: 120%;
     width: 87.5%;
     top : 20%;
     left: 7%;
@@ -115,17 +116,36 @@ input:checked ~ .star {
 }
   
 /*Text only*/
-.text-data{
+
+.text-title{
+    color: black;
+    font-family: "Arial", "Arial Normal", sans-serif;
+    font-size:150%;
+    position: relative;
+    top:0.5%;
+    left:5%;
+    
+}
+
+.text-subtitle {
+    position: relative;
     color: black;
     font-size: small;
     font-family: "Arial", "Arial Normal", sans-serif;
-    padding-left:2.5%;
+    left: 7%;
 }
 
-.text-comment{
-    color: grey;
+
+.text-data{
+    color: rgb(101, 96, 90);
     font-size: small;
     font-family: "Arial", "Arial Normal", sans-serif;
+    margin-left: 2%;
+}
+
+.text-data-decoration {
+    text-decoration: underline;
+    color: #000000;
 }
 
 .text-feedback {
@@ -135,7 +155,7 @@ input:checked ~ .star {
     font-weight: bold;
     margin-left: 42.5%;
     margin-right: 45%;
-    margin-top: -3%;
+    margin-top: 4.5%;
 }
 
 .fieldset-comment {
@@ -143,21 +163,36 @@ input:checked ~ .star {
     background-color: rgba(238, 238, 238, 1);
     border: 1.5px solid #000000;
     border-radius: 10px;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    height: 3vw;
+    margin-right: 7.5%;
+    margin-left: 7.5%;
+    padding-top: 0;
+    padding-bottom: 4%;
+}
+
+
+.fieldset-caracteristics {
+    overflow: auto;
+    background-color: rgba(238, 238, 238, 1);
+    border: 1.5px solid #000000;
+    border-radius: 10px;
+    margin-right: 7.5%;
+    margin-left: 7.5%;
+    margin-bottom: 1%;
+    padding: 0;
+    
 }
 
 .button-container button {
     padding: 10px 20%;
-    margin: 5px;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 4%;
     font-size: 16px;
     color: rgb(0, 0, 0);
     background-color: #d1d1d1;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left:2.5%;
 }
 
 .button-container #like-button:hover {
@@ -169,55 +204,77 @@ input:checked ~ .star {
 }
 
 /*Media Queries*/
+
+@media (display-mode: fullscreen) {
+    .green-box{
+        height: 100%;
+    }
+}
+
+
+
 @media screen and (max-width:1280px){
     .fieldset-comment {
         height:2vw;
     }
 
+    .fieldset-1{
+        height: 90%;
+    }
+
+    .fieldset-2{
+        height: 29%;
+    }
+
     .button-container #like-button:hover {
         background-color: rgba(120, 221, 255, 0.45);
     }
 
     .button-container #like-button:hover {
         background-color: rgba(120, 221, 255, 0.45);
+    }
+
+    .button-container button {
+        padding: 6px 10%;
+        font-size: 18px;
+        margin-left: 10%;
+        margin-right: 5%;
     }
 }
 
 @media screen and (max-width:1100px) {
-    .background-img-brand{
-        display: none;
-    }
 
     .fieldset-1{
-        clip-path: none;
+        height: 87%;
+    }
+    .fieldset-2{
+        width: 31%;
+        height: 27.5%;
     }
 
-    .fieldset-text{
-        width: 120%;
+    .fieldset-3 {
+        width: 31%;
     }
 
-    .text-title {
-        left: 5%;
+    .star{
+        margin-top: 20%;
     }
 
-    .text-subtitle {
-        padding-top: 11.75%;
-        padding-left: 2.7%;
-    }
 
-    .button-container button {
-        padding: 3px 5%;
-        font-size: 12px;
-    }
 }
 
-@media screen and (max-width:740px){
+@media screen and (max-width:800px){
     .fieldset-3,
     .text-feedback,
     .background-img-joint{
         display: none;
     }
 
+
+    .green-box{
+        margin-left: 12%;
+        height: 145%;
+    }
     .fieldset-1{
         width: 88.5%;
         height: 87.5%;
@@ -234,6 +291,7 @@ input:checked ~ .star {
     }
 
     .star{
+        margin-top: 0;
         font-size: 4vw;
     }
 
@@ -244,9 +302,95 @@ input:checked ~ .star {
     }
 
     .fieldset-comment{
-        height: 1.5vw;
+        height: 6vw;
     }
 }
+
+
+@media screen and (max-width:600px) {
+
+    .green-boxn{
+        left: 1%;
+    }
+
+    .fieldset-1{
+        width: 87%;
+    }
+
+    .fieldset-2{
+        height: 7vw;
+    }
+
+    .star{
+        font-size: 140%;
+    }
+
+    .fieldset-comment{
+        height: 7vw;
+    }
+
+    .button-container button {
+        padding: 5px 8%;
+        font-size: 14px;
+        margin-left: 12.5%;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (max-width:380px) {
+
+    .green-box{
+        left: -5%;
+        height: 150%;
+    }
+    .fieldset-1{
+        width: 84%;
+    }
+
+    .fieldset-2{
+        top: 85%;
+    }
+
+    .button-container button {
+        padding: 3px 5%;
+        font-size: 12px;
+        margin-left: 13.5%;
+        margin-right: 5%;
+    }
+
+    .star{
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width:300px) {
+
+    .green-box{
+        height: 160%;
+    }
+
+    .fieldset-1{
+        width: 80%;
+    }
+    .fieldset-2{
+        width: auto;
+        left: 30%;
+
+    }
+
+    .button-container button {
+        padding: 1px 3%;
+        font-size: 10px;
+        margin-left: 15.5%;
+        margin-right: 5%;
+    }
+
+}
+
+
+
+
+
 
 @media only screen and (max-width: 800px) and (max-height:500px) and (orientation: landscape) {
     .background-img-green,
@@ -257,33 +401,5 @@ input:checked ~ .star {
 
     .background-img-turn{
         display: block;
-    }
-}
-
-@media screen and (max-width:389px) {
-    .fieldset-1{
-        left: 1.5%;
-    }
-
-    .fieldset-2{
-        height: 7vw;
-    }
-
-    .fieldset-comment{
-        margin-left: 2%;
-        height: 2vw;
-        width: 90%;
-    }
-
-    .fieldset-text{
-        width: 100%;
-    }
-
-    .fieldset-text{
-        width: 110%;
-    }
-
-    .star{
-        font-size: 140%;
     }
 }

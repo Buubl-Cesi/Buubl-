@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-04 19:35:47
+/* Smarty version 3.1.47, created on 2024-04-04 21:40:39
   from 'C:\Server\Buubl-\IndividualCompany_Page\views\templates\company.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660ee4f30a7209_83598015',
+  'unifunc' => 'content_660f02374eea98_66663882',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f577c17d761ebbab1d438f50550f9517388f50b' => 
     array (
       0 => 'C:\\Server\\Buubl-\\IndividualCompany_Page\\views\\templates\\company.tpl',
-      1 => 1712252146,
+      1 => 1712253945,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660ee4f30a7209_83598015 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660f02374eea98_66663882 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
