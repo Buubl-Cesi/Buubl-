@@ -15,53 +15,7 @@
 
     <main>
         <div>
-            <div class="navbar" id="navbar">
-
-                <a href="accueil">
-                    <img src="Images/loupe.png" alt="Loupe" class="loupe" id="loupe" onmouseover="changeloupe()" onmouseout="resetloupe()">
-                </a>
             
-                <div class="search-box" >
-                    <input type="text" placeholder="Rechercher...">
-                </div>
-            
-                <div class="logo">
-                    <a href="accueil">
-                        <img src="Images/logo.png" alt="Logo" id="logo">
-                    </a>
-                </div>
-            
-                <div class="menu1">
-                    <div class="page"> 
-                    <a href="#accueil">Accueil</a>
-                    <a href="#services">Offre</a>
-                    <a href="#apropos">Entreprise</a>
-                    <a href="#contact">Demande</a>
-                    <a href="#contact">Profil</a>
-                    </div>
-                    <a href="like">
-                        <img src="Images/coeur.png" alt="Coeur" class="coeur" id="coeur" onmouseover="changecoeur()" onmouseout="resetcoeur()">
-                    </a>
-                </div>
-
-
-                <div class="menu2">
-                    <div class="hamburger-menu">
-                        <a>
-                        <img src="Images/slider.png" alt="menu" id="menuGR" onmouseover="changemenu()" onmouseout="resetmenu()" onclick="toggleMenu()">
-                        </a>
-                    </div>
-                    <div class="menu" id="menu">
-                        <a href="#accueil">Accueil</a>
-                        <a href="#services">Offre</a>
-                        <a href="#apropos">Entreprise</a>
-                        <a href="#contact">Demande</a>
-                        <a href="#contact">Profil</a>
-                        <a href="like">Like</a>
-                    </div> 
-                </div>
-            </div>
-        </div>
         
         <div class="green-box">
             <div class="select-form">
@@ -192,6 +146,9 @@
                             </div>
                         </div>
                     </fieldset>
+
+                    
+
                 </form>
 
                 <form id="form2" method="post">
@@ -289,6 +246,8 @@
                         </div>
                     </fieldset>
                 </form>
+
+                    
 
 
             <form id="form3" method="post">
@@ -400,6 +359,10 @@
                             </fieldset>
                         </div>
                     </div>
+                    
+
+
+                       
                 </fieldset>
             </form>
 
@@ -510,14 +473,6 @@
             </form>
             </section>
         </div>
-
-        <div>
-            <table>
-
-            </table>
-        </div>
-
-
 
         <script src="view/admin.js"></script>
     </main>

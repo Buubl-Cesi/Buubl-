@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-04 20:54:10
+/* Smarty version 3.1.47, created on 2024-04-05 00:38:43
   from 'C:\Users\flori\Desktop\Buubl-\DashboardAdmin\view\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660ef75213b1a5_91584720',
+  'unifunc' => 'content_660f2bf3d34818_58450250',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b30721803bdfc28e0197a3124a3317fe74679841' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\DashboardAdmin\\view\\admin.tpl',
-      1 => 1712256846,
+      1 => 1712270194,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660ef75213b1a5_91584720 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660f2bf3d34818_58450250 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,53 +38,7 @@ function content_660ef75213b1a5_91584720 (Smarty_Internal_Template $_smarty_tpl)
 
     <main>
         <div>
-            <div class="navbar" id="navbar">
-
-                <a href="accueil">
-                    <img src="Images/loupe.png" alt="Loupe" class="loupe" id="loupe" onmouseover="changeloupe()" onmouseout="resetloupe()">
-                </a>
             
-                <div class="search-box" >
-                    <input type="text" placeholder="Rechercher...">
-                </div>
-            
-                <div class="logo">
-                    <a href="accueil">
-                        <img src="Images/logo.png" alt="Logo" id="logo">
-                    </a>
-                </div>
-            
-                <div class="menu1">
-                    <div class="page"> 
-                    <a href="#accueil">Accueil</a>
-                    <a href="#services">Offre</a>
-                    <a href="#apropos">Entreprise</a>
-                    <a href="#contact">Demande</a>
-                    <a href="#contact">Profil</a>
-                    </div>
-                    <a href="like">
-                        <img src="Images/coeur.png" alt="Coeur" class="coeur" id="coeur" onmouseover="changecoeur()" onmouseout="resetcoeur()">
-                    </a>
-                </div>
-
-
-                <div class="menu2">
-                    <div class="hamburger-menu">
-                        <a>
-                        <img src="Images/slider.png" alt="menu" id="menuGR" onmouseover="changemenu()" onmouseout="resetmenu()" onclick="toggleMenu()">
-                        </a>
-                    </div>
-                    <div class="menu" id="menu">
-                        <a href="#accueil">Accueil</a>
-                        <a href="#services">Offre</a>
-                        <a href="#apropos">Entreprise</a>
-                        <a href="#contact">Demande</a>
-                        <a href="#contact">Profil</a>
-                        <a href="like">Like</a>
-                    </div> 
-                </div>
-            </div>
-        </div>
         
         <div class="green-box">
             <div class="select-form">
@@ -215,6 +169,9 @@ function content_660ef75213b1a5_91584720 (Smarty_Internal_Template $_smarty_tpl)
                             </div>
                         </div>
                     </fieldset>
+
+                    
+
                 </form>
 
                 <form id="form2" method="post">
@@ -312,6 +269,8 @@ function content_660ef75213b1a5_91584720 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                     </fieldset>
                 </form>
+
+                    
 
 
             <form id="form3" method="post">
@@ -423,6 +382,10 @@ function content_660ef75213b1a5_91584720 (Smarty_Internal_Template $_smarty_tpl)
                             </fieldset>
                         </div>
                     </div>
+                    
+
+
+                       
                 </fieldset>
             </form>
 
@@ -523,8 +486,9 @@ function content_660ef75213b1a5_91584720 (Smarty_Internal_Template $_smarty_tpl)
 
                         <div>
                             <fieldset class="fieldset-button">
-                                
-                                <button class="button4"  type="submit" name="action" value="ReadOffer" id = "readOffer">Afficher</button>
+                                <button class="button" type="submit" name="action" value="createOffer">Ajouter</button>
+                                <button class="button2" type="submit" name="action" value="updateOffer">Modifier</button>
+                                <button class="button3" type="submit" name="action" value="deleteOffer">Supprimer</button>
                             </fieldset>
                         </div>
                     </div>
@@ -532,6 +496,218 @@ function content_660ef75213b1a5_91584720 (Smarty_Internal_Template $_smarty_tpl)
             </form>
             </section>
         </div>
+
+        <?php if (!empty($_smarty_tpl->tpl_vars['offer']->value)) {?>
+        <div>
+            <table>
+                <tr>
+                    <th>Nom de l'offre</th>
+                    <th>Non de l'entreprise</th>
+                    <th>Description</th>
+                    <th>Durée</th>
+                    <th>Date de début</th>
+                    <th>Date de fin</th>
+                    <th>Nombre d'heures</th>
+                    <th>Rémunération</th>
+                    <th>Compétences</th>
+                    <th>Nombre de postes</th>
+                </tr>
+
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['offer']->value, 'o');
+$_smarty_tpl->tpl_vars['o']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['o']->value) {
+$_smarty_tpl->tpl_vars['o']->do_else = false;
+?>
+                <tr>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_NAME'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['COMPANY_NAME'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_DESCRIPTION'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_DURATION'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_START_DATE'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_END_DATE'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_SHEDULE'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_REMUNERATION'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_SKILLS'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['o']->value['INTERNSHIP_PLACE_NB'];?>
+</td>
+                </tr>
+            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </table>
+        </div>
+        <?php }?>
+
+
+        <?php if (!empty($_smarty_tpl->tpl_vars['company']->value)) {?>
+            <div>
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Secteur d'activité</th>
+                        <th>Description</th>
+                        <th>Pays</th>
+                        <th>Code Postal</th>
+                        <th>Ville</th>
+                        <th>Rue</th>
+                        <th>Numéro d'appartement</th>
+                    </tr>
+
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['student']->value, 's');
+$_smarty_tpl->tpl_vars['s']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['s']->value) {
+$_smarty_tpl->tpl_vars['s']->do_else = false;
+?>
+                    <tr>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_ACTIVITY'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['COMPANY_DESCRIPTION'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['COUNTRY_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['CITY_CP'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['CITY_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['ADDRESS_STREET'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['ADDRESS_NB_APPARTEMENT'];?>
+</td>
+                    </tr>
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </table>
+            </div>
+        <?php }?>
+
+        <?php if (!empty($_smarty_tpl->tpl_vars['pilot']->value)) {?>
+            <div>
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
+                        <th>Login</th>
+                        <th>Mot de passe</th>
+                        <th>Promotion</th>
+                        <th>Pays</th>
+                        <th>Code Postal</th>
+                        <th>Ville</th>
+                        <th>Rue</th>
+                        <th>Numéro d'appartement</th>
+                        <th>Secteur d'activité</th>
+                    </tr>
+
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['pilot']->value, 'p');
+$_smarty_tpl->tpl_vars['p']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
+$_smarty_tpl->tpl_vars['p']->do_else = false;
+?>
+                    <tr>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['USERS_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['USERS_FNAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['USERS_MAIL'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['USERS_LOGIN'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['USERS_PASSWORD'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['PILOT_PROMOTION'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['COUNTRY_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['CITY_PC'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['CITY_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['p']->value['ADDRESS_STREET'];?>
+</td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['p']->value['ADDRESS_NB_APPARTEMENT'];?>
+</td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['p']->value['PILOT_FIELD'];?>
+</td>
+                            </tr>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </table>
+                    </div>
+        <?php }?>
+
+
+        <?php if (!empty($_smarty_tpl->tpl_vars['student']->value)) {?>
+            <div>
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
+                        <th>Login</th>
+                        <th>Mot de passe</th>
+                        <th>Promo</th>
+                        <th>Pays</th>
+                        <th>Code Postal</th>
+                        <th>Ville</th>
+                        <th>Rue</th>
+                        <th>Numéro d'appartement</th>
+                    </tr>
+
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['company']->value, 'c');
+$_smarty_tpl->tpl_vars['c']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['c']->value) {
+$_smarty_tpl->tpl_vars['c']->do_else = false;
+?>
+                    <tr>
+                        <td><?php echo $_smarty_tpl->tpl_vars['s']->value['USERS_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['USERS_FNAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['USERS_MAIL'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['USERS_LOGIN'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['USERS_PASSWORD'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['STUDENT_PROMOTION'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['COUNTRY_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['CITY_PC'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['CITY_NAME'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['ADDRESS_STREET'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['ADDRESS_NB_APPARTEMENT'];?>
+</td>
+                    </tr>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </table>
+        </div>
+        <?php }?>
+
+
+
         <?php echo '<script'; ?>
  src="view/admin.js"><?php echo '</script'; ?>
 >

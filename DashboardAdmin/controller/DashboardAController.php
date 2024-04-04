@@ -90,35 +90,20 @@ class DashboardAController {
 
 
 
-// Fonctions qui récupère pour le tableau :
-
-    public function getStudents(){
-        $students = $this->model->getStudents();
-        $this->smarty->assign('view/table.tpl');
-        $this->smarty->assign('students', $students);
-        $this->smarty->display('view/table.tpl');
-    }
-
-    public function getCompany(){
-        $this->model->getCompany();
-        $this->smarty->assign('view/admin.tpl');
-    }
-
-    public function getPilot(){
-        $this->model->getPilot();
-        $this->smarty->assign('view/admin.tpl');
-    }
-
-    public function getOffer(){
-        $this->model->getOffer();
-        $this->smarty->assign('view/admin.tpl');
-    }
-
 }
+
+
+$pdo = Connexion();
+$dashboardAController = new DashboardAController($pdo);
+
+
+
+
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $action = isset($_POST["action"]) ? $_POST["action"] : '';
 
+        
 // ETUDIANT ----------------------------------------------------------------------------------------------------------        
         if ($action == 'createStudent') {
             $name_student = isset($_POST["name_student"]) ? $_POST["name_student"] : '';
@@ -134,8 +119,11 @@ class DashboardAController {
             $numap_student = isset($_POST["numap_student"]) ? $_POST["numap_student"] : '';
             $pfp_student = isset($_POST["pfp_student"]) ? $_POST["pfp_student"] : '';
 
+
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
+        
+            
             $dashboardAController->createStudents($name_student, $fname_student, $mail_student, $login_student, $password_student, $promotion_student, $country_student, $pc_student, $city_student, $street_student, $numap_student, $pfp_student);
         }
 
@@ -198,7 +186,7 @@ class DashboardAController {
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->updateCompany($name_company, $activity_company, $desc_company, $country_company, $pc_company, $city_company, $street_company, $numap_company, $pfp_company);
-
+            
         }
 
         else if ($action =='deleteCompany') {
@@ -208,6 +196,7 @@ class DashboardAController {
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->deleteCompany($name_company);
+            
         }
 
 
@@ -230,6 +219,7 @@ class DashboardAController {
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->createPilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot, $password_pilot, $promotion_pilot, $country_pilot, $pc_pilot, $city_pilot, $street_pilot, $numap_pilot, $activity_pilot);
+
         }
 
         else if ($action =='updatePilot'){
@@ -250,6 +240,7 @@ class DashboardAController {
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot, $password_pilot, $promotion_pilot, $country_pilot, $pc_pilot, $city_pilot, $street_pilot, $numap_pilot, $activity_pilot);
+
         }
 
         else if ($action == 'deletePilot') {
@@ -258,6 +249,7 @@ class DashboardAController {
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->deletePilot($login_pilot);
+
         }
 
 // OFFRE ----------------------------------------------------------------------------------------------------------
@@ -296,6 +288,7 @@ class DashboardAController {
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name);
+            
         }
 
         else if ($action == 'deleteOffer') {
@@ -313,30 +306,4 @@ class DashboardAController {
         $dashboardAController->display();
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        $action = isset($_GET["action"]) ? $_GET["action"] : '';
-
-        if ($action == 'getStudents') {
-            $pdo = Connexion();
-            $dashboardAController = new DashboardAController($pdo);
-            $dashboardAController->getStudents();
-        }
-
-        else if ($action == 'getCompany') {
-            $pdo = Connexion();
-            $dashboardAController = new DashboardAController($pdo);
-            $dashboardAController->getCompany();
-        }
-
-        else if ($action == 'getPilot') {
-            $pdo = Connexion();
-            $dashboardAController = new DashboardAController($pdo);
-            $dashboardAController->getPilot();
-        }
-
-        else if ($action == 'getOffer') {
-            $pdo = Connexion();
-            $dashboardAController = new DashboardAController($pdo);
-            $dashboardAController->getOffer();
-        }
-    }
+?>
