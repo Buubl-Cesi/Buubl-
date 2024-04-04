@@ -30,8 +30,8 @@ class OfferPageModel {
             WHERE 1=1";
         $params = array();
         if (!empty($name)) {
-            $sql .= " AND COMPANY_NAME = :name";
-            $params[':name'] = $name;
+            $sql .= " AND COMPANY_NAME LIKE :name";
+            $params[':name'] = "%{$name}%";
         }
         if ($sector !== "NoOne") {
             $sql .= " AND COMPANY_ACTIVITY = :sector";
@@ -42,12 +42,12 @@ class OfferPageModel {
             $params[':skill'] = $skill;
         }
         if (!empty($city)) {
-            $sql .= " AND CITY_NAME = :city";
-            $params[':city'] = $city;
+            $sql .= " AND CITY_NAME LIKE :city";
+            $params[':city'] = "%{$city}%";
         }
         if (!empty($duration)) {
-            $sql .= " AND INTERNSHIP_DURATION = :duration";
-            $params[':duration'] = $duration;
+            $sql .= " AND INTERNSHIP_DURATION LIKE :duration";
+            $params[':duration'] = "%{$duration}%";
         }
 
         $stmt = $this->pdo->prepare($sql);
@@ -71,8 +71,8 @@ class OfferPageModel {
         $params = array();
 
         if (!empty($name)) {
-            $sql .= " AND COMPANY_NAME = :name"; 
-            $params[':name'] = $name;
+            $sql .= " AND COMPANY_NAME LIKE :name"; 
+            $params[':name'] = "%{$name}%";
         }
 
         if ($sector !== "NoOne") {
@@ -84,12 +84,12 @@ class OfferPageModel {
             $params[':skills'] = $skills;
         }
         if (!empty($city)) {
-            $sql .= " AND CITY_NAME = :city";
-            $params[':city'] = $city;
+            $sql .= " AND CITY_NAME LIKE :city";
+            $params[':city'] = "%{$city}%";
         }
         if (!empty($duration)) {
-            $sql .= " AND INTERNSHIP_DURATION = :duration";
-            $params[':duration'] = $duration;
+            $sql .= " AND INTERNSHIP_DURATION LIKE :duration";
+            $params[':duration'] = "%{$duration}%";
         }
 
         $sql .= " LIMIT :offset, :limit";
