@@ -137,3 +137,20 @@ function validateInput(input) {
         input.value = "";
     }
 }
+
+
+document.getElementById("readOffer").addEventListener("click", function() {
+    // Effectuer une requête GET vers le contrôleur PHP
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "DashboardAController.php", readOffer);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Réponse du contrôleur
+            console.log(xhr.responseText);
+        }
+    };
+    xhr.send();
+});
+
+
+

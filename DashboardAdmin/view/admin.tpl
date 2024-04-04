@@ -510,6 +510,15 @@
             </form>
             </section>
         </div>
+
+        <div>
+            <table>
+
+            </table>
+        </div>
+
+
+
         <script src="view/admin.js"></script>
     </main>
 </body>

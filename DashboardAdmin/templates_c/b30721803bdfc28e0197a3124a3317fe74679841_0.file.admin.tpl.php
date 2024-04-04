@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-04 18:51:32
+/* Smarty version 3.1.47, created on 2024-04-04 20:54:10
   from 'C:\Users\flori\Desktop\Buubl-\DashboardAdmin\view\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660eda94d98679_19313429',
+  'unifunc' => 'content_660ef75213b1a5_91584720',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b30721803bdfc28e0197a3124a3317fe74679841' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\DashboardAdmin\\view\\admin.tpl',
-      1 => 1712249489,
+      1 => 1712256846,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660eda94d98679_19313429 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660ef75213b1a5_91584720 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -523,9 +523,8 @@ function content_660eda94d98679_19313429 (Smarty_Internal_Template $_smarty_tpl)
 
                         <div>
                             <fieldset class="fieldset-button">
-                                <button class="button" type="submit" name="action" value="createOffer">Ajouter</button>
-                                <button class="button2" type="submit" name="action" value="updateOffer">Modifier</button>
-                                <button class="button3" type="submit" name="action" value="deleteOffer">Supprimer</button>
+                                
+                                <button class="button4"  type="submit" name="action" value="ReadOffer" id = "readOffer">Afficher</button>
                             </fieldset>
                         </div>
                     </div>

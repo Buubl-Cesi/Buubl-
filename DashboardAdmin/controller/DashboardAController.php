@@ -87,13 +87,32 @@ class DashboardAController {
         $this->model->deleteOffer($name_offer);
         $this->smarty->display('view/admin.tpl');
     }
-    
 
 
 
+// Fonctions qui récupère pour le tableau :
 
+    public function getStudents(){
+        $students = $this->model->getStudents();
+        $this->smarty->assign('view/table.tpl');
+        $this->smarty->assign('students', $students);
+        $this->smarty->display('view/table.tpl');
+    }
 
+    public function getCompany(){
+        $this->model->getCompany();
+        $this->smarty->assign('view/admin.tpl');
+    }
 
+    public function getPilot(){
+        $this->model->getPilot();
+        $this->smarty->assign('view/admin.tpl');
+    }
+
+    public function getOffer(){
+        $this->model->getOffer();
+        $this->smarty->assign('view/admin.tpl');
+    }
 
 }
 
@@ -292,4 +311,32 @@ class DashboardAController {
     $pdo = Connexion();
         $dashboardAController = new DashboardAController($pdo);
         $dashboardAController->display();
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $action = isset($_GET["action"]) ? $_GET["action"] : '';
+
+        if ($action == 'getStudents') {
+            $pdo = Connexion();
+            $dashboardAController = new DashboardAController($pdo);
+            $dashboardAController->getStudents();
+        }
+
+        else if ($action == 'getCompany') {
+            $pdo = Connexion();
+            $dashboardAController = new DashboardAController($pdo);
+            $dashboardAController->getCompany();
+        }
+
+        else if ($action == 'getPilot') {
+            $pdo = Connexion();
+            $dashboardAController = new DashboardAController($pdo);
+            $dashboardAController->getPilot();
+        }
+
+        else if ($action == 'getOffer') {
+            $pdo = Connexion();
+            $dashboardAController = new DashboardAController($pdo);
+            $dashboardAController->getOffer();
+        }
     }
