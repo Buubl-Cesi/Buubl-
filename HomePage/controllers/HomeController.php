@@ -8,10 +8,10 @@ class HomeController {
     private $smarty;
     public $id;
 
-    public function __construct($pdo) {
+    public function __construct($pdo, $id) { 
         $this->model = new HomeModel($pdo);
         $this->smarty = new Smarty;
-        $this->id = 2; 
+        $this->id = $id; 
     }
     
     public function LoadPage() {
@@ -37,8 +37,8 @@ class HomeController {
     }
 }
 
-$id=2;
+$id = 2;
 $pdo = Connexion();
-$homeController = new HomeController($pdo);
+$homeController = new HomeController($pdo, $id);
 $homeController->LoadPage();
 print_r($_SESSION);
