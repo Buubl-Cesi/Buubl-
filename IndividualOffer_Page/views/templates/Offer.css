@@ -145,13 +145,41 @@ input:checked ~ .star {
     border-radius: 10px;
     margin-right: 2.5%;
     margin-left: 2.5%;
-    height: 5vw;
+    height: 3vw;
+}
+
+.button-container button {
+    padding: 10px 20%;
+    margin: 5px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    background-color: #d1d1d1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left:2.5%;
+}
+
+.button-container #like-button:hover {
+    background-color: rgba(120, 221, 255, 0.45);
+}
+
+.button-container #application-button:hover {
+    background-color: rgba(149, 255, 193, 0.45);
 }
 
 /*Media Queries*/
 @media screen and (max-width:1280px){
     .fieldset-comment {
-        height:3vw;
+        height:2vw;
+    }
+
+    .button-container #like-button:hover {
+        background-color: rgba(120, 221, 255, 0.45);
+    }
+
+    .button-container #like-button:hover {
+        background-color: rgba(120, 221, 255, 0.45);
     }
 }
 
@@ -175,6 +203,11 @@ input:checked ~ .star {
     .text-subtitle {
         padding-top: 11.75%;
         padding-left: 2.7%;
+    }
+
+    .button-container button {
+        padding: 3px 5%;
+        font-size: 12px;
     }
 }
 
@@ -211,7 +244,7 @@ input:checked ~ .star {
     }
 
     .fieldset-comment{
-        height: 4vw;
+        height: 1.5vw;
     }
 }
 
@@ -238,7 +271,7 @@ input:checked ~ .star {
 
     .fieldset-comment{
         margin-left: 2%;
-        height: 5vw;
+        height: 2vw;
         width: 90%;
     }
 

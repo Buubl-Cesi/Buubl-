@@ -54,6 +54,11 @@
                         </fieldset>
                     </div>
 
+                    <div class = "button-container">
+                        <button type="submit" class="new-button-class" id="like-button" >Liker</button>
+                        <button type="submit" class="new-button-class" id="application-button" >Postuler</button>
+                    </div>
+
                 </fieldset>
 
                 <fieldset class="fieldset-2">

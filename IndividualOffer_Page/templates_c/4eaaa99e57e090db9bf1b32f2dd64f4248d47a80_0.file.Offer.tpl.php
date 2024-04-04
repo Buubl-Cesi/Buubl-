@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-03 20:06:38
+/* Smarty version 3.1.47, created on 2024-04-04 13:44:32
   from 'C:\Users\flori\Desktop\Buubl-\IndividualOffer_Page\views\templates\Offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660d9aae0c9e17_09730594',
+  'unifunc' => 'content_660e92a07e9c00_58925516',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4eaaa99e57e090db9bf1b32f2dd64f4248d47a80' => 
     array (
       0 => 'C:\\Users\\flori\\Desktop\\Buubl-\\IndividualOffer_Page\\views\\templates\\Offer.tpl',
-      1 => 1712167596,
+      1 => 1712231069,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660d9aae0c9e17_09730594 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660e92a07e9c00_58925516 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -88,6 +88,11 @@ h</p>
                             <p class="text-comment"><?php echo $_smarty_tpl->tpl_vars['IndividualOffer']->value['INTERNSHIP_DESCRIPTION'];?>
 </p>
                         </fieldset>
+                    </div>
+
+                    <div class = "button-container">
+                        <button type="submit" class="new-button-class" id="like-button" >Liker</button>
+                        <button type="submit" class="new-button-class" id="application-button" >Postuler</button>
                     </div>
 
                 </fieldset>
