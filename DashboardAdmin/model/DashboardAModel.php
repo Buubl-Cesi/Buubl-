@@ -6,9 +6,6 @@ class DashboardAModel {
         $this->pdo = $pdo;
     }
 
-    // public function getStudents(){
-    // }
-
     public function createStudents($name_student, $fname_student, $mail_student, $login_student, $password_student, $promotion_student, $country_student, $pc_student, $city_student, $street_student, $numap_student, $pfp_student){
         $stmt = $this->pdo->prepare("INSERT INTO COUNTRY (COUNTRY_NAME) VALUES (:country_student);
         INSERT INTO CITY (CITY_NAME, CITY_PC, ID_COUNTRY) VALUES (:city_student,:pc_student, (SELECT MAX(ID_COUNTRY) FROM COUNTRY));
@@ -95,6 +92,7 @@ class DashboardAModel {
 
 
   public function createCompany($name_company, $activity_company, $desc_company, $country_company, $pc_company, $city_company, $street_company, $numap_company, $pfp_company){
+      $Image = str_replace(' ', '', $name_company);
       $stmt = $this->pdo->prepare("INSERT INTO COUNTRY (COUNTRY_NAME) VALUES (:country_company);
       INSERT INTO CITY (CITY_NAME, CITY_PC, ID_COUNTRY) VALUES (:city_company, :pc_company, (SELECT MAX(ID_COUNTRY) FROM COUNTRY));
       INSERT INTO ADDRESS (ADDRESS_STREET, ADDRESS_NB_APPARTEMENT, ID_CITY) VALUES (:street_company, :numap_company, (SELECT MAX(ID_CITY) FROM CITY));
@@ -110,7 +108,7 @@ class DashboardAModel {
         :activity_company, 
         0, 
         :desc_company, 
-        CONCAT('../../../../Images/', :pfp_company, '.png'), 
+        CONCAT('../../../../Images/', :img, '.png'), 
         (SELECT MAX(ID_ADDRESS) FROM ADDRESS)
       );");
 
@@ -122,7 +120,7 @@ class DashboardAModel {
       $stmt->bindParam(':city_company', $city_company);
       $stmt->bindParam(':street_company', $street_company);
       $stmt->bindParam(':numap_company', $numap_company);
-      $stmt->bindParam(':pfp_company', $pfp_company);    
+      $stmt->bindParam(':img', $Image);    
       $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -204,6 +202,7 @@ public function deleteCompany($name_company){
 }
 
 public function createPilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot, $password_pilot, $promotion_pilot, $country_pilot, $pc_pilot, $city_pilot, $street_pilot, $numap_pilot, $activity_pilot){
+    $image = str_replace(' ', '', $name_pilot);
     $stmt = $this->pdo->prepare("INSERT INTO COUNTRY (COUNTRY_NAME) VALUES (:country_pilot);
     INSERT INTO CITY (CITY_NAME, CITY_PC, ID_COUNTRY) VALUES (:city_pilot, :pc_pilot, (SELECT MAX(ID_COUNTRY) FROM COUNTRY));
     INSERT INTO ADDRESS (ADDRESS_STREET, ADDRESS_NB_APPARTEMENT, ID_CITY) VALUES (:street_pilot, :numap_pilot, (SELECT MAX(ID_CITY) FROM CITY));
@@ -225,7 +224,7 @@ public function createPilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot
       :login_pilot,
       :password_pilot, 
       :mail_pilot, 
-      'chemin/vers/imagePilote.png', 
+      CONCAT('../../../../Images/', :img, '.png'),
       (SELECT MAX(ID_ADDRESS) FROM ADDRESS), 
       (SELECT MAX(ID_PILOT) FROM PILOT), 
       NULL, 
@@ -244,16 +243,10 @@ public function createPilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot
     $stmt->bindParam(':street_pilot', $street_pilot);
     $stmt->bindParam(':numap_pilot', $numap_pilot);
     $stmt->bindParam(':activity_pilot', $activity_pilot);
+    $stmt->bindParam(':img', $image);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
-///Ne marche pas 
-/////
-/////
-/////
-/////
-/////
 
 public function updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot, $password_pilot, $promotion_pilot, $country_pilot, $pc_pilot, $city_pilot, $street_pilot, $numap_pilot, $activity_pilot){
     $stmt = $this->pdo->prepare("UPDATE COUNTRY
@@ -316,22 +309,6 @@ public function deletePilot($login_pilot){
     $stmt->bindParam(':id_pilot', $id_pilot);
     $stmt->execute();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name){
