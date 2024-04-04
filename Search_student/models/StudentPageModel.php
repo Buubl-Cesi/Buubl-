@@ -15,18 +15,18 @@ class StudentPageModel {
         $params = array();
     
         if (!empty($name)) {
-            $sql .= " AND U.USERS_NAME = :name";
-            $params[':name'] = $name;
+            $sql .= " AND U.USERS_NAME LIKE :name";
+            $params[':name'] = "%{$name}%";
         }
     
         if (!empty($fname)) {
-            $sql .= " AND U.USERS_FNAME = :fname";
-            $params[':fname'] = $fname;
+            $sql .= " AND U.USERS_FNAME LIKE :fname";
+            $params[':fname'] = "%{$fname}%";
         }
     
         if (!empty($promo)) {
             $sql .= " AND S.STUDENT_PROMOTION = :promo";
-            $params[':promo'] = $promo;
+            $params[':promo'] = "%{$promo}%";
         }
     
         $stmt = $this->pdo->prepare($sql);
@@ -49,18 +49,18 @@ class StudentPageModel {
         $params = array();
 
         if (!empty($name)) {
-            $sql .= " AND USERS_NAME = :name"; 
-            $params[':name'] = $name;
+            $sql .= " AND USERS_NAME LIKE :name"; 
+            $params[':name'] = "%{$name}%";
         }
 
         if (!empty($fname)) {
-            $sql .= " AND USERS_FNAME = :fname";
-            $params[':fname'] = $fname;
+            $sql .= " AND USERS_FNAME LIKE :fname";
+            $params[':fname'] = "%{$fname}%";
         }
 
         if (!empty($promo)) {
-            $sql .= " AND STUDENT_PROMOTION = :promo";
-            $params[':promo'] = $promo;
+            $sql .= " AND STUDENT_PROMOTION LIKE :promo";
+            $params[':promo'] = "%{$promo}%";
         }
 
         $sql .= " LIMIT :offset, :limit";
