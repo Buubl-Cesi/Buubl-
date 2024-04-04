@@ -304,7 +304,35 @@ public function updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot
 /////
 /////
 
-public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer){
+
+public function deletePilot($name_company){
+    $stmt = $this->pdo->prepare("
+    ");
+
+    $stmt->bindParam(':name_company', $name_company);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_offer){
     $stmt = $this->pdo->prepare("INSERT INTO INTERNSHIP (
         INTERNSHIP_NAME, 
         INTERNSHIP_DESCRIPTION, 
@@ -344,5 +372,37 @@ public function createOffer($name_offer, $desc_offer, $duration_offer, $start_of
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+
+public function updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_offer){
+    $stmt = $this->pdo->prepare("");
+
+    $stmt->bindParam(':name_pilot', $name_offer);
+    $stmt->bindParam(':desc_offer', $desc_offer);
+    $stmt->bindParam(':duration_offer', $duration_offer);
+    $stmt->bindParam('start_offer', $start_offer);
+    $stmt->bindParam('end_offer', $end_offer);
+    $stmt->bindParam('hour_offer', $hour_offer);
+    $stmt->bindParam('pricing_offer', $pricing_offer);
+    $stmt->bindParam('skills_offer', $skills_offer);
+    $stmt->bindParam('nb_offer', $nb_offer);
+    $stmt->bindParam('company_offer', $company_offer);
+
+
+    $stmt->execute();
+
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+public function deleteOffer($name_offer){
+    // marche :)
+    $stmt = $this->pdo->prepare("DELETE FROM APPLICATIONS WHERE ID_INTERNSHIP = (SELECT ID_INTERNSHIP FROM INTERNSHIP WHERE INTERNSHIP_NAME = :name_offer);
+    DELETE FROM LIKES WHERE ID_INTERNSHIP = (SELECT ID_INTERNSHIP FROM INTERNSHIP WHERE INTERNSHIP_NAME = :name_offer);
+    DELETE FROM INTERNSHIP WHERE INTERNSHIP_NAME = :name_offer;");
+
+    $stmt->bindParam(':name_offer', $name_offer);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
     
 }

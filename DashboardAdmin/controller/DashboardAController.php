@@ -62,6 +62,12 @@ class DashboardAController {
         $this->model->updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot, $password_pilot, $promotion_pilot, $country_pilot, $pc_pilot, $city_pilot, $street_pilot, $numap_pilot, $activity_pilot);
         $this->smarty->display('view/admin.tpl');
     }
+
+    public function deletePilot($login_pilot){
+        // A implémenter
+        $this->model->deletePilot($login_pilot);
+        $this->smarty->display('view/admin.tpl');
+    }
     
     //
 
@@ -71,14 +77,30 @@ class DashboardAController {
     }
 
     public function updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer){
+        //  ajouter la méthode 
         $this->model->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
         $this->smarty->display('view/admin.tpl');
     }
+
+    public function deleteOffer($name_offer){
+        // A implémenter
+        $this->model->deleteOffer($name_offer);
+        $this->smarty->display('view/admin.tpl');
+    }
+    
+
+
+
+
+
+
 
 }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $action = isset($_POST["action"]) ? $_POST["action"] : '';
+
+// ETUDIANT ----------------------------------------------------------------------------------------------------------        
         if ($action == 'createStudent') {
             $name_student = isset($_POST["name_student"]) ? $_POST["name_student"] : '';
             $fname_student = isset($_POST["fname_student"]) ? $_POST["fname_student"] : '';
@@ -96,7 +118,6 @@ class DashboardAController {
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->createStudents($name_student, $fname_student, $mail_student, $login_student, $password_student, $promotion_student, $country_student, $pc_student, $city_student, $street_student, $numap_student, $pfp_student);
-
         }
 
         else if ($action == 'updateStudent') {
@@ -127,7 +148,7 @@ class DashboardAController {
             $dashboardAController->deleteStudents($login_student);
         }
 
-
+// ENTREPRISE ----------------------------------------------------------------------------------------------------------
         else if ($action == 'createCompany') {
             $name_company = isset($_POST["name_company"]) ? $_POST["name_company"] : '';
             $activity_company = isset($_POST["activity_company"]) ? $_POST["activity_company"] : '';
@@ -170,6 +191,9 @@ class DashboardAController {
             $dashboardAController->deleteCompany($name_company);
         }
 
+
+// PILOTE ----------------------------------------------------------------------------------------------------------        
+
         else if ($action =='createPilot'){
             $name_pilot = isset($_POST["name_pilot"]) ? $_POST["name_pilot"] : '';
             $fname_pilot = isset($_POST["fname_pilot"]) ? $_POST["fname_pilot"] : '';
@@ -209,7 +233,15 @@ class DashboardAController {
             $dashboardAController->updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot, $password_pilot, $promotion_pilot, $country_pilot, $pc_pilot, $city_pilot, $street_pilot, $numap_pilot, $activity_pilot);
         }
 
-        /////
+        else if ($action == 'deletePilot') {
+            $login_pilot = isset($_POST["login_pilot"]) ? $_POST["login_pilot"] : '';
+
+            $pdo = Connexion();
+            $dashboardAController = new DashboardAController($pdo);
+            $dashboardAController->deletePilot($login_pilot);
+        }
+
+// OFFRE ----------------------------------------------------------------------------------------------------------
 
         else if ($action =='createOffer'){
             $name_offer = isset($_POST["name_offer"]) ? $_POST["name_offer"] : '';
@@ -243,6 +275,14 @@ class DashboardAController {
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+        }
+
+        else if ($action == 'deleteOffer') {
+            $name_offer = isset($_POST["name_offer"]) ? $_POST["name_offer"] : '';
+
+            $pdo = Connexion();
+            $dashboardAController = new DashboardAController($pdo);
+            $dashboardAController->deleteOffer($name_offer);
         }
     }
 

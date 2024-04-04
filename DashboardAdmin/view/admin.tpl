@@ -435,6 +435,8 @@
                                             <input class="text-fieldset" type="number" name="duration_offer" placeholder="Exemple : '...' mois" max="96" oninput="validateInput(this)" >
                                         </fieldset>
                                     </div>
+
+                                    
                                 </div>
                             </div>
 
@@ -485,6 +487,13 @@
                                             <input class="text-fieldset" type="number" name="nb_offer" placeholder="Exemple : '15'" >
                                         </fieldset>
                                     </div>
+
+                                    <h3 class="text-data">Nom de l'entreprise :</h3>
+                                        <fieldset class="fieldset-text">
+                                            <input class="text-fieldset" type="number" name="company_offer" placeholder="Exemple : '15'" >
+                                        </fieldset>
+
+                                    
                                 </div>
                             </div>
                         </div>
