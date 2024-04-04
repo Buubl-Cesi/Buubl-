@@ -15,9 +15,14 @@ class IndividualCompanyPageController {
     public function getCompanyInfo($id) {
         
         $IndividualCompany = $this->model->getCompanyInfo($id);
+        $IndividualLike = $this->model->getCompanyLike($id);
+        $IndividualCand = $this->model->getCompanycand($id);
         $this->smarty->assign('IndividualCompany', $IndividualCompany);
-        return $IndividualCompany;
+        $this->smarty->assign('IndividualLike', $IndividualLike);
+        $this->smarty->assign('IndividualCand', $IndividualCand);
+        
     }
+
 
     public function display() {
         $this->smarty->display('views/templates/company.tpl');
@@ -38,15 +43,13 @@ class IndividualCompanyPageController {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $id = isset($_GET['id']) ? intval($_GET['id']) : 1;
-
-    $id = 1;
-
+    $id = isset($_GET['id']) ? intval($_GET['id']) : null;
+    
     $pdo = Connexion();
     $controller = new IndividualCompanyPageController($pdo);
 
     /*
-    $queryParams = $_GET;
+    $queryParams = $_GET;+
     unset($queryParams['p']);
     $queryString = http_build_query($queryParams);
     $controller->assignRequest($queryString);
