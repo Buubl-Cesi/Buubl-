@@ -63,6 +63,18 @@ class DashboardAController {
         $this->smarty->display('view/admin.tpl');
     }
     
+    //
+
+    public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer){
+        $this->model->createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+        $this->smarty->display('view/admin.tpl');
+    }
+
+    public function updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer){
+        $this->model->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+        $this->smarty->display('view/admin.tpl');
+    }
+
 }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -190,12 +202,50 @@ class DashboardAController {
             $street_pilot = isset($_POST["street_pilot"]) ? $_POST["street_pilot"] : '';
             $numap_pilot = isset($_POST["numap_pilot"]) ? $_POST["numap_pilot"] : '';
             $activity_pilot = isset($_POST["activity_pilot"]) ? $_POST["activity_pilot"] : '';
+            
 
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
             $dashboardAController->updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot, $password_pilot, $promotion_pilot, $country_pilot, $pc_pilot, $city_pilot, $street_pilot, $numap_pilot, $activity_pilot);
         }
+
+        /////
+
+        else if ($action =='createOffer'){
+            $name_offer = isset($_POST["name_offer"]) ? $_POST["name_offer"] : '';
+            $desc_offer = isset($_POST["desc_offer"]) ? $_POST["desc_offer"] : '';
+            $duration_offer = isset($_POST["duration_offer"]) ? $_POST["duration_offer"] : '';
+            $start_offer = isset($_POST["start_offer"]) ? $_POST["start_offer"] : '';
+            $end_offer = isset($_POST["end_offer"]) ? $_POST["end_offer"] : '';
+            $hour_offer = isset($_POST["hour_offer"]) ? $_POST["hour_offer"] : '';
+            $pricing_offer = isset($_POST["pricing_offer"]) ? $_POST["pricing_offer"] : '';
+            $skills_offer = isset($_POST["skills_offer"]) ? $_POST["skills_offer"] : '';
+            $nb_offer = isset($_POST["nb_offer"]) ? $_POST["nb_offer"] : '';
+            
+            $pdo = Connexion();
+            $dashboardAController = new DashboardAController($pdo);
+            $dashboardAController->createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+        }
+
+
+        
+        else if ($action =='updateOffer'){
+            $name_offer = isset($_POST["name_offer"]) ? $_POST["name_offer"] : '';
+            $desc_offer = isset($_POST["desc_offer"]) ? $_POST["desc_offer"] : '';
+            $duration_offer = isset($_POST["duration_offer"]) ? $_POST["duration_offer"] : '';
+            $start_offer = isset($_POST["start_offer"]) ? $_POST["start_offer"] : '';
+            $end_offer = isset($_POST["end_offer"]) ? $_POST["end_offer"] : '';
+            $hour_offer = isset($_POST["hour_offer"]) ? $_POST["hour_offer"] : '';
+            $pricing_offer = isset($_POST["pricing_offer"]) ? $_POST["pricing_offer"] : '';
+            $skills_offer = isset($_POST["skills_offer"]) ? $_POST["skills_offer"] : '';
+            $nb_offer = isset($_POST["nb_offer"]) ? $_POST["nb_offer"] : '';
+            
+            $pdo = Connexion();
+            $dashboardAController = new DashboardAController($pdo);
+            $dashboardAController->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+        }
     }
+
     else {
     $pdo = Connexion();
         $dashboardAController = new DashboardAController($pdo);
