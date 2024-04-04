@@ -71,39 +71,25 @@ class DashboardAModel {
   }
 
   public function deleteStudents($login_student){
-    $stmt = $this->pdo->prepare("DELETE  FROM Avoir 
-        WHERE ID_STUDENTS IN (
-            SELECT ID_STUDENTS 
-            FROM USERS 
-            WHERE USERS_LOGIN = 'TTTT'
-        );
-        
-        DELETE  FROM APPLICATIONS 
-        WHERE ID_STUDENTS IN (
-            SELECT ID_STUDENTS 
-            FROM USERS 
-            WHERE USERS_LOGIN = 'TTTT'
-        );
-        
-        DELETE  FROM USERS 
-        WHERE USERS_LOGIN = 'TTTT';
-        
-        DELETE  FROM STUDENTS 
-        WHERE ID_STUDENTS IN (
-            SELECT ID_STUDENTS 
-            FROM USERS 
-            WHERE USERS_LOGIN = 'TTTT'
-        );
-        
-        DELETE  FROM ADDRESS
-        WHERE ID_ADDRESS IN (
-            SELECT ID_ADDRESS
-            FROM USERS
-            WHERE USERS_LOGIN = 'TTTT'
-        );");
-        // $stmt->bindParam(':login_student', $login_student);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $this->pdo->prepare("SELECT ID_STUDENTS FROM USERS WHERE USERS_LOGIN = ?");
+    $stmt->execute([$login_student]);
+    $id_students = $stmt->fetchColumn();
+
+    $stmt = $this->pdo->prepare("SELECT ID_ADDRESS FROM USERS WHERE USERS_LOGIN = ?");
+    $stmt->execute([$login_student]);
+    $id_address = $stmt->fetchColumn();
+
+    $stmt = $this->pdo->prepare("DELETE FROM APPLICATIONS WHERE ID_STUDENTS = ?");
+    $stmt->execute([$id_students]);
+
+    $stmt = $this->pdo->prepare("DELETE FROM USERS WHERE USERS_LOGIN = ?");
+    $stmt->execute([$login_student]);
+
+    $stmt = $this->pdo->prepare("DELETE FROM STUDENTS WHERE ID_STUDENTS = ?");
+    $stmt->execute([$id_students]);
+
+    $stmt = $this->pdo->prepare("DELETE FROM ADDRESS WHERE ID_ADDRESS = ?");
+    $stmt->execute([$id_address]);
 }
 
 
