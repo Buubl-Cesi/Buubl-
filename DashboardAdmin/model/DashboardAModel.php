@@ -297,23 +297,25 @@ public function updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-/////
-/////
-/////
-/////
-/////
-/////
 
 
-public function deletePilot($name_company){
-    $stmt = $this->pdo->prepare("
-    ");
 
-    $stmt->bindParam(':name_company', $name_company);
+public function deletePilot($login_pilot){
+    $stmt = $this->pdo->prepare("SELECT ID_PILOT FROM PILOT WHERE USERS_LOGIN = :login_pilot;");
+    $stmt->bindParam(':login_pilot', $login_pilot);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
 
+    $id_pilot = $stmt->fetch(PDO::FETCH_ASSOC);
+    $id_pilot = $id_pilot['ID_PILOT'];
+
+    $stmt = $this->pdo->prepare("DELETE FROM PILOT WHERE ID_PILOT = :id_pilot;");
+    $stmt->bindParam(':id_pilot', $id_pilot);
+    $stmt->execute();
+
+    $stmt = $this->pdo->prepare("DELETE FROM USERS WHERE ID_PILOT = :id_pilot;");
+    $stmt->bindParam(':id_pilot', $id_pilot);
+    $stmt->execute();
+}
 
 
 
