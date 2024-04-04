@@ -71,14 +71,14 @@ class DashboardAController {
     
     //
 
-    public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer){
-        $this->model->createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+    public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name){
+        $this->model->createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name);
         $this->smarty->display('view/admin.tpl');
     }
 
-    public function updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer){
+    public function updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name){
         //  ajouter la méthode 
-        $this->model->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+        $this->model->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name);
         $this->smarty->display('view/admin.tpl');
     }
 
@@ -253,10 +253,11 @@ class DashboardAController {
             $pricing_offer = isset($_POST["pricing_offer"]) ? $_POST["pricing_offer"] : '';
             $skills_offer = isset($_POST["skills_offer"]) ? $_POST["skills_offer"] : '';
             $nb_offer = isset($_POST["nb_offer"]) ? $_POST["nb_offer"] : '';
+            $company_name = isset($_POST["company_name"]) ? $_POST["company_name"] : '';
             
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
-            $dashboardAController->createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+            $dashboardAController->createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name);
         }
 
 
@@ -271,10 +272,11 @@ class DashboardAController {
             $pricing_offer = isset($_POST["pricing_offer"]) ? $_POST["pricing_offer"] : '';
             $skills_offer = isset($_POST["skills_offer"]) ? $_POST["skills_offer"] : '';
             $nb_offer = isset($_POST["nb_offer"]) ? $_POST["nb_offer"] : '';
+            $company_name = isset($_POST["company_name"]) ? $_POST["company_name"] : '';
             
             $pdo = Connexion();
             $dashboardAController = new DashboardAController($pdo);
-            $dashboardAController->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer);
+            $dashboardAController->updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name);
         }
 
         else if ($action == 'deleteOffer') {

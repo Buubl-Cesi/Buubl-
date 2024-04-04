@@ -490,7 +490,7 @@
 
                                     <h3 class="text-data">Nom de l'entreprise :</h3>
                                         <fieldset class="fieldset-text">
-                                            <input class="text-fieldset" type="number" name="company_offer" placeholder="Exemple : '15'" >
+                                            <input class="text-fieldset" type="text" name="company_name" placeholder="Exemple : '15'" >
                                         </fieldset>
 
                                     

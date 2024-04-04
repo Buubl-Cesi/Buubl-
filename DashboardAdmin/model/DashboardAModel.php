@@ -332,31 +332,89 @@ public function deletePilot($name_company){
 
 
 
-public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_offer){
-    $stmt = $this->pdo->prepare("INSERT INTO INTERNSHIP (
-        INTERNSHIP_NAME, 
-        INTERNSHIP_DESCRIPTION, 
-        INTERNSHIP_DURATION, 
-        INTERNSHIP_START_DATE, 
-        INTERNSHIP_END_DATE, 
-        INTERNSHIP_SHEDULE, 
-        INTERNSHIP_REMUNERATION, 
-        INTERNSHIP_SKILLS, 
-        INTERNSHIP_PLACE_NB, 
-        ID_COMPANY
-      ) VALUES (
-        :name_offer, 
-        :desc_offer, 
-        :duration_offer, -- Durée en mois
-        :start_offer, -- Date de début
-        :end_offer, -- Date de fin
-        :hour_offer, -- Horaires prévus par semaine
-        :pricing_offer, -- Rémunération mensuelle
-        :skills_offer, -- Compétences requises
-        :nb_offer -- Nombre de places disponibles
-        -- , (SELECT ID_COMPANY FROM COMPANY WHERE COMPANY_NAME = 'Nom de la Compagnie') 
-      );");
-    
+public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name){
+    // requete qui recherche l'id de l'entreprise insérée
+    $stmt = $this->pdo->prepare("SELECT ID_COMPANY 
+    FROM company 
+    WHERE COMPANY_NAME = :company_name;
+    ");
+    $stmt->bindParam(':company_name', $company_name);
+    $stmt->execute();
+    $id_company = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($id_company) {
+        $id_company = $id_company['ID_COMPANY'];
+
+        $stmt = $this->pdo->prepare("INSERT INTO INTERNSHIP (
+            INTERNSHIP_NAME, 
+            INTERNSHIP_DESCRIPTION, 
+            INTERNSHIP_DURATION, 
+            INTERNSHIP_START_DATE, 
+            INTERNSHIP_END_DATE, 
+            INTERNSHIP_SHEDULE, 
+            INTERNSHIP_REMUNERATION, 
+            INTERNSHIP_SKILLS, 
+            INTERNSHIP_PLACE_NB, 
+            ID_COMPANY
+        ) 
+        VALUES (
+            :name_offer, 
+            :desc_offer, 
+            :duration_offer, 
+            :start_offer, 
+            :end_offer, 
+            :hour_offer, 
+            :pricing_offer, 
+            :skills_offer, 
+            :nb_offer,
+            :id_company
+        )");
+
+        $stmt->bindParam(':name_offer', $name_offer);
+        $stmt->bindParam(':desc_offer', $desc_offer);
+        $stmt->bindParam(':duration_offer', $duration_offer);
+        $stmt->bindParam(':start_offer', $start_offer);
+        $stmt->bindParam(':end_offer', $end_offer);
+        $stmt->bindParam(':hour_offer', $hour_offer);
+        $stmt->bindParam(':pricing_offer', $pricing_offer);
+        $stmt->bindParam(':skills_offer', $skills_offer);
+        $stmt->bindParam(':nb_offer', $nb_offer);
+        $stmt->bindParam(':id_company', $id_company);
+
+        $stmt->execute();
+    } else {
+
+    }
+}
+
+
+public function updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_name){
+    // requete qui recherche l'id de l'entreprise insérée
+    $stmt = $this->pdo->prepare("SELECT ID_COMPANY 
+    FROM company 
+    WHERE COMPANY_NAME = :company_name;
+    ");
+    $stmt->bindParam(':company_name', $company_name);
+    $stmt->execute();
+    $id_company = $stmt->fetch(PDO::FETCH_ASSOC);
+    $id_company = $id_company['ID_COMPANY'];
+
+
+    $stmt = $this->pdo->prepare("UPDATE `internship` 
+    SET
+    `INTERNSHIP_DESCRIPTION`= :desc_offer,
+    `INTERNSHIP_DURATION`= :duration_offer,
+    `INTERNSHIP_START_DATE`= :start_offer,
+    `INTERNSHIP_END_DATE`= :end_offer,
+    `INTERNSHIP_SHEDULE`= :hour_offer,
+    `INTERNSHIP_REMUNERATION`= :pricing_offer,
+    `INTERNSHIP_SKILLS`= :skills_offer,
+    `INTERNSHIP_PLACE_NB`= :nb_offer,
+    `ID_COMPANY`= :id_company
+    WHERE 
+    INTERNSHIP_NAME = :name_offer;
+    ");
+
 
     $stmt->bindParam(':name_offer', $name_offer);
     $stmt->bindParam(':desc_offer', $desc_offer);
@@ -367,31 +425,9 @@ public function createOffer($name_offer, $desc_offer, $duration_offer, $start_of
     $stmt->bindParam(':pricing_offer', $pricing_offer);
     $stmt->bindParam(':skills_offer', $skills_offer);
     $stmt->bindParam(':nb_offer', $nb_offer);
-  
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-
-public function updateOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer, $company_offer){
-    $stmt = $this->pdo->prepare("");
-
-    $stmt->bindParam(':name_pilot', $name_offer);
-    $stmt->bindParam(':desc_offer', $desc_offer);
-    $stmt->bindParam(':duration_offer', $duration_offer);
-    $stmt->bindParam('start_offer', $start_offer);
-    $stmt->bindParam('end_offer', $end_offer);
-    $stmt->bindParam('hour_offer', $hour_offer);
-    $stmt->bindParam('pricing_offer', $pricing_offer);
-    $stmt->bindParam('skills_offer', $skills_offer);
-    $stmt->bindParam('nb_offer', $nb_offer);
-    $stmt->bindParam('company_offer', $company_offer);
-
+    $stmt->bindParam(':id_company', $id_company);
 
     $stmt->execute();
-
-
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 public function deleteOffer($name_offer){
