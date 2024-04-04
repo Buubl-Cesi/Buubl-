@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-04 16:23:47
+/* Smarty version 3.1.47, created on 2024-04-04 19:39:44
   from 'C:\Users\laine\Desktop\Buubl-\profilpage\views\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660eb7f389ba81_95772037',
+  'unifunc' => 'content_660ee5e0486c79_90423739',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd2a1395a9a6456f1bb6a0469af0adda0564d010a' => 
     array (
       0 => 'C:\\Users\\laine\\Desktop\\Buubl-\\profilpage\\views\\templates\\profil.tpl',
-      1 => 1712240622,
+      1 => 1712252378,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660eb7f389ba81_95772037 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660ee5e0486c79_90423739 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +30,6 @@ function content_660eb7f389ba81_95772037 (Smarty_Internal_Template $_smarty_tpl)
     <title>Buubl | Profil</title>
 </head>
 <body>
- 
     <fieldset class="fieldset-left">
 
         <img src=<?php echo $_smarty_tpl->tpl_vars['info']->value[0]['ing'];?>
@@ -67,9 +66,6 @@ function content_660eb7f389ba81_95772037 (Smarty_Internal_Template $_smarty_tpl)
             <input type="text" id="champ6" value=<?php echo $_smarty_tpl->tpl_vars['info']->value[0]['logn'];?>
  required>
           </div>
-          <button class="custom-button" id="boutonGriser" type="submit">
-            Modifier
-          </button>
       <?php echo '<script'; ?>
  src="../../../profilpage/views/templates/profil.js"><?php echo '</script'; ?>
 >

@@ -7,7 +7,6 @@
     <title>Buubl | Profil</title>
 </head>
 <body>
- 
     <fieldset class="fieldset-left">
 
         <img src={$info[0]['ing']} alt="profil" class="profil_photo" id="imageCliquee" style="cursor: pointer;">
@@ -37,9 +36,6 @@
             <label>Login :</label>
             <input type="text" id="champ6" value={$info[0]['logn']} required>
           </div>
-          <button class="custom-button" id="boutonGriser" type="submit">
-            Modifier
-          </button>
       <script src="../../../profilpage/views/templates/profil.js"></script>
     
     </fieldset>

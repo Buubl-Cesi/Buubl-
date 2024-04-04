@@ -24,31 +24,4 @@ class ProfilModel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function update($id, $prenom, $nom, $email, $adresse, $ville, $login) {
-        $stmt = $this->pdo->prepare("UPDATE USERS
-        SET USERS_NAME = :nom,
-            USERS_FNAME = :prenom,
-            USERS_MAIL = :email,
-            USERS_LOGIN = :logine
-        WHERE ID_USERS = :id;
-        
-        UPDATE ADDRESS
-        SET ADDRESS_STREET = :adresse
-        WHERE ID_ADDRESS = (SELECT ID_ADDRESS FROM USERS WHERE ID_USERS = :id);
-        
-        UPDATE CITY
-        SET CITY_NAME = :ville
-        WHERE ID_CITY = (SELECT ID_CITY FROM ADDRESS WHERE ID_ADDRESS = (SELECT ID_ADDRESS FROM USERS WHERE ID_USERS = :id));");
-        
-        $stmt->bindParam(':id', $id);
-        $stmt->bindParam(':prenom', $prenom);
-        $stmt->bindParam(':nom', $nom);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':adresse', $adresse);
-        $stmt->bindParam(':ville', $ville);
-        $stmt->bindParam(':logine', $login);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
 }
