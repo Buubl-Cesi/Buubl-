@@ -262,6 +262,13 @@ public function createPilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+///Ne marche pas 
+/////
+/////
+/////
+/////
+/////
+
 public function updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot, $password_pilot, $promotion_pilot, $country_pilot, $pc_pilot, $city_pilot, $street_pilot, $numap_pilot, $activity_pilot){
     $stmt = $this->pdo->prepare("UPDATE COUNTRY
     SET COUNTRY_NAME = :country_pilot
@@ -304,6 +311,52 @@ public function updatePilot($name_pilot, $fname_pilot, $mail_pilot, $login_pilot
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+/////
+/////
+/////
+/////
+/////
+/////
+
+public function createOffer($name_offer, $desc_offer, $duration_offer, $start_offer, $end_offer, $hour_offer, $pricing_offer, $skills_offer, $nb_offer){
+    $stmt = $this->pdo->prepare("INSERT INTO INTERNSHIP (
+        INTERNSHIP_NAME, 
+        INTERNSHIP_DESCRIPTION, 
+        INTERNSHIP_DURATION, 
+        INTERNSHIP_START_DATE, 
+        INTERNSHIP_END_DATE, 
+        INTERNSHIP_SHEDULE, 
+        INTERNSHIP_REMUNERATION, 
+        INTERNSHIP_SKILLS, 
+        INTERNSHIP_PLACE_NB, 
+        ID_COMPANY
+      ) VALUES (
+        :name_offer, 
+        :desc_offer, 
+        :duration_offer, -- Durée en mois
+        :start_offer, -- Date de début
+        :end_offer, -- Date de fin
+        :hour_offer, -- Horaires prévus par semaine
+        :pricing_offer, -- Rémunération mensuelle
+        :skills_offer, -- Compétences requises
+        :nb_offer -- Nombre de places disponibles
+        -- , (SELECT ID_COMPANY FROM COMPANY WHERE COMPANY_NAME = 'Nom de la Compagnie') 
+      );");
+    
+
+    $stmt->bindParam(':name_offer', $name_offer);
+    $stmt->bindParam(':desc_offer', $desc_offer);
+    $stmt->bindParam(':duration_offer', $duration_offer);
+    $stmt->bindParam(':start_offer', $start_offer);
+    $stmt->bindParam(':end_offer', $end_offer);
+    $stmt->bindParam(':hour_offer', $hour_offer);
+    $stmt->bindParam(':pricing_offer', $pricing_offer);
+    $stmt->bindParam(':skills_offer', $skills_offer);
+    $stmt->bindParam(':nb_offer', $nb_offer);
+  
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
     
 }

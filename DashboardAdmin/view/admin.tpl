@@ -491,9 +491,9 @@
 
                         <div>
                             <fieldset class="fieldset-button">
-                                <button class="button" type="button">Ajouter</button>
-                                <button class="button2" type="button">Modifier</button>
-                                <button class="button3" type="button">Supprimer</button>
+                                <button class="button" type="submit" name="action" value="createOffer">Ajouter</button>
+                                <button class="button2" type="submit" name="action" value="updateOffer">Modifier</button>
+                                <button class="button3" type="submit" name="action" value="deleteOffer">Supprimer</button>
                             </fieldset>
                         </div>
                     </div>
