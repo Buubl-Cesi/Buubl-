@@ -27,26 +27,25 @@ class ProfilController {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : '';
-    $nom = isset($_POST['nom']) ? $_POST['nom'] : '';
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $adresse = isset($_POST['adresse']) ? $_POST['adresse'] : '';
-    $ville = isset($_POST['codePostal']) ? $_POST['codePostal'] : '';
-    $login = isset($_POST['login']) ? $_POST['login'] : '';
+    $prenom = $_POST['prenom'] ?? '';
+    $nom = $_POST['nom'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $adresse = $_POST['adresse'] ?? '';
+    $ville = $_POST['ville'] ?? ''; 
+    $login = $_POST['login'] ?? '';
 
-    $id = 1;
+    $id = 2;
     $pdo = Connexion();
     $ProfilController = new ProfilController($pdo);
     $ProfilController->update($id, $prenom, $nom, $email, $adresse, $ville, $login);
     echo "update";
+    header('Content-Type: application/json');
+    echo json_encode(['success' => $result ? true : false]);
 }
 else{
-    $id = 1;
+    $id = 2;
     $pdo = Connexion();
     $ProfilController = new ProfilController($pdo);
     $ProfilController->LoadPage($id);
+    echo "pas pas pas ";
 }
-    
-     
-    
-  
