@@ -15,20 +15,20 @@ class PilotPageModel {
         $params = array();
     
         if (!empty($name)) {
-            $sql .= " AND U.USERS_NAME = :name";
-            $params[':name'] = $name;
+            $sql .= " AND U.USERS_NAME LIKE :name";
+            $params[':name'] = "%{$name}%";
         }
     
         if (!empty($fname)) {
             $sql .= " AND U.USERS_FNAME = :fname";
-            $params[':fname'] = $fname;
+            $params[':fname'] = "%{$fname}%";
         }
     
         if (!empty($promo)) {
             $sql .= " AND P.PILOT_PROMOTION = :promo";
-            $params[':promo'] = $promo;
+            $params[':promo'] = "%{$promo}%";
         }
-    
+
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -49,18 +49,18 @@ class PilotPageModel {
         $params = array();
 
         if (!empty($name)) {
-            $sql .= " AND USERS_NAME = :name"; 
-            $params[':name'] = $name;
+            $sql .= " AND U.USERS_NAME LIKE :name";
+            $params[':name'] = "%{$name}%";
         }
 
         if (!empty($fname)) {
-            $sql .= " AND USERS_FNAME = :fname";
-            $params[':fname'] = $fname;
+            $sql .= " AND USERS_FNAME LIKE :fname";
+            $params[':fname'] = "%{$fname}%";
         }
 
         if (!empty($promo)) {
-            $sql .= " AND PILOT_PROMOTION = :promo";
-            $params[':promo'] = $promo;
+            $sql .= " AND PILOT_PROMOTION LIKE :promo";
+            $params[':promo'] = "%{$promo}%";
         }
 
         $sql .= " LIMIT :offset, :limit";
