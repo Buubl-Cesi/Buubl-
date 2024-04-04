@@ -13,29 +13,7 @@ class CompanyPageModel {
         return $sector;
     }
 
-
-    public function getNumberCompany() {
-        $stmt = $this->pdo->query("SELECT COUNT(ID_COMPANY) AS NUMBER_ARTICLE FROM COMPANY;");
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return intval($result['NUMBER_ARTICLE']);
-    }
-
-    public function getCompanyWithLimit($limit, $offset)
-    {
-        $stmt = $this->pdo->prepare("SELECT COMPANY_NAME,
-        COMPANY_DESCRIPTION,
-        COMPANY_IMG 
-        FROM Company
-        LIMIT :offset, :Limit;");
-        $stmt->bindParam(':Limit', $limit, PDO::PARAM_INT);
-        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
-        $stmt->execute();
-        $stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $stmt;
-    }
-
     public function getNumberCompanyWithParameters($name, $sector, $city) {
-        // Début de la requête SQL
         
         $sql = "SELECT
             COUNT(C.ID_COMPANY) AS NUMBER_COMPANY
@@ -43,14 +21,11 @@ class CompanyPageModel {
             JOIN ADDRESS A ON C.ID_ADDRESS = A.ID_ADDRESS
             JOIN CITY CT ON A.ID_CITY = CT.ID_CITY
             WHERE 1=1";
-    
-        // Tableau pour stocker les paramètres de la requête
         $params = array();
     
-        // Vérifiez chaque paramètre et ajoutez une condition à la requête si le paramètre n'est pas vide
         if (!empty($name)) {
-            $sql .= " AND COMPANY_NAME = :name";
-            $params[':name'] = $name;
+            $sql .= " AND COMPANY_NAME LIKE :name";
+            $params[':name'] = "%{$name}%";
         }
 
         if ($sector !== "NoOne") {
@@ -59,17 +34,13 @@ class CompanyPageModel {
         }
         
         if (!empty($city)) {
-            $sql .= " AND CITY_NAME = :city";
-            $params[':city'] = $city;
+            $sql .= " AND CITY_NAME LIKE :city";
+            $params[':city'] = "%{$city}%";
         }
         
-    
-        // Préparez et exécutez la requête SQL
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-        // Retournez le nombre d'offres
         return $result !== false ? intval($result['NUMBER_COMPANY']) : 0;
     }
     
@@ -87,8 +58,8 @@ class CompanyPageModel {
         $params = array();
 
         if (!empty($name)) {
-            $sql .= " AND COMPANY_NAME = :name"; 
-            $params[':name'] = $name;
+            $sql .= " AND COMPANY_NAME LIKE :name"; 
+            $params[':name'] = "%{$name}%";
         }
 
         if ($sector !== "NoOne") {
@@ -97,12 +68,10 @@ class CompanyPageModel {
         }
         
         if (!empty($city)) {
-            $sql .= " AND CITY_NAME = :city";
-            $params[':city'] = $city;
+            $sql .= " AND CITY_NAME LIKE :city";
+            $params[':city'] = "%{$city}%";
         }
         
-
-        // Préparez et exécutez la requête SQL
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

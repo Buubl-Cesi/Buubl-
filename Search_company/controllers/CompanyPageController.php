@@ -17,24 +17,10 @@ class CompanyPageController {
         return $sector;
     }
 
-
-    public function getNumberCompany() {
-        $numberOffer = $this->model->getNumberCompany();
-        $this->smarty->assign('numberOffer', $numberOffer);
-        return $numberOffer;
-    }
-
     public function getNumberCompanyWithParameters($name, $sector, $city) {
         $numberOffer = $this->model->getNumberCompanyWithParameters($name, $sector, $city);
         $this->smarty->assign('numberOffer', $numberOffer);
         return $numberOffer;
-    }
-
-    public function getCompanyWithLimit($currentPage, $limit) {
-        $offset = ($currentPage - 1) * $limit;
-        $company = $this->model->getCompanyWithLimit($limit, $offset);
-        $this->smarty->assign('company', $company);
-        return $company;
     }
 
     public function getWithLimitParameters($currentPage, $limit, $name, $sector, $city) {
@@ -77,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $city = isset($_GET["city"]) ? $_GET["city"] : '';
     $page = isset($_GET['p']) ? intval($_GET['p']) : 1;
 
-    $limit = 2;
+    $limit = 5;
     $offset = ($page - 1) * $limit;
 
     $pdo = Connexion();
@@ -88,14 +74,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $queryString = http_build_query($queryParams);
     
     $controller->assignRequest($queryString);
+
+    $NumberOffer = $controller->getNumberCompanyWithParameters($name, $sector, $city);
+    $offers = $controller->getWithLimitParameters($page, $limit, $name, $sector, $city);
     
-    if (empty($name) && $sector == "NoOne" && empty($city)) {
-        $NumberOffer = $controller->getNumberCompany();
-        $offers = $controller->getCompanyWithLimit($page, $limit);
-    } else {
-        $NumberOffer = $controller->getNumberCompanyWithParameters($name, $sector, $city);
-        $offers = $controller->getWithLimitParameters($page, $limit, $name, $sector, $city);
-    }
 
     $NumberPage = ceil($NumberOffer / $limit);
 
