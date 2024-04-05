@@ -1,0 +1,289 @@
+/*Sélecteur*/
+body {
+    background-color: rgb(42, 43, 52);
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ .star {
+    color: gold;
+}
+
+/*Classes Img & Shapes*/
+.background-img-green {
+    position: absolute;
+    width: 44%;
+    height: 76%;
+    top: 35%;
+    left: 71%;
+}
+
+.background-img-brand{
+    position: absolute;
+    left: 2%;
+    top: 4%;
+    width: 20%;
+    height: 40%;
+    border: 8px solid rgba(214, 207, 207, 0.5);
+    border-radius: 2px;
+    background-color: whitesmoke;
+}
+
+.background-img-joint {
+    width: 75%;
+    height: auto;
+}
+
+.background-img-turn{
+    display: none;
+    position: absolute;
+    top: 4.7%;
+    left: 37%;
+    width: 25%;
+    height: 90%;
+}
+
+.fieldset-1, .fieldset-2, .fieldset-3 {
+    position: absolute;
+    border: 2px solid rgba(214, 207, 207, 0.5);
+    height: 85%;
+    width: 57.7%;
+}
+
+.fieldset-1 {
+    left: 2.5%;
+    top: 5%;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+.fieldset-2 {
+    left: 62%;
+    top: 66%;
+    width: 33%;
+    height: 25%;
+    background-color: whitesmoke;
+    border: 8px solid rgba(214, 207, 207, 0.5) ;
+    border-radius: 5px;
+}
+
+.fieldset-3 {
+    left: 62%;
+    top: 2.5%;
+    width: 33%;
+    height: 60%;
+    background-color: whitesmoke;
+    border: 8px solid rgba(214, 207, 207, 0.5) ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-box {
+    background-color: rgba(113, 194, 133, 0.45);
+    position: absolute;
+    height: 75%;
+    width: 87.5%;
+    top : 20%;
+    left: 7%;
+    border-radius: 15px;
+    box-shadow: 0.40vw 0.40vw 0.64vw rgba(0, 0, 0, 0.35);
+}
+
+/*Star*/
+.star-container {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    direction: rtl;
+}
+ 
+.star {
+    font-size: 6vw;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.star:hover,
+.star:hover ~ .star {
+    color: gold;
+}
+  
+/*Text only*/
+.text-data{
+    color: black;
+    font-size: small;
+    font-family: "Arial", "Arial Normal", sans-serif;
+    padding-left:2.5%;
+}
+
+.text-comment{
+    color: grey;
+    font-size: small;
+    font-family: "Arial", "Arial Normal", sans-serif;
+}
+
+.text-feedback {
+    color: rgb(113, 194, 133);
+    font-family: "Arial", "Arial Normal", sans-serif;
+    font-size:180%;
+    font-weight: bold;
+    margin-left: 42.5%;
+    margin-right: 45%;
+    margin-top: -3%;
+}
+
+.fieldset-comment {
+    overflow: auto;
+    background-color: rgba(238, 238, 238, 1);
+    border: 1.5px solid #000000;
+    border-radius: 10px;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    height: 3vw;
+}
+
+.button-container button {
+    padding: 10px 20%;
+    margin: 5px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    background-color: #d1d1d1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left:2.5%;
+}
+
+.button-container #like-button:hover {
+    background-color: rgba(120, 221, 255, 0.45);
+}
+
+.button-container #application-button:hover {
+    background-color: rgba(149, 255, 193, 0.45);
+}
+
+/*Media Queries*/
+@media screen and (max-width:1280px){
+    .fieldset-comment {
+        height:2vw;
+    }
+
+    .button-container #like-button:hover {
+        background-color: rgba(120, 221, 255, 0.45);
+    }
+
+    .button-container #like-button:hover {
+        background-color: rgba(120, 221, 255, 0.45);
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .background-img-brand{
+        display: none;
+    }
+
+    .fieldset-1{
+        clip-path: none;
+    }
+
+    .fieldset-text{
+        width: 120%;
+    }
+
+    .text-title {
+        left: 5%;
+    }
+
+    .text-subtitle {
+        padding-top: 11.75%;
+        padding-left: 2.7%;
+    }
+
+    .button-container button {
+        padding: 3px 5%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:740px){
+    .fieldset-3,
+    .text-feedback,
+    .background-img-joint{
+        display: none;
+    }
+
+    .fieldset-1{
+        width: 88.5%;
+        height: 87.5%;
+    }
+
+    .fieldset-2{
+        width: 80%;
+        height: 5vw;
+        left: 7%;
+        top:82%;
+        background-color: rgba(238, 238, 238, 1);
+        border: 1.5px solid #000000;
+        border-radius: 10px;
+    }
+
+    .star{
+        font-size: 4vw;
+    }
+
+    .text-feedback {
+        font-size:100%;
+        margin-left: 45%;
+        margin-top: -2%;
+    }
+
+    .fieldset-comment{
+        height: 1.5vw;
+    }
+}
+
+@media only screen and (max-width: 800px) and (max-height:500px) and (orientation: landscape) {
+    .background-img-green,
+    .green-box,
+    .fieldset-1{
+        display: none;
+    }
+
+    .background-img-turn{
+        display: block;
+    }
+}
+
+@media screen and (max-width:389px) {
+    .fieldset-1{
+        left: 1.5%;
+    }
+
+    .fieldset-2{
+        height: 7vw;
+    }
+
+    .fieldset-comment{
+        margin-left: 2%;
+        height: 2vw;
+        width: 90%;
+    }
+
+    .fieldset-text{
+        width: 100%;
+    }
+
+    .fieldset-text{
+        width: 110%;
+    }
+
+    .star{
+        font-size: 140%;
+    }
+}

@@ -1,0 +1,245 @@
+body{
+    background-color: #2A2B34;
+    color: azure;
+    font-family: Helvetica;
+    overflow: auto;
+}
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 130px;
+  min-height: 80vh;
+}
+
+.click-box-link * { 
+  font-size: 23px; 
+}
+
+.fieldset-left, .fieldset-right {
+    flex: 1;
+    margin: 0 1%; 
+}
+
+.fieldset-left{
+  background-color: #465257;
+  border: 1px solid #465257;
+  border-radius: 8px; 
+  display: flex;
+  flex-direction: column; 
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+.fieldset-right{
+    background-color: #2A2B34;
+    border: 1px solid #2A2B34;
+}
+ 
+.legend-right{
+    margin-top: 2%;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.legend-left{
+    margin-bottom: 3%;
+    font-weight: bold;
+    font-size: 150%;
+}
+  
+.form-group {
+    width: 48%;
+    margin-bottom: 1%;
+}
+
+.form-group label {
+    display: block; 
+    margin-bottom: 1%; 
+    color: white; 
+    font-size: 80%;
+} 
+  
+.form-group input {
+    width: 80%;  
+    padding: 5%; 
+    border: 1px solid #ccc; 
+    border-radius: 7px;  
+}
+
+.click-box {
+    background-color: #39415A;
+    border: 1px solid #596469;
+    margin-bottom: 2%;
+    border-radius: 15px; 
+    padding-left: 3%; 
+    line-height: 350%; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+.click-box:hover{
+  padding: 1%;
+  cursor: pointer; 
+  
+}
+
+.click-box img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 15px; 
+    right: 4%;
+    margin-top: 0.8%;
+}
+
+a, .Legend-Pagination {
+  color: white;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.active {
+  color : grey;
+}
+
+.pagination {
+  margin-top:3%;
+}
+
+.Legend-Pagination {
+  font-size: 0.8em;
+}
+
+.small-label {
+  font-size: 17px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.Button-submit {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #39415A;
+    margin-top : 40%;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  .fieldset-left {
+    flex: 1;
+    max-width: 20%; /* Ajout de cette ligne pour limiter la largeur à 20% */
+    margin-right: 1%; /* Ajout de cette ligne pour laisser un espace entre les fieldsets */
+}
+
+.fieldset-left form {
+    width: 100%; /* Ajout de cette ligne pour que le formulaire occupe toute la largeur du fieldset */
+}
+
+.form-group {
+    width: 100%; /* Ajout de cette ligne pour que chaque groupe de formulaire occupe toute la largeur disponible */
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+  body{
+    overflow: auto;
+  }
+
+  .flex-container {
+    flex-direction: column; 
+  }
+
+  .fieldset-left{
+    background-color: #465257;
+    border-radius: 8px; 
+    margin-bottom: 2%;
+    height: 80vh;
+  }
+
+  .fieldset-right{
+    background-color: #2A2B34;
+  }
+
+  .fieldset-left {
+    max-width: 100%;
+    margin-right: 1%;
+}
+ 
+  .legend-right{
+    margin-bottom: 3%;
+    font-weight: bold;
+    font-size: 120%;
+  }
+
+  .legend-left{
+    margin-bottom: 3%;
+    font-weight: bold;
+    font-size: 150%;
+  }
+  
+  .form-group {
+    width: 48%;
+    margin-bottom: 1%;
+  }
+
+  .form-group label {
+    display: block; 
+    margin-bottom: 1%; 
+    color: white; 
+    font-size: 80%;
+  } 
+  
+  .form-group input {
+    width: 80%;  
+    padding: 2%; 
+    border: 1px solid #ccc; 
+    border-radius: 7px;  
+  }
+
+
+.click-box {
+    background-color: #39415A;
+    border: 1px solid #596469;
+    margin-bottom: 4%;
+    border-radius: 15px; 
+    padding-left: 3%; 
+    line-height: 350%; 
+    cursor: pointer; 
+}
+
+
+.click-box img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 15px; 
+    right: 4%;
+    margin-top: 0.8%;
+}
+.Button-submit {
+  margin-top : 5%;
+}
+
+.form-group input,
+.form-group select {
+    width: 208%;
+
+}
+
+
+}
+   

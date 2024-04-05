@@ -1,0 +1,93 @@
+body{
+    background-color: #2A2B34;
+    color: azure;
+    font-family: Helvetica;
+    overflow: auto;
+}
+
+
+.img {
+    height: 40px;
+    width: 40px;
+    border : 1px black solid;
+    border-radius: 15px; 
+    right: 4%;
+    margin-top: 0.8%;
+}
+
+.container {
+    margin-top: 1%;
+    width: 80%;
+    min-height: 80%;
+    background-color: white;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Informations {
+    color : black;
+}
+
+.demands {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.click-box {
+    background-color: #f5f5f5;
+    border: 1px solid #596469;
+    margin-bottom: 4%;
+    border-radius: 15px; 
+    width: 90%;
+    padding-left: 3%; 
+    line-height: 50%; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: left; 
+    justify-content: space-between;
+  }
+
+.click-box:hover{
+  padding: 1%;
+  cursor: pointer; 
+  
+}
+
+.click-box img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 15px; 
+    right: 4%;
+    margin-top: 0.8%;
+}
+  
+.pagination {
+    margin-top : 2%;
+    margin-bottom : 1%;
+}
+
+a, .Legend-Pagination {
+    color: rgb(0, 0, 0);
+    font-size: 0.8em;
+    text-decoration: none;
+  }
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 50%;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+}
