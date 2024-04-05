@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-04-05 02:27:11
+  from 'C:\WebProject\Buubl-\Buubl-\DashboardAdmin\view\admin.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_660f455fe1f720_86912547',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a7fd2c955f9b492b412c7f8a5a58d8c2e72851fc' => 
+    array (
+      0 => 'C:\\WebProject\\Buubl-\\Buubl-\\DashboardAdmin\\view\\admin.tpl',
+      1 => 1712276823,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660f455fe1f720_86912547 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -474,7 +497,10 @@
             </section>
         </div>
 
-        <script src="view/admin.js"></script>
+        <?php echo '<script'; ?>
+ src="view/admin.js"><?php echo '</script'; ?>
+>
     </main>
 </body>
-</html>
+</html><?php }
+}

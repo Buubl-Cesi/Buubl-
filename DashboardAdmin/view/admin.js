@@ -1,107 +1,3 @@
-function changecoeur() {
-    document.getElementById('coeur').src = 'Images/coeur-bleu.png'; 
-}
-
-function resetcoeur() {
-    document.getElementById('coeur').src = 'Images/coeur.png'; 
-}
-
-function changeloupe() {
-    document.getElementById('loupe').src = 'Images/loupe-bleu.png'; 
-}
-
-function resetloupe() {
-    document.getElementById('loupe').src = 'Images/loupe.png'; 
-}
-
-function changemenu() {
-    document.getElementById('menuGR').src = 'Images/slider-bleu.png'; 
-}
-
-function resetmenu() {
-    document.getElementById('menuGR').src = 'Images/slider.png'; 
-}
-
-/*----------------Afficher navbar------------------------------------------------*/
-let pagetop = true;
-let menus = false;
-
-window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    const threshold = 10; // Vous pouvez ajuster ce seuil si nécessaire
-    const currentScroll = window.scrollY;
-
-    // Vérifie si la page est en haut
-    if (currentScroll <= threshold) {
-        navbar.classList.remove('navbar-hidden');
-        pagetop = true;
-    } 
-    else {
-        navbar.classList.add('navbar-hidden');
-        pagetop = false;
-        menus = false;
-        menu.classList.remove('show');    
-    }
-});
-
-window.addEventListener('mousemove', function(e) {
-    const cursorPositionY = e.clientY
-    const navbar = document.getElementById('navbar');
-    const threshold = 80;
-
-    if (cursorPositionY <= threshold && pagetop == false) {
-        navbar.classList.remove('navbar-hidden');
-    } 
-    else if (cursorPositionY > threshold && pagetop == false && menus == false) {
-        navbar.classList.add('navbar-hidden');
-    }
-});
-
-
-
-function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.classList.toggle("show");
-    if (menus == false){
-        menus = true;
-    }
-    else{
-        menus = false;
-    }
-}
-
-document.addEventListener('click', function(e) {
-    var menu = document.getElementById("menu");
-    var menuToggle = document.getElementById("menuGR"); 
-    var target = e.target; 
-    if (!menu.contains(target) && !menuToggle.contains(target)) {
-        menus = false;
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');
-            
-        }
-    }
-});
-
-function updateImageSource() {
-    var width = window.innerWidth;
-    var image = document.getElementById('logo');
-  
-    if (width < 1400 && width > 1100) {
-      image.src = 'Images/logo.png';
-    } 
-    else if (width < 1100 && width > 400) {
-      image.src = 'Images/mini-logo.png';
-    }
-    else if (width < 400){
-      image.src = 'Images/mini-logo.png';
-    }
-    
-    
-  }
-  window.addEventListener('resize', updateImageSource);
-  updateImageSource();
-
 ////////////
 
 
@@ -129,7 +25,10 @@ function changeForm(nameOfForm) {
 
     document.getElementById(nameOfForm).style.display = 'block';
 }
-    
+ 
+window.addEventListener('load', function() {
+    changeForm('form1'); // Appeler la fonction changeForm avec le nom du formulaire 1
+});
 
 function validateInput(input) {
     var max = Number(input.getAttribute('max'));
@@ -151,6 +50,25 @@ document.getElementById("readOffer").addEventListener("click", function() {
     };
     xhr.send();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const apiurl = "https://apicarto.ign.fr/api/codes-postaux/communes/";
+    
+    document.getElementById("pc_student").addEventListener('blur', function() {
+        let codePostal = this.value;
+        console.log(codePostal);
+
+        fetch(apiurl + codePostal)
+            .then(response => response.json())
+            .then(data => {
+                let options = data.map(commune => `<option value="${commune.nomCommune}">${commune.nomCommune}</option>`).join('');
+                document.getElementById("city_student").innerHTML = options;
+            });
+    });
+});
+
+
+
 
 
 
