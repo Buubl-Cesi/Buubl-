@@ -108,10 +108,11 @@ document.getElementById("pc_company").addEventListener('input', function() {
     }   
 });
 
-// --------------------------------------------------------------------------------
-
 
 /*
+
+MARCHE PAS :/
+
 // Validation champ --------------------------------------------------------------------------------
 
 // Nécessité tout les champs student sur créer et modifier et supprimer
