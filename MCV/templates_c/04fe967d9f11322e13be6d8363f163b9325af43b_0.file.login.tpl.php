@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.47, created on 2024-04-05 02:54:40
+  from 'C:\WebProject\Buubl-\Buubl-\MCV\views\templates\login.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.47',
+  'unifunc' => 'content_660f4bd0e067c7_57914817',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '04fe967d9f11322e13be6d8363f163b9325af43b' => 
+    array (
+      0 => 'C:\\WebProject\\Buubl-\\Buubl-\\MCV\\views\\templates\\login.tpl',
+      1 => 1712278479,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660f4bd0e067c7_57914817 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +29,9 @@
     <title>Bubbl-Login</title>
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
     <link rel="stylesheet" href="views/templates/login.css">
-    <script src="views/templates/login.js"></script>
+    <?php echo '<script'; ?>
+ src="views/templates/login.js"><?php echo '</script'; ?>
+>
     <link rel="manifest" href="../manifest.json">
 </head>
 <body>
@@ -68,4 +93,5 @@
         </section>
     </main>
 </body>
-</html>
+</html><?php }
+}

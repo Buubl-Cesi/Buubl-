@@ -1,0 +1,38 @@
+{
+    "name": "Bubbl-Login",
+    "short_name": "Login",
+    "description": "Une simple page login pour vous connecter de manière sécurisé à notre site web",
+    "start_url": "index.php",
+    "display": "standalone",
+    "background_color": "#2a2b34",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "MCV/Images/Logo_unique_192_192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "MCV/Images/Logo_unique_512_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+
+    "screenshots": [
+        {
+            "src": "MCV/Images/Logo_1280_720.png",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide"
+            
+        },
+        {
+            "src": "MCV/Images/logo_wide_1280_720.png",
+            "sizes": "1280x720",
+            "type": "image/png"
+        }
+    ],
+
+    "splash_pages": null
+}
