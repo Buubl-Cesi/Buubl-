@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.47, created on 2024-04-05 02:54:40
+/* Smarty version 3.1.47, created on 2024-04-05 03:55:28
   from 'C:\WebProject\Buubl-\Buubl-\MCV\views\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.47',
-  'unifunc' => 'content_660f4bd0e067c7_57914817',
+  'unifunc' => 'content_660f5a1070eea7_64509089',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04fe967d9f11322e13be6d8363f163b9325af43b' => 
     array (
       0 => 'C:\\WebProject\\Buubl-\\Buubl-\\MCV\\views\\templates\\login.tpl',
-      1 => 1712278479,
+      1 => 1712282124,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660f4bd0e067c7_57914817 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660f5a1070eea7_64509089 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +29,10 @@ function content_660f4bd0e067c7_57914817 (Smarty_Internal_Template $_smarty_tpl)
     <title>Bubbl-Login</title>
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
     <link rel="stylesheet" href="views/templates/login.css">
+    <link rel="manifest" href="../manifest.json">
     <?php echo '<script'; ?>
  src="views/templates/login.js"><?php echo '</script'; ?>
 >
-    <link rel="manifest" href="../manifest.json">
 </head>
 <body>
     <header>
@@ -48,7 +48,7 @@ function content_660f4bd0e067c7_57914817 (Smarty_Internal_Template $_smarty_tpl)
         <form method="post">
                 <h1 class="text-title">Buubl | <span class="text-title-thin">Login page</span></h1>
                 <h2 class="text-subtitle">Sort de ta bulle !</h2>
-                <p class="text-advertisement">Trouvez ici votre stage en entreprise</p>
+                <p class="text-advertisements">Trouvez ici votre stage en entreprise</p>
 
                 <div>
                     <p class="text-title-2">Identification</p>
@@ -81,8 +81,8 @@ function content_660f4bd0e067c7_57914817 (Smarty_Internal_Template $_smarty_tpl)
                     <label class="check-box-text" for="checkbox2">J'accepte le traitement de mes données <span class="display">personnelles</span> ?</label>
                 </div>
 
-                <div class="button-login">
-                    <input class = "object-param-button" type="submit" value="Se connecter" />
+                <div>
+                    <input class="button-login" type="submit" value="Se connecter" />
                 </div>
 
                 <div class="text-alignement">
@@ -92,6 +92,11 @@ function content_660f4bd0e067c7_57914817 (Smarty_Internal_Template $_smarty_tpl)
         </form>
         </section>
     </main>
+
+    <?php echo '<script'; ?>
+ src="../service-worker.js"><?php echo '</script'; ?>
+>
+
 </body>
 </html><?php }
 }

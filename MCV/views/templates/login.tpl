@@ -6,8 +6,8 @@
     <title>Bubbl-Login</title>
     <link rel="icon" href="Images/Logo_unique.png" type="image/png">
     <link rel="stylesheet" href="views/templates/login.css">
-    <script src="views/templates/login.js"></script>
     <link rel="manifest" href="../manifest.json">
+    <script src="views/templates/login.js"></script>
 </head>
 <body>
     <header>
@@ -67,5 +67,8 @@
         </form>
         </section>
     </main>
+
+    <script src="../service-worker.js"></script>
+
 </body>
 </html>
